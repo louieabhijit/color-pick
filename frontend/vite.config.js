@@ -18,13 +18,13 @@ export default defineConfig({
                 manualChunks: {
                     vendor: ['react', 'react-dom', 'react-router-dom'],
                     ui: ['framer-motion', 'react-icons'],
-                    utils: ['culori', 'colorthief']
+                    utils: ['culori', 'colorthief', 'color-name-list']
                 }
             }
         },
         chunkSizeWarningLimit: 1000
     },
     optimizeDeps: {
-        include: ['colorthief']
+        include: ['colorthief', 'color-name-list']
     }
 });
