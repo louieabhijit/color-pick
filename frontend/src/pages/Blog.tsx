@@ -22,7 +22,7 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    slug: 'complete-guide-color-theory',
+    slug: 'color-theory',
     title: 'The Complete Guide to Color Theory for Designers',
     description: 'Master the fundamentals of color theory, from primary colors to complex color harmonies. Learn how to create effective color schemes for your designs.',
     date: 'March 15, 2024',
@@ -36,7 +36,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    slug: 'top-5-color-palette-tools-2025',
+    slug: 'color-palette-tools',
     title: 'Top 5 Free Color Palette Tools for Designers in 2025',
     description: 'Discover the best free color palette generators and tools that will revolutionize your design workflow in 2025.',
     date: 'March 10, 2024',
@@ -50,7 +50,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '3',
-    slug: 'extract-colors-from-image',
+    slug: 'image-color-extraction',
     title: 'How to Extract Colors from an Image for Web Design',
     description: 'Learn professional techniques for extracting beautiful color palettes from images to create cohesive web designs.',
     date: 'March 5, 2024',
@@ -78,7 +78,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '6',
-    slug: 'color-psychology-customer-behavior',
+    slug: 'color-psychology',
     title: 'How Color Psychology Influences Customer Behavior',
     description: 'Explore the psychological impact of colors on consumer behavior and learn how to use this knowledge in your design strategy.',
     date: 'February 15, 2024',
