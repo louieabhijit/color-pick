@@ -30,7 +30,8 @@ import ImageColorExtraction from './pages/BlogPosts/ImageColorExtraction'
 import WCAGColorContrast from './pages/BlogPosts/WCAGColorContrast'
 import ColorPsychology from './pages/BlogPosts/ColorPsychology'
 import { ClipboardProvider } from './context/ClipboardContext'
-import { Toaster } from 'react-hot-toast'
+import { Toaster as HotToaster } from 'react-hot-toast'
+import defaultImage from './assets/default.jpg'
 
 interface HomePageProps {
   selectedImage: string;
@@ -111,8 +112,8 @@ const HomePage = ({
   </>
 );
 
-function App() {
-  const [selectedImage, setSelectedImage] = useState<string>('/src/assets/default.jpg')
+const App: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<string>(defaultImage)
   const [selectedColor, setSelectedColor] = useState<string | null>(null)
   const [favorites, setFavorites] = useState<string[]>(() => {
     const saved = localStorage.getItem('colorFavorites')
@@ -152,7 +153,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <Toaster />
+        <HotToaster />
         <ClipboardProvider>
           <div className="min-h-screen w-full bg-white dark:bg-gray-900">
             <Navbar onColorSelect={handleColorSelect} />
