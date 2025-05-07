@@ -1,195 +1,185 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
-import { FaCalendar, FaClock, FaTags, FaChevronRight } from 'react-icons/fa';
 
 interface BlogPost {
   id: string;
+  slug: string;
   title: string;
   description: string;
-  content: string;
-  author: string;
   date: string;
   readTime: string;
-  tags: string[];
+  category: string;
   image: string;
-  slug: string;
+  author: {
+    name: string;
+    avatar: string;
+  };
 }
 
 const blogPosts: BlogPost[] = [
   {
-    id: '5',
-    title: 'How Color Psychology Influences Customer Behavior',
-    description: 'Discover how color psychology impacts consumer decisions and brand perception. Learn to leverage color theory for increased conversions and better customer engagement in marketing and web design.',
-    content: '', // This will be in a separate component
-    author: 'Marketing Psychology Expert',
-    date: 'May 7, 2024',
-    readTime: '15 min read',
-    tags: ['Color Psychology', 'Marketing', 'Consumer Behavior', 'Brand Design', 'Conversion Rate', 'UX Design', 'E-commerce'],
-    image: 'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=2070',
-    slug: 'color-psychology-customer-behavior'
-  },
-  {
-    id: '4',
-    title: 'WCAG 2.1 Color Contrast Guidelines Explained',
-    description: 'Master WCAG 2.1 color contrast requirements for web accessibility. Learn how to create accessible designs that comply with AA and AAA standards. Essential guide for web designers and developers.',
-    content: '', // This will be in a separate component
-    author: 'Accessibility Expert',
-    date: 'May 5, 2024',
+    id: '1',
+    slug: 'complete-guide-color-theory',
+    title: 'The Complete Guide to Color Theory for Designers',
+    description: 'Master the fundamentals of color theory, from primary colors to complex color harmonies. Learn how to create effective color schemes for your designs.',
+    date: 'March 15, 2024',
     readTime: '12 min read',
-    tags: ['WCAG 2.1', 'Accessibility', 'Color Contrast', 'Web Design', 'UI/UX', 'A11y', 'Web Standards'],
-    image: 'https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?q=80&w=2070',
-    slug: 'wcag-color-contrast-guidelines'
-  },
-  {
-    id: '3',
-    title: 'How to Extract Colors from an Image for Web Design',
-    description: 'Learn professional techniques for extracting beautiful color palettes from images. Master color sampling, palette generation, and how to apply extracted colors effectively in your web designs.',
-    content: '', // This will be in a separate component
-    author: 'Design Expert',
-    date: 'May 3, 2024',
-    readTime: '10 min read',
-    tags: ['Color Extraction', 'Web Design', 'UI/UX', 'Color Palettes', 'Design Tools', 'Image Analysis'],
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070',
-    slug: 'how-to-extract-colors-from-image'
+    category: 'Color Theory',
+    image: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Sarah Anderson',
+      avatar: 'https://ui-avatars.com/api/?name=Sarah+Anderson&background=random'
+    }
   },
   {
     id: '2',
+    slug: 'top-5-color-palette-tools-2025',
     title: 'Top 5 Free Color Palette Tools for Designers in 2025',
-    description: 'Discover the best free color palette generators and tools that will revolutionize your design workflow in 2025. Compare features, explore AI-powered options, and find the perfect tool for your next project.',
-    content: '', // This will be in a separate component
-    author: 'Design Expert',
-    date: 'May 1, 2024',
+    description: 'Discover the best free color palette generators and tools that will revolutionize your design workflow in 2025.',
+    date: 'March 10, 2024',
     readTime: '8 min read',
-    tags: ['Color Tools', 'Design Resources', 'Color Palettes', 'UI/UX', 'Web Design', 'Free Tools'],
-    image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?q=80&w=2070&auto=format&fit=crop',
-    slug: 'top-5-free-color-palette-tools-2025'
+    category: 'Tools',
+    image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Michael Chen',
+      avatar: 'https://ui-avatars.com/api/?name=Michael+Chen&background=random'
+    }
   },
   {
-    id: '1',
-    title: 'The Complete Guide to Color Theory for Designers',
-    description: 'Master the fundamentals of color theory, from basic principles to practical applications in modern design. Learn how to create harmonious color schemes and evoke emotions through strategic color choices.',
-    content: '', // This will be in a separate component
-    author: 'Design Expert',
-    date: 'April 29, 2024',
-    readTime: '12 min read',
-    tags: ['Color Theory', 'Design Principles', 'UI/UX', 'Web Design', 'Color Psychology'],
-    image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?q=80&w=2070&auto=format&fit=crop',
-    slug: 'complete-guide-color-theory-designers'
+    id: '3',
+    slug: 'extract-colors-from-image',
+    title: 'How to Extract Colors from an Image for Web Design',
+    description: 'Learn professional techniques for extracting beautiful color palettes from images to create cohesive web designs.',
+    date: 'March 5, 2024',
+    readTime: '10 min read',
+    category: 'Techniques',
+    image: 'https://images.unsplash.com/photo-1579546929662-711aa81148cf?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Emma Wilson',
+      avatar: 'https://ui-avatars.com/api/?name=Emma+Wilson&background=random'
+    }
+  },
+  {
+    id: '5',
+    slug: 'wcag-color-contrast',
+    title: 'WCAG 2.1 Color Contrast Guidelines Explained',
+    description: 'A comprehensive guide to understanding and implementing WCAG 2.1 color contrast requirements for accessible web design.',
+    date: 'February 20, 2024',
+    readTime: '11 min read',
+    category: 'Accessibility',
+    image: 'https://images.unsplash.com/photo-1557683311-eac922347aa1?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Alex Martinez',
+      avatar: 'https://ui-avatars.com/api/?name=Alex+Martinez&background=random'
+    }
+  },
+  {
+    id: '6',
+    slug: 'color-psychology-customer-behavior',
+    title: 'How Color Psychology Influences Customer Behavior',
+    description: 'Explore the psychological impact of colors on consumer behavior and learn how to use this knowledge in your design strategy.',
+    date: 'February 15, 2024',
+    readTime: '13 min read',
+    category: 'Psychology',
+    image: 'https://images.unsplash.com/photo-1501366062246-723b4d3e4eb6?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Rachel Thompson',
+      avatar: 'https://ui-avatars.com/api/?name=Rachel+Thompson&background=random'
+    }
   }
 ];
 
-const Blog = () => {
-  const [hoveredPost, setHoveredPost] = useState<string | null>(null);
+interface BlogProps {}
 
+const Blog: React.FC<BlogProps> = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Navbar />
+      <Helmet>
+        <title>Color Design Blog | Color Pick</title>
+        <meta name="description" content="Explore the latest insights, tutorials, and best practices in color theory, design tools, and accessibility." />
+        <meta name="keywords" content="color theory, color design, color tools, color accessibility, color psychology, design blog" />
+      </Helmet>
+
+      <Navbar onColorSelect={() => {}} />
       
       {/* Hero Section */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="relative h-[40vh] overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2070')] bg-cover bg-center mix-blend-overlay" />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-          <motion.h1 
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
+      <div className="relative bg-gradient-to-r from-indigo-500 to-purple-600 py-24">
+        <div className="absolute inset-0 bg-grid-white/[0.1] bg-[size:20px_20px]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
           >
-            Design & Color Blog
-          </motion.h1>
-          <motion.p 
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-xl text-gray-200 max-w-2xl"
-          >
-            Explore in-depth articles about color theory, design principles, and creative inspiration
-          </motion.p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Color Design Blog
+            </h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Explore the latest insights, tutorials, and best practices in color theory,
+              design tools, and accessibility.
+            </p>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Blog Posts Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post, index) => (
             <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -5 }}
-              onHoverStart={() => setHoveredPost(post.id)}
-              onHoverEnd={() => setHoveredPost(null)}
-              className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg transition-shadow duration-300 hover:shadow-2xl"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Link to={`/blog/${post.slug}`}>
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <motion.img
-                    animate={{
-                      scale: hoveredPost === post.id ? 1.05 : 1
-                    }}
-                    transition={{ duration: 0.3 }}
+              <Link
+                to={`/blog/${post.slug}`}
+                className="block group h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 text-sm font-medium bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white rounded-full">
+                      {post.category}
+                    </span>
+                  </div>
                 </div>
 
+                {/* Content */}
                 <div className="p-6">
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Title and Description */}
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-                    {post.description}
-                  </p>
-
-                  {/* Metadata */}
-                  <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-                    <div className="flex items-center space-x-4">
-                      <div className="flex items-center">
-                        <FaCalendar className="w-4 h-4 mr-2" />
-                        <span>{post.date}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <FaClock className="w-4 h-4 mr-2" />
-                        <span>{post.readTime}</span>
-                      </div>
+                  <div className="flex items-center space-x-2 mb-4">
+                    <img
+                      src={post.author.avatar}
+                      alt={post.author.name}
+                      className="w-8 h-8 rounded-full"
+                    />
+                    <div className="text-sm">
+                      <p className="text-gray-900 dark:text-gray-100 font-medium">
+                        {post.author.name}
+                      </p>
+                      <p className="text-gray-500 dark:text-gray-400">
+                        {post.date} · {post.readTime}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Read More Button */}
-                  <div className="mt-6">
-                    <motion.div
-                      animate={{
-                        x: hoveredPost === post.id ? 5 : 0
-                      }}
-                      className="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium"
-                    >
-                      Read More
-                      <FaChevronRight className="ml-2 w-4 h-4" />
-                    </motion.div>
-                  </div>
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                    {post.title}
+                  </h2>
+                  
+                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
+                    {post.description}
+                  </p>
                 </div>
               </Link>
             </motion.div>
