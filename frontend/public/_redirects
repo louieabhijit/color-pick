@@ -1,0 +1,14 @@
+# Redirect all requests to index.html
+/* /index.html 200
+
+# Handle specific routes
+/blog/* /index.html 200
+/color-harmony-guide /index.html 200
+/image-color-extraction /index.html 200
+/color-psychology /index.html 200
+/color-accessibility /index.html 200
+/color-trends /index.html 200
+/color-theory /index.html 200
+/color-palettes /index.html 200
+/color-tools /index.html 200
+/color-inspiration /index.html 200 
