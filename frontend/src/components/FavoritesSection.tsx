@@ -21,7 +21,7 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
         </svg>
         <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
           Favorites
-        </span>
+        </span><span className="ml-2 text-sm font-normal text-gray-500">Click color to see details</span>
         <span className="ml-2 text-sm font-normal text-gray-500">
           ({favorites.length}/10)
         </span>

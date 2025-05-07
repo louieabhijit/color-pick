@@ -4,6 +4,16 @@ import ColorThief from 'colorthief'
 import { getColorName } from '../utils/colorNames'
 import { useClipboard } from '../context/ClipboardContext'
 
+// Helper function to convert hex to RGB
+const hexToRgb = (hex: string) => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+};
+
 interface ColorPaletteProps {
   image: string
   favorites: string[]
@@ -48,6 +58,21 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
         ).map(color => color.toUpperCase())
         
         setSelectedColors(hexColors)
+
+        // Select a random color from the palette (excluding black and white)
+        const validColors = hexColors.filter(color => {
+          const rgb = hexToRgb(color);
+          if (!rgb) return false;
+          // Check if the color is not too close to black or white
+          const isBlack = rgb.r < 30 && rgb.g < 30 && rgb.b < 30;
+          const isWhite = rgb.r > 225 && rgb.g > 225 && rgb.b > 225;
+          return !isBlack && !isWhite;
+        });
+
+        if (validColors.length > 0) {
+          const randomIndex = Math.floor(Math.random() * validColors.length);
+          onColorSelect(validColors[randomIndex]);
+        }
       }
     } catch (error) {
       console.error('Failed to generate palette:', error)
@@ -115,7 +140,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
           </svg>
           <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
           Color Palette
-          </span>
+          </span><span className="ml-2 text-sm font-normal text-gray-500">(click palette to see color details)</span>
         </h2>
         <button
           onClick={handleRegenerate}
