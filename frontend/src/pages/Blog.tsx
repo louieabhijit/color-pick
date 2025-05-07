@@ -22,7 +22,7 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    slug: 'color-theory',
+    slug: 'complete-guide-color-theory-designers',
     title: 'The Complete Guide to Color Theory for Designers',
     description: 'Master the fundamentals of color theory, from primary colors to complex color harmonies. Learn how to create effective color schemes for your designs.',
     date: 'March 15, 2024',
@@ -36,7 +36,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    slug: 'color-palette-tools',
+    slug: 'top-5-free-color-palette-tools-2025',
     title: 'Top 5 Free Color Palette Tools for Designers in 2025',
     description: 'Discover the best free color palette generators and tools that will revolutionize your design workflow in 2025.',
     date: 'March 10, 2024',
@@ -50,7 +50,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '3',
-    slug: 'image-color-extraction',
+    slug: 'how-to-extract-colors-from-image',
     title: 'How to Extract Colors from an Image for Web Design',
     description: 'Learn professional techniques for extracting beautiful color palettes from images to create cohesive web designs.',
     date: 'March 5, 2024',
@@ -64,7 +64,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '5',
-    slug: 'wcag-color-contrast',
+    slug: 'wcag-color-contrast-guidelines',
     title: 'WCAG 2.1 Color Contrast Guidelines Explained',
     description: 'A comprehensive guide to understanding and implementing WCAG 2.1 color contrast requirements for accessible web design.',
     date: 'February 20, 2024',
@@ -78,7 +78,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: '6',
-    slug: 'color-psychology',
+    slug: 'color-psychology-customer-behavior',
     title: 'How Color Psychology Influences Customer Behavior',
     description: 'Explore the psychological impact of colors on consumer behavior and learn how to use this knowledge in your design strategy.',
     date: 'February 15, 2024',
