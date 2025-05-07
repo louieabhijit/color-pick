@@ -23,9 +23,12 @@ export default defineConfig({
         }
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
+    assetsDir: 'assets',
+    copyPublicDir: true
   },
   optimizeDeps: {
     include: ['colorthief', 'color-name-list', 'nearest-color']
-  }
+  },
+  publicDir: 'public'
 })
