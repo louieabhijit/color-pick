@@ -40,6 +40,13 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://color-pick.com/blog/how-to-choose-brand-color-palette</loc>
+    <lastmod>2024-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://color-pick.com/blog/complete-guide-color-theory-designers</loc>
     <lastmod>2024-05-08</lastmod>
     <changefreq>monthly</changefreq>

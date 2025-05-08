@@ -21,6 +21,20 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: '7',
+    slug: 'how-to-choose-brand-color-palette',
+    title: 'How to Choose the Right Color Palette for Your Brand',
+    description: 'Learn how to select the perfect color palette that aligns with your brand identity, evokes the right emotions, and resonates with your target audience.',
+    date: 'March 20, 2024',
+    readTime: '10 min read',
+    category: 'Branding',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'David Miller',
+      avatar: 'https://ui-avatars.com/api/?name=David+Miller&background=random'
+    }
+  },
+  {
     id: '1',
     slug: 'complete-guide-color-theory-designers',
     title: 'The Complete Guide to Color Theory for Designers',

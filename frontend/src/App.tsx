@@ -31,6 +31,7 @@ import ColorPaletteTools from './pages/BlogPosts/ColorPaletteTools'
 import ImageColorExtraction from './pages/BlogPosts/ImageColorExtraction'
 import WCAGColorContrast from './pages/BlogPosts/WCAGColorContrast'
 import ColorPsychology from './pages/BlogPosts/ColorPsychology'
+import BrandColorPalette from './pages/BlogPosts/BrandColorPalette'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import defaultImage from './assets/default.jpg'
@@ -176,6 +177,7 @@ const App: React.FC = () => {
               <Route path="/blog/how-to-extract-colors-from-image" element={<ImageColorExtraction />} />
               <Route path="/blog/wcag-color-contrast-guidelines" element={<WCAGColorContrast />} />
               <Route path="/blog/color-psychology-customer-behavior" element={<ColorPsychology />} />
+              <Route path="/blog/how-to-choose-brand-color-palette" element={<BrandColorPalette />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 
