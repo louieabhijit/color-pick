@@ -48,8 +48,8 @@ const BrandColorPalette = () => {
       description: "Professional color wheel and palette generation tool"
     },
     {
-      name: "Coolors",
-      url: "https://coolors.co",
+      name: "colorPeek",
+      url: "https://color-peek.com/palettes",
       description: "Fast color scheme generator with trending palettes"
     },
     {
