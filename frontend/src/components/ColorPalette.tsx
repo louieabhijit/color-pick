@@ -27,8 +27,14 @@ export interface ColorPaletteRef {
 
 const MAX_COLORS = 6
 
+// Add a new interface for color entries
+interface ColorEntry {
+  id: string;
+  color: string;
+}
+
 const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, favorites, onToggleFavorite, onColorSelect }, ref) => {
-  const [selectedColors, setSelectedColors] = useState<string[]>([])
+  const [selectedColors, setSelectedColors] = useState<ColorEntry[]>([])
   const { copyToClipboard } = useClipboard();
   const [isGenerating, setIsGenerating] = useState(false)
   const [colorNames, setColorNames] = useState<Record<string, string>>({})
@@ -52,15 +58,22 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
       const palette = colorThief.getPalette(img, MAX_COLORS)
       
       if (palette) {
-        // Convert RGB arrays to hex colors
-        const hexColors = palette.map(([r, g, b]) => 
-          `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
-        ).map(color => color.toUpperCase())
+        // Convert RGB arrays to hex colors and create unique entries
+        const hexColors = palette
+          .map(([r, g, b]) => 
+            `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
+          )
+          .map(color => color.toUpperCase())
+          .slice(0, MAX_COLORS) // Ensure we don't exceed MAX_COLORS
+          .map((color, index) => ({
+            id: `${color}-${Date.now()}-${index}`,
+            color: color
+          }))
         
         setSelectedColors(hexColors)
 
         // Select a random color from the palette (excluding black and white)
-        const validColors = hexColors.filter(color => {
+        const validColors = hexColors.filter(({ color }) => {
           const rgb = hexToRgb(color);
           if (!rgb) return false;
           // Check if the color is not too close to black or white
@@ -71,7 +84,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
 
         if (validColors.length > 0) {
           const randomIndex = Math.floor(Math.random() * validColors.length);
-          onColorSelect(validColors[randomIndex]);
+          onColorSelect(validColors[randomIndex].color);
         }
       }
     } catch (error) {
@@ -88,7 +101,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
 
   // Update color names when selected colors change
   useEffect(() => {
-    const newColorNames = selectedColors.reduce((acc, color) => {
+    const newColorNames = selectedColors.reduce((acc, { color }) => {
       acc[color] = getColorName(color);
       return acc;
     }, {} as Record<string, string>);
@@ -98,13 +111,13 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
   // Expose handleColorSelect through ref
   useImperativeHandle(ref, () => ({
     handleColorSelect: (color: string) => {
-      if (!selectedColors.includes(color)) {
+      if (!selectedColors.some(entry => entry.color === color)) {
         setSelectedColors(prev => {
           if (prev.length >= MAX_COLORS) {
             // Remove the first color and add the new one at the end
-            return [...prev.slice(1), color]
+            return [...prev.slice(1), { id: `${color}-${Date.now()}`, color }]
           }
-          return [...prev, color]
+          return [...prev, { id: `${color}-${Date.now()}`, color }]
         })
       }
     }
@@ -117,7 +130,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
 
   // Handle color removal
   const handleColorRemove = (colorToRemove: string) => {
-    setSelectedColors(prev => prev.filter(color => color !== colorToRemove))
+    setSelectedColors(prev => prev.filter(entry => entry.color !== colorToRemove))
   }
 
   // Handle regenerate palette
@@ -161,9 +174,9 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
       
       <div className="h-[300px] flex gap-0 rounded-xl overflow-hidden shadow-lg">
         <AnimatePresence mode="sync">
-          {selectedColors.map((color, index) => (
+          {selectedColors.map((entry, index) => (
             <motion.div
-              key={color}
+              key={entry.id}
               initial={{ width: 0, opacity: 0 }}
               animate={{ 
                 width: `${100 / MAX_COLORS}%`,
@@ -188,11 +201,11 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                        after:duration-500 after:shadow-[inset_0_0_100px_rgba(0,0,0,0.2)]
                        hover:after:opacity-100"
               onClick={() => {
-                handleColorCopy(color)
-                onColorSelect(color)
+                handleColorCopy(entry.color)
+                onColorSelect(entry.color)
               }}
               style={{
-                backgroundColor: color,
+                backgroundColor: entry.color,
                 transformOrigin: 'center',
                 transformStyle: 'preserve-3d',
                 perspective: '1000px'
@@ -201,7 +214,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
               <motion.div
                 className="absolute inset-0 w-full h-full transition-transform duration-500
                          group-hover:[transform:translateZ(20px)]"
-                style={{ backgroundColor: color }}
+                style={{ backgroundColor: entry.color }}
               >
                 {/* Subtle gradient for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10" />
@@ -228,7 +241,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                                   textShadow: '0 1px 2px rgba(0,0,0,0.3)'
                                 }}
                       >
-                        {colorNames[color] || 'Loading...'}
+                        {colorNames[entry.color] || 'Loading...'}
                       </p>
                     </div>
                   </div>
@@ -244,7 +257,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                                 textShadow: '0 1px 2px rgba(0,0,0,0.3)'
                               }}
                     >
-                      {color}
+                      {entry.color}
                     </p>
                   
                     <div className="flex items-center justify-center gap-2">
@@ -257,7 +270,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                              shadow-lg hover:shadow-xl"
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleColorCopy(color);
+                      handleColorCopy(entry.color);
                     }}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" 
@@ -286,12 +299,12 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                                shadow-lg hover:shadow-xl"
                         onClick={(e) => {
                           e.stopPropagation();
-                          onToggleFavorite(color);
+                          onToggleFavorite(entry.color);
                         }}
                       >
                         <svg 
                           className={`h-5 w-5 transition-colors duration-200 ${
-                            favorites.includes(color) 
+                            favorites.includes(entry.color) 
                               ? 'text-red-500 fill-current' 
                               : 'text-white/70 group-hover:text-white'
                           }`}
