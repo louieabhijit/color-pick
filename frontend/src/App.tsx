@@ -20,6 +20,8 @@ import Footer from './components/Footer'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
+import Cookies from './pages/Cookies'
 import FAQ from './pages/FAQ'
 import ColorPalettes from './pages/ColorPalettes'
 import Gradients from './pages/Gradients'
@@ -163,6 +165,8 @@ const App: React.FC = () => {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/cookies" element={<Cookies />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/palettes" element={<ColorPalettes />} />
               <Route path="/gradients" element={<Gradients />} />
