@@ -38,7 +38,7 @@ import CulturalColors from './pages/BlogPosts/CulturalColors'
 import ColorPerception from './pages/BlogPosts/ColorPerception'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
-import defaultImage from './assets/default.jpg'
+import defaultImage from './assets/default1.jpg'
 
 interface HomePageProps {
   selectedImage: string;
