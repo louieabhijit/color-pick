@@ -3,6 +3,9 @@
 
 # Handle specific routes
 /blog/* /index.html 200
+/blog/cultural-significance-of-colors /index.html 200
+/blog/diy-creating-color-palettes-using-color-peek /index.html 200
+/blog/color-accessibility-designing-for-color-blind-users /index.html 200
 /blog/complete-guide-color-theory-designers /index.html 200
 /blog/top-5-free-color-palette-tools-2025 /index.html 200
 /blog/how-to-extract-colors-from-image /index.html 200

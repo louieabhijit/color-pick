@@ -103,6 +103,48 @@ const blogPosts: BlogPost[] = [
       name: 'Rachel Thompson',
       avatar: 'https://ui-avatars.com/api/?name=Rachel+Thompson&background=random'
     }
+  },
+  {
+    id: '8',
+    slug: 'color-accessibility-designing-for-color-blind-users',
+    title: 'Color Accessibility: Designing for Color Blind Users',
+    description: 'Learn how to design accessible experiences for color blind users with practical tips, best practices, and tools to create inclusive, user-friendly designs.',
+    date: 'March 25, 2024',
+    readTime: '11 min read',
+    category: 'Accessibility',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Emily Parker',
+      avatar: 'https://ui-avatars.com/api/?name=Emily+Parker&background=random'
+    }
+  },
+  {
+    id: '9',
+    slug: 'diy-creating-color-palettes-using-color-peek',
+    title: 'DIY: Creating Your Own Color Palettes Using Color-Peek',
+    description: 'Learn how to create stunning, accessible, and personalized color palettes using Color-Peek. A perfect guide for designers, developers, and creatives.',
+    date: 'March 30, 2024',
+    readTime: '12 min read',
+    category: 'Tutorial',
+    image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Sophie Chen',
+      avatar: 'https://ui-avatars.com/api/?name=Sophie+Chen&background=random'
+    }
+  },
+  {
+    id: '10',
+    slug: 'cultural-significance-of-colors',
+    title: 'Cultural Significance of Colors Around the World',
+    description: 'Explore the rich cultural meanings of colors across different countries and traditions. Discover how red, blue, white, and more are interpreted around the world.',
+    date: 'April 5, 2024',
+    readTime: '15 min read',
+    category: 'Culture',
+    image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Maya Patel',
+      avatar: 'https://ui-avatars.com/api/?name=Maya+Patel&background=random'
+    }
   }
 ];
 

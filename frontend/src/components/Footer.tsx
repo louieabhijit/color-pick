@@ -43,13 +43,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const links = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
+      { name: 'Home', href: '/' },
+      { name: 'About', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Cookie Policy', href: '/cookies' },
   ];
 
   return (
@@ -59,29 +59,29 @@ const Footer = () => {
           <div className="flex items-center space-x-3">
             <ColorPickerLogo />
             <Link to="/" className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-              ColorPeek
+                ColorPeek
             </Link>
-            <a
+                <a
               href="https://github.com/louieabhijit/color-pick"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
               aria-label="GitHub"
-            >
+                >
               <FaGithub className="w-5 h-5" />
-            </a>
+                </a>
           </div>
 
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            {links.map((link) => (
-              <Link
+                {links.map((link) => (
+                      <Link
                 key={link.name}
-                to={link.href}
-                className="text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+                        to={link.href}
+                        className="text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                ))}
           </nav>
 
           <p className="text-center text-sm text-gray-600 dark:text-gray-400">

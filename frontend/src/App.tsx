@@ -32,6 +32,9 @@ import ImageColorExtraction from './pages/BlogPosts/ImageColorExtraction'
 import WCAGColorContrast from './pages/BlogPosts/WCAGColorContrast'
 import ColorPsychology from './pages/BlogPosts/ColorPsychology'
 import BrandColorPalette from './pages/BlogPosts/BrandColorPalette'
+import ColorAccessibility from './pages/BlogPosts/ColorAccessibility'
+import DIYColorPalettes from './pages/BlogPosts/DIYColorPalettes'
+import CulturalColors from './pages/BlogPosts/CulturalColors'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import defaultImage from './assets/default.jpg'
@@ -178,6 +181,9 @@ const App: React.FC = () => {
               <Route path="/blog/wcag-color-contrast-guidelines" element={<WCAGColorContrast />} />
               <Route path="/blog/color-psychology-customer-behavior" element={<ColorPsychology />} />
               <Route path="/blog/how-to-choose-brand-color-palette" element={<BrandColorPalette />} />
+              <Route path="/blog/color-accessibility-designing-for-color-blind-users" element={<ColorAccessibility />} />
+              <Route path="/blog/diy-creating-color-palettes-using-color-peek" element={<DIYColorPalettes />} />
+              <Route path="/blog/cultural-significance-of-colors" element={<CulturalColors />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 
