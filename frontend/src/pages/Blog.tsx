@@ -21,6 +21,20 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    id: '11',
+    slug: 'science-behind-color-perception',
+    title: 'The Science Behind Color Perception and Vision',
+    description: 'Explore the fascinating world of color perception, from the physics of light to how our brains process visual information. Perfect for designers and developers.',
+    date: 'April 10, 2024',
+    readTime: '15 min read',
+    category: 'Science',
+    image: 'https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?w=800&auto=format&fit=crop&q=60',
+    author: {
+      name: 'Dr. James Wilson',
+      avatar: 'https://ui-avatars.com/api/?name=James+Wilson&background=random'
+    }
+  },
+  {
     id: '7',
     slug: 'how-to-choose-brand-color-palette',
     title: 'How to Choose the Right Color Palette for Your Brand',

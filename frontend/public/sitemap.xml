@@ -95,6 +95,13 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://color-pick.com/blog/science-behind-color-perception</loc>
+    <lastmod>2024-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Resource Pages -->
   <url>
     <loc>https://color-pick.com/color-harmony-guide</loc>
