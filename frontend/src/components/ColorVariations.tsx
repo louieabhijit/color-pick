@@ -152,7 +152,7 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
         <div className="flex">
           {colors.map((color, index) => (
             <motion.div
-              key={color}
+              key={`${title.toLowerCase()}-${color}-${index}`}
               className="group relative flex-1 cursor-pointer"
               whileHover={{ scale: 1.15, zIndex: 10 }}
               whileTap={{ scale: 0.95 }}
