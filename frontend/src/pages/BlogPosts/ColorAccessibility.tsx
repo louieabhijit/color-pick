@@ -69,7 +69,8 @@ const ColorAccessibility = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Helmet>
-        <title>{metadata.title}</title>
+        <title>{metadata.title} | Color Pick Blog</title>
+        <link rel="canonical" href={metadata.url} />
         <meta name="description" content={metadata.description} />
         
         {/* Open Graph Tags */}
@@ -88,7 +89,6 @@ const ColorAccessibility = () => {
         {/* Additional SEO Tags */}
         <meta name="keywords" content="color accessibility, color blindness, accessible design, color contrast, inclusive design, web accessibility, WCAG" />
         <meta name="author" content="Color-Peek" />
-        <link rel="canonical" href={metadata.url} />
 
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>

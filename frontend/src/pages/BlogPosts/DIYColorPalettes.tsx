@@ -30,7 +30,7 @@ const DIYColorPalettes = () => {
   };
 
   const metadata = {
-    title: 'DIY: Creating Your Own Color Palettes Using Color-Peek | Color-Peek',
+    title: 'DIY: Creating Your Own Color Palettes Using Color-Peek',
     description: 'Learn how to create stunning, accessible, and personalized color palettes using Color-Peek. A perfect guide for designers, developers, and creatives.',
     ogDescription: 'Step-by-step guide to building your own color palette with Color-Peek. Ideal for branding, web design, art, fashion, and more.',
     twitterDescription: 'Learn how to extract, build, and customize your own color palette with this user-friendly tutorial using Color-Peek.',
@@ -54,7 +54,8 @@ const DIYColorPalettes = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Helmet>
-        <title>{metadata.title}</title>
+        <title>{metadata.title} | Color Pick Blog</title>
+        <link rel="canonical" href={metadata.url} />
         <meta name="description" content={metadata.description} />
         
         {/* Open Graph Tags */}
@@ -73,7 +74,6 @@ const DIYColorPalettes = () => {
         {/* Additional SEO Tags */}
         <meta name="keywords" content="DIY color palette creator, color palette generator, extract colors from image, custom branding palette, color wheel design, Color-Peek tutorial" />
         <meta name="author" content="Color-Peek" />
-        <link rel="canonical" href={metadata.url} />
 
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>

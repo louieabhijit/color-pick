@@ -65,7 +65,8 @@ const ColorPerception = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Helmet>
-        <title>{metadata.title}</title>
+        <title>{metadata.title} | Color Pick Blog</title>
+        <link rel="canonical" href={metadata.url} />
         <meta name="description" content={metadata.description} />
         
         {/* Open Graph Tags */}
@@ -84,7 +85,6 @@ const ColorPerception = () => {
         {/* Additional SEO Tags */}
         <meta name="keywords" content="color perception, vision science, color psychology, eye anatomy, brain processing, color theory, visual perception" />
         <meta name="author" content="Color-Peek" />
-        <link rel="canonical" href={metadata.url} />
 
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>

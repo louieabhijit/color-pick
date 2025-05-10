@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
+import { Helmet } from 'react-helmet-async';
 import { FaLightbulb, FaCode, FaPalette, FaRocket } from 'react-icons/fa';
 
 const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
@@ -69,6 +70,28 @@ const About = () => {
 
   return (
     <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+      <Helmet>
+        <title>About ColorPeek | Color Pick</title>
+        <link rel="canonical" href={window.location.href} />
+        <meta name="description" content="Learn about ColorPeek's mission to empower creators with intelligent color tools and innovative design solutions." />
+        <meta name="keywords" content="color tools, design solutions, color analysis, color extraction, color harmonies" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GSMXWF15GP');
+          `}
+        </script>
+        {/* Google AdSense */}
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
+          crossOrigin="anonymous"
+        ></script>
+      </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
       <main className="pt-16 pb-8">

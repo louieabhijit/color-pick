@@ -85,7 +85,25 @@ const FAQ = () => {
     <>
       <Helmet>
         <title>FAQ - Color Peek | Color Extraction & Palette Generation Tool</title>
+        <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Frequently asked questions about Color Peek - Learn how to extract colors from images, generate palettes, and use our color tools effectively." />
+        <meta name="keywords" content="FAQ, color extraction, palette generation, color tools, help, support" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GSMXWF15GP');
+          `}
+        </script>
+        {/* Google AdSense */}
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
+          crossOrigin="anonymous"
+        ></script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-4 sm:px-6 lg:px-8">

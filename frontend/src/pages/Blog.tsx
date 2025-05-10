@@ -169,8 +169,25 @@ const Blog: React.FC<BlogProps> = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Helmet>
         <title>Color Design Blog | Color Pick</title>
+        <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Explore the latest insights, tutorials, and best practices in color theory, design tools, and accessibility." />
         <meta name="keywords" content="color theory, color design, color tools, color accessibility, color psychology, design blog" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GSMXWF15GP');
+          `}
+        </script>
+        {/* Google AdSense */}
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
+          crossOrigin="anonymous"
+        ></script>
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />

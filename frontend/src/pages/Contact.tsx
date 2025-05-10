@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import type { ComponentType } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Toast from '../components/Toast';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaCheck } from 'react-icons/fa';
@@ -115,6 +116,28 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+      <Helmet>
+        <title>Contact Us | Color Pick</title>
+        <link rel="canonical" href={window.location.href} />
+        <meta name="description" content="Get in touch with the ColorPeek team. We're here to help with your color design needs, technical support, and partnership opportunities." />
+        <meta name="keywords" content="contact, support, color design help, technical support, partnership" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GSMXWF15GP');
+          `}
+        </script>
+        {/* Google AdSense */}
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
+          crossOrigin="anonymous"
+        ></script>
+      </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
       <main className="pt-16 pb-8">

@@ -129,6 +129,7 @@ const WCAGColorContrast = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
+        <link rel="canonical" href={shareUrl} />
         <meta name="description" content={metadata.description} />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
@@ -139,6 +140,22 @@ const WCAGColorContrast = () => {
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.image} />
         <meta name="keywords" content="WCAG 2.1, web accessibility, color contrast, accessibility guidelines, web design, UI design, a11y, contrast ratio, AA compliance, AAA compliance, accessible design" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GSMXWF15GP');
+          `}
+        </script>
+        {/* Google AdSense */}
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
+          crossOrigin="anonymous"
+        ></script>
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />

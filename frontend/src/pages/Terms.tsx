@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 
 const Terms = () => {
@@ -8,6 +9,28 @@ const Terms = () => {
 
   return (
     <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+      <Helmet>
+        <title>Terms of Service | Color Pick</title>
+        <link rel="canonical" href={window.location.href} />
+        <meta name="description" content="Read ColorPeek's terms of service to understand your rights and responsibilities when using our color design tools." />
+        <meta name="keywords" content="terms of service, user agreement, legal terms, ColorPeek terms, service conditions" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GSMXWF15GP');
+          `}
+        </script>
+        {/* Google AdSense */}
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
+          crossOrigin="anonymous"
+        ></script>
+      </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
       <main className="pt-16 pb-8">

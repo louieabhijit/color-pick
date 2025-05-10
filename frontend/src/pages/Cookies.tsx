@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 
 const Cookies = () => {
@@ -8,6 +9,28 @@ const Cookies = () => {
 
   return (
     <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+      <Helmet>
+        <title>Cookie Policy | Color Pick</title>
+        <link rel="canonical" href={window.location.href} />
+        <meta name="description" content="Learn about how ColorPeek uses cookies to enhance your experience and protect your privacy." />
+        <meta name="keywords" content="cookie policy, privacy, website cookies, cookie management, data protection" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GSMXWF15GP');
+          `}
+        </script>
+        {/* Google AdSense */}
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
+          crossOrigin="anonymous"
+        ></script>
+      </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
       <main className="pt-16 pb-8">
