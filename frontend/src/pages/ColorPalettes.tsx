@@ -1,7 +1,9 @@
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
+import AdsterraAd from '../components/AdsterraAd';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes, FaPlus } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch, formatRgb } from 'culori';
@@ -469,6 +471,9 @@ const ColorPalettes = () => {
       {/* Add spacing div to prevent overlap */}
       <div className="h-24 bg-white dark:bg-gray-900" />
 
+      {/* Ad placement after header */}
+      <AdsterraAd variant="content" />
+
       <main className="relative z-0">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
           <div className="flex gap-8">
@@ -553,96 +558,104 @@ const ColorPalettes = () => {
             {/* Palettes Grid */}
             <div className="flex-1 min-w-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {displayedPalettes.map((palette) => (
-                  <motion.div
-                    key={palette.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    whileHover={{ y: -5 }}
-                    className="bg-white dark:bg-gray-800 overflow-hidden shadow-lg"
-                  >
-                    {/* Color Preview */}
-                    <div className="h-32 flex [&>*:first-child]:rounded-none [&>*:last-child]:rounded-none">
-                      {palette.colors.map((color, idx) => (
-                        <button
-                          key={`${palette.id}-${idx}`}
-                          onClick={() => copyColor(rgbToHex(color))}
-                          className="flex-1 group relative transition-transform hover:transform hover:scale-105 focus:outline-none rounded-none"
-                          style={{ backgroundColor: color }}
-                        >
-                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/30 transition-opacity rounded-none">
-                            <span className="text-xs text-white font-medium">
-                              {rgbToHex(color)}
-                            </span>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Palette Info */}
-                    <div className="p-4">
-                      <div className="flex items-start justify-between mb-3">
-                        <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
-                            {palette.name}
-                          </h3>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">
-                            {palette.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center space-x-4">
-                          <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400">
-                            <Icon icon={FaHeart} className="w-4 h-4" />
-                            <span>{palette.likes}</span>
-                          </div>
-                          <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400">
-                            <Icon icon={FaEye} className="w-4 h-4" />
-                            <span>{palette.views}</span>
-                          </div>
-                        </div>
-                        <div className="flex space-x-2">
+                {displayedPalettes.map((palette, index) => (
+                  <React.Fragment key={palette.id}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -5 }}
+                      className="bg-white dark:bg-gray-800 overflow-hidden shadow-lg"
+                    >
+                      {/* Color Preview */}
+                      <div className="h-32 flex [&>*:first-child]:rounded-none [&>*:last-child]:rounded-none">
+                        {palette.colors.map((color, idx) => (
                           <button
-                            onClick={() => toggleFavorite(palette.id)}
-                            className={`p-2 rounded-full transition-colors ${
-                              favorites.includes(palette.id)
-                                ? 'text-red-500 bg-red-50 dark:bg-red-900/20'
-                                : 'text-gray-400 hover:text-red-500'
-                            }`}
+                            key={`${palette.id}-${idx}`}
+                            onClick={() => copyColor(rgbToHex(color))}
+                            className="flex-1 group relative transition-transform hover:transform hover:scale-105 focus:outline-none rounded-none"
+                            style={{ backgroundColor: color }}
                           >
-                            <Icon icon={FaHeart} />
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/30 transition-opacity rounded-none">
+                              <span className="text-xs text-white font-medium">
+                                {rgbToHex(color)}
+                              </span>
+                            </div>
                           </button>
-                          <button
-                            onClick={() => copyPalette(palette.colors)}
-                            className="p-2 rounded-full text-gray-400 hover:text-indigo-500 
-                                     transition-colors"
-                          >
-                            <Icon icon={FaCopy} />
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2">
-                        <span className="px-2 py-1 text-xs font-medium rounded-full 
-                                     bg-indigo-100 dark:bg-indigo-900/30 
-                                     text-indigo-600 dark:text-indigo-400">
-                          {palette.category}
-                        </span>
-                        {palette.tags.map(tag => (
-                          <span
-                            key={`${palette.id}-${tag}`}
-                            className="px-2 py-1 text-xs font-medium rounded-full 
-                                     bg-gray-100 dark:bg-gray-700 
-                                     text-gray-600 dark:text-gray-400"
-                          >
-                            {tag}
-                          </span>
                         ))}
                       </div>
-                    </div>
-                  </motion.div>
+
+                      {/* Palette Info */}
+                      <div className="p-4">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                              {palette.name}
+                            </h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {palette.description}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center space-x-4">
+                            <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400">
+                              <Icon icon={FaHeart} className="w-4 h-4" />
+                              <span>{palette.likes}</span>
+                            </div>
+                            <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400">
+                              <Icon icon={FaEye} className="w-4 h-4" />
+                              <span>{palette.views}</span>
+                            </div>
+                          </div>
+                          <div className="flex space-x-2">
+                            <button
+                              onClick={() => toggleFavorite(palette.id)}
+                              className={`p-2 rounded-full transition-colors ${
+                                favorites.includes(palette.id)
+                                  ? 'text-red-500 bg-red-50 dark:bg-red-900/20'
+                                  : 'text-gray-400 hover:text-red-500'
+                              }`}
+                            >
+                              <Icon icon={FaHeart} />
+                            </button>
+                            <button
+                              onClick={() => copyPalette(palette.colors)}
+                              className="p-2 rounded-full text-gray-400 hover:text-indigo-500 
+                                       transition-colors"
+                            >
+                              <Icon icon={FaCopy} />
+                            </button>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-2 py-1 text-xs font-medium rounded-full 
+                                       bg-indigo-100 dark:bg-indigo-900/30 
+                                       text-indigo-600 dark:text-indigo-400">
+                            {palette.category}
+                          </span>
+                          {palette.tags.map(tag => (
+                            <span
+                              key={`${palette.id}-${tag}`}
+                              className="px-2 py-1 text-xs font-medium rounded-full 
+                                       bg-gray-100 dark:bg-gray-700 
+                                       text-gray-600 dark:text-gray-400"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Add ad after every 9 palettes */}
+                    {(index + 1) % 9 === 0 && index < displayedPalettes.length - 1 && (
+                      <div className="md:col-span-2 lg:col-span-3">
+                        <AdsterraAd variant="content" />
+                      </div>
+                    )}
+                  </React.Fragment>
                 ))}
               </div>
               
@@ -656,6 +669,9 @@ const ColorPalettes = () => {
                   <div className="text-gray-500 dark:text-gray-400">No more palettes</div>
                 )}
               </div>
+
+              {/* Ad at the end */}
+              <AdsterraAd variant="footer" />
             </div>
           </div>
         </div>

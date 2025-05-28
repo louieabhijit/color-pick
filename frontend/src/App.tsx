@@ -39,6 +39,7 @@ import ColorPerception from './pages/BlogPosts/ColorPerception'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import defaultImage from './assets/default1.jpg'
+import AdsterraAd from './components/AdsterraAd'
 
 interface HomePageProps {
   selectedImage: string;
@@ -101,8 +102,14 @@ const HomePage = ({
             </div>
           </div>
         </div>
+        
+        {/* Ad placement after main content */}
+        <AdsterraAd variant="content" />
       </div>
     </main>
+
+    {/* Ad placement before blog carousel */}
+    <AdsterraAd variant="content" className="bg-white dark:bg-gray-900" />
 
     {/* Blog Carousel Section */}
     <BlogCarousel />
@@ -118,34 +125,6 @@ const HomePage = ({
     />
   </>
 );
-
-// Add Adsterra Ad Component
-const AdsterraAd = () => {
-  useEffect(() => {
-    // Load the Adsterra script dynamically
-    const script = document.createElement('script');
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
-    script.src = '//pl26778179.profitableratecpm.com/c9e179680766f6937ee0983f8fd40dee/invoke.js';
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script on component unmount
-      const existingScript = document.querySelector('script[src="//pl26778179.profitableratecpm.com/c9e179680766f6937ee0983f8fd40dee/invoke.js"]');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
-
-  return (
-    <div className="w-full bg-gray-50 dark:bg-gray-800 py-2">
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 flex justify-center">
-        <div id="container-c9e179680766f6937ee0983f8fd40dee"></div>
-      </div>
-    </div>
-  );
-};
 
 const App: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string>(defaultImage)
@@ -192,7 +171,7 @@ const App: React.FC = () => {
         <ClipboardProvider>
           <div className="min-h-screen w-full bg-white dark:bg-gray-900">
             <Navbar onColorSelect={handleColorSelect} />
-            <AdsterraAd />
+            <AdsterraAd variant="header" />
             
             <Routes>
               <Route path="/" element={<HomePage selectedImage={selectedImage} selectedColor={selectedColor} favorites={favorites} showToast={showToast} colorPaletteRef={colorPaletteRef} handleColorSelect={handleColorSelect} handleToggleFavorite={handleToggleFavorite} setSelectedImage={setSelectedImage} setFavorites={setFavorites} />} />

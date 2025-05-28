@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
+import AdsterraAd from '../components/AdsterraAd';
 import { Helmet } from 'react-helmet-async';
 import { FaLightbulb, FaCode, FaPalette, FaRocket } from 'react-icons/fa';
 
@@ -158,6 +159,9 @@ const About = () => {
             ))}
           </motion.div>
 
+          {/* Ad placement after features */}
+          <AdsterraAd variant="content" />
+
           {/* Mission Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -207,6 +211,9 @@ const About = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Ad placement at end */}
+          <AdsterraAd variant="footer" />
         </div>
       </main>
     </div>

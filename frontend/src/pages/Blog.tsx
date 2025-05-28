@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import AdsterraAd from '../components/AdsterraAd';
 
 interface BlogPost {
   id: string;
@@ -213,65 +214,79 @@ const Blog: React.FC<BlogProps> = () => {
         </div>
       </div>
 
+      {/* Ad placement after hero */}
+      <AdsterraAd variant="content" />
+
       {/* Blog Posts Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <motion.div
-              key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <Link
-                to={`/blog/${post.slug}`}
-                className="block group h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+            <React.Fragment key={post.id}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 text-sm font-medium bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white rounded-full">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-4">
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="block group h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden">
                     <img
-                      src={post.author.avatar}
-                      alt={post.author.name}
-                      className="w-8 h-8 rounded-full"
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="text-sm">
-                      <p className="text-gray-900 dark:text-gray-100 font-medium">
-                        {post.author.name}
-                      </p>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        {post.date} · {post.readTime}
-                      </p>
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 text-sm font-medium bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white rounded-full">
+                        {post.category}
+                      </span>
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300">
-                    {post.title}
-                  </h2>
-                  
-                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
-                    {post.description}
-                  </p>
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <img
+                        src={post.author.avatar}
+                        alt={post.author.name}
+                        className="w-8 h-8 rounded-full"
+                      />
+                      <div className="text-sm">
+                        <p className="text-gray-900 dark:text-gray-100 font-medium">
+                          {post.author.name}
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400">
+                          {post.date} · {post.readTime}
+                        </p>
+                      </div>
+                    </div>
+
+                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                      {post.title}
+                    </h2>
+                    
+                    <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
+                      {post.description}
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+              
+              {/* Add ad after every 6 posts */}
+              {(index + 1) % 6 === 0 && index < blogPosts.length - 1 && (
+                <div className="md:col-span-2 lg:col-span-3">
+                  <AdsterraAd variant="content" />
                 </div>
-              </Link>
-            </motion.div>
+              )}
+            </React.Fragment>
           ))}
         </div>
+        
+        {/* Ad at the end */}
+        <AdsterraAd variant="footer" />
       </div>
     </div>
   );

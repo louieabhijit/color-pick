@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { ComponentType } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import AdsterraAd from '../components/AdsterraAd';
 import Toast from '../components/Toast';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaCheck } from 'react-icons/fa';
 
@@ -157,6 +158,9 @@ const Contact = () => {
             </p>
           </motion.div>
 
+          {/* Ad placement after hero */}
+          <AdsterraAd variant="content" />
+
           {/* Contact Info Grid */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -279,6 +283,9 @@ const Contact = () => {
               </form>
             </motion.div>
           </div>
+
+          {/* Ad placement at end */}
+          <AdsterraAd variant="footer" />
         </div>
       </main>
 
