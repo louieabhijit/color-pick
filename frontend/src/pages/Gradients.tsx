@@ -1,7 +1,9 @@
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
+import BannerAd from '../components/BannerAd';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch } from 'culori';
@@ -395,6 +397,9 @@ const Gradients = () => {
       {/* Add spacing div to prevent overlap */}
       <div className="h-24 bg-white dark:bg-gray-900" />
 
+      {/* Banner ad after header */}
+      <BannerAd variant="content" />
+
       <main className="relative z-0">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
           <div className="flex gap-8">
@@ -469,6 +474,11 @@ const Gradients = () => {
                             </div>
                           </div>
                         </div>
+
+                        {/* Banner ad in sidebar */}
+                        <div className="p-4">
+                          <BannerAd variant="sidebar" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -479,102 +489,110 @@ const Gradients = () => {
             {/* Gradients Grid */}
             <div className="flex-1 min-w-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {displayedGradients.map((gradient) => (
-                  <motion.div
-                    key={gradient.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    whileHover={{ y: -5 }}
-                    className="overflow-hidden shadow-lg rounded-2xl aspect-[1.6/1] relative"
-                  >
-                    {/* Background Gradient */}
-                    <div
-                      className="absolute inset-0"
-                      style={{
-                        background: `linear-gradient(to right, ${gradient.colors.join(', ')})`
-                      }}
-                    />
+                {displayedGradients.map((gradient, index) => (
+                  <React.Fragment key={gradient.id}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -5 }}
+                      className="overflow-hidden shadow-lg rounded-2xl aspect-[1.6/1] relative"
+                    >
+                      {/* Background Gradient */}
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background: `linear-gradient(to right, ${gradient.colors.join(', ')})`
+                        }}
+                      />
 
-                    {/* Glassmorphism Overlay */}
-                    <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] border border-white/20" />
+                      {/* Glassmorphism Overlay */}
+                      <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] border border-white/20" />
 
-                    {/* Content */}
-                    <div className="relative w-full h-full">
-                      {/* Content Overlay */}
-                      <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                        {/* Top Section */}
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <h3 className="text-2xl font-semibold text-white mb-2 drop-shadow-md">
-                              {gradient.name}
-                            </h3>
-                            <p className="text-sm text-white/90 drop-shadow-md max-w-[80%]">
-                              {gradient.description}
-                            </p>
-                          </div>
-                          <div className="flex space-x-2">
-                            <button
-                              onClick={() => toggleFavorite(gradient.id)}
-                              className={`p-2 rounded-full backdrop-blur-md transition-all duration-300 
-                                border border-white/20 shadow-lg hover:shadow-xl
-                                ${favorites.includes(gradient.id)
-                                  ? 'bg-white/30 text-red-500 hover:bg-white/40'
-                                  : 'bg-white/10 text-white hover:bg-white/20'
-                              }`}
-                            >
-                              <Icon icon={FaHeart} className="w-5 h-5" />
-                            </button>
-                            <button
-                              onClick={() => copyGradient(gradient.colors)}
-                              className="p-2 rounded-full bg-white/10 backdrop-blur-md text-white 
-                                       hover:bg-white/20 transition-all duration-300
-                                       border border-white/20 shadow-lg hover:shadow-xl"
-                            >
-                              <Icon icon={FaCopy} className="w-5 h-5" />
-                            </button>
-                          </div>
-                        </div>
-
-                        {/* Bottom Section */}
-                        <div>
-                          <div className="flex items-center justify-between mb-4">
-                            <div className="flex items-center space-x-4">
-                              <div className="flex items-center space-x-1 text-white/90 
-                                          bg-white/10 backdrop-blur-md px-3 py-1 rounded-full
-                                          border border-white/20">
-                                <Icon icon={FaHeart} className="w-4 h-4" />
-                                <span>{gradient.likes}</span>
-                              </div>
-                              <div className="flex items-center space-x-1 text-white/90
-                                          bg-white/10 backdrop-blur-md px-3 py-1 rounded-full
-                                          border border-white/20">
-                                <Icon icon={FaEye} className="w-4 h-4" />
-                                <span>{gradient.views}</span>
-                              </div>
+                      {/* Content */}
+                      <div className="relative w-full h-full">
+                        {/* Content Overlay */}
+                        <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                          {/* Top Section */}
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <h3 className="text-2xl font-semibold text-white mb-2 drop-shadow-md">
+                                {gradient.name}
+                              </h3>
+                              <p className="text-sm text-white/90 drop-shadow-md max-w-[80%]">
+                                {gradient.description}
+                              </p>
+                            </div>
+                            <div className="flex space-x-2">
+                              <button
+                                onClick={() => toggleFavorite(gradient.id)}
+                                className={`p-2 rounded-full backdrop-blur-md transition-all duration-300 
+                                  border border-white/20 shadow-lg hover:shadow-xl
+                                  ${favorites.includes(gradient.id)
+                                    ? 'bg-white/30 text-red-500 hover:bg-white/40'
+                                    : 'bg-white/10 text-white hover:bg-white/20'
+                                }`}
+                              >
+                                <Icon icon={FaHeart} className="w-5 h-5" />
+                              </button>
+                              <button
+                                onClick={() => copyGradient(gradient.colors)}
+                                className="p-2 rounded-full bg-white/10 backdrop-blur-md text-white 
+                                         hover:bg-white/20 transition-all duration-300
+                                         border border-white/20 shadow-lg hover:shadow-xl"
+                              >
+                                <Icon icon={FaCopy} className="w-5 h-5" />
+                              </button>
                             </div>
                           </div>
 
-                          <div className="flex flex-wrap gap-2">
-                            <span className="px-3 py-1 text-xs font-medium rounded-full 
-                                         bg-white/20 backdrop-blur-md text-white
-                                         border border-white/20 shadow-sm">
-                              {gradient.category}
-                            </span>
-                            {gradient.tags.map(tag => (
-                              <span
-                                key={`${gradient.id}-${tag}`}
-                                className="px-3 py-1 text-xs font-medium rounded-full 
-                                         bg-white/10 backdrop-blur-md text-white
-                                         border border-white/20 shadow-sm"
-                              >
-                                {tag}
+                          {/* Bottom Section */}
+                          <div>
+                            <div className="flex items-center justify-between mb-4">
+                              <div className="flex items-center space-x-4">
+                                <div className="flex items-center space-x-1 text-white/90 
+                                            bg-white/10 backdrop-blur-md px-3 py-1 rounded-full
+                                            border border-white/20">
+                                  <Icon icon={FaHeart} className="w-4 h-4" />
+                                  <span>{gradient.likes}</span>
+                                </div>
+                                <div className="flex items-center space-x-1 text-white/90
+                                            bg-white/10 backdrop-blur-md px-3 py-1 rounded-full
+                                            border border-white/20">
+                                  <Icon icon={FaEye} className="w-4 h-4" />
+                                  <span>{gradient.views}</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="flex flex-wrap gap-2">
+                              <span className="px-3 py-1 text-xs font-medium rounded-full 
+                                           bg-white/20 backdrop-blur-md text-white
+                                           border border-white/20 shadow-sm">
+                                {gradient.category}
                               </span>
-                            ))}
+                              {gradient.tags.map(tag => (
+                                <span
+                                  key={`${gradient.id}-${tag}`}
+                                  className="px-3 py-1 text-xs font-medium rounded-full 
+                                           bg-white/10 backdrop-blur-md text-white
+                                           border border-white/20 shadow-sm"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+
+                    {/* Add banner ad after every 9 gradients */}
+                    {(index + 1) % 9 === 0 && index < displayedGradients.length - 1 && (
+                      <div className="md:col-span-2 lg:col-span-3">
+                        <BannerAd variant="content" />
+                      </div>
+                    )}
+                  </React.Fragment>
                 ))}
               </div>
               
@@ -588,6 +606,9 @@ const Gradients = () => {
                   <div className="text-gray-500 dark:text-gray-400">No more gradients</div>
                 )}
               </div>
+
+              {/* Banner ad at the end */}
+              <BannerAd variant="footer" />
             </div>
           </div>
         </div>

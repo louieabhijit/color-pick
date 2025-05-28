@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
 import AdsterraAd from '../components/AdsterraAd';
+import BannerAd from '../components/BannerAd';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes, FaPlus } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch, formatRgb } from 'culori';
@@ -473,6 +474,7 @@ const ColorPalettes = () => {
 
       {/* Ad placement after header */}
       <AdsterraAd variant="content" />
+      <BannerAd variant="content" />
 
       <main className="relative z-0">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
@@ -547,6 +549,11 @@ const ColorPalettes = () => {
                               <span className="font-medium text-gray-900 dark:text-gray-100">{filteredPalettes.length}</span>
                             </div>
                           </div>
+                        </div>
+
+                        {/* Banner ad in sidebar */}
+                        <div className="p-4">
+                          <BannerAd variant="sidebar" />
                         </div>
                       </div>
                     </div>
@@ -651,8 +658,9 @@ const ColorPalettes = () => {
 
                     {/* Add ad after every 9 palettes */}
                     {(index + 1) % 9 === 0 && index < displayedPalettes.length - 1 && (
-                      <div className="md:col-span-2 lg:col-span-3">
+                      <div className="md:col-span-2 lg:col-span-3 space-y-4">
                         <AdsterraAd variant="content" />
+                        <BannerAd variant="content" />
                       </div>
                     )}
                   </React.Fragment>
@@ -672,6 +680,7 @@ const ColorPalettes = () => {
 
               {/* Ad at the end */}
               <AdsterraAd variant="footer" />
+              <BannerAd variant="footer" />
             </div>
           </div>
         </div>

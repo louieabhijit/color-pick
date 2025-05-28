@@ -40,6 +40,7 @@ import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import defaultImage from './assets/default1.jpg'
 import AdsterraAd from './components/AdsterraAd'
+import BannerAd from './components/BannerAd'
 
 interface HomePageProps {
   selectedImage: string;
@@ -76,6 +77,10 @@ const HomePage = ({
                 onColorSelect={handleColorSelect}
               />
               <UploadSection onImageSelect={setSelectedImage} />
+              
+              {/* Banner ad in sidebar */}
+              <BannerAd variant="sidebar" />
+              
               <FavoritesSection 
                 favorites={favorites}
                 onColorSelect={handleColorSelect}
@@ -96,6 +101,10 @@ const HomePage = ({
               />
               <ColorDetails selectedColor={selectedColor} />
               <ColorHarmony selectedColor={selectedColor} />
+              
+              {/* Banner ad in content */}
+              <BannerAd variant="content" />
+              
               <ColorVariations selectedColor={selectedColor} />
               <ContrastChecker selectedColor={selectedColor} />
               <ColorCodeSnippets selectedColor={selectedColor} />
@@ -113,6 +122,9 @@ const HomePage = ({
 
     {/* Blog Carousel Section */}
     <BlogCarousel />
+
+    {/* Banner ad before How to Use */}
+    <BannerAd variant="footer" />
 
     {/* How to Use Section */}
     <HowToUse />

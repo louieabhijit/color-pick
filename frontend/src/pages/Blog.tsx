@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import AdsterraAd from '../components/AdsterraAd';
+import BannerAd from '../components/BannerAd';
 
 interface BlogPost {
   id: string;
@@ -217,6 +218,9 @@ const Blog: React.FC<BlogProps> = () => {
       {/* Ad placement after hero */}
       <AdsterraAd variant="content" />
 
+      {/* Banner ad after hero */}
+      <BannerAd variant="content" />
+
       {/* Blog Posts Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -277,8 +281,9 @@ const Blog: React.FC<BlogProps> = () => {
               
               {/* Add ad after every 6 posts */}
               {(index + 1) % 6 === 0 && index < blogPosts.length - 1 && (
-                <div className="md:col-span-2 lg:col-span-3">
+                <div className="md:col-span-2 lg:col-span-3 space-y-4">
                   <AdsterraAd variant="content" />
+                  <BannerAd variant="content" />
                 </div>
               )}
             </React.Fragment>
@@ -287,6 +292,7 @@ const Blog: React.FC<BlogProps> = () => {
         
         {/* Ad at the end */}
         <AdsterraAd variant="footer" />
+        <BannerAd variant="footer" />
       </div>
     </div>
   );
