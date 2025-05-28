@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import AdsterraAd from '../components/AdsterraAd';
 import BannerAd from '../components/BannerAd';
+import PopunderAd from '../components/PopunderAd';
 import { Helmet } from 'react-helmet-async';
 import { FaLightbulb, FaCode, FaPalette, FaRocket } from 'react-icons/fa';
 
@@ -95,6 +96,8 @@ const About = () => {
         ></script>
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
+      
+      <PopunderAd />
       
       <main className="pt-16 pb-8">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">

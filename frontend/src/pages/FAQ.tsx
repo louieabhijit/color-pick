@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import Navbar from '../components/Navbar';
+import PopunderAd from '../components/PopunderAd';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 interface FAQItem {
   question: string;
@@ -64,6 +67,7 @@ const faqs: FAQItem[] = [
 const FAQ = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const categories = ["all", ...Array.from(new Set(faqs.map(faq => faq.category)))];
 
@@ -81,157 +85,149 @@ const FAQ = () => {
     ? faqs 
     : faqs.filter(faq => faq.category === selectedCategory);
 
+  const handleColorSelect = (color: string) => {
+    // No-op since we don't need color selection on this page
+  };
+
   return (
-    <>
+    <div className="min-h-screen w-full bg-white dark:bg-gray-900">
       <Helmet>
-        <title>FAQ - Color Peek | Color Extraction & Palette Generation Tool</title>
-        <link rel="canonical" href={window.location.href} />
-        <meta name="description" content="Frequently asked questions about Color Peek - Learn how to extract colors from images, generate palettes, and use our color tools effectively." />
-        <meta name="keywords" content="FAQ, color extraction, palette generation, color tools, help, support" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
+        <title>FAQ | Color Pick</title>
+        <meta name="description" content="Frequently Asked Questions about Color Pick - Get answers to common questions about our color palette generator and tools." />
       </Helmet>
-
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Everything you need to know about Color Peek
-            </p>
-          </motion.div>
-
-          {/* Category Filter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-12"
-          >
-            <div className="flex flex-wrap justify-center gap-2">
-              {categories.map((category, index) => (
-                <motion.button
-                  key={category}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    selectedCategory === category
-                      ? 'bg-indigo-600 text-white'
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-                  }`}
-                >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* FAQ Items */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-4"
-          >
-            {filteredFaqs.map((faq, index) => (
-              <motion.div
-                key={faq.question}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
-              >
-                <button
-                  onClick={() => toggleItem(faq.question)}
-                  className="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
-                >
-                  <span className="text-lg font-medium text-gray-900 dark:text-white">
-                    {faq.question}
-                  </span>
-                  <motion.span
-                    animate={{ rotate: expandedItems.has(faq.question) ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <svg
-                      className="w-5 h-5 text-gray-500 dark:text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </motion.span>
-                </button>
-                <AnimatePresence>
-                  {expandedItems.has(faq.question) && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="px-6 pb-4"
-                    >
-                      <p className="text-gray-600 dark:text-gray-300">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Contact Support */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-12 text-center bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
-          >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              Still have questions?
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Can't find the answer you're looking for? Please chat with our friendly team.
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-colors"
+      <Navbar onColorSelect={handleColorSelect} />
+      
+      {/* Add PopunderAd component */}
+      <PopunderAd />
+      
+      <main className="pt-16 pb-8">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
             >
-              Contact Support
-            </a>
-          </motion.div>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                Frequently Asked Questions
+              </h1>
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                Everything you need to know about Color Peek
+              </p>
+            </motion.div>
+
+            {/* Category Filter */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-12"
+            >
+              <div className="flex flex-wrap justify-center gap-2">
+                {categories.map((category, index) => (
+                  <motion.button
+                    key={category}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                      selectedCategory === category
+                        ? 'bg-indigo-600 text-white'
+                        : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    }`}
+                  >
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* FAQ Items */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="space-y-4"
+            >
+              {filteredFaqs.map((faq, index) => (
+                <motion.div
+                  key={faq.question}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
+                >
+                  <button
+                    onClick={() => toggleItem(faq.question)}
+                    className="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
+                  >
+                    <span className="text-lg font-medium text-gray-900 dark:text-white">
+                      {faq.question}
+                    </span>
+                    <motion.span
+                      animate={{ rotate: expandedItems.has(faq.question) ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <svg
+                        className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </motion.span>
+                  </button>
+                  <AnimatePresence>
+                    {expandedItems.has(faq.question) && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="px-6 pb-4"
+                      >
+                        <p className="text-gray-600 dark:text-gray-300">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Contact Support */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-12 text-center bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
+            >
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Still have questions?
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Can't find the answer you're looking for? Please chat with our friendly team.
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-colors"
+              >
+                Contact Support
+              </a>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </>
+      </main>
+    </div>
   );
 };
 

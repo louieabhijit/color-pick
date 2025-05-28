@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import AdsterraAd from '../components/AdsterraAd';
 import BannerAd from '../components/BannerAd';
+import PopunderAd from '../components/PopunderAd';
 
 interface BlogPost {
   id: string;
@@ -193,6 +194,9 @@ const Blog: React.FC<BlogProps> = () => {
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />
+      
+      {/* Add PopunderAd component */}
+      <PopunderAd />
       
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-indigo-500 to-purple-600 py-24">

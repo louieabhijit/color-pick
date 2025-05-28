@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PopunderAd from '../components/PopunderAd';
 
 const Cookies = () => {
   const handleColorSelect = (color: string) => {
@@ -32,6 +33,8 @@ const Cookies = () => {
         ></script>
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
+      
+      <PopunderAd />
       
       <main className="pt-16 pb-8">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">

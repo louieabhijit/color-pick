@@ -5,6 +5,7 @@ import { FaArrowUp, FaExternalLinkAlt } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
 import AdsterraAd from '../../components/AdsterraAd';
 import BannerAd from '../../components/BannerAd';
+import PopunderAd from '../../components/PopunderAd';
 
 const BrandColorPalette = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -105,6 +106,9 @@ const BrandColorPalette = () => {
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />
+
+      {/* Add PopunderAd component */}
+      <PopunderAd />
 
       {/* Hero Section */}
       <motion.div

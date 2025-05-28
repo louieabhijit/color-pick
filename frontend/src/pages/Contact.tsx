@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import AdsterraAd from '../components/AdsterraAd';
 import BannerAd from '../components/BannerAd';
+import PopunderAd from '../components/PopunderAd';
 import Toast from '../components/Toast';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaCheck } from 'react-icons/fa';
 
@@ -141,6 +142,8 @@ const Contact = () => {
         ></script>
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
+      
+      <PopunderAd />
       
       <main className="pt-16 pb-8">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">

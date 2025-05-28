@@ -5,6 +5,7 @@ import { FaArrowUp, FaGlobeAmericas, FaHeart, FaSun, FaMoon, FaPray, FaCrown, Fa
 import Navbar from '../../components/Navbar';
 import AdsterraAd from '../../components/AdsterraAd';
 import BannerAd from '../../components/BannerAd';
+import PopunderAd from '../../components/PopunderAd';
 
 interface ColorCard {
   color: string;
@@ -115,6 +116,9 @@ const CulturalColors = () => {
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />
+
+      {/* Add PopunderAd component */}
+      <PopunderAd />
 
       {/* Hero Section */}
       <motion.div

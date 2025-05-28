@@ -41,6 +41,7 @@ import { Toaster as HotToaster } from 'react-hot-toast'
 import defaultImage from './assets/default1.jpg'
 import AdsterraAd from './components/AdsterraAd'
 import BannerAd from './components/BannerAd'
+import PopunderAd from './components/PopunderAd'
 
 interface HomePageProps {
   selectedImage: string;
@@ -184,6 +185,9 @@ const App: React.FC = () => {
           <div className="min-h-screen w-full bg-white dark:bg-gray-900">
             <Navbar onColorSelect={handleColorSelect} />
             <AdsterraAd variant="header" />
+            
+            {/* Add PopunderAd component - loads once per session */}
+            <PopunderAd />
             
             <Routes>
               <Route path="/" element={<HomePage selectedImage={selectedImage} selectedColor={selectedColor} favorites={favorites} showToast={showToast} colorPaletteRef={colorPaletteRef} handleColorSelect={handleColorSelect} handleToggleFavorite={handleToggleFavorite} setSelectedImage={setSelectedImage} setFavorites={setFavorites} />} />

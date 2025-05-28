@@ -5,6 +5,7 @@ import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
 import AdsterraAd from '../components/AdsterraAd';
 import BannerAd from '../components/BannerAd';
+import PopunderAd from '../components/PopunderAd';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes, FaPlus } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch, formatRgb } from 'culori';
@@ -419,6 +420,9 @@ const ColorPalettes = () => {
   return (
     <div className="min-h-screen w-full bg-white dark:bg-gray-900">
       <Navbar onColorSelect={handleColorSelect} />
+      
+      {/* Add PopunderAd component */}
+      <PopunderAd />
       
       {/* Sticky Header */}
       <div className="sticky top-16 z-30 bg-white dark:bg-gray-900 shadow-sm">

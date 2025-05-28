@@ -5,6 +5,7 @@ import { FaArrowUp, FaExternalLinkAlt, FaEye, FaBrain, FaPalette, FaFlask, FaDna
 import Navbar from '../../components/Navbar';
 import AdsterraAd from '../../components/AdsterraAd';
 import BannerAd from '../../components/BannerAd';
+import PopunderAd from '../../components/PopunderAd';
 
 const ColorPerception = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -108,6 +109,9 @@ const ColorPerception = () => {
       </Helmet>
 
       <Navbar onColorSelect={handleColorSelect} />
+
+      {/* Add PopunderAd component */}
+      <PopunderAd />
 
       {/* Hero Section */}
       <motion.div

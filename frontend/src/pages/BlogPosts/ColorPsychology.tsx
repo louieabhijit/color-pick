@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Navbar from '../../components/Navbar';
 import AdsterraAd from '../../components/AdsterraAd';
 import BannerAd from '../../components/BannerAd';
+import PopunderAd from '../../components/PopunderAd';
 import { FaCalendar, FaClock, FaTags, FaShare, FaTwitter, FaFacebook, FaLinkedin, FaArrowUp, FaBrain, FaShoppingCart, FaChartLine, FaHeart, FaExclamationCircle, FaCheckCircle } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
@@ -211,6 +212,9 @@ const ColorPsychology = () => {
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />
+
+      {/* Add PopunderAd component */}
+      <PopunderAd />
 
       {/* Hero Section */}
       <motion.div
