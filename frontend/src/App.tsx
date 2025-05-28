@@ -119,6 +119,34 @@ const HomePage = ({
   </>
 );
 
+// Add Adsterra Ad Component
+const AdsterraAd = () => {
+  useEffect(() => {
+    // Load the Adsterra script dynamically
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = '//pl26778179.profitableratecpm.com/c9e179680766f6937ee0983f8fd40dee/invoke.js';
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on component unmount
+      const existingScript = document.querySelector('script[src="//pl26778179.profitableratecpm.com/c9e179680766f6937ee0983f8fd40dee/invoke.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
+
+  return (
+    <div className="w-full bg-gray-50 dark:bg-gray-800 py-2">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 flex justify-center">
+        <div id="container-c9e179680766f6937ee0983f8fd40dee"></div>
+      </div>
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string>(defaultImage)
   const [selectedColor, setSelectedColor] = useState<string | null>(null)
@@ -164,6 +192,7 @@ const App: React.FC = () => {
         <ClipboardProvider>
           <div className="min-h-screen w-full bg-white dark:bg-gray-900">
             <Navbar onColorSelect={handleColorSelect} />
+            <AdsterraAd />
             
             <Routes>
               <Route path="/" element={<HomePage selectedImage={selectedImage} selectedColor={selectedColor} favorites={favorites} showToast={showToast} colorPaletteRef={colorPaletteRef} handleColorSelect={handleColorSelect} handleToggleFavorite={handleToggleFavorite} setSelectedImage={setSelectedImage} setFavorites={setFavorites} />} />
