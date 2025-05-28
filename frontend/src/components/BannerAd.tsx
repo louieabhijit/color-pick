@@ -12,16 +12,16 @@ const BannerAd = ({ variant = 'content', className = '' }: BannerAdProps) => {
     if (!existingScript) {
       // Set the atOptions for the banner ad
       (window as any).atOptions = {
-        'key': 'fb74ea3383d9fca516c82520125151eb',
+        'key': '3cc50db8ddc0b95cbf5c613ddc630888',
         'format': 'iframe',
-        'height': 250,
-        'width': 300,
+        'height': 300,
+        'width': 160,
         'params': {}
       };
 
       const script = document.createElement('script');
       script.type = 'text/javascript';
-      script.src = '//www.highperformanceformat.com/fb74ea3383d9fca516c82520125151eb/invoke.js';
+      script.src = '//www.highperformanceformat.com/3cc50db8ddc0b95cbf5c613ddc630888/invoke.js';
       document.head.appendChild(script);
     }
   }, []);
