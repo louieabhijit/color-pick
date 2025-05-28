@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import Navbar from '../../components/Navbar';
+import AdsterraAd from '../../components/AdsterraAd';
+import BannerAd from '../../components/BannerAd';
 import { FaCalendar, FaClock, FaTags, FaShare, FaTwitter, FaFacebook, FaLinkedin, FaArrowUp } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
@@ -120,6 +122,10 @@ const ColorTheory = () => {
           </motion.div>
         </div>
       </motion.div>
+
+      {/* Ad placement after hero */}
+      <AdsterraAd variant="content" />
+      <BannerAd variant="content" />
 
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
@@ -243,6 +249,9 @@ const ColorTheory = () => {
             </div>
           </motion.section>
 
+          {/* Ad placement in middle of content */}
+          <BannerAd variant="content" />
+
           <motion.section
             id="psychology"
             initial={{ opacity: 0, y: 20 }}
@@ -360,6 +369,9 @@ const ColorTheory = () => {
             </div>
           </motion.section>
 
+          {/* Ad placement between sections */}
+          <AdsterraAd variant="content" />
+
           <motion.section
             id="application"
             initial={{ opacity: 0, y: 20 }}
@@ -453,6 +465,9 @@ const ColorTheory = () => {
             </div>
           </motion.section>
 
+          {/* Ad placement before social sharing */}
+          <BannerAd variant="footer" />
+
           {/* Social Sharing */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -485,6 +500,9 @@ const ColorTheory = () => {
               </button>
             </div>
           </motion.div>
+
+          {/* Final ad placement */}
+          <AdsterraAd variant="footer" />
         </div>
       </article>
 

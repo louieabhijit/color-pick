@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUp, FaExternalLinkAlt, FaEye, FaBrain, FaPalette, FaFlask, FaDna, FaGlobe, FaLaptop, FaChartBar } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
+import AdsterraAd from '../../components/AdsterraAd';
+import BannerAd from '../../components/BannerAd';
 
 const ColorPerception = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -129,9 +131,13 @@ const ColorPerception = () => {
         </div>
       </motion.div>
 
+      {/* Ad placement after hero */}
+      <AdsterraAd variant="content" />
+      <BannerAd variant="content" />
+
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-base md:prose-lg dark:prose-invert max-w-none">
           
           {/* Introduction */}
           <section className="mb-16">
@@ -175,6 +181,9 @@ const ColorPerception = () => {
             </div>
           </section>
 
+          {/* Ad placement in middle of content */}
+          <BannerAd variant="content" />
+
           {/* Anatomy of the Human Eye */}
           <section className="mb-16">
             <div className="flex items-center mb-6">
@@ -203,6 +212,9 @@ const ColorPerception = () => {
               </div>
             </div>
           </section>
+
+          {/* Ad placement between sections */}
+          <AdsterraAd variant="content" />
 
           {/* Brain Processing */}
           <section className="mb-16">
@@ -239,6 +251,9 @@ const ColorPerception = () => {
               </ul>
             </div>
           </section>
+
+          {/* Ad placement before social sharing */}
+          <BannerAd variant="footer" />
 
           {/* Applications Section */}
           <section className="mb-16">
@@ -305,6 +320,9 @@ const ColorPerception = () => {
               ))}
             </div>
           </section>
+
+          {/* Final ad placement */}
+          <AdsterraAd variant="footer" />
         </div>
       </article>
 

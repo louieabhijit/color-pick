@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import Navbar from '../../components/Navbar';
+import AdsterraAd from '../../components/AdsterraAd';
+import BannerAd from '../../components/BannerAd';
 import { FaCalendar, FaClock, FaTags, FaShare, FaTwitter, FaFacebook, FaLinkedin, FaArrowUp, FaUniversalAccess, FaMobileAlt, FaDesktop, FaCheck } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
@@ -201,6 +203,10 @@ const WCAGColorContrast = () => {
           </motion.div>
         </div>
       </motion.div>
+
+      {/* Ad placement after hero */}
+      <AdsterraAd variant="content" />
+      <BannerAd variant="content" />
 
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
@@ -410,6 +416,9 @@ const WCAGColorContrast = () => {
             </div>
           </motion.section>
 
+          {/* Ad placement in middle of content */}
+          <BannerAd variant="content" />
+
           {/* Conclusion */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -436,6 +445,9 @@ const WCAGColorContrast = () => {
               </ul>
             </div>
           </motion.section>
+
+          {/* Ad placement between sections */}
+          <AdsterraAd variant="content" />
 
           {/* Social Sharing */}
           <motion.div
@@ -469,6 +481,12 @@ const WCAGColorContrast = () => {
               </button>
             </div>
           </motion.div>
+
+          {/* Ad placement before social sharing */}
+          <BannerAd variant="footer" />
+
+          {/* Final ad placement */}
+          <AdsterraAd variant="footer" />
         </div>
       </article>
 

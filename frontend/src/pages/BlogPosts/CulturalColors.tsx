@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUp, FaGlobeAmericas, FaHeart, FaSun, FaMoon, FaPray, FaCrown, FaDove, FaLandmark, FaHome } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
+import AdsterraAd from '../../components/AdsterraAd';
+import BannerAd from '../../components/BannerAd';
 
 interface ColorCard {
   color: string;
@@ -136,9 +138,13 @@ const CulturalColors = () => {
         </div>
       </motion.div>
 
+      {/* Ad placement after hero */}
+      <AdsterraAd variant="content" />
+      <BannerAd variant="content" />
+
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-base md:prose-lg dark:prose-invert max-w-none">
           {/* Introduction */}
           <section className="mb-16">
             <p className="mb-4 text-lg leading-relaxed">
@@ -275,6 +281,21 @@ const CulturalColors = () => {
               For designers and marketers alike, a color is never just a color—it's a message. And with tools like <a href="https://color-peek.com" className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Color-Peek</a>, you can explore and apply these meanings with both creativity and cultural sensitivity.
             </p>
           </section>
+
+          {/* Ad placement in middle of content */}
+          <BannerAd variant="content" />
+
+          {/* Ad placement between sections */}
+          <AdsterraAd variant="content" />
+
+          {/* Ad placement before social sharing */}
+          <BannerAd variant="footer" />
+
+          {/* Social Sharing */}
+          {/* ... existing social sharing ... */}
+
+          {/* Final ad placement */}
+          <AdsterraAd variant="footer" />
         </div>
       </article>
 

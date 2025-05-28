@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUp, FaExternalLinkAlt } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
+import AdsterraAd from '../../components/AdsterraAd';
+import BannerAd from '../../components/BannerAd';
 
 const DIYColorPalettes = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -118,9 +120,13 @@ const DIYColorPalettes = () => {
         </div>
       </motion.div>
 
+      {/* Ad placement after hero */}
+      <AdsterraAd variant="content" />
+      <BannerAd variant="content" />
+
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-base md:prose-lg dark:prose-invert max-w-none">
           {/* Introduction */}
           <section className="mb-16">
             <p className="mb-4">
@@ -293,6 +299,9 @@ const DIYColorPalettes = () => {
             </ol>
           </section>
 
+          {/* Ad placement in middle of content */}
+          <BannerAd variant="content" />
+
           {/* Conclusion */}
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">🧾 Conclusion</h2>
@@ -306,6 +315,18 @@ const DIYColorPalettes = () => {
               Ready to create your first palette? <a href="https://color-peek.com/palettes" className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Head to Color-Peek</a> and start experimenting. Your colors, your rules.
             </p>
           </section>
+
+          {/* Ad placement between sections */}
+          <AdsterraAd variant="content" />
+
+          {/* Ad placement before social sharing */}
+          <BannerAd variant="footer" />
+
+          {/* Social Sharing */}
+          {/* ... existing social sharing ... */}
+
+          {/* Final ad placement */}
+          <AdsterraAd variant="footer" />
         </div>
       </article>
 

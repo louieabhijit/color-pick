@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUp, FaExternalLinkAlt } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
+import AdsterraAd from '../../components/AdsterraAd';
+import BannerAd from '../../components/BannerAd';
 
 const BrandColorPalette = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -126,9 +128,13 @@ const BrandColorPalette = () => {
         </div>
       </motion.div>
 
+      {/* Ad placement after hero */}
+      <AdsterraAd variant="content" />
+      <BannerAd variant="content" />
+
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-base md:prose-lg dark:prose-invert max-w-none">
           {/* Understanding Brand Identity */}
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Understanding Brand Identity</h2>
@@ -148,6 +154,9 @@ const BrandColorPalette = () => {
             </p>
           </section>
 
+          {/* Ad placement in middle of content */}
+          <BannerAd variant="content" />
+
           {/* Color Psychology Basics */}
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Color Psychology Basics</h2>
@@ -166,6 +175,9 @@ const BrandColorPalette = () => {
               Remember that color associations can vary across cultures, so consider your target market's cultural context when making color choices.
             </p>
           </section>
+
+          {/* Ad placement between sections */}
+          <AdsterraAd variant="content" />
 
           {/* Competitor Analysis */}
           <section className="mb-16">
@@ -281,29 +293,14 @@ const BrandColorPalette = () => {
             </p>
           </section>
 
-          {/* Useful Tools */}
-          <section className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Useful Color Selection Tools</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {tools.map((tool, index) => (
-                <motion.a
-                  key={index}
-                  href={tool.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <h3 className="text-xl font-semibold mb-3 flex items-center">
-                    {tool.name}
-                    <FaExternalLinkAlt className="ml-2 w-4 h-4" />
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">{tool.description}</p>
-                </motion.a>
-              ))}
-            </div>
-          </section>
+          {/* Ad placement before social sharing */}
+          <BannerAd variant="footer" />
+
+          {/* Social Sharing */}
+          {/* ... existing social sharing ... */}
+
+          {/* Final ad placement */}
+          <AdsterraAd variant="footer" />
         </div>
       </article>
 
