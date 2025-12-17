@@ -3,9 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
-import AdsterraAd from '../components/AdsterraAd';
-import BannerAd from '../components/BannerAd';
-import PopunderAd from '../components/PopunderAd';
+
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes, FaPlus } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch, formatRgb } from 'culori';
