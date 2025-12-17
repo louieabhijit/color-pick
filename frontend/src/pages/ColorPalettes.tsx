@@ -556,9 +556,9 @@ const ColorPalettes = () => {
                         </div>
 
                         {/* Banner ad in sidebar */}
-                        <div className="p-4">
+                        {/* <div className="p-4"> */}
                           {/* <BannerAd variant="sidebar" /> */}
-                        </div>
+                        {/* </div> */}
                       </div>
                     </div>
                   </div>
@@ -662,11 +662,11 @@ const ColorPalettes = () => {
 
                     {/* Add ad after every 9 palettes */}
                     {/* {(index + 1) % 9 === 0 && index < displayedPalettes.length - 1 && ( */}
-                      // <div className="md:col-span-2 lg:col-span-3 space-y-4">
+                      {/* // <div className="md:col-span-2 lg:col-span-3 space-y-4"> */}
                         {/* <AdsterraAd variant="content" /> */}
                         {/* <BannerAd variant="content" /> */}
                       {/* </div> */}
-                    // )}
+                    {/* // )} */}
                   </React.Fragment>
                 ))}
               </div>
@@ -683,8 +683,8 @@ const ColorPalettes = () => {
               </div>
 
               {/* Ad at the end */}
-              // <AdsterraAd variant="footer" />
-              // <BannerAd variant="footer" />
+              {/* // <AdsterraAd variant="footer" /> */}
+              {/* // <BannerAd variant="footer" /> */}
             </div>
           </div>
         </div>
