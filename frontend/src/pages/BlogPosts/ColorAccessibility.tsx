@@ -140,8 +140,8 @@ const ColorAccessibility = () => {
       </motion.div>
 
       {/* Ad placement after hero */}
-      <AdsterraAd variant="content" />
-      <BannerAd variant="content" />
+      {/* <AdsterraAd variant="content" /> */}
+      {/* <BannerAd variant="content" /> */}
 
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
@@ -295,7 +295,7 @@ const ColorAccessibility = () => {
           </section>
 
           {/* Ad placement in middle of content */}
-          <BannerAd variant="content" />
+          {/* <BannerAd variant="content" /> */}
 
           {/* Conclusion */}
           <section className="mb-16">
@@ -309,16 +309,16 @@ const ColorAccessibility = () => {
           </section>
 
           {/* Ad placement between sections */}
-          <AdsterraAd variant="content" />
+          {/* <AdsterraAd variant="content" /> */}
 
           {/* Ad placement before social sharing */}
-          <BannerAd variant="footer" />
+          {/* <BannerAd variant="footer" /> */}
 
           {/* Social Sharing */}
           {/* ... existing social sharing ... */}
 
           {/* Final ad placement */}
-          <AdsterraAd variant="footer" />
+          {/* <AdsterraAd variant="footer" /> */}
         </div>
       </article>
 

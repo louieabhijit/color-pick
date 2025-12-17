@@ -220,10 +220,10 @@ const Blog: React.FC<BlogProps> = () => {
       </div>
 
       {/* Ad placement after hero */}
-      <AdsterraAd variant="content" />
+      {/* <AdsterraAd variant="content" /> */}
 
       {/* Banner ad after hero */}
-      <BannerAd variant="content" />
+      {/* <BannerAd variant="content" /> */}
 
       {/* Blog Posts Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -284,19 +284,19 @@ const Blog: React.FC<BlogProps> = () => {
               </motion.div>
               
               {/* Add ad after every 6 posts */}
-              {(index + 1) % 6 === 0 && index < blogPosts.length - 1 && (
+              {/* {(index + 1) % 6 === 0 && index < blogPosts.length - 1 && (
                 <div className="md:col-span-2 lg:col-span-3 space-y-4">
                   <AdsterraAd variant="content" />
                   <BannerAd variant="content" />
                 </div>
-              )}
+              )} */}
             </React.Fragment>
           ))}
         </div>
         
         {/* Ad at the end */}
-        <AdsterraAd variant="footer" />
-        <BannerAd variant="footer" />
+        {/* <AdsterraAd variant="footer" />
+        <BannerAd variant="footer" /> */}
       </div>
     </div>
   );

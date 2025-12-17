@@ -163,8 +163,8 @@ const Contact = () => {
           </motion.div>
 
           {/* Ad placement after hero */}
-          <AdsterraAd variant="content" />
-          <BannerAd variant="content" />
+          {/* <AdsterraAd variant="content" /> */}
+          {/* <BannerAd variant="content" /> */}
 
           {/* Contact Info Grid */}
           <motion.div
@@ -293,8 +293,8 @@ const Contact = () => {
           </div>
 
           {/* Ad placement at end */}
-          <AdsterraAd variant="footer" />
-          <BannerAd variant="footer" />
+          {/* <AdsterraAd variant="footer" /> */}
+          {/* <BannerAd variant="footer" /> */}
         </div>
       </main>
 

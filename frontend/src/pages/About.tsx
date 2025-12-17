@@ -126,7 +126,7 @@ const About = () => {
           </motion.div>
 
           {/* Banner ad after hero */}
-          <BannerAd variant="content" />
+          {/* <BannerAd variant="content" /> */}
 
           {/* Stats Section */}
           <motion.div
@@ -167,10 +167,10 @@ const About = () => {
           </motion.div>
 
           {/* Ad placement after features */}
-          <AdsterraAd variant="content" />
+          {/* <AdsterraAd variant="content" /> */}
 
           {/* Banner ad between sections */}
-          <BannerAd variant="content" />
+          {/* <BannerAd variant="content" /> */}
 
           {/* Mission Section */}
           <motion.div
@@ -223,7 +223,7 @@ const About = () => {
           </motion.div>
 
           {/* Ad placement at end */}
-          <AdsterraAd variant="footer" />
+          {/* <AdsterraAd variant="footer" /> */}
         </div>
       </main>
     </div>

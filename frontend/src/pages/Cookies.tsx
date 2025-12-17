@@ -34,7 +34,7 @@ const Cookies = () => {
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
-      <PopunderAd />
+      {/* <PopunderAd /> */}
       
       <main className="pt-16 pb-8">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
