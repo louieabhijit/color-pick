@@ -5,26 +5,26 @@ interface BannerAdProps {
   className?: string;
 }
 
-const BannerAd = ({ variant = 'content', className = '' }: BannerAdProps) => {
-  useEffect(() => {
-    // Load the banner ad script dynamically if not already loaded
-    const existingScript = document.querySelector('script[src*="highperformanceformat.com"]');
-    if (!existingScript) {
-      // Set the atOptions for the banner ad
-      (window as any).atOptions = {
-        'key': '3cc50db8ddc0b95cbf5c613ddc630888',
-        'format': 'iframe',
-        'height': 300,
-        'width': 160,
-        'params': {}
-      };
+// const BannerAd = ({ variant = 'content', className = '' }: BannerAdProps) => {
+//   useEffect(() => {
+//     // Load the banner ad script dynamically if not already loaded
+//     const existingScript = document.querySelector('script[src*="highperformanceformat.com"]');
+//     if (!existingScript) {
+//       // Set the atOptions for the banner ad
+//       (window as any).atOptions = {
+//         'key': '3cc50db8ddc0b95cbf5c613ddc630888',
+//         'format': 'iframe',
+//         'height': 300,
+//         'width': 160,
+//         'params': {}
+//       };
 
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = '//www.highperformanceformat.com/3cc50db8ddc0b95cbf5c613ddc630888/invoke.js';
-      document.head.appendChild(script);
-    }
-  }, []);
+//       const script = document.createElement('script');
+//       script.type = 'text/javascript';
+//       script.src = '//www.highperformanceformat.com/3cc50db8ddc0b95cbf5c613ddc630888/invoke.js';
+//       document.head.appendChild(script);
+//     }
+//   }, []);
 
   const getVariantStyles = () => {
     switch (variant) {

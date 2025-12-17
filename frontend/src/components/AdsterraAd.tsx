@@ -5,18 +5,18 @@ interface AdsterraAdProps {
   className?: string;
 }
 
-const AdsterraAd = ({ variant = 'content', className = '' }: AdsterraAdProps) => {
-  useEffect(() => {
-    // Load the Adsterra script dynamically if not already loaded
-    const existingScript = document.querySelector('script[src*="profitableratecpm.com"]');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.async = true;
-      script.setAttribute('data-cfasync', 'false');
-      script.src = '//pl26778179.profitableratecpm.com/c9e179680766f6937ee0983f8fd40dee/invoke.js';
-      document.head.appendChild(script);
-    }
-  }, []);
+// const AdsterraAd = ({ variant = 'content', className = '' }: AdsterraAdProps) => {
+//   useEffect(() => {
+//     // Load the Adsterra script dynamically if not already loaded
+//     // const existingScript = document.querySelector('script[src*="profitableratecpm.com"]');
+//     // if (!existingScript) {
+//     //   const script = document.createElement('script');
+//     //   script.async = true;
+//     //   script.setAttribute('data-cfasync', 'false');
+//     //   script.src = '//pl26778179.profitableratecpm.com/c9e179680766f6937ee0983f8fd40dee/invoke.js';
+//     //   document.head.appendChild(script);
+//     // }
+//   }, []);
 
   const getVariantStyles = () => {
     switch (variant) {
