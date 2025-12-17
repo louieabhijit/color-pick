@@ -3,9 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
-import AdsterraAd from '../components/AdsterraAd';
-import BannerAd from '../components/BannerAd';
-import PopunderAd from '../components/PopunderAd';
 
 interface BlogPost {
   id: string;

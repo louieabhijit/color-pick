@@ -39,9 +39,6 @@ import ColorPerception from './pages/BlogPosts/ColorPerception'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import defaultImage from './assets/default1.jpg'
-import AdsterraAd from './components/AdsterraAd'
-import BannerAd from './components/BannerAd'
-import PopunderAd from './components/PopunderAd'
 
 interface HomePageProps {
   selectedImage: string;
@@ -80,7 +77,7 @@ const HomePage = ({
               <UploadSection onImageSelect={setSelectedImage} />
               
               {/* Banner ad in sidebar */}
-              <BannerAd variant="sidebar" />
+              {/* <BannerAd variant="sidebar" /> */}
               
               <FavoritesSection 
                 favorites={favorites}
@@ -104,7 +101,7 @@ const HomePage = ({
               <ColorHarmony selectedColor={selectedColor} />
               
               {/* Banner ad in content */}
-              <BannerAd variant="content" />
+              {/* <BannerAd variant="content" /> */}
               
               <ColorVariations selectedColor={selectedColor} />
               <ContrastChecker selectedColor={selectedColor} />
@@ -114,18 +111,18 @@ const HomePage = ({
         </div>
         
         {/* Ad placement after main content */}
-        <AdsterraAd variant="content" />
+        {/* <AdsterraAd variant="content" /> */}
       </div>
     </main>
 
     {/* Ad placement before blog carousel */}
-    <AdsterraAd variant="content" className="bg-white dark:bg-gray-900" />
+    {/* <AdsterraAd variant="content" className="bg-white dark:bg-gray-900" /> */}
 
     {/* Blog Carousel Section */}
     <BlogCarousel />
 
     {/* Banner ad before How to Use */}
-    <BannerAd variant="footer" />
+    {/* <BannerAd variant="footer" /> */}
 
     {/* How to Use Section */}
     <HowToUse />
@@ -184,10 +181,10 @@ const App: React.FC = () => {
         <ClipboardProvider>
           <div className="min-h-screen w-full bg-white dark:bg-gray-900">
             <Navbar onColorSelect={handleColorSelect} />
-            <AdsterraAd variant="header" />
+            {/* <AdsterraAd variant="header" /> */}
             
             {/* Add PopunderAd component - loads once per session */}
-            <PopunderAd />
+            {/* <PopunderAd /> */}
             
             <Routes>
               <Route path="/" element={<HomePage selectedImage={selectedImage} selectedColor={selectedColor} favorites={favorites} showToast={showToast} colorPaletteRef={colorPaletteRef} handleColorSelect={handleColorSelect} handleToggleFavorite={handleToggleFavorite} setSelectedImage={setSelectedImage} setFavorites={setFavorites} />} />
