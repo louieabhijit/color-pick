@@ -50,61 +50,52 @@ const blogPosts: BlogPost[] = [
 const BlogCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % blogPosts.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + blogPosts.length) % blogPosts.length);
-  };
+  const nextSlide = () => setCurrentIndex(i => (i + 1) % blogPosts.length);
+  const prevSlide = () => setCurrentIndex(i => (i - 1 + blogPosts.length) % blogPosts.length);
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-800">
+    <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          Latest from Our Blog
-        </h2>
-        
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <span className="section-label mb-3 inline-block">From the Blog</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-[var(--text-primary)]">
+            Latest <span className="gradient-text">Articles</span>
+          </h2>
+        </motion.div>
+
         <div className="relative">
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 p-3 rounded-full bg-white dark:bg-gray-700 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 p-2.5 rounded-full
+                       glass-card border border-white/40 shadow-lg
+                       hover:border-indigo-300/60 transition-colors duration-200"
             aria-label="Previous slide"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-gray-600 dark:text-gray-300"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[var(--text-secondary)]"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
+
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 p-3 rounded-full bg-white dark:bg-gray-700 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 p-2.5 rounded-full
+                       glass-card border border-white/40 shadow-lg
+                       hover:border-indigo-300/60 transition-colors duration-200"
             aria-label="Next slide"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-gray-600 dark:text-gray-300"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[var(--text-secondary)]"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
@@ -113,10 +104,10 @@ const BlogCarousel = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, x: 100 }}
+                initial={{ opacity: 0, x: 80 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0, x: -80 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="grid grid-cols-1 md:grid-cols-3 gap-6"
               >
                 {[
@@ -127,22 +118,28 @@ const BlogCarousel = () => {
                   <a
                     key={index}
                     href={post.path}
-                    className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                    className="group glass-card card-shine overflow-hidden hover:border-indigo-300/50
+                               dark:hover:border-indigo-500/30 border border-white/40 dark:border-white/10
+                               transition-all duration-300 rounded-2xl"
                   >
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden rounded-t-2xl">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent
+                                      group-hover:from-black/60 transition-colors duration-300" />
                     </div>
                     <div className="p-6">
-                      <p className="text-sm text-indigo-600 dark:text-indigo-400 mb-2">{post.date}</p>
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                      <p className="text-xs font-semibold text-indigo-500 dark:text-indigo-400 mb-2 uppercase tracking-wide">
+                        {post.date}
+                      </p>
+                      <h3 className="text-base font-semibold text-[var(--text-primary)] mb-2 line-clamp-2
+                                     group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-200">
                         {post.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300 line-clamp-2">
+                      <p className="text-sm text-[var(--text-muted)] line-clamp-2">
                         {post.description}
                       </p>
                     </div>
@@ -153,15 +150,15 @@ const BlogCarousel = () => {
           </div>
 
           {/* Dots */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-8 gap-2">
             {blogPosts.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
+                className={`rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-indigo-600 dark:bg-indigo-400'
-                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                    ? 'w-6 h-2.5 bg-indigo-500'
+                    : 'w-2.5 h-2.5 bg-gray-300 dark:bg-gray-600 hover:bg-indigo-300 dark:hover:bg-indigo-700'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -173,4 +170,4 @@ const BlogCarousel = () => {
   );
 };
 
-export default BlogCarousel; 
+export default BlogCarousel;

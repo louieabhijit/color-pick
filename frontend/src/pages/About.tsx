@@ -7,7 +7,7 @@ const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: str
   <motion.div
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
-    className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md 
+    className="glass-card p-6 shadow-sm hover:shadow-md 
                transition-all duration-300 border border-gray-100 dark:border-gray-700"
   >
     <div className="flex items-start space-x-4">
@@ -15,8 +15,8 @@ const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: str
         <Icon className="w-6 h-6 text-white" />
       </div>
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-400">{description}</p>
+        <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{title}</h3>
+        <p className="text-[var(--text-muted)]">{description}</p>
       </div>
     </div>
   </motion.div>
@@ -69,7 +69,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+    <div className="min-h-screen w-full">
       <Helmet>
         <title>About ColorPeek | Color Pick</title>
         <link rel="canonical" href={window.location.href} />
@@ -100,7 +100,7 @@ const About = () => {
             <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
               About ColorPeek
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-[var(--text-muted)] max-w-3xl mx-auto">
               Empowering creators with intelligent color tools and innovative design solutions.
             </p>
           </motion.div>
@@ -154,9 +154,9 @@ const About = () => {
             className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 
                       rounded-2xl p-8 md:p-12 mb-16"
           >
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">Our Mission</h2>
+            <h2 className="text-3xl font-bold mb-6 text-[var(--text-primary)]">Our Mission</h2>
             <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-[var(--text-muted)]">
                 At ColorPeek, we believe that color is fundamental to great design. Our mission is to make 
                 color exploration and palette creation intuitive and accessible for everyone. Whether you're 
                 a professional designer or just someone who loves colors, our tool helps you discover, 
@@ -173,22 +173,22 @@ const About = () => {
             className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 
                       dark:border-gray-700"
           >
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">Our Technology</h2>
+            <h2 className="text-3xl font-bold mb-6 text-[var(--text-primary)]">Our Technology</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                <h3 className="text-xl font-semibold text-[var(--text-primary)]">
                   Advanced Color Analysis
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-[var(--text-muted)]">
                   Our sophisticated algorithms analyze images to extract the most meaningful colors, 
                   considering both dominant hues and subtle accents that make your design unique.
                 </p>
               </div>
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                <h3 className="text-xl font-semibold text-[var(--text-primary)]">
                   Real-time Processing
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-[var(--text-muted)]">
                   Experience instant color analysis and palette generation with our optimized 
                   processing engine, designed for performance and accuracy.
                 </p>

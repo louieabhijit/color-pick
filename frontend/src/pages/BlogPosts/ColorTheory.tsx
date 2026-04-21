@@ -45,7 +45,7 @@ const ColorTheory = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
         <link rel="canonical" href={shareUrl} />
@@ -117,7 +117,7 @@ const ColorTheory = () => {
             transition={{ delay: 0.4 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold">Understanding Color Theory: The Foundation of Design</h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
               Color theory is more than just understanding the color wheel—it's about mastering the art of visual communication. 
               In this comprehensive guide, we'll explore how colors interact, influence emotions, and create meaningful designs 
               that resonate with your audience.
@@ -126,7 +126,7 @@ const ColorTheory = () => {
             {/* Quick Summary */}
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4">What You'll Learn</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>✓ Fundamentals of color theory and the color wheel</li>
                 <li>✓ How to create harmonious color combinations</li>
                 <li>✓ Understanding color psychology and emotional impact</li>
@@ -187,7 +187,7 @@ const ColorTheory = () => {
               alt="Color wheel illustration"
               className="rounded-2xl my-8 w-full"
             />
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-[var(--text-secondary)] leading-relaxed">
               At its core, color theory provides a framework for understanding how colors work together. 
               The color wheel, first developed by Sir Isaac Newton in 1666, remains a fundamental tool for designers. 
               It showcases the relationships between:
@@ -200,7 +200,7 @@ const ColorTheory = () => {
                   <div className="w-8 h-8 rounded-full bg-blue-500"></div>
                   <div className="w-8 h-8 rounded-full bg-yellow-500"></div>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-[var(--text-secondary)]">
                   The foundation of all colors: Red, Blue, and Yellow
                 </p>
               </div>
@@ -211,7 +211,7 @@ const ColorTheory = () => {
                   <div className="w-8 h-8 rounded-full bg-orange-500"></div>
                   <div className="w-8 h-8 rounded-full bg-purple-500"></div>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-[var(--text-secondary)]">
                   Created by mixing primary colors
                 </p>
               </div>
@@ -222,7 +222,7 @@ const ColorTheory = () => {
                   <div className="w-8 h-8 rounded-full bg-blue-green-500"></div>
                   <div className="w-8 h-8 rounded-full bg-red-orange-500"></div>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-[var(--text-secondary)]">
                   Mixed from primary and secondary colors
                 </p>
               </div>
@@ -241,7 +241,7 @@ const ColorTheory = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
               <div className="bg-blue-100 dark:bg-blue-900/30 p-6 rounded-2xl">
                 <h3 className="text-xl font-semibold text-blue-800 dark:text-blue-200 mb-3">Cool Colors</h3>
-                <p className="text-gray-700 dark:text-gray-300">Evoke calmness, trust, and professionalism</p>
+                <p className="text-[var(--text-secondary)]">Evoke calmness, trust, and professionalism</p>
                 <div className="mt-4 space-y-2">
                   <div className="flex items-center">
                     <div className="w-6 h-6 rounded-full bg-blue-500 mr-3"></div>
@@ -259,7 +259,7 @@ const ColorTheory = () => {
               </div>
               <div className="bg-red-100 dark:bg-red-900/30 p-6 rounded-2xl">
                 <h3 className="text-xl font-semibold text-red-800 dark:text-red-200 mb-3">Warm Colors</h3>
-                <p className="text-gray-700 dark:text-gray-300">Create energy, excitement, and passion</p>
+                <p className="text-[var(--text-secondary)]">Create energy, excitement, and passion</p>
                 <div className="mt-4 space-y-2">
                   <div className="flex items-center">
                     <div className="w-6 h-6 rounded-full bg-red-500 mr-3"></div>
@@ -278,10 +278,10 @@ const ColorTheory = () => {
             </div>
             <div className="bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl my-8">
               <h3 className="text-xl font-semibold mb-4">Color Psychology in Action</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] mb-4">
                 Understanding color psychology is crucial for:
               </p>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-[var(--text-muted)]">
                 <li>• Brand Identity Development</li>
                 <li>• Marketing and Advertising</li>
                 <li>• User Interface Design</li>

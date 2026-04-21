@@ -87,7 +87,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+    <div className="min-h-screen w-full">
       <Helmet>
         <title>FAQ | Color Pick</title>
         <meta name="description" content="Frequently Asked Questions about Color Pick - Get answers to common questions about our color palette generator and tools." />
@@ -105,10 +105,10 @@ const FAQ = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
                 Frequently Asked Questions
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
+              <p className="text-lg text-[var(--text-secondary)]">
                 Everything you need to know about Color Peek
               </p>
             </motion.div>
@@ -130,7 +130,7 @@ const FAQ = () => {
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                       selectedCategory === category
                         ? 'bg-indigo-600 text-white'
-                        : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                        : 'bg-white dark:bg-gray-800 text-[var(--text-secondary)] hover:bg-gray-100 dark:hover:bg-gray-700'
                     }`}
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -158,7 +158,7 @@ const FAQ = () => {
                     onClick={() => toggleItem(faq.question)}
                     className="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
                   >
-                    <span className="text-lg font-medium text-gray-900 dark:text-white">
+                    <span className="text-lg font-medium text-[var(--text-primary)]">
                       {faq.question}
                     </span>
                     <motion.span
@@ -166,7 +166,7 @@ const FAQ = () => {
                       transition={{ duration: 0.2 }}
                     >
                       <svg
-                        className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                        className="w-5 h-5 text-[var(--text-muted)]"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -189,7 +189,7 @@ const FAQ = () => {
                         transition={{ duration: 0.2 }}
                         className="px-6 pb-4"
                       >
-                        <p className="text-gray-600 dark:text-gray-300">
+                        <p className="text-[var(--text-secondary)]">
                           {faq.answer}
                         </p>
                       </motion.div>
@@ -206,10 +206,10 @@ const FAQ = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-12 text-center bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
             >
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                 Still have questions?
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-[var(--text-secondary)] mb-6">
                 Can't find the answer you're looking for? Please chat with our friendly team.
               </p>
               <a

@@ -8,7 +8,7 @@ const Privacy = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+    <div className="min-h-screen w-full">
       <Helmet>
         <title>Privacy Policy | Color Pick</title>
         <link rel="canonical" href={window.location.href} />
@@ -30,13 +30,13 @@ const Privacy = () => {
               Privacy Policy
             </h1>
 
-            <div className="space-y-8 text-gray-600 dark:text-gray-400">
+            <div className="space-y-8 text-[var(--text-muted)]">
               <motion.section
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Introduction
                 </h2>
                 <p className="mb-4">
@@ -50,7 +50,7 @@ const Privacy = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Information We Collect
                 </h2>
                 <div className="space-y-4">
@@ -76,7 +76,7 @@ const Privacy = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   How We Use Your Information
                 </h2>
                 <ul className="list-disc pl-6 space-y-2">
@@ -93,7 +93,7 @@ const Privacy = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Data Storage and Security
                 </h2>
                 <p className="mb-4">
@@ -107,7 +107,7 @@ const Privacy = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Your Rights
                 </h2>
                 <ul className="list-disc pl-6 space-y-2">
@@ -124,7 +124,7 @@ const Privacy = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Contact Us
                 </h2>
                 <p>

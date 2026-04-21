@@ -126,7 +126,7 @@ const WCAGColorContrast = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
         <link rel="canonical" href={shareUrl} />
@@ -198,7 +198,7 @@ const WCAGColorContrast = () => {
             transition={{ delay: 0.4 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold">Understanding WCAG Color Contrast</h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
               Color contrast is a fundamental aspect of web accessibility that ensures content is readable 
               by all users, including those with visual impairments. WCAG 2.1 provides specific guidelines 
               for contrast ratios that help create accessible and inclusive designs.
@@ -207,7 +207,7 @@ const WCAGColorContrast = () => {
             {/* Quick Summary */}
             <div className="my-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4">What You'll Learn</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>✓ WCAG 2.1 contrast requirements for AA and AAA levels</li>
                 <li>✓ How to measure and test color contrast</li>
                 <li>✓ Best practices for implementing accessible colors</li>
@@ -359,7 +359,7 @@ const WCAGColorContrast = () => {
                     {practice.tips.map((tip, i) => (
                       <li
                         key={i}
-                        className="flex items-start text-gray-600 dark:text-gray-300 text-sm"
+                        className="flex items-start text-[var(--text-secondary)] text-sm"
                       >
                         <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-1.5"></span>
                         {tip}
@@ -390,7 +390,7 @@ const WCAGColorContrast = () => {
                 >
                   <tool.icon className="w-12 h-12 text-blue-500 mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-2">{tool.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{tool.description}</p>
+                  <p className="text-[var(--text-secondary)]">{tool.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -405,7 +405,7 @@ const WCAGColorContrast = () => {
             className="mt-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold">Final Thoughts</h2>
-            <p className="text-gray-600 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] mt-4">
               Implementing proper color contrast isn't just about following guidelines—it's about creating 
               an inclusive web that everyone can access and enjoy. By understanding and applying WCAG 2.1 
               contrast requirements, you're not only improving accessibility but also enhancing the overall 
@@ -414,7 +414,7 @@ const WCAGColorContrast = () => {
 
             <div className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 p-6 rounded-2xl mt-8">
               <h3 className="text-xl font-semibold mb-4">Key Takeaways</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>• Always test contrast ratios during design</li>
                 <li>• Consider both AA and AAA compliance levels</li>
                 <li>• Use appropriate tools for verification</li>

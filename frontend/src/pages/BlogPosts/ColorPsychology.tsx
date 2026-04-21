@@ -176,7 +176,7 @@ const ColorPsychology = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
         <link rel="canonical" href={shareUrl} />
@@ -248,7 +248,7 @@ const ColorPsychology = () => {
             transition={{ delay: 0.4 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold">The Power of Color in Marketing</h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
               Color psychology in marketing is more than just aesthetic appeal—it's a powerful tool that 
               can influence consumer behavior, drive conversions, and build brand recognition. Understanding 
               how different colors affect customer decisions is crucial for creating effective marketing 
@@ -258,7 +258,7 @@ const ColorPsychology = () => {
             {/* Quick Summary */}
             <div className="my-8 p-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4">What You'll Learn</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>✓ How colors trigger emotional responses</li>
                 <li>✓ Color psychology principles in marketing</li>
                 <li>✓ Industry-specific color strategies</li>
@@ -289,7 +289,7 @@ const ColorPsychology = () => {
                   <h3 className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
                     {stat.stat}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{stat.description}</p>
+                  <p className="text-[var(--text-secondary)]">{stat.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -323,7 +323,7 @@ const ColorPsychology = () => {
                     <h3 className="text-xl font-semibold mb-3">{color.name}</h3>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-medium text-gray-700 dark:text-gray-300">Emotions:</h4>
+                        <h4 className="font-medium text-[var(--text-secondary)]">Emotions:</h4>
                         <div className="flex flex-wrap gap-2 mt-2">
                           {color.emotions.map((emotion, i) => (
                             <span
@@ -336,13 +336,13 @@ const ColorPsychology = () => {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-700 dark:text-gray-300">Marketing Use:</h4>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+                        <h4 className="font-medium text-[var(--text-secondary)]">Marketing Use:</h4>
+                        <p className="text-[var(--text-muted)] text-sm mt-1">
                           {color.marketing}
                         </p>
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-700 dark:text-gray-300">Impact:</h4>
+                        <h4 className="font-medium text-[var(--text-secondary)]">Impact:</h4>
                         <p className="text-green-600 dark:text-green-400 font-medium mt-1">
                           {color.conversion}
                         </p>
@@ -373,12 +373,12 @@ const ColorPsychology = () => {
                 >
                   <industry.icon className="w-12 h-12 text-blue-500 mb-4" />
                   <h3 className="text-xl font-semibold mb-3">{industry.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{industry.description}</p>
+                  <p className="text-[var(--text-muted)] mb-4">{industry.description}</p>
                   <ul className="space-y-2">
                     {industry.insights.map((insight, i) => (
                       <li
                         key={i}
-                        className="flex items-start text-gray-600 dark:text-gray-300 text-sm"
+                        className="flex items-start text-[var(--text-secondary)] text-sm"
                       >
                         <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-1.5"></span>
                         {insight}
@@ -412,7 +412,7 @@ const ColorPsychology = () => {
                     {section.tips.map((tip, i) => (
                       <li
                         key={i}
-                        className="flex items-start text-gray-600 dark:text-gray-300 text-sm"
+                        className="flex items-start text-[var(--text-secondary)] text-sm"
                       >
                         <FaCheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
                         <span>{tip}</span>
@@ -439,25 +439,25 @@ const ColorPsychology = () => {
             <div className="space-y-4">
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-red-500 rounded-full mr-3 mt-2"></span>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-[var(--text-secondary)]">
                   Using too many colors that compete for attention
                 </p>
               </div>
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-red-500 rounded-full mr-3 mt-2"></span>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-[var(--text-secondary)]">
                   Ignoring cultural color associations in global markets
                 </p>
               </div>
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-red-500 rounded-full mr-3 mt-2"></span>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-[var(--text-secondary)]">
                   Not testing color combinations with target audience
                 </p>
               </div>
               <div className="flex items-start">
                 <span className="w-2 h-2 bg-red-500 rounded-full mr-3 mt-2"></span>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-[var(--text-secondary)]">
                   Failing to maintain consistent brand colors across platforms
                 </p>
               </div>
@@ -472,7 +472,7 @@ const ColorPsychology = () => {
             className="mt-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold">Final Thoughts</h2>
-            <p className="text-gray-600 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] mt-4">
               Color psychology is a powerful tool in marketing and design that can significantly impact 
               consumer behavior and business success. By understanding and properly implementing color 
               psychology principles, businesses can create more effective marketing strategies, improve 
@@ -481,7 +481,7 @@ const ColorPsychology = () => {
 
             <div className="bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 p-6 rounded-2xl mt-8">
               <h3 className="text-xl font-semibold mb-4">Key Takeaways</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>• Research your target audience's color preferences</li>
                 <li>• Test different color combinations for optimal results</li>
                 <li>• Consider cultural context in color choices</li>

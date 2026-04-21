@@ -75,7 +75,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mt-4"
+        className="glass-card p-6 mt-4"
       >
         <div className="flex items-center mb-6">
           <h2 className="text-xl font-bold flex items-center">
@@ -88,7 +88,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
             </span>
           </h2>
         </div>
-        <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+        <div className="text-center py-8 text-[var(--text-muted)]">
           <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
@@ -105,7 +105,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mt-4"
+      className="glass-card p-6 mt-4"
     >
       <div className="flex items-center mb-6">
         <h2 className="text-xl font-bold flex items-center">
@@ -193,7 +193,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
         <div className="space-y-8">
           {/* Main Score */}
           <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-500/5 dark:to-purple-500/5 rounded-xl p-6 text-center">
-            <h3 className="text-lg font-medium text-gray-600 dark:text-gray-300 mb-2">
+            <h3 className="text-lg font-medium text-[var(--text-secondary)] mb-2">
               Contrast Ratio
             </h3>
             <div className="text-6xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
@@ -219,12 +219,12 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
           <div className="grid grid-cols-2 gap-6">
             {/* Small Text Column */}
             <div className="space-y-4">
-              <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
+              <h3 className="text-sm font-medium text-[var(--text-secondary)]">
                 Small Text (under 18pt)
               </h3>
               <div className="space-y-3">
                 <motion.div 
-                  className={`p-4 rounded-xl ${wcagScores.smallAA ? 'bg-green-500/10' : 'bg-gray-100 dark:bg-gray-700/50'}`}
+                  className={`p-4 rounded-xl ${wcagScores.smallAA ? 'bg-green-500/10' : 'bg-white/40 dark:bg-white/8'}`}
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center justify-between">
@@ -242,13 +242,13 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  <p className="text-xs text-[var(--text-muted)] mt-1">
                     Minimum ratio: 4.5:1
                   </p>
                 </motion.div>
 
                 <motion.div 
-                  className={`p-4 rounded-xl ${wcagScores.smallAAA ? 'bg-green-500/10' : 'bg-gray-100 dark:bg-gray-700/50'}`}
+                  className={`p-4 rounded-xl ${wcagScores.smallAAA ? 'bg-green-500/10' : 'bg-white/40 dark:bg-white/8'}`}
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center justify-between">
@@ -266,7 +266,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  <p className="text-xs text-[var(--text-muted)] mt-1">
                     Enhanced ratio: 7:1
                   </p>
                 </motion.div>
@@ -275,12 +275,12 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
 
             {/* Large Text Column */}
             <div className="space-y-4">
-              <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
+              <h3 className="text-sm font-medium text-[var(--text-secondary)]">
                 Large Text (18pt+)
               </h3>
               <div className="space-y-3">
                 <motion.div 
-                  className={`p-4 rounded-xl ${wcagScores.largeAA ? 'bg-green-500/10' : 'bg-gray-100 dark:bg-gray-700/50'}`}
+                  className={`p-4 rounded-xl ${wcagScores.largeAA ? 'bg-green-500/10' : 'bg-white/40 dark:bg-white/8'}`}
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center justify-between">
@@ -298,13 +298,13 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  <p className="text-xs text-[var(--text-muted)] mt-1">
                     Minimum ratio: 3:1
                   </p>
                 </motion.div>
 
                 <motion.div 
-                  className={`p-4 rounded-xl ${wcagScores.largeAAA ? 'bg-green-500/10' : 'bg-gray-100 dark:bg-gray-700/50'}`}
+                  className={`p-4 rounded-xl ${wcagScores.largeAAA ? 'bg-green-500/10' : 'bg-white/40 dark:bg-white/8'}`}
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center justify-between">
@@ -322,7 +322,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                  <p className="text-xs text-[var(--text-muted)] mt-1">
                     Enhanced ratio: 4.5:1
                   </p>
                 </motion.div>
@@ -333,9 +333,9 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
       </div>
 
       {/* WCAG Guidelines Info - Now outside the grid */}
-      <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6">
+      <div className="mt-8 border-t border-white/30 dark:border-white/10 pt-6">
         <div className="bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-indigo-500/5 dark:to-purple-500/5 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4 flex items-center">
+          <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4 flex items-center">
             <svg className="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -343,12 +343,12 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
             WCAG Guidelines
           </h3>
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
               Check color contrast according to WCAG Guidelines. Ensure your text is readable for all users by meeting accessibility standards.
               AA level is the minimum requirement for most websites, while AAA provides enhanced accessibility.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Features:</span>
+              <span className="text-xs font-medium text-[var(--text-muted)]">Features:</span>
               {[
                 'Real-time contrast calculation',
                 'WCAG compliance checking',
@@ -358,7 +358,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
               ].map((feature) => (
                 <span
                   key={feature}
-                  className="text-xs px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 
+                  className="text-xs px-3 py-1 rounded-full bg-indigo-500/10 
                            text-indigo-600 dark:text-indigo-300 font-medium"
                 >
                   {feature}

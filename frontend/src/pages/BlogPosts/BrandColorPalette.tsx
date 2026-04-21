@@ -60,7 +60,7 @@ const BrandColorPalette = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />

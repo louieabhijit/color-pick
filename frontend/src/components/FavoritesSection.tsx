@@ -12,7 +12,7 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
-      className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg"
+      className="glass-card p-4"
     >
       <h2 className="text-xl font-semibold mb-3 flex items-center">
         <svg className="w-6 h-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,14 +88,14 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="w-full pt-[100%] rounded-md bg-gray-100 dark:bg-gray-700/50"
+              className="w-full pt-[100%] rounded-md bg-white/40 dark:bg-white/8"
             />
           ))}
         </AnimatePresence>
       </div>
 
       {favorites.length === 0 && (
-        <div className="text-center py-6 text-gray-500 dark:text-gray-400">
+        <div className="text-center py-6 text-[var(--text-muted)]">
           <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                   d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />

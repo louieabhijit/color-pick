@@ -1,96 +1,82 @@
 import { motion } from 'framer-motion';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const ColorPickerLogo = () => (
-  <motion.div
-    className="relative w-8 h-8"
-    initial={{ rotate: 0 }}
-    animate={{ rotate: 360 }}
-    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-  >
-    {/* Color circles */}
-    {['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEEAD'].map((color, index) => (
-      <motion.div
-        key={color}
-        className="absolute w-3 h-3 rounded-full"
-        style={{
-          backgroundColor: color,
-          left: `${Math.cos(2 * Math.PI * index / 5) * 12 + 16}px`,
-          top: `${Math.sin(2 * Math.PI * index / 5) * 12 + 16}px`,
-        }}
-        initial={{ scale: 0 }}
-        animate={{ scale: [0, 1, 1, 0], opacity: [0, 1, 1, 0] }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          delay: index * 0.4,
-          ease: "easeInOut"
-        }}
-      />
-    ))}
-    {/* Center dot */}
-    <motion.div
-      className="absolute w-2 h-2 bg-primary rounded-full"
-      style={{ left: '14px', top: '14px' }}
-      animate={{ scale: [1, 1.5, 1] }}
-      transition={{ duration: 2, repeat: Infinity }}
-    />
-  </motion.div>
-);
-
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
   const links = [
-      { name: 'Home', href: '/' },
-      { name: 'About', href: '/about' },
-      { name: 'Contact', href: '/contact' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Privacy Policy', href: '/privacy' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Cookie Policy', href: '/cookies' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Privacy', href: '/privacy' },
+    { name: 'Terms', href: '/terms' },
+    { name: 'Cookies', href: '/cookies' },
   ];
 
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 py-6">
-        <div className="flex flex-col items-center space-y-4">
-          <div className="flex items-center space-x-3">
-            <ColorPickerLogo />
-            <Link to="/" className="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                ColorPeek
-            </Link>
-                <a
-              href="https://github.com/louieabhijit/color-pick"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
-              aria-label="GitHub"
+    <footer className="relative mt-8">
+      <div className="glass-card rounded-none rounded-t-4xl border-b-0 mx-0">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-8 py-10">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+
+            {/* Brand */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.5 }}
+              className="flex items-center gap-3"
+            >
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+                  <circle cx="6" cy="6" r="3.5" fill="white" opacity="0.9" />
+                  <circle cx="12" cy="6" r="3.5" fill="white" opacity="0.6" />
+                  <circle cx="9" cy="12" r="3.5" fill="white" opacity="0.75" />
+                </svg>
+              </div>
+              <span className="text-lg font-bold gradient-text">ColorPeek</span>
+            </motion.div>
+
+            {/* Links */}
+            <motion.nav
+              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex flex-wrap gap-x-5 gap-y-2"
+            >
+              {links.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-200"
                 >
-              <FaGithub className="w-5 h-5" />
-                </a>
+                  {link.name}
+                </Link>
+              ))}
+            </motion.nav>
+
+            {/* Social + copyright */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex items-center gap-4"
+            >
+              <a
+                href="https://github.com/louieabhijit/color-pick"
+                target="_blank" rel="noopener noreferrer"
+                className="w-9 h-9 flex items-center justify-center rounded-xl glass-button text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                aria-label="GitHub"
+              >
+                <FaGithub className="w-4 h-4" />
+              </a>
+              <p className="text-sm text-[var(--text-muted)] flex items-center gap-1">
+                © {year} ColorPeek · Made with <FaHeart className="w-3 h-3 text-rose-400" />
+              </p>
+            </motion.div>
           </div>
-
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                {links.map((link) => (
-                      <Link
-                key={link.name}
-                        to={link.href}
-                        className="text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                ))}
-          </nav>
-
-          <p className="text-center text-sm text-gray-600 dark:text-gray-400">
-            © {currentYear} ColorPeek. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;

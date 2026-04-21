@@ -37,7 +37,7 @@ const ClipboardToast = ({ copiedValue }: ClipboardToastProps) => {
             </svg>
           </div>
           <div className="flex items-center space-x-1">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+            <span className="text-sm font-medium text-[var(--text-primary)]">
               Copied
             </span>
             <span className="text-sm font-semibold bg-gradient-to-r from-primary to-secondary

@@ -152,41 +152,39 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg relative overflow-hidden"
+      transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className="glass-card p-6 relative overflow-hidden"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-40 h-40 bg-indigo-500 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-500 rounded-full filter blur-3xl" />
-      </div>
+      {/* Subtle inner glow */}
+      <div className="absolute top-0 right-0 w-40 h-40 rounded-full opacity-20 pointer-events-none"
+           style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.4) 0%, transparent 70%)', filter: 'blur(30px)' }} />
 
       <div className="relative">
-        <h2 className="text-xl font-semibold mb-6 flex items-center">
-          <svg className="w-6 h-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0l-4 4m4-4v12" />
-          </svg>
-          <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-          Upload Image
-          </span>
-        </h2>
-        
+        <div className="flex items-center gap-2.5 mb-5">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-500/20 to-indigo-500/20 border border-violet-500/20 flex items-center justify-center">
+            <svg className="w-4 h-4 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0l-4 4m4-4v12" />
+            </svg>
+          </div>
+          <h2 className="text-base font-semibold gradient-text">Upload Image</h2>
+        </div>
+
         {/* Upload method tabs */}
-        <div className="flex space-x-2 mb-6 bg-gray-100 dark:bg-gray-700/50 p-1 rounded-lg">
+        <div className="flex gap-1.5 mb-5 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.4)', backdropFilter: 'blur(8px)' }}>
           {(['device', 'url', 'clipboard'] as const).map((tab) => (
             <motion.button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200
-                ${activeTab === tab 
-                  ? 'bg-white dark:bg-gray-800 text-indigo-500 shadow-sm' 
-                  : 'text-gray-600 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400'
+              className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200
+                ${activeTab === tab
+                  ? 'glass-tab-active'
+                  : 'text-[var(--text-muted)] hover:text-[var(--text-secondary)]'
                 }`}
               whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              whileTap={{ scale: 0.96 }}
             >
               {tab === 'device' && (
                 <svg className="w-4 h-4 mr-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -225,11 +223,17 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
             {activeTab === 'device' && (
               <div
                 {...getRootProps()}
-                className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all duration-200
+                className={`relative rounded-2xl p-8 text-center transition-all duration-300 cursor-pointer
                   ${isDragActive || isDragReady
-                    ? 'border-indigo-500 bg-indigo-50 dark:bg-indigo-500/10 scale-102' 
-                    : 'border-gray-300 hover:border-indigo-500 dark:border-gray-600'
+                    ? 'border-2 border-indigo-400/60 scale-[1.01]'
+                    : 'border-2 border-dashed hover:border-indigo-400/50'
                   }`}
+                style={{
+                  background: isDragActive || isDragReady
+                    ? 'rgba(99,102,241,0.08)'
+                    : 'rgba(255,255,255,0.25)',
+                  borderColor: isDragActive || isDragReady ? 'rgba(99,102,241,0.5)' : 'rgba(148,163,184,0.4)',
+                }}
               >
                 <input {...getInputProps()} />
                 <motion.div
@@ -254,31 +258,25 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                       d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" 
                     />
                   </svg>
-                  <p className={`text-lg font-medium mb-2 transition-colors duration-200
-                    ${isDragActive || isDragReady ? 'text-indigo-500' : 'text-gray-600 dark:text-gray-300'}`}>
-                    {isDragActive 
-                      ? 'Drop your image here' 
-                      : 'Drag & drop an image here'}
+                  <p className={`text-base font-semibold mb-1.5 transition-colors duration-200
+                    ${isDragActive || isDragReady ? 'text-indigo-500' : 'text-[var(--text-primary)]'}`}>
+                    {isDragActive ? 'Drop your image here' : 'Drag & drop an image here'}
                   </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    or click to select from your device
-                  </p>
+                  <p className="text-sm text-[var(--text-muted)]">or click to select from your device</p>
                 </motion.div>
               </div>
             )}
 
             {/* URL upload */}
             {activeTab === 'url' && (
-              <form onSubmit={handleUrlSubmit} className="space-y-4">
+              <form onSubmit={handleUrlSubmit} className="space-y-3">
                 <div className="relative">
                   <input
                     type="url"
                     value={urlInput}
                     onChange={(e) => setUrlInput(e.target.value)}
                     placeholder="Paste image URL here"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
-                             dark:bg-gray-700/50 dark:text-white focus:ring-2 focus:ring-indigo-500 
-                             focus:border-transparent outline-none pl-10"
+                    className="w-full px-4 py-3 rounded-xl glass-input pl-10 text-sm"
                   />
                   <svg 
                     className="w-5 h-5 absolute left-3 top-3.5 text-gray-400"
@@ -296,11 +294,9 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                 </div>
                 <motion.button
                   type="submit"
-                  className="w-full px-4 py-3 bg-indigo-500 text-white rounded-lg 
-                           hover:bg-indigo-600 transition-colors duration-200
-                           flex items-center justify-center space-x-2"
+                  className="w-full px-4 py-3 rounded-xl glass-button-primary flex items-center justify-center gap-2 text-sm"
                   whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -315,12 +311,10 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
             {activeTab === 'clipboard' && (
               <motion.div
                 onClick={handleBoxClick}
-                className="w-full px-4 py-12 rounded-xl border-2 border-dashed border-gray-300 
-                         dark:border-gray-600 hover:border-indigo-500 transition-all duration-200
-                         group relative overflow-hidden focus-within:outline-none focus-within:ring-2 
-                         focus-within:ring-indigo-500 focus-within:border-transparent
-                         cursor-pointer flex flex-col items-center justify-center min-h-[240px]"
-                whileHover={{ scale: 1.01 }}
+                className="w-full rounded-2xl border-2 border-dashed transition-all duration-300
+                         group relative overflow-hidden cursor-pointer flex flex-col items-center justify-center min-h-[200px] py-10"
+                style={{ background: 'rgba(255,255,255,0.25)', borderColor: 'rgba(148,163,184,0.4)' }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(99,102,241,0.5)' }}
                 whileTap={{ scale: 0.99 }}
               >
                 <button
@@ -337,13 +331,9 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                       initial={{ opacity: 0, y: 20, scale: 0.9 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -20, scale: 0.9 }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleManualPaste();
-                      }}
+                      onClick={(e) => { e.stopPropagation(); handleManualPaste(); }}
                       className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                               bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full
-                               shadow-lg flex items-center space-x-2 transition-colors duration-200"
+                               glass-button-primary px-6 py-3 rounded-2xl flex items-center gap-2 shadow-xl"
                     >
                       <svg 
                         className="w-5 h-5" 
@@ -391,11 +381,10 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                     animate={isPasting ? { y: -5, opacity: 0.7 } : { y: 0, opacity: 1 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p className="text-xl font-medium mb-2 text-gray-700 dark:text-gray-200
-                                group-hover:text-indigo-500 transition-colors duration-300">
+                    <p className="text-base font-semibold mb-1.5 text-[var(--text-primary)] group-hover:text-indigo-500 transition-colors duration-300">
                       {isPasting ? 'Processing...' : 'Paste from Clipboard'}
                     </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                    <p className="text-sm text-[var(--text-muted)]">
                       Click here, then press Ctrl+V (Cmd+V on Mac)
                     </p>
                   </motion.div>
@@ -445,7 +434,7 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                                     rounded-full px-4 py-2 shadow-lg">
                         <div className="animate-spin rounded-full h-5 w-5 border-2 border-indigo-500 
                                       border-t-transparent" />
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
+                        <p className="text-sm text-[var(--text-secondary)]">
                           Processing image...
                         </p>
                       </div>

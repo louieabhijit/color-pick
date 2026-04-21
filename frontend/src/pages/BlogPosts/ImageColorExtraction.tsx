@@ -111,7 +111,7 @@ const ImageColorExtraction = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
         <link rel="canonical" href={shareUrl} />
@@ -183,7 +183,7 @@ const ImageColorExtraction = () => {
             transition={{ delay: 0.4 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold">Mastering Color Extraction for Web Design</h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
               Extracting colors from images is a powerful technique for creating cohesive and visually appealing web designs. 
               Whether you're working on a brand website, portfolio, or e-commerce platform, understanding how to effectively 
               extract and utilize colors from images can elevate your design to the next level.
@@ -192,7 +192,7 @@ const ImageColorExtraction = () => {
             {/* Quick Summary */}
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4">What You'll Learn</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>✓ Different methods of color extraction</li>
                 <li>✓ Tools and techniques for accurate color sampling</li>
                 <li>✓ Best practices for creating balanced palettes</li>
@@ -225,7 +225,7 @@ const ImageColorExtraction = () => {
                 </div>
                 
                 <div className="p-6">
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  <p className="text-[var(--text-secondary)] mb-6">
                     {method.description}
                   </p>
 
@@ -236,7 +236,7 @@ const ImageColorExtraction = () => {
                         {method.steps.map((step, i) => (
                           <li
                             key={i}
-                            className="flex items-center text-gray-600 dark:text-gray-300"
+                            className="flex items-center text-[var(--text-secondary)]"
                           >
                             <span className="w-6 h-6 flex items-center justify-center bg-indigo-500 text-white rounded-full mr-3 text-sm">
                               {i + 1}
@@ -253,7 +253,7 @@ const ImageColorExtraction = () => {
                         {method.tools.map((tool, i) => (
                           <li
                             key={i}
-                            className="flex items-center text-gray-600 dark:text-gray-300"
+                            className="flex items-center text-[var(--text-secondary)]"
                           >
                             <span className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
                             {tool}
@@ -288,7 +288,7 @@ const ImageColorExtraction = () => {
                     <tip.icon className="w-6 h-6 text-indigo-500 mr-3" />
                     <h3 className="text-xl font-semibold">{tip.title}</h3>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-[var(--text-secondary)]">
                     {tip.description}
                   </p>
                 </motion.div>
@@ -305,7 +305,7 @@ const ImageColorExtraction = () => {
             className="mt-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold">Putting It All Together</h2>
-            <p className="text-gray-600 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] mt-4">
               Color extraction is both an art and a science. By combining the right tools and techniques with 
               your design intuition, you can create stunning color palettes that enhance your web designs and 
               create memorable user experiences. Remember to always consider your target audience and brand 
@@ -314,7 +314,7 @@ const ImageColorExtraction = () => {
 
             <div className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-8">
               <h3 className="text-xl font-semibold mb-4">Key Takeaways</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>• Choose the extraction method that best suits your project needs</li>
                 <li>• Always validate extracted colors for accessibility</li>
                 <li>• Create a systematic approach to organizing extracted colors</li>

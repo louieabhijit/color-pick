@@ -239,7 +239,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mt-4"
+        className="glass-card p-6 mt-4"
       >
         <div className="flex items-center mb-6">
           <h2 className="text-xl font-bold flex items-center">
@@ -252,7 +252,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
             </span>
           </h2>
         </div>
-        <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+        <div className="text-center py-8 text-[var(--text-muted)]">
           <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -271,7 +271,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mt-4"
+      className="glass-card p-6 mt-4"
     >
       <div className="flex items-center mb-6">
         <h2 className="text-xl font-bold flex items-center">
@@ -293,7 +293,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
             className={`p-2 rounded ${
               lineNumbers 
                 ? 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'
-                : 'hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400'
+                : 'hover:bg-gray-200 dark:hover:bg-gray-800 text-[var(--text-muted)]'
             }`}
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -302,7 +302,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
             </svg>
           </button>
         </div>
-        <div className="text-xs text-gray-500 dark:text-gray-400 font-mono">
+        <div className="text-xs text-[var(--text-muted)] font-mono">
           {activeLanguage}{codeSnippets.find(s => s.language === activeLanguage)?.fileExtension}
         </div>
       </div>
@@ -317,7 +317,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
             className={`px-3 py-1.5 rounded-md flex items-center space-x-2 transition-all duration-200 text-sm
                       ${activeLanguage === lang.language
                         ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 shadow-sm'
-                        : 'hover:bg-white/50 dark:hover:bg-gray-800/50 text-gray-600 dark:text-gray-400'
+                        : 'hover:bg-white/50 dark:hover:bg-gray-800/50 text-[var(--text-muted)]'
                       }`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -352,7 +352,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
                     <span dangerouslySetInnerHTML={{ 
                       __html: codeSnippets.find(s => s.language === activeLanguage)?.icon || ''
                     }} />
-                    <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                    <h3 className="text-sm font-medium text-[var(--text-secondary)]">
                       {snippet.title}
                     </h3>
                   </div>
@@ -390,7 +390,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
                       </div>
                     )}
                     <pre className="relative p-4 text-sm font-mono overflow-x-auto flex-1
-                                 text-gray-800 dark:text-gray-200 bg-white/50 dark:bg-black/20">
+                                 text-[var(--text-primary)] bg-white/50 dark:bg-black/20">
                       <code className="language-javascript">
                         {snippet.code.split('\n').map((line, i) => (
                           <div key={i} className="syntax-line leading-6 hover:bg-gray-100/50 dark:hover:bg-gray-800/30 -mx-4 px-4">
@@ -404,7 +404,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
                               } else if (/^[$]/.test(part)) {
                                 className = 'text-green-600 dark:text-green-400'; // Variables
                               } else if (/^[:;]$/.test(part)) {
-                                className = 'text-gray-500 dark:text-gray-400'; // Punctuation
+                                className = 'text-[var(--text-muted)]'; // Punctuation
                               } else if (/^['"`]/.test(part)) {
                                 className = 'text-green-600 dark:text-green-400'; // Strings
                               } else if (/^#[0-9a-fA-F]{3,8}$/.test(part)) {
@@ -429,9 +429,9 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
       </div>
 
       {/* Information Section */}
-      <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6">
+      <div className="mt-8 border-t border-white/30 dark:border-white/10 pt-6">
         <div className="bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-indigo-500/5 dark:to-purple-500/5 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4 flex items-center">
+          <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4 flex items-center">
             <svg className="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                     d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -439,11 +439,11 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
             Code Snippets Guide
           </h3>
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
               Access ready-to-use color code snippets for popular programming languages and frameworks. Copy and paste color values in various formats including CSS, SCSS, TailwindCSS, JavaScript, and React. Perfect for developers looking to implement consistent color schemes across their projects.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Features:</span>
+              <span className="text-xs font-medium text-[var(--text-muted)]">Features:</span>
               {[
                 'Multiple languages',
                 'Framework support',
@@ -454,7 +454,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
               ].map((feature) => (
                 <span
                   key={feature}
-                  className="text-xs px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 
+                  className="text-xs px-3 py-1 rounded-full bg-indigo-500/10 
                            text-indigo-600 dark:text-indigo-300 font-medium"
                 >
                   {feature}

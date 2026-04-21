@@ -98,26 +98,27 @@ const ImageSection = ({ selectedImage, onColorSelect }: ImageSectionProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg"
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="glass-card p-6"
     >
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold flex items-center">
-          <svg className="w-6 h-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-            Select Color from Image
-          </span>
-        </h2>
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/20 flex items-center justify-center">
+            <svg className="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h2 className="text-base font-semibold gradient-text">Select Color from Image</h2>
+        </div>
       </div>
 
-      <div 
+      <div
         ref={containerRef}
-        className="relative overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-700 cursor-crosshair"
+        className="relative overflow-hidden rounded-2xl cursor-crosshair"
+        style={{ background: 'rgba(255,255,255,0.3)', backdropFilter: 'blur(8px)' }}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setShowMagnifier(true)}
         onMouseLeave={() => setShowMagnifier(false)}

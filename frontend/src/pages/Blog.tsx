@@ -180,7 +180,7 @@ interface BlogProps {}
 
 const Blog: React.FC<BlogProps> = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>Color Design Blog | Color Pick</title>
         <link rel="canonical" href={window.location.href} />
@@ -192,7 +192,7 @@ const Blog: React.FC<BlogProps> = () => {
       
       
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-indigo-500 to-purple-600 py-24">
+      <div className="relative bg-gradient-to-r from-indigo-500 to-violet-600 py-24">
         <div className="absolute inset-0 bg-grid-white/[0.1] bg-[size:20px_20px]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -237,7 +237,7 @@ const Blog: React.FC<BlogProps> = () => {
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 text-sm font-medium bg-white/90 dark:bg-gray-900/90 text-gray-900 dark:text-white rounded-full">
+                      <span className="px-3 py-1 text-sm font-medium bg-white/90 dark:bg-gray-900/90 text-[var(--text-primary)] rounded-full">
                         {post.category}
                       </span>
                     </div>
@@ -252,20 +252,20 @@ const Blog: React.FC<BlogProps> = () => {
                         className="w-8 h-8 rounded-full"
                       />
                       <div className="text-sm">
-                        <p className="text-gray-900 dark:text-gray-100 font-medium">
+                        <p className="text-[var(--text-primary)] font-medium">
                           {post.author.name}
                         </p>
-                        <p className="text-gray-500 dark:text-gray-400">
+                        <p className="text-[var(--text-muted)]">
                           {post.date} · {post.readTime}
                         </p>
                       </div>
                     </div>
 
-                    <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                    <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300">
                       {post.title}
                     </h2>
                     
-                    <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
+                    <p className="text-[var(--text-secondary)] line-clamp-3">
                       {post.description}
                     </p>
                   </div>

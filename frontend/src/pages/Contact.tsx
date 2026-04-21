@@ -16,7 +16,7 @@ const ContactCard = ({ icon: Icon, title, details }: ContactInfo) => (
   <motion.div
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
-    className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm hover:shadow-md 
+    className="glass-card p-6 shadow-sm hover:shadow-md 
                transition-all duration-300 border border-gray-100 dark:border-gray-700"
   >
     <div className="flex items-start space-x-4">
@@ -24,9 +24,9 @@ const ContactCard = ({ icon: Icon, title, details }: ContactInfo) => (
         {Icon && <Icon className="w-6 h-6 text-white" />}
       </div>
       <div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{title}</h3>
+        <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{title}</h3>
         {details.map((detail, index) => (
-          <p key={index} className="text-gray-600 dark:text-gray-400">{detail}</p>
+          <p key={index} className="text-[var(--text-muted)]">{detail}</p>
         ))}
       </div>
     </div>
@@ -48,7 +48,7 @@ const InputField = ({ label, type, name, value, onChange, required = true }: Inp
     animate={{ opacity: 1, y: 0 }}
     className="space-y-2"
   >
-    <label htmlFor={name} className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+    <label htmlFor={name} className="block text-sm font-medium text-[var(--text-secondary)]">
       {label}
     </label>
     {type === 'textarea' ? (
@@ -60,7 +60,7 @@ const InputField = ({ label, type, name, value, onChange, required = true }: Inp
         required={required}
         rows={6}
         className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
-                 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
+                 bg-white dark:bg-gray-700 text-[var(--text-primary)]
                  focus:ring-2 focus:ring-indigo-500 focus:border-transparent
                  transition-colors duration-200 resize-none"
       />
@@ -73,7 +73,7 @@ const InputField = ({ label, type, name, value, onChange, required = true }: Inp
         onChange={onChange}
         required={required}
         className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
-                 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
+                 bg-white dark:bg-gray-700 text-[var(--text-primary)]
                  focus:ring-2 focus:ring-indigo-500 focus:border-transparent
                  transition-colors duration-200"
       />
@@ -124,7 +124,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+    <div className="min-h-screen w-full">
       <Helmet>
         <title>Contact Us | Color Pick</title>
         <link rel="canonical" href={window.location.href} />
@@ -146,7 +146,7 @@ const Contact = () => {
             <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
               Get in Touch
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-[var(--text-muted)] max-w-3xl mx-auto">
               Have questions or feedback? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
             </p>
           </motion.div>
@@ -182,7 +182,7 @@ const Contact = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-500 opacity-10" />
               <div className="relative p-8">
-                <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+                <h2 className="text-3xl font-bold mb-6 text-[var(--text-primary)]">
                   Why Contact Us?
                 </h2>
                 <div className="space-y-4">
@@ -190,25 +190,25 @@ const Contact = () => {
                     <div className="bg-indigo-500 rounded-full p-1">
                       {FaCheck && <FaCheck className="w-4 h-4 text-white" />}
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300">Get expert color advice</p>
+                    <p className="text-[var(--text-secondary)]">Get expert color advice</p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="bg-indigo-500 rounded-full p-1">
                       {FaCheck && <FaCheck className="w-4 h-4 text-white" />}
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300">Technical support</p>
+                    <p className="text-[var(--text-secondary)]">Technical support</p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="bg-indigo-500 rounded-full p-1">
                       {FaCheck && <FaCheck className="w-4 h-4 text-white" />}
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300">Partnership opportunities</p>
+                    <p className="text-[var(--text-secondary)]">Partnership opportunities</p>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="bg-indigo-500 rounded-full p-1">
                       {FaCheck && <FaCheck className="w-4 h-4 text-white" />}
                     </div>
-                    <p className="text-gray-700 dark:text-gray-300">Feature requests</p>
+                    <p className="text-[var(--text-secondary)]">Feature requests</p>
                   </div>
                 </div>
               </div>

@@ -8,7 +8,7 @@ const Terms = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+    <div className="min-h-screen w-full">
       <Helmet>
         <title>Terms of Service | Color Pick</title>
         <link rel="canonical" href={window.location.href} />
@@ -30,13 +30,13 @@ const Terms = () => {
               Terms of Service
             </h1>
 
-            <div className="space-y-8 text-gray-600 dark:text-gray-400">
+            <div className="space-y-8 text-[var(--text-muted)]">
               <motion.section
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   1. Acceptance of Terms
                 </h2>
                 <p className="mb-4">
@@ -50,7 +50,7 @@ const Terms = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   2. Service Description
                 </h2>
                 <p className="mb-4">
@@ -65,7 +65,7 @@ const Terms = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   3. User Obligations
                 </h2>
                 <ul className="list-disc pl-6 space-y-2">
@@ -81,7 +81,7 @@ const Terms = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   4. Intellectual Property
                 </h2>
                 <p className="mb-4">
@@ -96,7 +96,7 @@ const Terms = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   5. Limitation of Liability
                 </h2>
                 <p className="mb-4">
@@ -110,7 +110,7 @@ const Terms = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   6. Changes to Terms
                 </h2>
                 <p className="mb-4">
@@ -124,7 +124,7 @@ const Terms = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   7. Contact Information
                 </h2>
                 <p>

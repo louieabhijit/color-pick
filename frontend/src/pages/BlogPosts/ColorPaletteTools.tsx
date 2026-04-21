@@ -124,7 +124,7 @@ const ColorPaletteTools = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
         <link rel="canonical" href={shareUrl} />
@@ -196,7 +196,7 @@ const ColorPaletteTools = () => {
             transition={{ delay: 0.4 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold">Finding the Perfect Color Palette Tool</h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
               In 2025, color palette tools have evolved beyond simple color pickers into sophisticated platforms 
               that leverage AI and advanced algorithms to help designers create stunning color combinations. 
               We've curated the top 5 free tools that stand out for their innovative features and user-friendly interfaces.
@@ -205,7 +205,7 @@ const ColorPaletteTools = () => {
             {/* Quick Summary */}
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4">What You'll Discover</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>✓ AI-powered color palette generators</li>
                 <li>✓ Tools with accessibility checking features</li>
                 <li>✓ Community-driven color inspiration platforms</li>
@@ -253,7 +253,7 @@ const ColorPaletteTools = () => {
                 </div>
                 
                 <div className="p-6">
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  <p className="text-[var(--text-secondary)] mb-6">
                     {tool.description}
                   </p>
 
@@ -263,7 +263,7 @@ const ColorPaletteTools = () => {
                       {tool.features.map((feature, i) => (
                         <li
                           key={i}
-                          className="flex items-center text-gray-600 dark:text-gray-300"
+                          className="flex items-center text-[var(--text-secondary)]"
                         >
                           <span className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
                           {feature}
@@ -297,7 +297,7 @@ const ColorPaletteTools = () => {
             className="mt-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold">Making the Right Choice</h2>
-            <p className="text-gray-600 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] mt-4">
               Each of these tools offers unique features and capabilities that cater to different design needs. 
               Whether you're looking for AI-powered suggestions, community-driven inspiration, or advanced color 
               theory tools, there's a perfect option for your workflow. We recommend trying a few different tools 
@@ -306,7 +306,7 @@ const ColorPaletteTools = () => {
 
             <div className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-8">
               <h3 className="text-xl font-semibold mb-4">Pro Tips</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>• Test color combinations across different devices and screens</li>
                 <li>• Consider accessibility when choosing color palettes</li>
                 <li>• Save your favorite palettes for future reference</li>

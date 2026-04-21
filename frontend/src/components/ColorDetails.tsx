@@ -294,20 +294,18 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mt-4"
+        className="glass-card p-6 mt-4"
       >
-        <div className="flex items-center mb-6">
-          <h2 className="text-xl font-bold flex items-center">
-            <svg className="w-6 h-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="flex items-center gap-2.5 mb-5">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/20 flex items-center justify-center">
+            <svg className="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
             </svg>
-            <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-              Color Details
-            </span>
-          </h2>
+          </div>
+          <h2 className="text-base font-semibold gradient-text">Color Details</h2>
         </div>
-        <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+        <div className="text-center py-8 text-[var(--text-muted)]">
           <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -337,7 +335,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
     max?: number 
   }) => (
     <div className="flex items-center space-x-2 group">
-      <div className="w-4 text-xs font-semibold text-gray-600 dark:text-gray-300">{label}</div>
+      <div className="w-4 text-xs font-semibold text-[var(--text-secondary)]">{label}</div>
       <div className="relative flex-grow h-2">
         {/* Background gradient track */}
         <div 
@@ -367,8 +365,8 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                         shadow-[0_0_4px_rgba(99,102,241,0.4)] dark:shadow-[0_0_4px_rgba(167,139,250,0.4)]" />
         </motion.div>
       </div>
-      <div className="w-14 text-xs font-mono text-right text-gray-600 dark:text-gray-300 
-                   bg-gray-100 dark:bg-gray-700/50 rounded-md px-1.5 py-0.5">
+      <div className="w-14 text-xs font-mono text-right text-[var(--text-secondary)] 
+                   bg-white/40 dark:bg-white/8 rounded-md px-1.5 py-0.5">
         {value}{unit}
       </div>
     </div>
@@ -379,18 +377,16 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mt-4"
+      className="glass-card p-6 mt-4"
     >
-      <div className="flex items-center mb-6">
-        <h2 className="text-xl font-bold flex items-center">
-          <svg className="w-6 h-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div className="flex items-center gap-2.5 mb-5">
+        <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/20 flex items-center justify-center">
+          <svg className="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
           </svg>
-          <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-            Color Details
-          </span>
-        </h2>
+        </div>
+        <h2 className="text-base font-semibold gradient-text">Color Details</h2>
       </div>
 
       <div className="flex flex-col md:flex-row md:items-start md:space-x-6">
@@ -413,7 +409,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
 
           {/* Color Name */}
           <div className="relative text-center md:text-left">
-            <h3 className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Color Name</h3>
+            <h3 className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">Color Name</h3>
             <p className="text-xl font-semibold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
               {colorName}
             </p>
@@ -423,9 +419,9 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
           <div className="space-y-3">
             {/* Hex Code */}
             <div className="relative group">
-              <h3 className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Hex Code</h3>
+              <h3 className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">Hex Code</h3>
               <div className="flex items-center">
-                <code className="text-sm font-mono font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 
+                <code className="text-sm font-mono font-medium text-[var(--text-secondary)] bg-white/40 dark:bg-white/8 
                               rounded-md px-2 py-1 flex-grow truncate">
                   {selectedColor}
                 </code>
@@ -433,7 +429,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleCopy(selectedColor)}
-                  className="ml-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 
+                  className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
                 >
                   {copyState.hex ? (
@@ -458,9 +454,8 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
           {/* RGB and CMYK graphs */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
             {/* RGB Graph */}
-            <div className="space-y-3 bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                          border border-gray-100 dark:border-gray-700/50">
-              <h3 className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-semibold">RGB Values</h3>
+            <div className="space-y-3 glass-card-subtle p-4">
+              <h3 className="text-xs uppercase tracking-wider text-[var(--text-muted)] font-semibold">RGB Values</h3>
               <div className="space-y-3">
                 {[
                   { label: 'R', value: colorValues.rgb.r, color: '#ef4444' },
@@ -468,9 +463,9 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                   { label: 'B', value: colorValues.rgb.b, color: '#3b82f6' }
                 ].map(({ label, value, color }) => (
                   <div key={label} className="flex items-center space-x-2 group">
-                    <div className="w-4 text-xs font-semibold text-gray-600 dark:text-gray-300">{label}</div>
+                    <div className="w-4 text-xs font-semibold text-[var(--text-secondary)]">{label}</div>
                     <div className="relative flex-grow h-4">
-                      <div className="absolute inset-0 rounded-full bg-gray-100 dark:bg-gray-700/50 shadow-inner" />
+                      <div className="absolute inset-0 rounded-full bg-white/40 dark:bg-white/8 shadow-inner" />
                       <div
                         className="absolute inset-y-0 left-0 rounded-full transition-all duration-300"
                         style={{ 
@@ -480,15 +475,15 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                         }}
                       />
                     </div>
-                    <div className="w-14 text-xs font-mono text-right text-gray-600 dark:text-gray-300 
-                                 bg-gray-100 dark:bg-gray-700/50 rounded-md px-1.5 py-0.5">
+                    <div className="w-14 text-xs font-mono text-right text-[var(--text-secondary)] 
+                                 bg-white/40 dark:bg-white/8 rounded-md px-1.5 py-0.5">
                       {value}
                     </div>
                   </div>
                 ))}
               </div>
               <div className="flex items-center pt-2">
-                <code className="text-sm font-mono text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 
+                <code className="text-sm font-mono text-[var(--text-secondary)] bg-white/40 dark:bg-white/8 
                               rounded-md px-2 py-1 flex-grow truncate">
                   {colorValues.rgbString}
                 </code>
@@ -496,7 +491,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleCopy(colorValues.rgbString)}
-                  className="ml-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 
+                  className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
                 >
                   {copyState.rgb ? (
@@ -515,9 +510,8 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
             </div>
 
             {/* CMYK Graph */}
-            <div className="space-y-3 bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                          border border-gray-100 dark:border-gray-700/50">
-              <h3 className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-semibold">CMYK Values</h3>
+            <div className="space-y-3 glass-card-subtle p-4">
+              <h3 className="text-xs uppercase tracking-wider text-[var(--text-muted)] font-semibold">CMYK Values</h3>
               <div className="space-y-3">
                 {[
                   { label: 'C', value: colorValues.cmyk.c, color: '#06b6d4' },
@@ -526,9 +520,9 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                   { label: 'K', value: colorValues.cmyk.k, color: '#4b5563' }
                 ].map(({ label, value, color }) => (
                   <div key={label} className="flex items-center space-x-2 group">
-                    <div className="w-4 text-xs font-semibold text-gray-600 dark:text-gray-300">{label}</div>
+                    <div className="w-4 text-xs font-semibold text-[var(--text-secondary)]">{label}</div>
                     <div className="relative flex-grow h-4">
-                      <div className="absolute inset-0 rounded-full bg-gray-100 dark:bg-gray-700/50 shadow-inner" />
+                      <div className="absolute inset-0 rounded-full bg-white/40 dark:bg-white/8 shadow-inner" />
                       <div
                         className="absolute inset-y-0 left-0 rounded-full transition-all duration-300"
                         style={{ 
@@ -538,15 +532,15 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                         }}
                       />
                     </div>
-                    <div className="w-14 text-xs font-mono text-right text-gray-600 dark:text-gray-300 
-                                 bg-gray-100 dark:bg-gray-700/50 rounded-md px-1.5 py-0.5">
+                    <div className="w-14 text-xs font-mono text-right text-[var(--text-secondary)] 
+                                 bg-white/40 dark:bg-white/8 rounded-md px-1.5 py-0.5">
                       {value}%
                     </div>
                   </div>
                 ))}
               </div>
               <div className="flex items-center pt-2">
-                <code className="text-sm font-mono text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 
+                <code className="text-sm font-mono text-[var(--text-secondary)] bg-white/40 dark:bg-white/8 
                               rounded-md px-2 py-1 flex-grow truncate">
                   {colorValues.cmykString}
                 </code>
@@ -554,7 +548,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleCopy(colorValues.cmykString)}
-                  className="ml-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 
+                  className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
                 >
                   {copyState.cmyk ? (
@@ -576,9 +570,8 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
           {/* HSL and HSV graphs */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {/* HSL Graph */}
-            <div className="space-y-3 bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                          border border-gray-100 dark:border-gray-700/50">
-              <h3 className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-semibold">HSL Values</h3>
+            <div className="space-y-3 glass-card-subtle p-4">
+              <h3 className="text-xs uppercase tracking-wider text-[var(--text-muted)] font-semibold">HSL Values</h3>
               <div className="space-y-3">
                 <SpectrumSlider
                   value={colorValues.hsl.h}
@@ -599,7 +592,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                 />
               </div>
               <div className="flex items-center pt-2">
-                <code className="text-sm font-mono text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 
+                <code className="text-sm font-mono text-[var(--text-secondary)] bg-white/40 dark:bg-white/8 
                               rounded-md px-2 py-1 flex-grow truncate">
                   {colorValues.hslString}
                 </code>
@@ -607,7 +600,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleCopy(colorValues.hslString)}
-                  className="ml-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 
+                  className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
                 >
                   {copyState.hsl ? (
@@ -626,9 +619,8 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
             </div>
 
             {/* HSV Graph */}
-            <div className="space-y-3 bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                          border border-gray-100 dark:border-gray-700/50">
-              <h3 className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-semibold">HSV Values</h3>
+            <div className="space-y-3 glass-card-subtle p-4">
+              <h3 className="text-xs uppercase tracking-wider text-[var(--text-muted)] font-semibold">HSV Values</h3>
               <div className="space-y-3">
                 <SpectrumSlider
                   value={colorValues.hsv.h}
@@ -649,7 +641,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                 />
               </div>
               <div className="flex items-center pt-2">
-                <code className="text-sm font-mono text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700/50 
+                <code className="text-sm font-mono text-[var(--text-secondary)] bg-white/40 dark:bg-white/8 
                               rounded-md px-2 py-1 flex-grow truncate">
                   {colorValues.hsvString}
                 </code>
@@ -657,7 +649,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleCopy(colorValues.hsvString)}
-                  className="ml-2 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 
+                  className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
                 >
                   {copyState.hsv ? (
@@ -679,10 +671,9 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
       </div>
 
       {/* Information Section */}
-      <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6">
-        <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 
-                     rounded-xl p-6 shadow-lg">
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4 flex items-center">
+      <div className="mt-6 pt-5 border-t border-white/30 dark:border-white/10">
+        <div className="glass-card-subtle p-5 rounded-xl">
+          <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-3 flex items-center">
             <svg className="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                     d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -690,11 +681,11 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
             Color Details Guide
           </h3>
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
               Explore comprehensive color information with our advanced color analysis tool. View and convert between multiple color spaces including RGB, CMYK, HSL, HSV, and professional color models like CIE-Lab. Perfect for designers, developers, and color scientists needing precise color data.
             </p>
             <div className="flex flex-wrap gap-2 md:gap-4 items-center">
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Features:</span>
+              <span className="text-xs font-medium text-[var(--text-muted)]">Features:</span>
               {[
                 'Multiple color spaces',
                 'Professional models',
@@ -705,8 +696,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
               ].map((feature) => (
                 <span
                   key={feature}
-                  className="text-xs px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 
-                           text-indigo-600 dark:text-indigo-300 font-medium"
+                  className="text-xs px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-300 font-medium"
                 >
                   {feature}
                 </span>

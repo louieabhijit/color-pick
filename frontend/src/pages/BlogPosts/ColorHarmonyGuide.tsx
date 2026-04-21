@@ -144,7 +144,7 @@ const ColorHarmonyGuide = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
         <link rel="canonical" href={shareUrl} />
@@ -216,7 +216,7 @@ const ColorHarmonyGuide = () => {
             transition={{ delay: 0.4 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold">Understanding Color Harmony</h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
               Color harmony is the foundation of effective design. It's the art of combining colors in a way 
               that creates visual interest while maintaining balance and order. Whether you're designing a 
               website, creating a brand identity, or working on any visual project, understanding color 
@@ -226,7 +226,7 @@ const ColorHarmonyGuide = () => {
             {/* Quick Summary */}
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4">What You'll Learn</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>✓ Different types of color harmonies</li>
                 <li>✓ How to create balanced color combinations</li>
                 <li>✓ Principles of effective color usage</li>
@@ -259,7 +259,7 @@ const ColorHarmonyGuide = () => {
                 </div>
                 
                 <div className="p-6">
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  <p className="text-[var(--text-secondary)] mb-6">
                     {harmony.description}
                   </p>
 
@@ -278,7 +278,7 @@ const ColorHarmonyGuide = () => {
                                 />
                               ))}
                             </div>
-                            <p className="text-sm text-center text-gray-600 dark:text-gray-400">
+                            <p className="text-sm text-center text-[var(--text-muted)]">
                               {example.name}
                             </p>
                           </div>
@@ -292,7 +292,7 @@ const ColorHarmonyGuide = () => {
                         {harmony.tips.map((tip, i) => (
                           <li
                             key={i}
-                            className="flex items-center text-gray-600 dark:text-gray-300"
+                            className="flex items-center text-[var(--text-secondary)]"
                           >
                             <span className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></span>
                             {tip}
@@ -328,14 +328,14 @@ const ColorHarmonyGuide = () => {
                     <principle.icon className="w-6 h-6 text-indigo-500 mr-3" />
                     <h3 className="text-xl font-semibold">{principle.title}</h3>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-[var(--text-secondary)] mb-4">
                     {principle.description}
                   </p>
                   <ul className="space-y-2">
                     {principle.tips.map((tip, i) => (
                       <li
                         key={i}
-                        className="flex items-center text-gray-600 dark:text-gray-300 text-sm"
+                        className="flex items-center text-[var(--text-secondary)] text-sm"
                       >
                         <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>
                         {tip}
@@ -356,7 +356,7 @@ const ColorHarmonyGuide = () => {
             className="mt-12"
           >
             <h2 className="text-2xl md:text-3xl font-bold">Putting Theory into Practice</h2>
-            <p className="text-gray-600 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] mt-4">
               Understanding color harmony is just the beginning. The real magic happens when you start 
               applying these principles to your designs. Remember that while these rules provide a solid 
               foundation, they're meant to be guidelines rather than strict rules. As you gain experience, 
@@ -366,7 +366,7 @@ const ColorHarmonyGuide = () => {
 
             <div className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-8">
               <h3 className="text-xl font-semibold mb-4">Key Takeaways</h3>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-[var(--text-secondary)]">
                 <li>• Start with basic color harmonies and experiment</li>
                 <li>• Consider your audience and project context</li>
                 <li>• Use color to support your design's message</li>

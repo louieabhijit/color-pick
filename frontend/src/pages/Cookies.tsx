@@ -8,7 +8,7 @@ const Cookies = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+    <div className="min-h-screen w-full">
       <Helmet>
         <title>Cookie Policy | Color Pick</title>
         <link rel="canonical" href={window.location.href} />
@@ -30,13 +30,13 @@ const Cookies = () => {
               Cookie Policy
             </h1>
 
-            <div className="space-y-8 text-gray-600 dark:text-gray-400">
+            <div className="space-y-8 text-[var(--text-muted)]">
               <motion.section
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   What Are Cookies
                 </h2>
                 <p className="mb-4">
@@ -51,7 +51,7 @@ const Cookies = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   How We Use Cookies
                 </h2>
                 <p className="mb-4">
@@ -70,7 +70,7 @@ const Cookies = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Types of Cookies We Use
                 </h2>
                 <div className="space-y-4">
@@ -98,7 +98,7 @@ const Cookies = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Managing Cookies
                 </h2>
                 <p className="mb-4">
@@ -117,7 +117,7 @@ const Cookies = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Third-Party Cookies
                 </h2>
                 <p className="mb-4">
@@ -131,7 +131,7 @@ const Cookies = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Updates to This Policy
                 </h2>
                 <p className="mb-4">
@@ -145,7 +145,7 @@ const Cookies = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
               >
-                <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                <h2 className="text-2xl font-semibold mb-4 text-[var(--text-primary)]">
                   Contact Us
                 </h2>
                 <p>

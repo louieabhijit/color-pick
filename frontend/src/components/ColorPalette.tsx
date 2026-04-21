@@ -140,36 +140,35 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg"
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="glass-card p-6"
     >
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold flex items-center">
-          <svg className="w-6 h-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-          </svg>
-          <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-          Color Palette
-          </span><span className="ml-2 text-sm font-normal text-gray-500">(click palette to see color details)</span>
-        </h2>
-        <button
+      <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/20 flex items-center justify-center">
+            <svg className="w-4 h-4 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+            </svg>
+          </div>
+          <div>
+            <h2 className="text-base font-semibold gradient-text">Color Palette</h2>
+            <p className="text-xs text-[var(--text-muted)]">Click a color to see its details</p>
+          </div>
+        </div>
+        <motion.button
           onClick={handleRegenerate}
           disabled={isGenerating}
-          className="w-10 h-10 flex items-center justify-center rounded-full 
-                   bg-gradient-to-r from-indigo-500 to-purple-500 
-                   hover:from-indigo-600 hover:to-purple-600
-                   text-white shadow-lg transition-all duration-300 
-                   disabled:opacity-50 disabled:cursor-not-allowed group
-                   hover:scale-105 active:scale-95"
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.94 }}
+          className="w-9 h-9 flex items-center justify-center rounded-xl glass-button-primary
+                   disabled:opacity-50 disabled:cursor-not-allowed"
           title="Regenerate palette"
         >
-          <span className={`transform inline-block transition-transform duration-300 ${isGenerating ? 'animate-spin' : 'group-hover:rotate-180'}`}>
-            ↻
-          </span>
-        </button>
+          <span className={`text-white text-lg leading-none transition-transform duration-500 ${isGenerating ? 'animate-spin' : 'hover:rotate-180'}`}>↻</span>
+        </motion.button>
       </div>
       
       <div className="h-[300px] flex gap-0 rounded-xl overflow-hidden shadow-lg">
@@ -342,9 +341,9 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
       </div>
 
       {/* Information Section */}
-      <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6">
-        <div className="bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-indigo-500/5 dark:to-purple-500/5 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4 flex items-center">
+      <div className="mt-6 pt-5 border-t border-white/30 dark:border-white/10">
+        <div className="glass-card-subtle rounded-xl p-5">
+          <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-3 flex items-center">
             <svg className="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                     d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -352,12 +351,12 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
             Color Palette Guide
           </h3>
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
               Extract beautiful color palettes from any image. Discover exact color names, copy HEX codes, and save your favorite colors. 
               Perfect for designers, developers, and digital artists seeking color inspiration.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Features:</span>
+              <span className="text-xs font-medium text-[var(--text-muted)]">Features:</span>
               {[
                 'Image color extraction',
                 'Precise color naming',
@@ -368,8 +367,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
               ].map((feature) => (
                 <span
                   key={feature}
-                  className="text-xs px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 
-                           text-indigo-600 dark:text-indigo-300 font-medium"
+                  className="text-xs px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-300 font-medium"
                 >
                   {feature}
                 </span>

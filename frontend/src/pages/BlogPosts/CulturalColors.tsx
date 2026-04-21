@@ -70,7 +70,7 @@ const CulturalColors = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -197,7 +197,7 @@ const CulturalColors = () => {
                           )}
                           <div>
                             <h4 className="font-semibold">{culture.region}</h4>
-                            <p className="text-gray-600 dark:text-gray-300">{culture.meaning}</p>
+                            <p className="text-[var(--text-secondary)]">{culture.meaning}</p>
                           </div>
                         </div>
                       ))}

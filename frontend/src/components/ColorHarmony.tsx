@@ -116,7 +116,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mt-4"
+        className="glass-card p-6 mt-4"
       >
         <div className="flex items-center mb-6">
           <h2 className="text-xl font-bold flex items-center">
@@ -129,7 +129,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
             </span>
           </h2>
         </div>
-        <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+        <div className="text-center py-8 text-[var(--text-muted)]">
           <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -148,7 +148,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg mt-4"
+      className="glass-card p-6 mt-4"
     >
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold flex items-center">
@@ -166,11 +166,11 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
         {/* Complementary */}
         <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                    border border-gray-100 dark:border-gray-700/50"
+                    border border-white/40 dark:border-white/10/50"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-gray-600 dark:text-gray-300 mb-3">Complementary</h4>
+          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Complementary</h4>
           <div className="flex">
             {harmonies.complementary.map((color, index) => (
               <motion.div
@@ -208,11 +208,11 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
         {/* Analogous */}
         <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                    border border-gray-100 dark:border-gray-700/50"
+                    border border-white/40 dark:border-white/10/50"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-gray-600 dark:text-gray-300 mb-3">Analogous</h4>
+          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Analogous</h4>
           <div className="flex">
             {harmonies.analogous.map((color, index) => (
               <motion.div
@@ -250,11 +250,11 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
         {/* Triadic */}
         <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                    border border-gray-100 dark:border-gray-700/50"
+                    border border-white/40 dark:border-white/10/50"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-gray-600 dark:text-gray-300 mb-3">Triadic</h4>
+          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Triadic</h4>
           <div className="flex">
             {harmonies.triadic.map((color, index) => (
               <motion.div
@@ -292,11 +292,11 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
         {/* Split Complementary */}
         <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                    border border-gray-100 dark:border-gray-700/50"
+                    border border-white/40 dark:border-white/10/50"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-gray-600 dark:text-gray-300 mb-3">Split Complementary</h4>
+          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Split Complementary</h4>
           <div className="flex">
             {harmonies.splitComplementary.map((color, index) => (
               <motion.div
@@ -334,11 +334,11 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
         {/* Tetradic */}
         <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                    border border-gray-100 dark:border-gray-700/50"
+                    border border-white/40 dark:border-white/10/50"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-gray-600 dark:text-gray-300 mb-3">Tetradic</h4>
+          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Tetradic</h4>
           <div className="flex">
             {harmonies.tetradic.map((color, index) => (
               <motion.div
@@ -376,11 +376,11 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
         {/* Square */}
         <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
-                    border border-gray-100 dark:border-gray-700/50"
+                    border border-white/40 dark:border-white/10/50"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-gray-600 dark:text-gray-300 mb-3">Square</h4>
+          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Square</h4>
           <div className="flex">
             {harmonies.square.map((color, index) => (
               <motion.div
@@ -417,9 +417,9 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
       </div>
 
       {/* Information Section */}
-      <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6">
+      <div className="mt-8 border-t border-white/30 dark:border-white/10 pt-6">
         <div className="bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-indigo-500/5 dark:to-purple-500/5 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4 flex items-center">
+          <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4 flex items-center">
             <svg className="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                     d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -427,12 +427,12 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
             Color Harmony Guide
           </h3>
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
               Discover perfect color combinations with our comprehensive color harmony tool. Generate complementary, analogous, triadic, and more color schemes instantly.
               Ideal for designers, artists, and developers seeking balanced and aesthetically pleasing color combinations.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Features:</span>
+              <span className="text-xs font-medium text-[var(--text-muted)]">Features:</span>
               {[
                 'Six harmony types',
                 'One-click color copying',
@@ -443,7 +443,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
               ].map((feature) => (
                 <span
                   key={feature}
-                  className="text-xs px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 
+                  className="text-xs px-3 py-1 rounded-full bg-indigo-500/10 
                            text-indigo-600 dark:text-indigo-300 font-medium"
                 >
                   {feature}

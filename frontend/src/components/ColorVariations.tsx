@@ -111,7 +111,7 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
   if (!selectedColor) {
     return (
       <div className="p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-lg
-                    border border-gray-100 dark:border-gray-700/50 shadow-lg">
+                    border border-white/40 dark:border-white/10/50 shadow-lg">
         <div className="flex items-center gap-2">
           <ColorVariationsIcon />
           <h2 className="text-xl font-semibold bg-gradient-to-r from-primary to-secondary 
@@ -119,7 +119,7 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
             Color Variations
           </h2>
         </div>
-        <p className="text-gray-500 dark:text-gray-400 mt-2">
+        <p className="text-[var(--text-muted)] mt-2">
           Select a color to see its variations
         </p>
       </div>
@@ -137,10 +137,10 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
       onHoverEnd={() => setHoveredSection(null)}
     >
       <div className="flex items-baseline justify-between mb-2">
-        <h3 className="text-sm font-medium text-gray-600 dark:text-gray-300">
+        <h3 className="text-sm font-medium text-[var(--text-secondary)]">
           {title}
         </h3>
-        <span className="text-xs text-gray-400 dark:text-gray-500">
+        <span className="text-xs text-[var(--text-muted)]">
           {description}
         </span>
       </div>
@@ -204,7 +204,7 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       className="p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-lg
-                border border-gray-100 dark:border-gray-700/50 shadow-lg"
+                border border-white/40 dark:border-white/10/50 shadow-lg"
     >
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
@@ -225,8 +225,8 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
       {renderColorSection("Tones", tones, "Gray mixed variations")}
 
       {/* SEO Description */}
-      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+      <div className="mt-8 pt-6 border-t border-white/30 dark:border-white/10">
+        <p className="text-sm text-[var(--text-muted)] leading-relaxed">
           Explore color variations with our advanced color manipulation tools. Generate shades (darker variations), 
           tints (lighter variations), and tones (gray-mixed variations) of any color. Perfect for creating 
           cohesive color palettes, designing UI elements, and ensuring accessible color combinations. 
@@ -235,9 +235,9 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
       </div>
 
       {/* Information Section */}
-      <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6">
+      <div className="mt-8 border-t border-white/30 dark:border-white/10 pt-6">
         <div className="bg-gradient-to-br from-indigo-50/50 to-purple-50/50 dark:from-indigo-500/5 dark:to-purple-500/5 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4 flex items-center">
+          <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4 flex items-center">
             <svg className="w-5 h-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
                     d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -245,12 +245,12 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
             Color Variations Guide
           </h3>
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
               Explore the full spectrum of your selected color with our advanced color variations tool. Generate tints, shades, and tones to create 
               perfect color palettes. Ideal for UI design, branding, and creating cohesive color schemes.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Features:</span>
+              <span className="text-xs font-medium text-[var(--text-muted)]">Features:</span>
               {[
                 'Tints & Shades',
                 'One-click copying',
@@ -261,7 +261,7 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
               ].map((feature) => (
                 <span
                   key={feature}
-                  className="text-xs px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 
+                  className="text-xs px-3 py-1 rounded-full bg-indigo-500/10 
                            text-indigo-600 dark:text-indigo-300 font-medium"
                 >
                   {feature}

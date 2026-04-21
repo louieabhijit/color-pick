@@ -52,7 +52,7 @@ const DIYColorPalettes = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
         <link rel="canonical" href={metadata.url} />
@@ -251,7 +251,7 @@ const DIYColorPalettes = () => {
                     {tool.name}
                     <FaExternalLinkAlt className="ml-2 text-sm" />
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{tool.description}</p>
+                  <p className="text-[var(--text-secondary)]">{tool.description}</p>
                 </a>
               ))}
             </div>

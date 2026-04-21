@@ -63,7 +63,7 @@ const ColorPerception = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>{metadata.title} | Color Pick Blog</title>
         <link rel="canonical" href={metadata.url} />
@@ -119,7 +119,7 @@ const ColorPerception = () => {
           
           {/* Introduction */}
           <section className="mb-16">
-            <p className="lead text-xl text-gray-600 dark:text-gray-300">
+            <p className="lead text-xl text-[var(--text-secondary)]">
               Color is not a property of objects themselves but rather a perceptual phenomenon created by our brains. When we say something is "blue," we're describing how our eyes and brain interpret a specific wavelength of light. Understanding the science behind color perception and vision isn't just fascinating—it's essential for fields ranging from digital design to neuroscience, photography, ophthalmology, and artificial intelligence.
             </p>
           </section>
@@ -287,7 +287,7 @@ const ColorPerception = () => {
                     {resource.name}
                     <FaExternalLinkAlt className="ml-2 w-4 h-4" />
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">{resource.description}</p>
+                  <p className="text-[var(--text-muted)]">{resource.description}</p>
                 </motion.a>
               ))}
             </div>

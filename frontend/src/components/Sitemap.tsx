@@ -33,7 +33,7 @@ const Sitemap = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen">
       <Helmet>
         <title>Sitemap | ColorPeek</title>
         <meta name="description" content="Navigate through all pages and resources available on ColorPeek." />
@@ -41,18 +41,18 @@ const Sitemap = () => {
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">Sitemap</h1>
+        <h1 className="text-4xl font-bold text-[var(--text-primary)] mb-12">Sitemap</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(sitemapLinks).map(([category, links]) => (
             <div key={category}>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{category}</h2>
+              <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-4">{category}</h2>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link
                       to={link.href}
-                      className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
+                      className="text-[var(--text-muted)] hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
                     >
                       {link.name}
                     </Link>

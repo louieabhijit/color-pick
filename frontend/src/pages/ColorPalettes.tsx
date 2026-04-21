@@ -415,7 +415,7 @@ const ColorPalettes = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-900">
+    <div className="min-h-screen w-full">
       <Navbar onColorSelect={handleColorSelect} />
       
       
@@ -438,7 +438,7 @@ const ColorPalettes = () => {
                     className={`px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors
                              ${sortBy === option.value
                                ? 'bg-indigo-500 text-white'
-                               : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                               : 'bg-gray-100 dark:bg-gray-800 text-[var(--text-secondary)] hover:bg-gray-200 dark:hover:bg-gray-700'
                              }`}
                   >
                     <Icon icon={option.icon} className="w-4 h-4" />
@@ -460,7 +460,7 @@ const ColorPalettes = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-64 pl-12 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 
-                           bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                           bg-white dark:bg-gray-800 text-[var(--text-primary)]"
                 />
               </div>
             </div>
@@ -489,7 +489,7 @@ const ColorPalettes = () => {
                       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm divide-y divide-gray-200 dark:divide-gray-700">
                         {/* Categories Section */}
                         <div className="p-6">
-                          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100 flex items-center">
+                          <h3 className="text-lg font-semibold mb-4 text-[var(--text-primary)] flex items-center">
                             <Icon icon={MdCategory} className="w-5 h-5 mr-2" />
                             Categories
                           </h3>
@@ -499,7 +499,7 @@ const ColorPalettes = () => {
                               className={`w-full p-3 rounded-lg text-left transition-all ${
                                 selectedCategory === 'all'
                                   ? 'bg-indigo-500 text-white'
-                                  : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600'
+                                  : 'bg-gray-100 dark:bg-gray-700 text-[var(--text-primary)] hover:bg-gray-200 dark:hover:bg-gray-600'
                               }`}
                             >
                               <div className="flex items-center justify-between">
@@ -516,7 +516,7 @@ const ColorPalettes = () => {
                                 className={`w-full p-3 rounded-lg text-left transition-all ${
                                   key === selectedCategory
                                     ? 'bg-indigo-500 text-white'
-                                    : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600'
+                                    : 'bg-gray-100 dark:bg-gray-700 text-[var(--text-primary)] hover:bg-gray-200 dark:hover:bg-gray-600'
                                 }`}
                               >
                                 <div className="flex items-center justify-between">
@@ -537,12 +537,12 @@ const ColorPalettes = () => {
                         <div className="p-6">
                           <div className="space-y-2 text-sm">
                             <div className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                              <span className="text-gray-600 dark:text-gray-400">Total Palettes:</span>
-                              <span className="font-medium text-gray-900 dark:text-gray-100">{allPalettes.length}</span>
+                              <span className="text-[var(--text-muted)]">Total Palettes:</span>
+                              <span className="font-medium text-[var(--text-primary)]">{allPalettes.length}</span>
                             </div>
                             <div className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                              <span className="text-gray-600 dark:text-gray-400">Filtered Palettes:</span>
-                              <span className="font-medium text-gray-900 dark:text-gray-100">{filteredPalettes.length}</span>
+                              <span className="text-[var(--text-muted)]">Filtered Palettes:</span>
+                              <span className="font-medium text-[var(--text-primary)]">{filteredPalettes.length}</span>
                             </div>
                           </div>
                         </div>
@@ -589,10 +589,10 @@ const ColorPalettes = () => {
                       <div className="p-4">
                         <div className="flex items-start justify-between mb-3">
                           <div>
-                            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                            <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-1">
                               {palette.name}
                             </h3>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                            <p className="text-sm text-[var(--text-muted)]">
                               {palette.description}
                             </p>
                           </div>
@@ -600,11 +600,11 @@ const ColorPalettes = () => {
 
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center space-x-4">
-                            <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400">
+                            <div className="flex items-center space-x-1 text-[var(--text-muted)]">
                               <Icon icon={FaHeart} className="w-4 h-4" />
                               <span>{palette.likes}</span>
                             </div>
-                            <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400">
+                            <div className="flex items-center space-x-1 text-[var(--text-muted)]">
                               <Icon icon={FaEye} className="w-4 h-4" />
                               <span>{palette.views}</span>
                             </div>
@@ -641,7 +641,7 @@ const ColorPalettes = () => {
                               key={`${palette.id}-${tag}`}
                               className="px-2 py-1 text-xs font-medium rounded-full 
                                        bg-gray-100 dark:bg-gray-700 
-                                       text-gray-600 dark:text-gray-400"
+                                       text-[var(--text-muted)]"
                             >
                               {tag}
                             </span>
@@ -659,9 +659,9 @@ const ColorPalettes = () => {
                 {loading ? (
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-500" />
                 ) : displayedPalettes.length < filteredPalettes.length ? (
-                  <div className="text-gray-500 dark:text-gray-400">Scroll for more</div>
+                  <div className="text-[var(--text-muted)]">Scroll for more</div>
                 ) : (
-                  <div className="text-gray-500 dark:text-gray-400">No more palettes</div>
+                  <div className="text-[var(--text-muted)]">No more palettes</div>
                 )}
               </div>
 
