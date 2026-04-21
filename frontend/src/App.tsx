@@ -38,6 +38,19 @@ import DIYColorPalettes from './pages/BlogPosts/DIYColorPalettes'
 import CulturalColors from './pages/BlogPosts/CulturalColors'
 import ColorPerception from './pages/BlogPosts/ColorPerception'
 import ColorHarmonyGuide from './pages/BlogPosts/ColorHarmonyGuide'
+import GradientGenerator from './pages/GradientGenerator'
+import TintShadeGenerator from './pages/TintShadeGenerator'
+import ColorBlindnessSimulator from './pages/ColorBlindnessSimulator'
+import ColorConverter from './pages/ColorConverter'
+import BorderRadiusBuilder from './pages/BorderRadiusBuilder'
+import BoxShadowGenerator from './pages/BoxShadowGenerator'
+import GlassEffectGenerator from './pages/GlassEffectGenerator'
+import TypeScaleGenerator from './pages/TypeScaleGenerator'
+import FontPairing from './pages/FontPairing'
+import PaletteFromURL from './pages/PaletteFromURL'
+import PaletteExporter from './pages/PaletteExporter'
+import Tools from './pages/Tools'
+import ToolsSidebar from './components/ToolsSidebar'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import defaultImage from './assets/default1.jpg'
@@ -54,35 +67,18 @@ interface HomePageProps {
   setFavorites: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const staggerContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12 } }
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }
-};
-
 const fadeIn = {
-  hidden: { opacity: 0, scale: 0.96 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } }
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
 };
 
-const STATS = [
-  { value: '6', label: 'Color Formats' },
-  { value: '10', label: 'Saved Favorites' },
-  { value: 'WCAG', label: 'Contrast Checks' },
-  { value: '∞', label: 'Palettes' },
-];
-
-const FEATURE_CHIPS = [
-  '🎨 Palette Extraction',
-  '🔬 Color Details',
-  '🎵 Harmony Generator',
-  '♿ Contrast Checker',
-  '🔁 Color Variations',
-  '💻 Code Snippets',
+const FEATURES = [
+  { label: 'Palette Extraction',  path: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343' },
+  { label: 'Harmony Generator',   path: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
+  { label: 'Contrast Checker',    path: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z' },
+  { label: 'Color Variations',    path: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z' },
+  { label: 'Code Snippets',       path: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' },
+  { label: '6 Color Formats',     path: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z' },
 ];
 
 const HomePage = ({
@@ -97,102 +93,19 @@ const HomePage = ({
   setFavorites
 }: HomePageProps) => (
   <>
-    {/* ── Hero Section ── */}
-    <section className="pt-28 pb-12 px-4 sm:px-6 overflow-hidden">
-      <div className="max-w-5xl mx-auto text-center">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="show"
-          className="flex flex-col items-center gap-6"
-        >
-          {/* Badge pill */}
-          <motion.div variants={fadeUp}>
-            <span className="section-label">Color Extraction & Palette Tools</span>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            variants={fadeUp}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight"
-          >
-            <span className="gradient-text">Extract Colors</span>
-            <br />
-            <span className="text-[var(--text-primary)]">from Any Image</span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            variants={fadeUp}
-            className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl"
-          >
-            Upload an image or paste a URL — instantly get dominant color palettes,
-            harmony suggestions, contrast ratios, and copy-ready code snippets.
-          </motion.p>
-
-          {/* Feature chips */}
-          <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mt-2">
-            {FEATURE_CHIPS.map(chip => (
-              <span
-                key={chip}
-                className="px-3 py-1.5 rounded-full text-sm font-medium glass-card border border-white/30
-                           text-[var(--text-secondary)] hover:border-indigo-400/60 hover:text-indigo-600
-                           dark:hover:text-indigo-300 transition-colors duration-200 cursor-default"
-              >
-                {chip}
-              </span>
-            ))}
-          </motion.div>
-
-          {/* Stats row */}
-          <motion.div
-            variants={fadeUp}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 w-full max-w-2xl"
-          >
-            {STATS.map(({ value, label }) => (
-              <div key={label} className="glass-card p-4 rounded-2xl text-center glow-ring">
-                <p className="text-3xl font-bold gradient-text">{value}</p>
-                <p className="text-xs text-[var(--text-muted)] mt-0.5">{label}</p>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-
-    {/* ── gradient divider ── */}
-    <div className="gradient-divider mx-4 sm:mx-8 mb-2" />
-
-    {/* ── Main Tool Section ── */}
-    <main className="pb-8">
+    {/* ── 3-column layout: left upload | center analysis | right sidebar ── */}
+    <main className="pt-16 pb-8">
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row w-full gap-4 items-start">
 
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-3 mb-6"
-        >
-          <span className="section-label">Color Studio</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-indigo-300/40 to-transparent" />
-        </motion.div>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-40px' }}
-          className="flex flex-col lg:flex-row w-full gap-0"
-        >
-          {/* Left Column */}
-          <motion.div variants={fadeIn} className="w-full lg:w-[40%]">
-            <div className="lg:pr-4 space-y-4">
-              <ImageSection
-                selectedImage={selectedImage}
-                onColorSelect={handleColorSelect}
-              />
+          {/* Left Column — image & upload (35%) */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="w-full lg:w-[35%]"
+          >
+            <div className="space-y-4">
+              <ImageSection selectedImage={selectedImage} onColorSelect={handleColorSelect} />
               <UploadSection onImageSelect={setSelectedImage} />
               <FavoritesSection
                 favorites={favorites}
@@ -202,9 +115,13 @@ const HomePage = ({
             </div>
           </motion.div>
 
-          {/* Right Column */}
-          <motion.div variants={fadeIn} className="w-full lg:w-[60%] mt-4 lg:mt-0">
-            <div className="lg:pl-4 space-y-4">
+          {/* Center Column — analysis panels (43%) */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="w-full lg:w-[43%]"
+          >
+            <div className="space-y-4">
               <ColorPalette
                 image={selectedImage}
                 ref={colorPaletteRef}
@@ -219,14 +136,75 @@ const HomePage = ({
               <ColorCodeSnippets selectedColor={selectedColor} />
             </div>
           </motion.div>
-        </motion.div>
+
+          {/* Right Sidebar — tools (22%) — sticky */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="hidden lg:block w-full lg:w-[22%] lg:sticky lg:top-20"
+          >
+            <ToolsSidebar />
+          </motion.div>
+
+        </div>
       </div>
     </main>
 
     {/* ── gradient divider ── */}
+    <div className="gradient-divider mx-4 sm:mx-8 my-4" />
+
+    {/* ── Compact Hero / About band ── */}
+    <section className="py-16 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.55 }}
+          className="flex flex-col lg:flex-row items-center gap-12"
+        >
+          {/* Left: headline */}
+          <div className="lg:w-1/2">
+            <span className="section-label mb-4 inline-block">What is ColorPeek?</span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4 text-[var(--text-primary)] leading-snug">
+              Extract <span className="gradient-text">any color</span> from<br/>any image — instantly
+            </h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">
+              Upload an image or paste a URL and ColorPeek extracts the dominant palette,
+              generates harmonies, checks WCAG contrast, and produces copy-ready code snippets —
+              all running locally in your browser, no sign-up required.
+            </p>
+          </div>
+
+          {/* Right: feature list */}
+          <div className="lg:w-1/2 grid grid-cols-2 gap-3">
+            {FEATURES.map(({ label, path }) => (
+              <motion.div
+                key={label}
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex items-center gap-2.5 glass-card px-3 py-2.5 rounded-xl border border-white/30 dark:border-white/8"
+              >
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500/15 to-violet-500/15
+                                flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={path}/>
+                  </svg>
+                </div>
+                <span className="text-xs font-medium text-[var(--text-secondary)]">{label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
+    {/* ── gradient divider ── */}
     <div className="gradient-divider mx-4 sm:mx-8 my-2" />
 
-    {/* Blog Carousel Section */}
+    {/* Blog Carousel */}
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -239,7 +217,7 @@ const HomePage = ({
     {/* ── gradient divider ── */}
     <div className="gradient-divider mx-4 sm:mx-8 my-2" />
 
-    {/* How to Use Section */}
+    {/* How to Use */}
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -249,12 +227,8 @@ const HomePage = ({
       <HowToUse />
     </motion.div>
 
-    {/* Toast notification */}
-    <Toast
-      message="Favorites limit reached (max 10 colors)"
-      type="warning"
-      isVisible={showToast}
-    />
+    {/* Toast */}
+    <Toast message="Favorites limit reached (max 10 colors)" type="warning" isVisible={showToast} />
   </>
 );
 
@@ -337,6 +311,18 @@ const App: React.FC = () => {
               <Route path="/blog/cultural-significance-of-colors" element={<CulturalColors />} />
               <Route path="/blog/science-behind-color-perception" element={<ColorPerception />} />
               <Route path="/blog/what-is-color-harmony-a-beginners-guide-for-designers" element={<ColorHarmonyGuide />} />
+              <Route path="/tools" element={<Tools />} />
+              <Route path="/gradient-generator" element={<GradientGenerator />} />
+              <Route path="/tint-shade" element={<TintShadeGenerator />} />
+              <Route path="/color-blindness" element={<ColorBlindnessSimulator />} />
+              <Route path="/color-converter" element={<ColorConverter />} />
+              <Route path="/border-radius" element={<BorderRadiusBuilder />} />
+              <Route path="/box-shadow" element={<BoxShadowGenerator />} />
+              <Route path="/glass-generator" element={<GlassEffectGenerator />} />
+              <Route path="/type-scale" element={<TypeScaleGenerator />} />
+              <Route path="/font-pairing" element={<FontPairing />} />
+              <Route path="/palette-url" element={<PaletteFromURL />} />
+              <Route path="/palette-exporter" element={<PaletteExporter />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 
