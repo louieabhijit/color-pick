@@ -36,6 +36,7 @@ import ColorAccessibility from './pages/BlogPosts/ColorAccessibility'
 import DIYColorPalettes from './pages/BlogPosts/DIYColorPalettes'
 import CulturalColors from './pages/BlogPosts/CulturalColors'
 import ColorPerception from './pages/BlogPosts/ColorPerception'
+import ColorHarmonyGuide from './pages/BlogPosts/ColorHarmonyGuide'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import defaultImage from './assets/default1.jpg'
@@ -76,8 +77,6 @@ const HomePage = ({
               />
               <UploadSection onImageSelect={setSelectedImage} />
               
-              {/* Banner ad in sidebar */}
-              {/* <BannerAd variant="sidebar" /> */}
               
               <FavoritesSection 
                 favorites={favorites}
@@ -100,8 +99,6 @@ const HomePage = ({
               <ColorDetails selectedColor={selectedColor} />
               <ColorHarmony selectedColor={selectedColor} />
               
-              {/* Banner ad in content */}
-              {/* <BannerAd variant="content" /> */}
               
               <ColorVariations selectedColor={selectedColor} />
               <ContrastChecker selectedColor={selectedColor} />
@@ -110,19 +107,13 @@ const HomePage = ({
           </div>
         </div>
         
-        {/* Ad placement after main content */}
-        {/* <AdsterraAd variant="content" /> */}
       </div>
     </main>
 
-    {/* Ad placement before blog carousel */}
-    {/* <AdsterraAd variant="content" className="bg-white dark:bg-gray-900" /> */}
 
     {/* Blog Carousel Section */}
     <BlogCarousel />
 
-    {/* Banner ad before How to Use */}
-    {/* <BannerAd variant="footer" /> */}
 
     {/* How to Use Section */}
     <HowToUse />
@@ -181,10 +172,7 @@ const App: React.FC = () => {
         <ClipboardProvider>
           <div className="min-h-screen w-full bg-white dark:bg-gray-900">
             <Navbar onColorSelect={handleColorSelect} />
-            {/* <AdsterraAd variant="header" /> */}
             
-            {/* Add PopunderAd component - loads once per session */}
-            {/* <PopunderAd /> */}
             
             <Routes>
               <Route path="/" element={<HomePage selectedImage={selectedImage} selectedColor={selectedColor} favorites={favorites} showToast={showToast} colorPaletteRef={colorPaletteRef} handleColorSelect={handleColorSelect} handleToggleFavorite={handleToggleFavorite} setSelectedImage={setSelectedImage} setFavorites={setFavorites} />} />
@@ -207,6 +195,7 @@ const App: React.FC = () => {
               <Route path="/blog/diy-creating-color-palettes-using-color-peek" element={<DIYColorPalettes />} />
               <Route path="/blog/cultural-significance-of-colors" element={<CulturalColors />} />
               <Route path="/blog/science-behind-color-perception" element={<ColorPerception />} />
+              <Route path="/blog/what-is-color-harmony-a-beginners-guide-for-designers" element={<ColorHarmonyGuide />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 

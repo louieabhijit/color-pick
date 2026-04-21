@@ -1,9 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import Navbar from '../../components/Navbar';
-import AdsterraAd from '../../components/AdsterraAd';
-import BannerAd from '../../components/BannerAd';
-import PopunderAd from '../../components/PopunderAd';
 import { FaCalendar, FaClock, FaTags, FaShare, FaTwitter, FaFacebook, FaLinkedin, FaArrowUp, FaStar, FaExternalLinkAlt } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
@@ -141,28 +138,10 @@ const ColorPaletteTools = () => {
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.image} />
         <meta name="keywords" content="color palette generator, color tools, design tools, color scheme generator, free design tools, color palette maker, UI design tools, web design resources, color picker, color inspiration" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />
 
-      {/* Add PopunderAd component */}
-      <PopunderAd />
 
       {/* Hero Section */}
       <motion.div
@@ -206,9 +185,6 @@ const ColorPaletteTools = () => {
         </div>
       </motion.div>
 
-      {/* Ad placement after hero */}
-      <AdsterraAd variant="content" />
-      <BannerAd variant="content" />
 
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
@@ -239,8 +215,6 @@ const ColorPaletteTools = () => {
             </div>
           </motion.section>
 
-          {/* Ad placement in middle of content */}
-          <BannerAd variant="content" />
 
           {/* Tool Cards */}
           {tools.map((tool, index) => (
@@ -314,8 +288,6 @@ const ColorPaletteTools = () => {
             </motion.section>
           ))}
 
-          {/* Ad placement between sections */}
-          <AdsterraAd variant="content" />
 
           {/* Conclusion */}
           <motion.section
@@ -344,8 +316,6 @@ const ColorPaletteTools = () => {
             </div>
           </motion.section>
 
-          {/* Ad placement before social sharing */}
-          <BannerAd variant="footer" />
 
           {/* Social Sharing */}
           <motion.div
@@ -381,7 +351,6 @@ const ColorPaletteTools = () => {
           </motion.div>
 
           {/* Final ad placement */}
-          <AdsterraAd variant="footer" />
         </div>
       </article>
 

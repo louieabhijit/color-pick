@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUp, FaExternalLinkAlt, FaEye, FaBrain, FaPalette, FaFlask, FaDna, FaGlobe, FaLaptop, FaChartBar } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
-import AdsterraAd from '../../components/AdsterraAd';
-import BannerAd from '../../components/BannerAd';
-import PopunderAd from '../../components/PopunderAd';
 
 const ColorPerception = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -88,30 +85,10 @@ const ColorPerception = () => {
         {/* Additional SEO Tags */}
         <meta name="keywords" content="color perception, vision science, color psychology, eye anatomy, brain processing, color theory, visual perception" />
         <meta name="author" content="Color-Peek" />
-
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
       </Helmet>
 
       <Navbar onColorSelect={handleColorSelect} />
 
-      {/* Add PopunderAd component */}
-      <PopunderAd />
 
       {/* Hero Section */}
       <motion.div
@@ -135,9 +112,6 @@ const ColorPerception = () => {
         </div>
       </motion.div>
 
-      {/* Ad placement after hero */}
-      <AdsterraAd variant="content" />
-      <BannerAd variant="content" />
 
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
@@ -185,8 +159,6 @@ const ColorPerception = () => {
             </div>
           </section>
 
-          {/* Ad placement in middle of content */}
-          <BannerAd variant="content" />
 
           {/* Anatomy of the Human Eye */}
           <section className="mb-16">
@@ -217,8 +189,6 @@ const ColorPerception = () => {
             </div>
           </section>
 
-          {/* Ad placement between sections */}
-          <AdsterraAd variant="content" />
 
           {/* Brain Processing */}
           <section className="mb-16">
@@ -256,8 +226,6 @@ const ColorPerception = () => {
             </div>
           </section>
 
-          {/* Ad placement before social sharing */}
-          <BannerAd variant="footer" />
 
           {/* Applications Section */}
           <section className="mb-16">
@@ -326,7 +294,6 @@ const ColorPerception = () => {
           </section>
 
           {/* Final ad placement */}
-          <AdsterraAd variant="footer" />
         </div>
       </article>
 

@@ -418,8 +418,6 @@ const ColorPalettes = () => {
     <div className="min-h-screen w-full bg-white dark:bg-gray-900">
       <Navbar onColorSelect={handleColorSelect} />
       
-      {/* Add PopunderAd component */}
-      <PopunderAd />
       
       {/* Sticky Header */}
       <div className="sticky top-16 z-30 bg-white dark:bg-gray-900 shadow-sm">
@@ -473,9 +471,6 @@ const ColorPalettes = () => {
       {/* Add spacing div to prevent overlap */}
       <div className="h-24 bg-white dark:bg-gray-900" />
 
-      {/* Ad placement after header */}
-      {/* <AdsterraAd variant="content" />
-      <BannerAd variant="content" /> */}
 
       <main className="relative z-0">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
@@ -552,9 +547,7 @@ const ColorPalettes = () => {
                           </div>
                         </div>
 
-                        {/* Banner ad in sidebar */}
                         {/* <div className="p-4"> */}
-                          {/* <BannerAd variant="sidebar" /> */}
                         {/* </div> */}
                       </div>
                     </div>
@@ -657,13 +650,6 @@ const ColorPalettes = () => {
                       </div>
                     </motion.div>
 
-                    {/* Add ad after every 9 palettes */}
-                    {/* {(index + 1) % 9 === 0 && index < displayedPalettes.length - 1 && ( */}
-                      {/* // <div className="md:col-span-2 lg:col-span-3 space-y-4"> */}
-                        {/* <AdsterraAd variant="content" /> */}
-                        {/* <BannerAd variant="content" /> */}
-                      {/* </div> */}
-                    {/* // )} */}
                   </React.Fragment>
                 ))}
               </div>
@@ -679,9 +665,6 @@ const ColorPalettes = () => {
                 )}
               </div>
 
-              {/* Ad at the end */}
-              {/* // <AdsterraAd variant="footer" /> */}
-              {/* // <BannerAd variant="footer" /> */}
             </div>
           </div>
         </div>

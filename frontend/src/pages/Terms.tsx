@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
-import PopunderAd from '../components/PopunderAd';
 
 const Terms = () => {
   const handleColorSelect = (color: string) => {
@@ -15,26 +14,9 @@ const Terms = () => {
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Read ColorPeek's terms of service to understand your rights and responsibilities when using our color design tools." />
         <meta name="keywords" content="terms of service, user agreement, legal terms, ColorPeek terms, service conditions" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
-      {/* <PopunderAd /> */}
       
       <main className="pt-16 pb-8">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">

@@ -1,8 +1,5 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
-import AdsterraAd from '../components/AdsterraAd';
-import BannerAd from '../components/BannerAd';
-import PopunderAd from '../components/PopunderAd';
 import { Helmet } from 'react-helmet-async';
 import { FaLightbulb, FaCode, FaPalette, FaRocket } from 'react-icons/fa';
 
@@ -78,26 +75,9 @@ const About = () => {
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Learn about ColorPeek's mission to empower creators with intelligent color tools and innovative design solutions." />
         <meta name="keywords" content="color tools, design solutions, color analysis, color extraction, color harmonies" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
-      <PopunderAd />
       
       <main className="pt-16 pb-8">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
@@ -125,8 +105,6 @@ const About = () => {
             </p>
           </motion.div>
 
-          {/* Banner ad after hero */}
-          {/* <BannerAd variant="content" /> */}
 
           {/* Stats Section */}
           <motion.div
@@ -166,11 +144,7 @@ const About = () => {
             ))}
           </motion.div>
 
-          {/* Ad placement after features */}
-          {/* <AdsterraAd variant="content" /> */}
 
-          {/* Banner ad between sections */}
-          {/* <BannerAd variant="content" /> */}
 
           {/* Mission Section */}
           <motion.div
@@ -222,8 +196,6 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Ad placement at end */}
-          {/* <AdsterraAd variant="footer" /> */}
         </div>
       </main>
     </div>

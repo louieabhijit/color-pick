@@ -159,6 +159,20 @@ const blogPosts: BlogPost[] = [
       name: 'Maya Patel',
       avatar: 'https://ui-avatars.com/api/?name=Maya+Patel&background=random'
     }
+  },
+  {
+    id: '12',
+    slug: 'what-is-color-harmony-a-beginners-guide-for-designers',
+    title: "What is Color Harmony? A Beginner's Guide for Designers",
+    description: "Discover the fundamental principles of color harmony and learn how to create visually pleasing color combinations. Perfect for beginners in web design, graphic design, and UI/UX design.",
+    date: 'March 30, 2024',
+    readTime: '15 min read',
+    category: 'Color Theory',
+    image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=2070',
+    author: {
+      name: 'Design Expert',
+      avatar: 'https://ui-avatars.com/api/?name=Design+Expert&background=random'
+    }
   }
 ];
 
@@ -172,28 +186,10 @@ const Blog: React.FC<BlogProps> = () => {
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Explore the latest insights, tutorials, and best practices in color theory, design tools, and accessibility." />
         <meta name="keywords" content="color theory, color design, color tools, color accessibility, color psychology, design blog" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />
       
-      {/* Add PopunderAd component */}
-      <PopunderAd />
       
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-indigo-500 to-purple-600 py-24">
@@ -216,11 +212,7 @@ const Blog: React.FC<BlogProps> = () => {
         </div>
       </div>
 
-      {/* Ad placement after hero */}
-      {/* <AdsterraAd variant="content" /> */}
 
-      {/* Banner ad after hero */}
-      {/* <BannerAd variant="content" /> */}
 
       {/* Blog Posts Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -280,20 +272,10 @@ const Blog: React.FC<BlogProps> = () => {
                 </Link>
               </motion.div>
               
-              {/* Add ad after every 6 posts */}
-              {/* {(index + 1) % 6 === 0 && index < blogPosts.length - 1 && (
-                <div className="md:col-span-2 lg:col-span-3 space-y-4">
-                  <AdsterraAd variant="content" />
-                  <BannerAd variant="content" />
-                </div>
-              )} */}
             </React.Fragment>
           ))}
         </div>
         
-        {/* Ad at the end */}
-        {/* <AdsterraAd variant="footer" />
-        <BannerAd variant="footer" /> */}
       </div>
     </div>
   );

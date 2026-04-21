@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaArrowUp, FaExternalLinkAlt } from 'react-icons/fa';
 import Navbar from '../../components/Navbar';
-import AdsterraAd from '../../components/AdsterraAd';
-import BannerAd from '../../components/BannerAd';
-import PopunderAd from '../../components/PopunderAd';
 
 const DIYColorPalettes = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -77,30 +74,10 @@ const DIYColorPalettes = () => {
         {/* Additional SEO Tags */}
         <meta name="keywords" content="DIY color palette creator, color palette generator, extract colors from image, custom branding palette, color wheel design, Color-Peek tutorial" />
         <meta name="author" content="Color-Peek" />
-
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
       </Helmet>
 
       <Navbar onColorSelect={() => {}} />
 
-      {/* Add PopunderAd component */}
-      <PopunderAd />
 
       {/* Hero Section */}
       <motion.div
@@ -124,9 +101,6 @@ const DIYColorPalettes = () => {
         </div>
       </motion.div>
 
-      {/* Ad placement after hero */}
-      <AdsterraAd variant="content" />
-      <BannerAd variant="content" />
 
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
@@ -303,8 +277,6 @@ const DIYColorPalettes = () => {
             </ol>
           </section>
 
-          {/* Ad placement in middle of content */}
-          <BannerAd variant="content" />
 
           {/* Conclusion */}
           <section className="mb-16">
@@ -320,17 +292,12 @@ const DIYColorPalettes = () => {
             </p>
           </section>
 
-          {/* Ad placement between sections */}
-          <AdsterraAd variant="content" />
 
-          {/* Ad placement before social sharing */}
-          <BannerAd variant="footer" />
 
           {/* Social Sharing */}
           {/* ... existing social sharing ... */}
 
           {/* Final ad placement */}
-          <AdsterraAd variant="footer" />
         </div>
       </article>
 

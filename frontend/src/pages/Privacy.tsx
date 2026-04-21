@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
-import PopunderAd from '../components/PopunderAd';
 
 const Privacy = () => {
   const handleColorSelect = (color: string) => {
@@ -15,26 +14,9 @@ const Privacy = () => {
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Learn about how ColorPeek protects your privacy and handles your personal information." />
         <meta name="keywords" content="privacy policy, data protection, personal information, user privacy, ColorPeek privacy" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
-      {/* <PopunderAd /> */}
       
       <main className="pt-16 pb-8">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">

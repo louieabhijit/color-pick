@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
-import BannerAd from '../components/BannerAd';
-import PopunderAd from '../components/PopunderAd';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch } from 'culori';
@@ -346,8 +344,6 @@ const Gradients = () => {
     <div className="min-h-screen w-full bg-white dark:bg-gray-900">
       <Navbar onColorSelect={() => {}} />
       
-      {/* Add PopunderAd component */}
-      {/* <PopunderAd /> */}
       
       {/* Sticky Header */}
       <div className="sticky top-16 z-30 bg-white dark:bg-gray-900 shadow-sm">
@@ -401,8 +397,6 @@ const Gradients = () => {
       {/* Add spacing div to prevent overlap */}
       <div className="h-24 bg-white dark:bg-gray-900" />
 
-      {/* Banner ad after header */}
-      {/* <BannerAd variant="content" /> */}
 
       <main className="relative z-0">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
@@ -479,9 +473,7 @@ const Gradients = () => {
                           </div>
                         </div>
 
-                        {/* Banner ad in sidebar */}
                         {/* <div className="p-4"> */}
-                          {/* <BannerAd variant="sidebar" /> */}
                         {/* </div> */}
                       </div>
                     </div>
@@ -590,12 +582,6 @@ const Gradients = () => {
                       </div>
                     </motion.div>
 
-                    {/* Add banner ad after every 9 gradients */}
-                    {/* {(index + 1) % 9 === 0 && index < displayedGradients.length - 1 && ( */}
-                      // <div className="md:col-span-2 lg:col-span-3">
-                        {/* <BannerAd variant="content" /> */}
-                      {/* </div> */}
-                    // )}
                   </React.Fragment>
                 ))}
               </div>
@@ -611,8 +597,6 @@ const Gradients = () => {
                 )}
               </div>
 
-              {/* Banner ad at the end */}
-              // <BannerAd variant="footer" />
             </div>
           </div>
         </div>

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
-import PopunderAd from '../components/PopunderAd';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 interface FAQItem {
@@ -67,8 +66,6 @@ const faqs: FAQItem[] = [
 const FAQ = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const categories = ["all", ...Array.from(new Set(faqs.map(faq => faq.category)))];
 
   const toggleItem = (question: string) => {
@@ -97,8 +94,6 @@ const FAQ = () => {
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
-      {/* Add PopunderAd component */}
-      {/* <PopunderAd /> */}
       
       <main className="pt-16 pb-8">
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-4 sm:px-6 lg:px-8">

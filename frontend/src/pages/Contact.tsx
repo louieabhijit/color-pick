@@ -3,9 +3,6 @@ import { useState } from 'react';
 import type { ComponentType } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
-import AdsterraAd from '../components/AdsterraAd';
-import BannerAd from '../components/BannerAd';
-import PopunderAd from '../components/PopunderAd';
 import Toast from '../components/Toast';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaCheck } from 'react-icons/fa';
 
@@ -36,7 +33,16 @@ const ContactCard = ({ icon: Icon, title, details }: ContactInfo) => (
   </motion.div>
 );
 
-const InputField = ({ label, type, name, value, onChange, required = true }: any) => (
+interface InputFieldProps {
+  label: string;
+  type: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  required?: boolean;
+}
+
+const InputField = ({ label, type, name, value, onChange, required = true }: InputFieldProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -124,26 +130,9 @@ const Contact = () => {
         <link rel="canonical" href={window.location.href} />
         <meta name="description" content="Get in touch with the ColorPeek team. We're here to help with your color design needs, technical support, and partnership opportunities." />
         <meta name="keywords" content="contact, support, color design help, technical support, partnership" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GSMXWF15GP');
-          `}
-        </script>
-        {/* Google AdSense */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
-          crossOrigin="anonymous"
-        ></script>
       </Helmet>
       <Navbar onColorSelect={handleColorSelect} />
       
-      <PopunderAd />
       
       <main className="pt-16 pb-8">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
@@ -162,9 +151,6 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          {/* Ad placement after hero */}
-          {/* <AdsterraAd variant="content" /> */}
-          {/* <BannerAd variant="content" /> */}
 
           {/* Contact Info Grid */}
           <motion.div
@@ -227,8 +213,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Banner ad in sidebar area */}
-              <BannerAd variant="sidebar" />
             </motion.div>
 
             {/* Form */}
@@ -292,9 +276,6 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          {/* Ad placement at end */}
-          {/* <AdsterraAd variant="footer" /> */}
-          {/* <BannerAd variant="footer" /> */}
         </div>
       </main>
 
