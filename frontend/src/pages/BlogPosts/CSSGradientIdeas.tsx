@@ -178,9 +178,9 @@ const CSSGradientIdeas = () => {
       <div className="p-5">
         <div className="flex items-center gap-2 mb-2">
           <FaPalette className="text-indigo-500 text-sm" />
-          <h4 className="font-bold text-gray-900 dark:text-white">{gradient.name}</h4>
+          <h4 className="font-bold text-[var(--text-primary)] dark:text-white">{gradient.name}</h4>
         </div>
-        <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">{gradient.description}</p>
+        <p className="text-[var(--text-muted)] dark:text-gray-400 text-sm mb-3">{gradient.description}</p>
         <pre className="bg-gray-900 text-green-400 p-3 rounded-xl overflow-x-auto text-xs">
 {`background: ${gradient.css};`}
         </pre>
@@ -288,7 +288,7 @@ const CSSGradientIdeas = () => {
             <h2 className="text-xl font-bold text-indigo-700 dark:text-indigo-300 mb-3 flex items-center">
               <FaLightbulb className="mr-2" /> What you'll learn
             </h2>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-inside space-y-1 text-[var(--text-secondary)] dark:text-gray-300">
               <li>8 named linear gradients with vivid colour stories</li>
               <li>4 radial gradient techniques for focal depth</li>
               <li>3 conic gradient examples including pie charts and color wheels</li>
@@ -308,7 +308,7 @@ const CSSGradientIdeas = () => {
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">CSS Gradient Quick Reference</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 CSS provides three native gradient functions. All are values for the
                 <code> background</code> or <code>background-image</code> property —
                 they are images, not colors.
@@ -338,7 +338,7 @@ background:
             transition={{ delay: 0.55 }}
           >
             <h2 className="text-2xl font-bold mb-2">Linear Gradients</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Linear gradients travel in a straight line between two or more color
               stops. The direction can be specified as a keyword (<code>to right</code>,
               <code>to bottom right</code>) or as an angle in degrees.
@@ -357,7 +357,7 @@ background:
             transition={{ delay: 0.9 }}
           >
             <h2 className="text-2xl font-bold mb-2 mt-4">Radial Gradients</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Radial gradients emit from a single point outward in an ellipse or circle.
               Shifting the center with <code>at X% Y%</code> creates off-center focal
               points that add drama and depth.
@@ -376,7 +376,7 @@ background:
             transition={{ delay: 1.0 }}
           >
             <h2 className="text-2xl font-bold mb-2 mt-4">Conic Gradients</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Conic gradients rotate color stops around a central point — like the
               hands of a clock sweeping through hues. They're perfect for pie charts,
               color pickers, and angular abstract backgrounds.
@@ -395,7 +395,7 @@ background:
             transition={{ delay: 1.05 }}
           >
             <h2 className="text-2xl font-bold mb-2 mt-4">Diagonal Gradients</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Diagonal gradients (45° and 135°) inject energy and movement into static
               layouts. They're the go-to for hero sections that need dynamism without
               photography.
@@ -414,7 +414,7 @@ background:
             transition={{ delay: 1.1 }}
           >
             <h2 className="text-2xl font-bold mb-2 mt-4">Mesh / Multi-Stop Gradients</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               CSS mesh gradients layer multiple transparent radial gradients to simulate
               Figma's mesh fill feature. The technique stacks 4–8 radials at different
               positions, each fading to transparent, to produce organic blobs of colour.
@@ -433,7 +433,7 @@ background:
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">Animated Gradients</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 CSS gradients themselves cannot be interpolated (browsers can't tween
                 between gradient values directly), but you can animate them by
                 oversizing the background and shifting its position with
@@ -504,12 +504,12 @@ background:
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">Tips for Accessible Gradient Text</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Gradient backgrounds create variable contrast — the contrast ratio at
                 one end may pass WCAG AA while the other end fails. Follow these
                 practices to keep your gradients accessible.
               </p>
-              <ul className="space-y-3 text-gray-600 dark:text-gray-300 mb-6">
+              <ul className="space-y-3 text-[var(--text-secondary)] dark:text-gray-300 mb-6">
                 <li className="flex gap-2">
                   <span className="text-green-500 font-bold flex-shrink-0">1.</span>
                   Test contrast at the lightest AND darkest gradient stop. Both must meet
@@ -569,7 +569,7 @@ background:
             className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-8"
           >
             <h3 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">Key Takeaways</h3>
-            <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+            <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
               <li>CSS gradients are <code>background-image</code> values — they stack like images</li>
               <li>Layer multiple radials to create organic mesh effects without libraries</li>
               <li>Animate gradients via <code>background-position</code> or <code>@property --angle</code></li>
@@ -624,7 +624,7 @@ background:
             <h3 className="text-2xl font-bold mb-2 text-indigo-700 dark:text-indigo-300">
               Create Your Own Gradients
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               ColorPeek's gradient tools let you build, tweak, and save beautiful
               gradients with live preview — then copy the CSS instantly or browse
               curated community palettes for inspiration.

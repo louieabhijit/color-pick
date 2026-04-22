@@ -123,7 +123,7 @@ const TailwindColorPaletteGuide = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8"
+            className="text-xl text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-8"
           >
             Tailwind CSS ships with an impressive built-in color palette — 22 named hues,
             each spanning 11 shades from 50 to 950. But real-world projects have brand
@@ -140,20 +140,20 @@ const TailwindColorPaletteGuide = () => {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               1. Why Tailwind's Default Palette Isn't Enough
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Tailwind's default palette is excellent as a starting point, but it was
               designed to be generic and broadly applicable. The moment you're building
               a product with a brand identity — a specific teal that matches your logo,
               a warm neutral that feels premium, or a red that meets WCAG contrast on
               dark backgrounds — you'll hit the limits of the defaults.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Common pain points with the default palette include:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-inside space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
               <li>
                 <strong>Brand mismatch:</strong> Your brand blue is <code>#1a4fd6</code>,
                 not Tailwind's <code>blue-600</code> (<code>#2563eb</code>). Close, but
@@ -175,7 +175,7 @@ const TailwindColorPaletteGuide = () => {
                 standards at your specific background colors.
               </li>
             </ul>
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               The good news: Tailwind's configuration system is built for exactly this.
               You have full control over every color, shade, and semantic alias.
             </p>
@@ -189,10 +189,10 @@ const TailwindColorPaletteGuide = () => {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               2. Understanding Tailwind's Color Scale (50–950)
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Tailwind uses a numeric scale system where each number represents a
               perceptual step in lightness. The scale runs from <strong>50</strong>{' '}
               (nearly white) through <strong>950</strong> (nearly black), with{' '}
@@ -204,9 +204,9 @@ const TailwindColorPaletteGuide = () => {
               <table className="w-full text-sm border-collapse">
                 <thead>
                   <tr className="bg-gray-100 dark:bg-gray-700">
-                    <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-200">Shade</th>
-                    <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-200">Use Case</th>
-                    <th className="px-4 py-2 text-left font-semibold text-gray-700 dark:text-gray-200">Example (Indigo)</th>
+                    <th className="px-4 py-2 text-left font-semibold text-[var(--text-secondary)] dark:text-gray-200">Shade</th>
+                    <th className="px-4 py-2 text-left font-semibold text-[var(--text-secondary)] dark:text-gray-200">Use Case</th>
+                    <th className="px-4 py-2 text-left font-semibold text-[var(--text-secondary)] dark:text-gray-200">Example (Indigo)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
@@ -225,14 +225,14 @@ const TailwindColorPaletteGuide = () => {
                   ].map(([shade, use, hex]) => (
                     <tr key={shade} className="hover:bg-gray-50 dark:hover:bg-gray-700/50">
                       <td className="px-4 py-2 font-mono text-indigo-600 dark:text-indigo-400">{shade}</td>
-                      <td className="px-4 py-2 text-gray-600 dark:text-gray-300">{use}</td>
+                      <td className="px-4 py-2 text-[var(--text-secondary)] dark:text-gray-300">{use}</td>
                       <td className="px-4 py-2">
                         <span className="flex items-center gap-2">
                           <span
                             className="inline-block w-4 h-4 rounded-sm border border-gray-200"
                             style={{ background: hex }}
                           />
-                          <code className="text-xs text-gray-500 dark:text-gray-400">{hex}</code>
+                          <code className="text-xs text-[var(--text-muted)] dark:text-gray-400">{hex}</code>
                         </span>
                       </td>
                     </tr>
@@ -241,7 +241,7 @@ const TailwindColorPaletteGuide = () => {
               </table>
             </div>
 
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300">
               The <strong>500 shade is always the "pure" hue</strong> — your base color
               at full saturation. Shades below 500 mix in white; shades above 500 mix in
               black (though the exact method Tailwind uses is more perceptually nuanced
@@ -257,14 +257,14 @@ const TailwindColorPaletteGuide = () => {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               3. Adding Custom Colors in tailwind.config.js
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Tailwind's <code>tailwind.config.js</code> file has a <code>theme</code>{' '}
               key with two ways to customize colors:
             </p>
-            <ul className="list-disc list-inside mb-4 text-gray-700 dark:text-gray-300 space-y-1">
+            <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)] dark:text-gray-300 space-y-1">
               <li>
                 <code>theme.extend.colors</code> — <strong>adds</strong> your colors
                 alongside the defaults (recommended)
@@ -275,7 +275,7 @@ const TailwindColorPaletteGuide = () => {
               </li>
             </ul>
 
-            <p className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
+            <p className="font-semibold text-[var(--text-primary)] dark:text-gray-200 mb-2">
               Example: Adding a brand color with a full scale
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
@@ -309,12 +309,12 @@ module.exports = {
 };`}
             </pre>
 
-            <p className="text-gray-700 dark:text-gray-300 mt-4 mb-2">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4 mb-2">
               You can now use <code>bg-brand-500</code>, <code>text-brand-700</code>,{' '}
               <code>border-brand-200</code>, etc., throughout your project.
             </p>
 
-            <p className="font-semibold text-gray-800 dark:text-gray-200 mb-2 mt-4">
+            <p className="font-semibold text-[var(--text-primary)] dark:text-gray-200 mb-2 mt-4">
               For Tailwind v4 (CSS-first config):
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
@@ -338,15 +338,15 @@ module.exports = {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               4. Generating a Full 50–900 Scale from One Base Color
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Manually picking 11 harmonious shades for every brand color is time-consuming
               and inconsistent. The better approach: start with your <strong>one brand hex</strong>{' '}
               and generate the entire scale algorithmically.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               This is exactly what ColorPeek's{' '}
               <a href="/tint-shade" className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">
                 Tint &amp; Shade Generator
@@ -359,7 +359,7 @@ module.exports = {
               <p className="font-semibold text-indigo-800 dark:text-indigo-200 mb-2">
                 How the scale generation works:
               </p>
-              <ol className="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+              <ol className="list-decimal list-inside space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
                 <li>Convert your base hex to <strong>HSL</strong> (Hue, Saturation, Lightness)</li>
                 <li>Keep the <strong>hue fixed</strong> across all 11 stops</li>
                 <li>
@@ -393,7 +393,7 @@ brand: {
 }`}
             </pre>
 
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               The key advantage of a generated scale over manually chosen values is
               <strong> perceptual uniformity</strong> — the visual step between adjacent
               shades feels equal, which makes your UI look polished and intentional.
@@ -408,10 +408,10 @@ brand: {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               5. Design Tokens vs. Utility Classes
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               A <strong>design token</strong> is a named variable that stores a design
               decision — <code>color.brand.primary</code>, <code>color.surface.default</code>,
               <code>spacing.layout.gutter</code>. Utility classes like{' '}
@@ -448,7 +448,7 @@ brand: {
               </div>
             </div>
 
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               In Tailwind, you can bridge the gap by defining semantic token names in
               your config that reference your scale:
             </p>
@@ -482,22 +482,22 @@ module.exports = {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               6. Exporting Your Palette as Tailwind Config
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Once you've built and refined your color palette — whether in ColorPeek's
               palette builder, a Figma file, or by hand — the final step is exporting it
               in a format you can paste directly into your project.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               ColorPeek's{' '}
               <a href="/palette-exporter" className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">
                 Palette Exporter
               </a>{' '}
               supports multiple output formats from a single palette:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-6">
+            <ul className="list-disc list-inside space-y-2 text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               <li><strong>Tailwind config</strong> — <code>theme.extend.colors</code> object</li>
               <li><strong>Tailwind v4 CSS</strong> — <code>@theme</code> block with CSS variables</li>
               <li><strong>CSS custom properties</strong> — for any CSS framework or vanilla projects</li>
@@ -531,7 +531,7 @@ module.exports = {
             transition={{ duration: 0.5 }}
           >
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
-              <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
                 7. Key Takeaways
               </h2>
               <ul className="space-y-3">
@@ -547,7 +547,7 @@ module.exports = {
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500 text-white text-xs flex items-center justify-center font-bold mt-0.5">
                       {i + 1}
                     </span>
-                    <span className="text-gray-700 dark:text-gray-300">{point}</span>
+                    <span className="text-[var(--text-secondary)] dark:text-gray-300">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -595,10 +595,10 @@ module.exports = {
             className="mt-12 rounded-2xl p-8 border border-indigo-200/40 dark:border-indigo-500/20"
             style={{ background: 'rgba(99,102,241,0.06)' }}
           >
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            <h3 className="text-xl font-bold text-[var(--text-primary)] dark:text-white mb-2">
               Build Your Tailwind Palette in Seconds
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Enter one hex color and get a complete 11-shade scale ready to paste into
               your Tailwind config. Then export in any format you need.
             </p>
@@ -611,7 +611,7 @@ module.exports = {
               </a>
               <a
                 href="/palette-exporter"
-                className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold rounded-xl border border-gray-200 dark:border-gray-600 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-[var(--text-primary)] dark:text-gray-200 font-semibold rounded-xl border border-gray-200 dark:border-gray-600 transition-colors"
               >
                 Export Palette as Tailwind Config
               </a>

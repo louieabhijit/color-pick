@@ -58,7 +58,7 @@ const GoogleFontPairings = () => {
       heading: 'Cormorant Garamond',
       body: 'Proza Libre',
       useCase: 'Luxury brands, fashion, culture',
-      description: 'Cormorant's ultra-thin serifs evoke fine-press typography. Proza Libre provides a warm, readable body at any size without competing for attention.',
+      description: "Cormorant's ultra-thin serifs evoke fine-press typography. Proza Libre provides a warm, readable body at any size without competing for attention.",
       headingWeight: '600',
     },
     {
@@ -89,7 +89,7 @@ const GoogleFontPairings = () => {
       heading: 'Space Grotesk',
       body: 'Inter',
       useCase: 'SaaS apps, developer tools, tech startups',
-      description: 'Space Grotesk's quirky geometric letterforms add personality to interfaces while Inter's extensive hinting makes it the definitive UI body font of the decade.',
+      description: "Space Grotesk's quirky geometric letterforms add personality to interfaces while Inter's extensive hinting makes it the definitive UI body font of the decade.",
       headingWeight: '600',
     },
     {
@@ -103,7 +103,7 @@ const GoogleFontPairings = () => {
       heading: 'Syne',
       body: 'Manrope',
       useCase: 'Creative agencies, portfolios, digital studios',
-      description: 'Syne's irregular stroke width gives headings a distinctive tech-art feel. Manrope is a geometric grotesque with excellent screen rendering at small sizes.',
+      description: "Syne's irregular stroke width gives headings a distinctive tech-art feel. Manrope is a geometric grotesque with excellent screen rendering at small sizes.",
       headingWeight: '700',
     },
     {
@@ -117,7 +117,7 @@ const GoogleFontPairings = () => {
       heading: 'Outfit',
       body: 'Nunito',
       useCase: 'Mobile apps, fintech, health tech',
-      description: 'Outfit's narrow width saves horizontal space in constrained UIs. Nunito's rounded forms create a friendly, accessible reading experience in supporting text.',
+      description: "Outfit's narrow width saves horizontal space in constrained UIs. Nunito's rounded forms create a friendly, accessible reading experience in supporting text.",
       headingWeight: '700',
     },
   ];
@@ -127,35 +127,35 @@ const GoogleFontPairings = () => {
       heading: 'Lora',
       body: 'Mulish',
       useCase: 'Personal blogs, non-profits, community sites',
-      description: 'Lora's calligraphic brushwork feels warm and personal. Mulish is a geometric sans with a light, open quality that pairs beautifully without competing.',
+      description: "Lora's calligraphic brushwork feels warm and personal. Mulish is a geometric sans with a light, open quality that pairs beautifully without competing.",
       headingWeight: '700',
     },
     {
       heading: 'Spectral',
       body: 'Karla',
       useCase: 'Literary websites, essays, online books',
-      description: 'Spectral was designed specifically for digital reading — it performs beautifully at both display and text sizes. Karla's narrow-grotesque character adds a contemporary feel.',
+      description: "Spectral was designed specifically for digital reading — it performs beautifully at both display and text sizes. Karla's narrow-grotesque character adds a contemporary feel.",
       headingWeight: '600',
     },
     {
       heading: 'Josefin Sans',
       body: 'Raleway',
       useCase: 'Portfolios, minimal lifestyle brands',
-      description: 'Josefin Sans draws from 1920s geometric lettering. Raleway's thin strokes and art-deco influence make them a coherent, stylish pairing for minimal aesthetics.',
+      description: "Josefin Sans draws from 1920s geometric lettering. Raleway's thin strokes and art-deco influence make them a coherent, stylish pairing for minimal aesthetics.",
       headingWeight: '700',
     },
     {
       heading: 'Fraunces',
       body: 'Jost',
       useCase: 'Food, wellness, artisan brands',
-      description: 'Fraunces is an optical-size variable serif with expressive warmth. Jost is an elegant geometric grotesque that balances Fraunces's personality without overwhelming it.',
+      description: "Fraunces is an optical-size variable serif with expressive warmth. Jost is an elegant geometric grotesque that balances Fraunces's personality without overwhelming it.",
       headingWeight: '600',
     },
     {
       heading: 'Crimson Pro',
       body: 'Work Sans',
       useCase: 'Academic, legal, finance, long-form content',
-      description: 'Crimson Pro's classical serifs convey trust and scholarship. Work Sans was fine-tuned for usage in headings and paragraphs — both faces have complementary x-heights.',
+      description: "Crimson Pro's classical serifs convey trust and scholarship. Work Sans was fine-tuned for usage in headings and paragraphs — both faces have complementary x-heights.",
       headingWeight: '700',
     },
   ];
@@ -174,7 +174,7 @@ const GoogleFontPairings = () => {
               {pairing.useCase}
             </span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex items-center gap-2 text-sm text-[var(--text-muted)] dark:text-gray-400">
             <FaFont className="text-xs" />
             <span>{pairing.heading}</span>
             <span className="text-gray-300">+</span>
@@ -184,13 +184,13 @@ const GoogleFontPairings = () => {
         {/* Visual sample */}
         <div className="border border-gray-100 dark:border-gray-700 rounded-xl p-5 mb-4 bg-gray-50 dark:bg-gray-900/30">
           <p
-            className="text-2xl md:text-3xl text-gray-900 dark:text-white mb-2"
+            className="text-2xl md:text-3xl text-[var(--text-primary)] dark:text-white mb-2"
             style={{ fontFamily: `'${pairing.heading}', serif`, fontWeight: parseInt(pairing.headingWeight) }}
           >
             The quick brown fox
           </p>
           <p
-            className="text-base text-gray-600 dark:text-gray-300 leading-relaxed"
+            className="text-base text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed"
             style={{ fontFamily: `'${pairing.body}', sans-serif` }}
           >
             Good typography is invisible — it communicates ideas without drawing attention
@@ -198,7 +198,7 @@ const GoogleFontPairings = () => {
             headline to body copy.
           </p>
         </div>
-        <p className="text-gray-600 dark:text-gray-300 text-sm">{pairing.description}</p>
+        <p className="text-[var(--text-secondary)] dark:text-gray-300 text-sm">{pairing.description}</p>
       </div>
     </motion.div>
   );
@@ -303,7 +303,7 @@ const GoogleFontPairings = () => {
             <h2 className="text-xl font-bold text-indigo-700 dark:text-indigo-300 mb-3 flex items-center">
               <FaLightbulb className="mr-2" /> What you'll learn
             </h2>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-inside space-y-1 text-[var(--text-secondary)] dark:text-gray-300">
               <li>Why font pairing is one of the highest-ROI design decisions</li>
               <li>The three pairing rules that make combinations feel inevitable</li>
               <li>5 editorial pairings for magazines, blogs, and publishing</li>
@@ -322,18 +322,18 @@ const GoogleFontPairings = () => {
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">Why Font Pairing Matters</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Typography accounts for roughly 95% of web design. The fonts you choose
                 communicate personality before the user reads a single word — and poor
                 pairing creates cognitive friction that drives visitors away.
               </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 A well-matched heading and body font creates visual hierarchy, reinforces
                 brand identity, and makes content effortless to consume. The goal is not
                 to choose fonts you love in isolation, but to find combinations that work
                 as a system.
               </p>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300">
                 Google Fonts offers over 1,500 free font families — making high-quality
                 pairing accessible to every project regardless of budget. The challenge
                 is not scarcity but discernment: knowing which combinations elevate your
@@ -354,7 +354,7 @@ const GoogleFontPairings = () => {
               <div className="space-y-6">
                 <div>
                   <h3 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">1. Contrast, Not Conflict</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-[var(--text-secondary)] dark:text-gray-300">
                     Pair type families that look different enough to create clear
                     hierarchy — typically a serif heading with a sans-serif body, or
                     a decorative display face with a neutral workhorse. Avoid two fonts
@@ -364,7 +364,7 @@ const GoogleFontPairings = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">2. Shared Mood</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-[var(--text-secondary)] dark:text-gray-300">
                     Even contrasting faces need to share a tonal register — both classic,
                     both playful, both technical. Pairing a whimsical script headline
                     with a heavy industrial grotesque creates incoherence. Look for shared
@@ -373,7 +373,7 @@ const GoogleFontPairings = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-2">3. Respect Hierarchy</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-[var(--text-secondary)] dark:text-gray-300">
                     The display or heading font earns its moment in headings and hero
                     sections. The body font does the real reading work — never use your
                     expressive heading font for body text. Consistent scale ratios
@@ -430,7 +430,7 @@ const GoogleFontPairings = () => {
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">How to Implement Google Fonts</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 The fastest way is the <code>&lt;link&gt;</code> tag in your HTML
                 <code>&lt;head&gt;</code>. Request only the weights you need to keep
                 page load times low.
@@ -468,7 +468,7 @@ body, p, li, blockquote {
 {`/* In your main CSS file */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap');`}
               </pre>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+              <p className="text-sm text-[var(--text-muted)] dark:text-gray-400 mt-4">
                 Pro tip: <code>display=swap</code> ensures text remains visible during
                 font load, preventing invisible text flashes (FOIT). Always include it.
               </p>
@@ -483,7 +483,7 @@ body, p, li, blockquote {
             className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-8"
           >
             <h3 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">Key Takeaways</h3>
-            <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+            <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
               <li>Contrast in classification (serif + sans) is the safest starting point</li>
               <li>Both fonts must share mood, era, or design intent to feel cohesive</li>
               <li>Load only the weights you use — every unused variant costs performance</li>
@@ -537,7 +537,7 @@ body, p, li, blockquote {
             <h3 className="text-2xl font-bold mb-2 text-indigo-700 dark:text-indigo-300">
               Try Font Pairings Interactively
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               ColorPeek's typography tools let you preview hundreds of Google Font
               combinations live — and fine-tune your type scale visually before writing
               a single line of CSS.

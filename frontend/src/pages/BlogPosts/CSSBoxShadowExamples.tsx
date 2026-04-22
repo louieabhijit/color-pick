@@ -138,7 +138,7 @@ const CSSBoxShadowExamples = () => {
             <h2 className="text-xl font-bold text-indigo-700 dark:text-indigo-300 mb-3 flex items-center">
               <FaLightbulb className="mr-2" /> What you'll learn
             </h2>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-inside space-y-1 text-[var(--text-secondary)] dark:text-gray-300">
               <li>The full <code>box-shadow</code> syntax and every parameter explained</li>
               <li>10 production-ready shadow techniques with copy-paste CSS</li>
               <li>Material Design elevation system recreated in pure CSS</li>
@@ -160,7 +160,7 @@ const CSSBoxShadowExamples = () => {
                 <FaCode className="mr-3 text-indigo-500" />
                 Understanding the <code>box-shadow</code> Syntax
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Before diving into examples, let's lock down the syntax. Every
                 <code> box-shadow</code> value follows this pattern:
               </p>
@@ -170,7 +170,7 @@ const CSSBoxShadowExamples = () => {
 /* Multiple shadows are comma-separated */
 box-shadow: shadow1, shadow2, shadow3;`}
               </pre>
-              <ul className="mt-4 space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+              <ul className="mt-4 space-y-2 text-[var(--text-secondary)] dark:text-gray-300 text-sm">
                 <li><strong>offset-x / offset-y</strong> — horizontal and vertical displacement (can be negative)</li>
                 <li><strong>blur-radius</strong> — how soft/diffuse the shadow is (0 = hard edge)</li>
                 <li><strong>spread-radius</strong> — expands (+) or contracts (−) the shadow before blurring</li>
@@ -188,13 +188,13 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">1. Basic Drop Shadow</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 The workhorse of UI design. A simple offset shadow lifts an element
                 off the page and creates an immediate sense of hierarchy.
               </p>
               <div className="flex justify-center my-6">
                 <div
-                  className="w-48 h-24 bg-white dark:bg-gray-700 rounded-xl flex items-center justify-center text-sm font-semibold text-gray-700 dark:text-gray-200"
+                  className="w-48 h-24 bg-white dark:bg-gray-700 rounded-xl flex items-center justify-center text-sm font-semibold text-[var(--text-secondary)] dark:text-gray-200"
                   style={{ boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)' }}
                 >
                   Basic Shadow
@@ -218,14 +218,14 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">2. Layered Multiple Shadows</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Stacking several shadows with different blur radii produces a far more
                 natural, physically accurate result. This is the secret behind polished
                 design systems.
               </p>
               <div className="flex justify-center my-6">
                 <div
-                  className="w-48 h-24 bg-white dark:bg-gray-700 rounded-xl flex items-center justify-center text-sm font-semibold text-gray-700 dark:text-gray-200"
+                  className="w-48 h-24 bg-white dark:bg-gray-700 rounded-xl flex items-center justify-center text-sm font-semibold text-[var(--text-secondary)] dark:text-gray-200"
                   style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07)' }}
                 >
                   Layered Shadow
@@ -254,13 +254,13 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">3. Inner Shadow (Inset)</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 The <code>inset</code> keyword flips the shadow inside the element,
                 perfect for pressed-button states, input wells, or embossed UI elements.
               </p>
               <div className="flex justify-center my-6">
                 <div
-                  className="w-48 h-24 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center text-sm font-semibold text-gray-700 dark:text-gray-200"
+                  className="w-48 h-24 bg-gray-100 dark:bg-gray-600 rounded-xl flex items-center justify-center text-sm font-semibold text-[var(--text-secondary)] dark:text-gray-200"
                   style={{ boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.2)' }}
                 >
                   Inset Shadow
@@ -291,7 +291,7 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">4. Colored Shadows</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Replacing black with a hue creates vivid, branded shadows that make
                 colored buttons and cards feel especially vibrant. Use low opacity to
                 keep it tasteful.
@@ -344,7 +344,7 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">5. Material Design Elevation Shadows</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Google's Material Design defines a precise elevation scale using paired
                 shadows (key light + ambient light). Here are the most useful levels:
               </p>
@@ -395,14 +395,14 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">6. Neumorphism Effect</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Neumorphism (soft UI) uses two shadows — one light, one dark — cast in
                 opposite directions to simulate physical extrusion from the background.
                 The background color of the element must match the page background.
               </p>
               <div className="flex justify-center my-6">
                 <div
-                  className="w-48 h-24 rounded-2xl flex items-center justify-center text-sm font-semibold text-gray-500"
+                  className="w-48 h-24 rounded-2xl flex items-center justify-center text-sm font-semibold text-[var(--text-muted)]"
                   style={{ background: '#e0e5ec', boxShadow: '9px 9px 16px #b8bec7, -9px -9px 16px #ffffff' }}
                 >
                   Neumorphic
@@ -437,14 +437,14 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">7. Glow Effect</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 A glow is simply a zero-offset, high-spread colored shadow. It works
                 beautifully on dark backgrounds for interactive elements, notifications,
                 or hero CTAs.
               </p>
               <div className="flex justify-center gap-6 my-6 flex-wrap">
                 <div
-                  className="w-36 h-14 bg-cyan-400 rounded-full flex items-center justify-center text-sm font-bold text-gray-900"
+                  className="w-36 h-14 bg-cyan-400 rounded-full flex items-center justify-center text-sm font-bold text-[var(--text-primary)]"
                   style={{ boxShadow: '0 0 20px 6px rgba(34,211,238,0.6)' }}
                 >
                   Cyan Glow
@@ -490,13 +490,13 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">8. Hard / Cut-Out Shadow</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Set blur to <code>0</code> for a completely sharp shadow. Popular in
                 retro design, brutalist UI, and comic-book-style components.
               </p>
               <div className="flex justify-center my-6">
                 <div
-                  className="w-48 h-20 bg-yellow-300 border-2 border-gray-900 rounded-xl flex items-center justify-center text-sm font-bold text-gray-900"
+                  className="w-48 h-20 bg-yellow-300 border-2 border-gray-900 rounded-xl flex items-center justify-center text-sm font-bold text-[var(--text-primary)]"
                   style={{ boxShadow: '6px 6px 0 #111827' }}
                 >
                   Brutalist Card
@@ -527,7 +527,7 @@ box-shadow: shadow1, shadow2, shadow3;`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">9. Text Shadow</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 <code>text-shadow</code> shares a similar syntax (minus spread-radius)
                 and adds depth or legibility to headings. For SVG icons and irregular
                 shapes, use <code>filter: drop-shadow()</code> instead — it respects
@@ -565,7 +565,7 @@ h1 {
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">10. Hover Transition Shadow</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Animating between two shadow states on hover communicates interactivity
                 and provides delightful feedback. Always pair with a subtle
                 <code> transform</code> for maximum effect.
@@ -599,7 +599,7 @@ h1 {
             className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-8"
           >
             <h3 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">Key Takeaways</h3>
-            <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+            <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
               <li>Layer multiple shadows for natural, physically accurate depth</li>
               <li>Match shadow color to the element color for vibrant colored shadows</li>
               <li>Use <code>inset</code> for pressed states and input wells</li>
@@ -654,7 +654,7 @@ h1 {
             <h3 className="text-2xl font-bold mb-2 text-indigo-700 dark:text-indigo-300">
               Generate Box Shadows Visually
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Stop guessing values. ColorPeek's interactive tools let you dial in the
               perfect shadow and copy the CSS instantly.
             </p>

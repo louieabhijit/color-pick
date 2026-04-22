@@ -78,7 +78,7 @@ const ColorPaletteFromPhoto = () => {
           {/* Summary box */}
           <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
             <h2 className="text-xl font-bold text-indigo-700 dark:text-indigo-300 mb-3 mt-0">What You'll Learn</h2>
-            <ul className="space-y-2 text-gray-700 dark:text-gray-300 mb-0">
+            <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300 mb-0">
               <li>Why photos produce more natural and harmonious palettes than generated ones</li>
               <li>The science behind k-means clustering and dominant color algorithms</li>
               <li>How to use ColorPeek's image palette extractor step-by-step</li>
@@ -97,31 +97,31 @@ const ColorPaletteFromPhoto = () => {
             transition={{ duration: 0.5 }}
             className="my-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
               1. Why Photos Are the Best Source of Natural Color Palettes
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               Human color perception evolved in a world of natural light, earth, sky, and living things. Our eyes find color relationships from the real world inherently harmonious because nature itself is a master colorist — every sunset, ocean scene, or forest landscape contains colors that coexist in perfect, context-aware balance.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               Algorithmically generated color palettes, while useful, often feel slightly artificial because they follow mathematical models of harmony (complementary, triadic, analogous) that approximate but don't fully replicate the complexity of real-world color interaction. A photograph of the Atacama Desert at golden hour contains warm ochres, cool shadow purples, and dusty mid-tones that no color wheel algorithm would spontaneously combine — yet together they feel completely natural.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               This is why so many of the most beloved design systems — from Airbnb's "Bélo" to Notion's warm neutrals to Spotify's dark mode — have photographic and real-world sources at the heart of their color inspiration. Even when the final palette is highly abstracted and digitally refined, the origin story usually begins with a photograph.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Why Photo-Derived Palettes Work</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-700 dark:text-gray-300">
+              <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-3">Why Photo-Derived Palettes Work</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-[var(--text-secondary)] dark:text-gray-300">
                 <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
-                  <p className="font-semibold text-gray-900 dark:text-white mb-2">Perceptual Harmony</p>
+                  <p className="font-semibold text-[var(--text-primary)] dark:text-white mb-2">Perceptual Harmony</p>
                   <p>Colors from the same photograph share real-world lighting conditions, producing naturally pleasing relationships.</p>
                 </div>
                 <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
-                  <p className="font-semibold text-gray-900 dark:text-white mb-2">Emotional Anchoring</p>
+                  <p className="font-semibold text-[var(--text-primary)] dark:text-white mb-2">Emotional Anchoring</p>
                   <p>A beach photo's palette evokes calm and openness. A forest's palette evokes depth and growth. Emotion is built in.</p>
                 </div>
                 <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
-                  <p className="font-semibold text-gray-900 dark:text-white mb-2">Unique Identity</p>
+                  <p className="font-semibold text-[var(--text-primary)] dark:text-white mb-2">Unique Identity</p>
                   <p>Photo-derived palettes are specific and distinctive — far less likely to look like "every other design tool default."</p>
                 </div>
               </div>
@@ -136,49 +136,49 @@ const ColorPaletteFromPhoto = () => {
             transition={{ duration: 0.5 }}
             className="my-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
               2. How Dominant Color Extraction Works
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               Modern color extraction tools — including ColorPeek's palette extractor — use a technique called <strong>k-means clustering</strong> applied to the color space of an image. Here's what that actually means in plain terms.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               Every pixel in an image has an RGB color value — essentially a point in 3D color space where the axes are Red, Green, and Blue. A 1000×800 photograph has 800,000 such points. K-means clustering groups these points into <em>k</em> clusters by finding the <em>k</em> centroids (center points) that minimize the total distance from every point to its nearest centroid. Each centroid becomes one of your extracted colors.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">The Extraction Pipeline</h3>
-              <ol className="space-y-4 text-gray-700 dark:text-gray-300">
+              <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">The Extraction Pipeline</h3>
+              <ol className="space-y-4 text-[var(--text-secondary)] dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center text-sm font-bold">1</span>
                   <div>
-                    <p className="font-semibold text-gray-800 dark:text-gray-200">Image Downsampling</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-gray-200">Image Downsampling</p>
                     <p className="text-sm">The image is resized to ~150×150px to reduce the number of pixels to analyze. This makes clustering fast without affecting color accuracy.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center text-sm font-bold">2</span>
                   <div>
-                    <p className="font-semibold text-gray-800 dark:text-gray-200">Color Space Conversion</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-gray-200">Color Space Conversion</p>
                     <p className="text-sm">Pixels are converted to LAB or HSL color space, which is perceptually uniform — meaning distances between colors correspond more closely to how different humans perceive them.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center text-sm font-bold">3</span>
                   <div>
-                    <p className="font-semibold text-gray-800 dark:text-gray-200">K-Means Clustering</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-gray-200">K-Means Clustering</p>
                     <p className="text-sm">The algorithm randomly initializes k centroids, assigns every pixel to its nearest centroid, recomputes centroid positions, and repeats until convergence. The result is k color clusters.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-7 h-7 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center text-sm font-bold">4</span>
                   <div>
-                    <p className="font-semibold text-gray-800 dark:text-gray-200">Centroid-to-Hex Conversion</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-gray-200">Centroid-to-Hex Conversion</p>
                     <p className="text-sm">Each cluster centroid is converted back to an RGB hex value and sorted by cluster size (number of pixels in each cluster = dominance ranking).</p>
                   </div>
                 </li>
               </ol>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               The <strong>ColorThief</strong> JavaScript library popularized this approach and is widely used in the browser. It runs entirely client-side, meaning your images never leave your device during extraction. ColorPeek uses an enhanced version of this pipeline with additional steps: near-white and near-black suppression (so you don't end up with a palette of sky blues and paper whites drowning out the interesting colors), and post-extraction contrast adjustment to ensure all palette colors meet minimum contrast thresholds.
             </p>
           </motion.section>
@@ -191,59 +191,59 @@ const ColorPaletteFromPhoto = () => {
             transition={{ duration: 0.5 }}
             className="my-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
               3. Step-by-Step: Using ColorPeek's Palette Extractor
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               ColorPeek's palette extractor is designed to be the fastest, most intuitive image-to-palette tool available. Here's the full workflow:
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
-              <ol className="space-y-5 text-gray-700 dark:text-gray-300">
+              <ol className="space-y-5 text-[var(--text-secondary)] dark:text-gray-300">
                 <li className="flex items-start gap-4">
                   <span className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                   <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Navigate to the Palette Extractor</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-white">Navigate to the Palette Extractor</p>
                     <p className="text-sm mt-1">Visit <a href="/palette-url" className="text-indigo-500 hover:text-indigo-600 underline">/palette-url</a> on ColorPeek. The tool opens with a drag-and-drop upload zone and a URL input field.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                   <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Upload or Paste Your Image</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-white">Upload or Paste Your Image</p>
                     <p className="text-sm mt-1">Drag a JPG, PNG, or WebP image onto the upload zone, or paste a public image URL directly. ColorPeek supports images up to 10MB and any common web image format.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
                   <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Choose How Many Colors to Extract</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-white">Choose How Many Colors to Extract</p>
                     <p className="text-sm mt-1">Set the extraction count using the slider (4–16 colors). The default is 6, which works well for most brand and UI use cases. See Section 5 for guidance on choosing the right count.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
                   <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Review and Adjust the Results</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-white">Review and Adjust the Results</p>
                     <p className="text-sm mt-1">The extracted palette is displayed as swatches with hex codes. Click any swatch to open a color picker and fine-tune its value. You can drag swatches to reorder them by role.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">5</span>
                   <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Assign Semantic Roles (Optional)</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-white">Assign Semantic Roles (Optional)</p>
                     <p className="text-sm mt-1">Label each color with a role — primary, secondary, accent, background, surface, text — so the export reflects your design system's token structure.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <span className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">6</span>
                   <div>
-                    <p className="font-semibold text-gray-900 dark:text-white">Export in Your Preferred Format</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-white">Export in Your Preferred Format</p>
                     <p className="text-sm mt-1">Choose from CSS variables, Tailwind config, JSON tokens, or a simple hex list. See Section 7 for details on each format.</p>
                   </div>
                 </li>
               </ol>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed">
               The entire process from image upload to exported CSS variables takes under 60 seconds. Try it now at <a href="/palette-url" className="text-indigo-500 hover:text-indigo-600 underline">ColorPeek's Palette Extractor</a>.
             </p>
           </motion.section>
@@ -256,14 +256,14 @@ const ColorPaletteFromPhoto = () => {
             transition={{ duration: 0.5 }}
             className="my-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
               4. Choosing the Right Image
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               Not every image makes an equally useful palette source. The best images for color extraction share a few key characteristics: <strong>distinct color zones</strong> (not heavily blurred or uniformly toned), <strong>moderate saturation</strong> (overly vivid images produce a palette that works only in highly energetic contexts), and <strong>emotional resonance</strong> with your project's intended mood.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Image Selection Guide by Mood</h3>
+              <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Image Selection Guide by Mood</h3>
               <div className="space-y-5">
                 {[
                   {
@@ -292,15 +292,15 @@ const ColorPaletteFromPhoto = () => {
                   },
                 ].map((item) => (
                   <div key={item.mood} className="border-l-4 border-indigo-400 pl-4">
-                    <p className="font-semibold text-gray-900 dark:text-white">{item.mood}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1"><span className="font-medium">Best source:</span> {item.image}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400"><span className="font-medium">Yields:</span> {item.what}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-500"><span className="font-medium">Avoid:</span> {item.avoid}</p>
+                    <p className="font-semibold text-[var(--text-primary)] dark:text-white">{item.mood}</p>
+                    <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400 mt-1"><span className="font-medium">Best source:</span> {item.image}</p>
+                    <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400"><span className="font-medium">Yields:</span> {item.what}</p>
+                    <p className="text-sm text-[var(--text-muted)] dark:text-[var(--text-muted)]"><span className="font-medium">Avoid:</span> {item.avoid}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed">
               The single most important factor: <strong>contrast within the image</strong>. An image with multiple distinct color regions — e.g., a landscape with a golden sky, green hills, and a blue river — will produce a rich, varied palette. A photo that's mostly one color (an extreme close-up of red fabric, for example) will produce a palette of nearly identical shades.
             </p>
           </motion.section>
@@ -313,35 +313,35 @@ const ColorPaletteFromPhoto = () => {
             transition={{ duration: 0.5 }}
             className="my-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
               5. How Many Colors to Extract: 4 vs 8 vs 16
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               The number of colors you extract dramatically affects the palette's usability. Extracting too few means you miss important nuances; extracting too many gives you a sprawling, unmanageable set. Here's a practical guide:
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">4</div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-2">Core Palette</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Best for: Brand identity, minimal design systems, logo color extraction, thumbnail generation.</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 italic">Yields the most dominant colors only. Ideal when you want one primary, one secondary, one accent, and one neutral.</p>
+                  <p className="font-semibold text-[var(--text-primary)] dark:text-white mb-2">Core Palette</p>
+                  <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400 mb-3">Best for: Brand identity, minimal design systems, logo color extraction, thumbnail generation.</p>
+                  <p className="text-xs text-[var(--text-muted)] dark:text-[var(--text-muted)] italic">Yields the most dominant colors only. Ideal when you want one primary, one secondary, one accent, and one neutral.</p>
                 </div>
                 <div className="text-center border-x border-gray-100 dark:border-gray-700 px-4">
                   <div className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">8</div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-2">Standard Palette</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Best for: Most web design projects, component libraries, design system foundations.</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 italic">The sweet spot for most use cases. Enough variety for a full UI without overwhelming designers.</p>
+                  <p className="font-semibold text-[var(--text-primary)] dark:text-white mb-2">Standard Palette</p>
+                  <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400 mb-3">Best for: Most web design projects, component libraries, design system foundations.</p>
+                  <p className="text-xs text-[var(--text-muted)] dark:text-[var(--text-muted)] italic">The sweet spot for most use cases. Enough variety for a full UI without overwhelming designers.</p>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">16</div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-2">Extended Palette</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Best for: Illustration, data visualization, generative art, rich editorial layouts.</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 italic">Returns a full spectrum including subtle midtones. Requires careful curation before use in a UI context.</p>
+                  <p className="font-semibold text-[var(--text-primary)] dark:text-white mb-2">Extended Palette</p>
+                  <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400 mb-3">Best for: Illustration, data visualization, generative art, rich editorial layouts.</p>
+                  <p className="text-xs text-[var(--text-muted)] dark:text-[var(--text-muted)] italic">Returns a full spectrum including subtle midtones. Requires careful curation before use in a UI context.</p>
                 </div>
               </div>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed">
               A practical workflow: extract 8–10 colors, then manually curate down to the 4–6 you'll actually use. The extras serve as a reference for edge cases — hover states, disabled states, subtle backgrounds — without cluttering your primary design token set.
             </p>
           </motion.section>
@@ -354,14 +354,14 @@ const ColorPaletteFromPhoto = () => {
             transition={{ duration: 0.5 }}
             className="my-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
               6. Applying Extracted Colors: Mapping to Design Roles
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               Having a beautiful extracted palette is only half the job. The other half is mapping those colors to specific roles in your design system. Here's a reliable framework for making that mapping:
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Design Role Mapping Framework</h3>
+              <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Design Role Mapping Framework</h3>
               <div className="space-y-4">
                 {[
                   { role: 'Primary', criteria: 'The most visually dominant or emotionally resonant color from the palette. Use for CTAs, key buttons, links, and brand moments.', tip: 'Should have enough saturation to feel intentional and branded.' },
@@ -374,7 +374,7 @@ const ColorPaletteFromPhoto = () => {
                   <div key={item.role} className="flex items-start gap-4 pb-4 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0">
                     <div className="flex-shrink-0 px-3 py-1 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-semibold">{item.role}</div>
                     <div>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">{item.criteria}</p>
+                      <p className="text-sm text-[var(--text-secondary)] dark:text-gray-300">{item.criteria}</p>
                       <p className="text-xs text-indigo-500 dark:text-indigo-400 mt-1 italic">{item.tip}</p>
                     </div>
                   </div>
@@ -391,14 +391,14 @@ const ColorPaletteFromPhoto = () => {
             transition={{ duration: 0.5 }}
             className="my-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
               7. Export Formats: CSS Variables, Tailwind Config, and JSON
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               ColorPeek's <a href="/palette-exporter" className="text-indigo-500 hover:text-indigo-600 underline">Palette Exporter</a> lets you download your extracted palette in whichever format your project needs. Here's what each format looks like and when to use it:
             </p>
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">CSS Custom Properties</h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            <h3 className="text-xl font-semibold text-[var(--text-primary)] dark:text-white mb-3 mt-6">CSS Custom Properties</h3>
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-3">
               Best for: vanilla CSS projects, any framework that accepts global CSS, dark mode implementation with class toggling.
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
@@ -412,8 +412,8 @@ const ColorPaletteFromPhoto = () => {
 }`}
             </pre>
 
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">Tailwind CSS Config</h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            <h3 className="text-xl font-semibold text-[var(--text-primary)] dark:text-white mb-3 mt-6">Tailwind CSS Config</h3>
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-3">
               Best for: Tailwind-based projects. Paste directly into your <code>tailwind.config.js</code> to get utilities like <code>bg-primary</code>, <code>text-accent</code>, etc.
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
@@ -434,8 +434,8 @@ module.exports = {
 }`}
             </pre>
 
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 mt-6">JSON Design Tokens</h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            <h3 className="text-xl font-semibold text-[var(--text-primary)] dark:text-white mb-3 mt-6">JSON Design Tokens</h3>
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-3">
               Best for: design systems using Style Dictionary, Figma Tokens plugin, or any custom token pipeline.
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
@@ -450,7 +450,7 @@ module.exports = {
   }
 }`}
             </pre>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mt-4">
               Export your palette now at <a href="/palette-exporter" className="text-indigo-500 hover:text-indigo-600 underline">ColorPeek's Palette Exporter</a>.
             </p>
           </motion.section>
@@ -463,61 +463,61 @@ module.exports = {
             transition={{ duration: 0.5 }}
             className="my-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
               8. Inspiration: Real-World Extraction Examples
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-6">
               Let's walk through three real-world photo types and the palettes they yield — along with how to apply each one in a UI context.
             </p>
             <div className="space-y-8">
 
               {/* Nature photo */}
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Nature Photo → Earthy Palette</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Source: a sunlit forest floor with mushrooms, moss, and golden dappled light.</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-2">Nature Photo → Earthy Palette</h3>
+                <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400 mb-4">Source: a sunlit forest floor with mushrooms, moss, and golden dappled light.</p>
                 <div className="grid grid-cols-5 gap-2 mb-4">
                   {['#2D3B2A', '#5C7A4E', '#A0874C', '#D4B483', '#EDE0CB'].map((hex) => (
                     <div key={hex}>
                       <div style={{ backgroundColor: hex }} className="w-full h-12 rounded-lg" />
-                      <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-1 font-mono">{hex}</p>
+                      <p className="text-xs text-center text-[var(--text-muted)] dark:text-gray-400 mt-1 font-mono">{hex}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-[var(--text-secondary)] dark:text-gray-300">
                   <strong>Application:</strong> Perfect for wellness, sustainability, food, or outdoor brand sites. Use the darkest green as a heading color, the warm tan as a background, and terracotta as the accent/CTA color.
                 </p>
               </div>
 
               {/* Cityscape */}
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Cityscape → Urban Palette</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Source: a nighttime city skyline with neon signs reflecting in wet pavement.</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-2">Cityscape → Urban Palette</h3>
+                <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400 mb-4">Source: a nighttime city skyline with neon signs reflecting in wet pavement.</p>
                 <div className="grid grid-cols-5 gap-2 mb-4">
                   {['#12131A', '#1E2B4A', '#3B5998', '#7CB3E8', '#F0A500'].map((hex) => (
                     <div key={hex}>
                       <div style={{ backgroundColor: hex }} className="w-full h-12 rounded-lg" />
-                      <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-1 font-mono">{hex}</p>
+                      <p className="text-xs text-center text-[var(--text-muted)] dark:text-gray-400 mt-1 font-mono">{hex}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-[var(--text-secondary)] dark:text-gray-300">
                   <strong>Application:</strong> Ideal for fintech, SaaS dashboards, developer tools. The deep navy is the perfect dark mode base, the amber creates high-contrast CTAs, and the light blue works beautifully for data visualization.
                 </p>
               </div>
 
               {/* Food */}
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Food Photography → Warm Palette</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Source: a flat-lay of spiced chai, cinnamon sticks, and cardamom pods on linen.</p>
+                <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-2">Food Photography → Warm Palette</h3>
+                <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400 mb-4">Source: a flat-lay of spiced chai, cinnamon sticks, and cardamom pods on linen.</p>
                 <div className="grid grid-cols-5 gap-2 mb-4">
                   {['#3D1F0D', '#7A3B1E', '#C4713A', '#E8B97A', '#F7EDDE'].map((hex) => (
                     <div key={hex}>
                       <div style={{ backgroundColor: hex }} className="w-full h-12 rounded-lg" />
-                      <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-1 font-mono">{hex}</p>
+                      <p className="text-xs text-center text-[var(--text-muted)] dark:text-gray-400 mt-1 font-mono">{hex}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-[var(--text-secondary)] dark:text-gray-300">
                   <strong>Application:</strong> Perfect for food & beverage, hospitality, recipe platforms. The creamy background evokes warmth and appetite, while the deep espresso brown as a text color feels premium and rich.
                 </p>
               </div>
@@ -548,15 +548,15 @@ module.exports = {
             className="mt-12 rounded-2xl p-8 border border-indigo-200/40 dark:border-indigo-500/20"
             style={{ background: 'rgba(99,102,241,0.06)' }}
           >
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Extract Your First Photo Palette Now</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <h3 className="text-xl font-bold text-[var(--text-primary)] dark:text-white mb-2">Extract Your First Photo Palette Now</h3>
+            <p className="text-[var(--text-secondary)] dark:text-gray-400 mb-6">
               Upload any image and get a beautiful, export-ready color palette in seconds — free, no signup required.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="/palette-url" className="inline-flex items-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">
                 Extract Palette from Photo
               </a>
-              <a href="/palette-exporter" className="inline-flex items-center px-5 py-2.5 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold rounded-xl border border-gray-200 dark:border-gray-700 transition-colors">
+              <a href="/palette-exporter" className="inline-flex items-center px-5 py-2.5 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-[var(--text-primary)] dark:text-gray-200 font-semibold rounded-xl border border-gray-200 dark:border-gray-700 transition-colors">
                 Export Your Palette
               </a>
             </div>

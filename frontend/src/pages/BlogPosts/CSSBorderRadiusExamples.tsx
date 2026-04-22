@@ -123,7 +123,7 @@ const CSSBorderRadiusExamples = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8"
+            className="text-xl text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-8"
           >
             Most developers use <code>border-radius</code> for one thing: rounded
             corners on cards and buttons. But <code>border-radius</code> is actually
@@ -141,10 +141,10 @@ const CSSBorderRadiusExamples = () => {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               1. Beyond <code>border-radius: 8px</code> — The Full Syntax
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               The shorthand <code>border-radius</code> accepts up to 8 values separated
               by a forward slash — 4 for the <strong>horizontal radii</strong> and 4 for
               the <strong>vertical radii</strong> of each corner. This is what enables
@@ -165,7 +165,7 @@ border-radius: 16px 8px 24px 4px;
 border-radius: 40px 20px 50px 30px / 20px 40px 30px 50px;
               /*  ←── horizontal ──→   ←──── vertical ────→ */`}
             </pre>
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               The 4 values in order are always: <strong>top-left → top-right →
               bottom-right → bottom-left</strong> (clockwise from top-left). The values
               before the slash control horizontal ellipse radius; values after control
@@ -181,10 +181,10 @@ border-radius: 40px 20px 50px 30px / 20px 40px 30px 50px;
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               2. Individual Corner Control
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Each corner has its own longhand property. Each longhand also accepts two
               values — horizontal and vertical radii separated by a space:
             </p>
@@ -215,7 +215,7 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-6 text-[var(--text-primary)] dark:text-white">
               3. 12 Creative Shape Examples
             </h2>
 
@@ -232,8 +232,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">1. Circle</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">1. Circle</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       50% on a square element. The classic avatar shape.
                     </p>
                     <pre className="bg-gray-900 text-green-400 p-3 rounded-xl text-xs font-mono overflow-x-auto">
@@ -259,8 +259,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">2. Pill / Capsule</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">2. Pill / Capsule</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       A very large radius that always exceeds the element's height — creating
                       a fully rounded "pill". Used for tags and badge buttons.
                     </p>
@@ -284,8 +284,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">3. Squircle (App Icon Shape)</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">3. Squircle (App Icon Shape)</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       The shape used by iOS app icons — between a square and a circle.
                       CSS can approximate it with a large percentage radius.
                     </p>
@@ -311,8 +311,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">4. Organic Blob</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">4. Organic Blob</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       Achieved with the slash syntax. Four different horizontal radii
                       and four different vertical radii create an asymmetric, fluid shape.
                     </p>
@@ -336,8 +336,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">5. Asymmetric Card</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">5. Asymmetric Card</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       Diagonal corners rounded, giving cards a dynamic, playful feel.
                       Great for feature highlights or pricing cards.
                     </p>
@@ -362,8 +362,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">6. Leaf Shape</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">6. Leaf Shape</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       A single pointed corner and a rounded side creates a botanical leaf.
                       Use for eco-brands, nature-themed UIs, or decorative elements.
                     </p>
@@ -394,8 +394,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">7. Speech Bubble Shape</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">7. Speech Bubble Shape</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       A chat bubble effect by setting one corner to near-zero. The
                       "tail" corner is bottom-left (4px) while all others are rounded.
                     </p>
@@ -427,8 +427,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">8. Wave / Wavy Card</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">8. Wave / Wavy Card</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       Alternating 100%/0% creates a wavy, abstract shape. Use as
                       decorative dividers or background accent blobs.
                     </p>
@@ -452,8 +452,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">9. Teardrop</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">9. Teardrop</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       Using an elliptical top (taller than wide) with matching radii
                       on all sides but different horizontal/vertical ratios. Great for
                       map pin icons.
@@ -482,8 +482,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">10. Badge Shape</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">10. Badge Shape</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       Diagonal pattern with small/large alternating corners — creates a
                       "folded label" feel. Works well for version badges and status tags.
                     </p>
@@ -507,8 +507,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">11. Skewed Card</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">11. Skewed Card</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       Sharp on two diagonal corners, rounded on the other two.
                       Creates a stylized, editorial card shape.
                     </p>
@@ -532,8 +532,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">12. Lozenge / Diamond</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                    <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">12. Lozenge / Diamond</h3>
+                    <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
                       A circle rotated 45°, or stretched with <code>scaleX()</code>.
                       Use as decorative bullet points or icon backgrounds.
                     </p>
@@ -567,10 +567,10 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               4. Using Percentage Values
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               When you use <strong>percentage values</strong>, the horizontal radius is
               calculated relative to the element's <em>width</em>, and the vertical
               radius relative to its <em>height</em>. This means a 50% border-radius on
@@ -601,10 +601,10 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               5. Animating Border Radius
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               <code>border-radius</code> is fully animatable with CSS transitions and
               keyframe animations. This is the technique behind "morphing blob"
               animations common in modern SaaS landing pages.
@@ -642,7 +642,7 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
             transition={{ duration: 0.5 }}
           >
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
-              <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
                 6. Common Mistakes to Avoid
               </h2>
               <div className="space-y-4">
@@ -671,8 +671,8 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                   <div key={mistake} className="flex gap-3">
                     <span className="flex-shrink-0 text-red-500 font-bold text-lg">✗</span>
                     <div>
-                      <p className="font-semibold text-gray-800 dark:text-gray-200">{mistake}</p>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm mt-0.5">{fix}</p>
+                      <p className="font-semibold text-[var(--text-primary)] dark:text-gray-200">{mistake}</p>
+                      <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mt-0.5">{fix}</p>
                     </div>
                   </div>
                 ))}
@@ -721,10 +721,10 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
             className="mt-12 rounded-2xl p-8 border border-indigo-200/40 dark:border-indigo-500/20"
             style={{ background: 'rgba(99,102,241,0.06)' }}
           >
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            <h3 className="text-xl font-bold text-[var(--text-primary)] dark:text-white mb-2">
               Generate Border Radius Visually
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Use ColorPeek's interactive Border Radius tool to drag corners, preview
               shapes in real time, and copy production-ready CSS — no guesswork required.
             </p>

@@ -123,7 +123,7 @@ const HexToRGBGuide = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8"
+            className="text-xl text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-8"
           >
             Every front-end developer has copy-pasted a hex code from Figma, only to
             realize the CSS property they need requires <code>rgb()</code> — or the
@@ -140,19 +140,19 @@ const HexToRGBGuide = () => {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               1. Why Color Formats Matter
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               The web supports many color formats — and they're not interchangeable in
               every context. Some CSS properties accept only specific formats. Some
               JavaScript APIs require numeric values. Print workflows use CMYK. Modern
               CSS Level 4 introduces perceptually uniform spaces like OKLCH.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Choosing the right format affects:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-inside space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
               <li><strong>Opacity control</strong> — only RGBA/HSLA/OKLCH support the alpha channel inline</li>
               <li><strong>Programmatic manipulation</strong> — HSL is far easier to lighten/darken in JS</li>
               <li><strong>Color interpolation</strong> — gradients look different in sRGB vs OKLCH</li>
@@ -169,10 +169,10 @@ const HexToRGBGuide = () => {
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               2. HEX — What Each Character Means
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               A hex color like <code>#2a56f0</code> encodes three 8-bit channels — Red,
               Green, Blue — as pairs of base-16 digits. Each pair ranges from{' '}
               <code>00</code> (0) to <code>ff</code> (255).
@@ -188,7 +188,7 @@ Calculation:
   G = 0x56 = 5×16 + 6  = 86
   B = 0xf0 = 15×16 + 0 = 240`}
             </pre>
-            <p className="text-gray-700 dark:text-gray-300 mt-4 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4 mb-4">
               <strong>3-digit shorthand:</strong> When both digits of each pair are
               identical, you can use the 3-digit form:
             </p>
@@ -196,7 +196,7 @@ Calculation:
 {`#aabbcc  →  #abc   ✓ (valid shorthand)
 #2a56f0  →  no shorthand possible (digits differ)`}
             </pre>
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               <strong>8-digit hex with alpha:</strong> CSS also supports{' '}
               <code>#rrggbbaa</code> where the last two digits control opacity:
               <code>#2a56f0ff</code> = fully opaque, <code>#2a56f080</code> = 50%
@@ -212,10 +212,10 @@ Calculation:
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               3. RGB and RGBA — When Opacity Matters
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               <code>rgb()</code> expresses the same three channels as HEX but in decimal
               notation, making it easier to read and manipulate programmatically.{' '}
               <code>rgba()</code> adds the alpha channel as a 0–1 decimal.
@@ -232,7 +232,7 @@ background: rgba(42, 86, 240, 0.5);   /* 50% semi-transparent */
 /* Modern CSS syntax (space-separated, / for alpha) */
 background: rgb(42 86 240 / 0.15);`}
             </pre>
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               RGB shines in <strong>JavaScript Canvas</strong> and{' '}
               <strong>WebGL</strong> contexts where you're passing numeric values to
               APIs. It's also the format used by <code>getComputedStyle()</code> — so
@@ -249,10 +249,10 @@ background: rgb(42 86 240 / 0.15);`}
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               4. HSL and HSLA — The Designer's Format
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               HSL stands for <strong>Hue</strong>, <strong>Saturation</strong>, and{' '}
               <strong>Lightness</strong>. It maps to how humans actually think about
               color — "a medium-bright blue" is far more intuitive than "42, 86, 240".
@@ -274,12 +274,12 @@ background: rgb(42 86 240 / 0.15);`}
 .button:hover   { background: hsl(221, 85%, 45%); } /* -10% L */
 .button:active  { background: hsl(221, 85%, 35%); } /* -20% L */`}
             </pre>
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               This is why HSL is a designer's best friend in CSS. You can tweak
               lightness and saturation independently without touching the hue — creating
               hover, active, and disabled states with a single number change.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               <strong>Caveat:</strong> HSL is mathematically simple but not perceptually
               uniform. Two colors with the same HSL lightness value may look very
               different in actual brightness to the human eye (yellow at L 50% appears
@@ -295,10 +295,10 @@ background: rgb(42 86 240 / 0.15);`}
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               5. CMYK — Print vs. Screen
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               CMYK (Cyan, Magenta, Yellow, Key/Black) is the color model used by
               physical printers. Unlike RGB which adds light, CMYK{' '}
               <strong>subtracts light</strong> by absorbing specific wavelengths via ink.
@@ -308,7 +308,7 @@ background: rgb(42 86 240 / 0.15);`}
               <p className="font-semibold text-amber-800 dark:text-amber-200 mb-2">
                 Important: CSS does not natively support CMYK
               </p>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 text-sm">
                 The web works in RGB color space. If you receive CMYK values from a
                 print designer, you must convert to RGB before using them in CSS.
                 The conversion is lossy — some CMYK colors (especially vivid cyans and
@@ -341,16 +341,16 @@ Result: rgb(129, 86, 240) → #8156f0`}
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               6. OKLCH — The Modern CSS Color Level 4 Format
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               OKLCH is the newest and most powerful color format for CSS, part of the
               CSS Color Level 4 specification. It stands for{' '}
               <strong>OK-LCH: Lightness, Chroma, Hue</strong> in the Oklab perceptual
               color space.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               The key difference from HSL: OKLCH is <strong>perceptually uniform</strong>.
               When you change the L value by 10%, the perceived lightness actually changes
               by the same amount regardless of hue. This solves HSL's biggest problem.
@@ -377,7 +377,7 @@ color: oklch(0.55 0.22 264);
 /* Wide-gamut colors (P3, Rec2020 displays) */
 color: oklch(0.65 0.35 264);  /* beyond sRGB — vivid on modern screens */`}
             </pre>
-            <p className="text-gray-700 dark:text-gray-300 mt-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               OKLCH has excellent browser support (Chrome 111+, Firefox 113+, Safari 15.4+)
               and is the recommended format for new CSS projects in 2026 and beyond.
             </p>
@@ -391,10 +391,10 @@ color: oklch(0.65 0.35 264);  /* beyond sRGB — vivid on modern screens */`}
             transition={{ duration: 0.5 }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
               7. Quick Conversion Formulas
             </h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Here are the key conversion formulas you'll need most often:
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
@@ -440,16 +440,16 @@ else {
             transition={{ duration: 0.5 }}
           >
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+              <h2 className="text-2xl font-bold mb-6 text-[var(--text-primary)] dark:text-white">
                 8. Which Format to Use Where
               </h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr className="bg-indigo-100 dark:bg-indigo-800/40">
-                      <th className="px-4 py-3 text-left font-semibold text-gray-800 dark:text-gray-200">Context</th>
-                      <th className="px-4 py-3 text-left font-semibold text-gray-800 dark:text-gray-200">Recommended</th>
-                      <th className="px-4 py-3 text-left font-semibold text-gray-800 dark:text-gray-200">Why</th>
+                      <th className="px-4 py-3 text-left font-semibold text-[var(--text-primary)] dark:text-gray-200">Context</th>
+                      <th className="px-4 py-3 text-left font-semibold text-[var(--text-primary)] dark:text-gray-200">Recommended</th>
+                      <th className="px-4 py-3 text-left font-semibold text-[var(--text-primary)] dark:text-gray-200">Why</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-indigo-100 dark:divide-indigo-800/30">
@@ -465,13 +465,13 @@ else {
                       ['Wide-gamut P3 displays', 'OKLCH', 'Only format that accesses P3 gamut in CSS'],
                     ].map(([ctx, fmt, why]) => (
                       <tr key={ctx} className="hover:bg-indigo-50/50 dark:hover:bg-indigo-800/20">
-                        <td className="px-4 py-3 text-gray-700 dark:text-gray-300 font-medium">{ctx}</td>
+                        <td className="px-4 py-3 text-[var(--text-secondary)] dark:text-gray-300 font-medium">{ctx}</td>
                         <td className="px-4 py-3">
                           <code className="text-indigo-700 dark:text-indigo-300 text-xs bg-indigo-100 dark:bg-indigo-800/40 px-2 py-0.5 rounded">
                             {fmt}
                           </code>
                         </td>
-                        <td className="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">{why}</td>
+                        <td className="px-4 py-3 text-[var(--text-secondary)] dark:text-gray-400 text-xs">{why}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -521,10 +521,10 @@ else {
             className="mt-12 rounded-2xl p-8 border border-indigo-200/40 dark:border-indigo-500/20"
             style={{ background: 'rgba(99,102,241,0.06)' }}
           >
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+            <h3 className="text-xl font-bold text-[var(--text-primary)] dark:text-white mb-2">
               Convert Any Color Format Instantly
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Paste any HEX, RGB, HSL, CMYK, or OKLCH value into ColorPeek's converter
               and get all formats at once — with one-click copy for each.
             </p>

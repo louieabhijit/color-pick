@@ -237,7 +237,7 @@ const blogPosts: BlogPost[] = [
     date: 'April 22, 2026',
     readTime: '9 min read',
     category: 'Developer Tools',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=800&auto=format&fit=crop',
     author: { name: 'Priya Sharma', avatar: 'https://ui-avatars.com/api/?name=Priya+Sharma&background=ef4444&color=fff' }
   },
   {
@@ -292,7 +292,7 @@ const blogPosts: BlogPost[] = [
     date: 'April 22, 2026',
     readTime: '10 min read',
     category: 'Design Trends',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=800&auto=format&fit=crop',
     author: { name: 'Zoe Williams', avatar: 'https://ui-avatars.com/api/?name=Zoe+Williams&background=a855f7&color=fff' }
   },
   {
@@ -314,7 +314,7 @@ const blogPosts: BlogPost[] = [
     date: 'April 22, 2026',
     readTime: '8 min read',
     category: 'Color Palette',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?q=80&w=800&auto=format&fit=crop',
     author: { name: 'Sofia Martínez', avatar: 'https://ui-avatars.com/api/?name=Sofia+Martinez&background=f97316&color=fff' }
   },
   {

@@ -148,7 +148,7 @@ const GlassmorphismTutorial = () => {
             <h2 className="text-xl font-bold text-indigo-700 dark:text-indigo-300 mb-3 flex items-center">
               <FaLightbulb className="mr-2" /> What you'll learn
             </h2>
-            <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-inside space-y-1 text-[var(--text-secondary)] dark:text-gray-300">
               <li>What glassmorphism is and why it became a dominant UI trend</li>
               <li>The four CSS properties that power every glass effect</li>
               <li>Browser compatibility table with percentage support data</li>
@@ -168,7 +168,7 @@ const GlassmorphismTutorial = () => {
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">What Is Glassmorphism?</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 Glassmorphism is a UI design style that mimics frosted glass surfaces.
                 Elements appear semi-transparent with a blurred view of whatever sits
                 behind them, creating the illusion of depth without heavy shadows. The
@@ -176,7 +176,7 @@ const GlassmorphismTutorial = () => {
                 (2020) and it has remained a staple of premium digital products ever
                 since.
               </p>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 The look is defined by four characteristics: a translucent
                 background, a blur applied to content behind the element, a subtle
                 border that catches light, and a soft drop shadow to lift the card off
@@ -213,13 +213,13 @@ const GlassmorphismTutorial = () => {
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">Core CSS Properties</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
                 Four properties do the heavy lifting. Understanding each one is essential
                 before combining them.
               </p>
 
               <h3 className="font-bold text-lg mb-2">1. <code>backdrop-filter: blur()</code></h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-3">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-3">
                 This is the star of the show. It blurs everything rendered behind the
                 element — not the element's own content. Values between <code>8px</code>
                 and <code>20px</code> produce the most realistic frosted-glass look.
@@ -230,7 +230,7 @@ const GlassmorphismTutorial = () => {
               </pre>
 
               <h3 className="font-bold text-lg mb-2">2. Semi-transparent <code>rgba</code> Background</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-3">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-3">
                 The element must be translucent so the blurred background shows through.
                 Light glass uses white at 10–25% opacity; dark glass uses black or dark
                 hues at similar opacity.
@@ -244,7 +244,7 @@ background: rgba(15, 15, 25, 0.35);`}
               </pre>
 
               <h3 className="font-bold text-lg mb-2">3. Subtle Border</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-3">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-3">
                 A 1px semi-transparent white border simulates the light catching the
                 edge of a glass surface.
               </p>
@@ -253,7 +253,7 @@ background: rgba(15, 15, 25, 0.35);`}
               </pre>
 
               <h3 className="font-bold text-lg mb-2">4. Soft Box Shadow</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-3">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-3">
                 A diffuse shadow beneath the card grounds it in space without fighting
                 the translucent look.
               </p>
@@ -272,7 +272,7 @@ background: rgba(15, 15, 25, 0.35);`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">Browser Support</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
                 <code>backdrop-filter</code> has strong modern browser support
                 (covering over 96% of global users as of 2026), but still needs the
                 <code> -webkit-</code> prefix for Safari.
@@ -294,7 +294,7 @@ background: rgba(15, 15, 25, 0.35);`}
                         className={i % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-750'}
                       >
                         <td className="p-3 font-medium">{row.browser}</td>
-                        <td className="p-3 text-gray-500 dark:text-gray-400">{row.version}</td>
+                        <td className="p-3 text-[var(--text-muted)] dark:text-gray-400">{row.version}</td>
                         <td className="p-3">
                           {row.support ? (
                             <span className="flex items-center text-green-600 dark:text-green-400">
@@ -306,13 +306,13 @@ background: rgba(15, 15, 25, 0.35);`}
                             </span>
                           )}
                         </td>
-                        <td className="p-3 text-gray-500 dark:text-gray-400">{row.note ?? '—'}</td>
+                        <td className="p-3 text-[var(--text-muted)] dark:text-gray-400">{row.note ?? '—'}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-gray-500 dark:text-gray-400 text-sm mt-4">
+              <p className="text-[var(--text-muted)] dark:text-gray-400 text-sm mt-4">
                 Always include both <code>backdrop-filter</code> and
                 <code> -webkit-backdrop-filter</code> for maximum compatibility.
               </p>
@@ -328,7 +328,7 @@ background: rgba(15, 15, 25, 0.35);`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">Step-by-Step: Building a Glass Card</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
                 A glass element only works when placed on top of a colorful or
                 photographic background. The wrapper element creates that background.
               </p>
@@ -399,7 +399,7 @@ background: rgba(15, 15, 25, 0.35);`}
           >
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">Light vs Dark Glassmorphism</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
                 The same blur technique produces distinct personalities depending on
                 whether you use white or dark glass.
               </p>
@@ -418,7 +418,7 @@ background: rgba(15, 15, 25, 0.35);`}
     blur(12px);
 }`}
                   </pre>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                  <p className="text-sm text-[var(--text-muted)] dark:text-gray-400 mt-2">
                     Airy and modern. Best on colourful or photographic backgrounds.
                   </p>
                 </div>
@@ -437,7 +437,7 @@ background: rgba(15, 15, 25, 0.35);`}
   color: #e2e8f0;
 }`}
                   </pre>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                  <p className="text-sm text-[var(--text-muted)] dark:text-gray-400 mt-2">
                     Sophisticated and dramatic. Suits dark-mode dashboards and overlays.
                   </p>
                 </div>
@@ -480,8 +480,8 @@ background: rgba(15, 15, 25, 0.35);`}
                   <div key={i} className="flex gap-3">
                     <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-800 dark:text-gray-100">{item.mistake}</p>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">{item.fix}</p>
+                      <p className="font-semibold text-[var(--text-primary)] dark:text-gray-100">{item.mistake}</p>
+                      <p className="text-[var(--text-secondary)] dark:text-gray-300 text-sm mt-1">{item.fix}</p>
                     </div>
                   </div>
                 ))}
@@ -503,7 +503,7 @@ background: rgba(15, 15, 25, 0.35);`}
                   <h3 className="font-bold text-green-600 dark:text-green-400 mb-3 flex items-center">
                     <FaCheckCircle className="mr-2" /> Good use cases
                   </h3>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+                  <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300 text-sm">
                     <li>Hero overlays on rich photography</li>
                     <li>Login / signup modals</li>
                     <li>Dashboard widgets on gradient backgrounds</li>
@@ -516,7 +516,7 @@ background: rgba(15, 15, 25, 0.35);`}
                   <h3 className="font-bold text-red-500 mb-3 flex items-center">
                     <FaTimesCircle className="mr-2" /> Avoid glassmorphism for
                   </h3>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+                  <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300 text-sm">
                     <li>Dense text-heavy content pages</li>
                     <li>Data tables with many rows</li>
                     <li>Plain white or black backgrounds</li>
@@ -546,7 +546,7 @@ background: rgba(15, 15, 25, 0.35);`}
             className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-8"
           >
             <h3 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">Key Takeaways</h3>
-            <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+            <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
               <li>Four properties: <code>backdrop-filter</code>, rgba background, border, and box-shadow</li>
               <li>Always place glass elements on colourful backgrounds — they need content to blur</li>
               <li>Include <code>-webkit-backdrop-filter</code> for full Safari support</li>
@@ -600,7 +600,7 @@ background: rgba(15, 15, 25, 0.35);`}
             <h3 className="text-2xl font-bold mb-2 text-indigo-700 dark:text-indigo-300">
               Build Glass Effects Visually
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Dial in your blur, opacity, border, and background with real-time preview —
               then copy the production-ready CSS with one click.
             </p>
