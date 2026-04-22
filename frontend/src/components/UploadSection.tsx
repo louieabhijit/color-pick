@@ -173,7 +173,7 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
         </div>
 
         {/* Upload method tabs */}
-        <div className="flex gap-1.5 mb-5 p-1 rounded-xl" style={{ background: 'rgba(255,255,255,0.4)', backdropFilter: 'blur(8px)' }}>
+        <div className="glass-tab-strip flex gap-1.5 mb-5 p-1">
           {(['device', 'url', 'clipboard'] as const).map((tab) => (
             <motion.button
               key={tab}

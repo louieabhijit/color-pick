@@ -242,8 +242,21 @@ body {
     font-weight: 600;
   }
   .dark .glass-tab-active {
-    background: rgba(255,255,255,0.13);
-    color: #a78bfa;
+    background: rgba(99,102,241,0.28);
+    box-shadow: 0 2px 12px rgba(99,102,241,0.25);
+    color: #c4b5fd;
+    border: 1px solid rgba(139,92,246,0.35);
+  }
+
+  /* Tab strip container */
+  .glass-tab-strip {
+    background: rgba(255,255,255,0.40);
+    backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+  }
+  .dark .glass-tab-strip {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
   }
 
   /* Gradient text */
