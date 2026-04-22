@@ -61,10 +61,10 @@ const BorderRadiusBuilder = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Border Radius Builder"
+        title="CSS Border Radius Builder"
         description="Visually design any CSS border-radius shape with live preview. Control all four corners independently, switch between px, %, and rem units, and copy the optimised CSS shorthand."
         path="/border-radius"
-        keywords="border radius builder, css border radius generator, rounded corners css, border radius tool, css shape builder"
+        keywords="css border radius builder, border radius generator, rounded corners css, border radius tool, css shape builder, border radius online"
       />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-4xl mx-auto">

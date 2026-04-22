@@ -73,10 +73,10 @@ const TypeScaleGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Type Scale Generator"
+        title="Modular Type Scale Generator"
         description="Generate a modular typographic scale from any base size and ratio. Choose from 8 musical scale ratios, preview all 10 steps live, then export as CSS variables, Tailwind fontSize, or SCSS."
         path="/type-scale"
-        keywords="type scale generator, modular type scale, typographic scale, css font size, tailwind font scale, typography tool"
+        keywords="modular type scale generator, typographic scale, css font size scale, tailwind font scale, typography tool online, modular scale"
       />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">

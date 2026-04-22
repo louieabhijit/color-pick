@@ -359,6 +359,25 @@ const ImageColorExtraction = () => {
           </motion.div>
 
 
+          {/* Tool CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="mt-12 rounded-2xl p-8 border border-indigo-200/40 dark:border-indigo-500/20"
+            style={{ background: 'rgba(99,102,241,0.06)' }}
+          >
+            <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">Try it yourself — free</h3>
+            <p className="text-[var(--text-muted)] mb-6 text-sm">Extract a palette from any image or URL right now, then export it in the format you need.</p>
+            <div className="flex flex-wrap gap-3">
+              <a href="/palette-url" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">
+                Extract from Image URL →
+              </a>
+              <a href="/palette-exporter" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-indigo-300 dark:border-indigo-600 text-indigo-600 dark:text-indigo-400 text-sm font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors">
+                Export Palette (CSS/Tailwind/JSON)
+              </a>
+            </div>
+          </motion.div>
+
           {/* Final ad placement */}
         </div>
       </article>

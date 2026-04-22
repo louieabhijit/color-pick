@@ -60,10 +60,10 @@ const GlassEffectGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Glass Effect Generator"
+        title="Glassmorphism CSS Generator"
         description="Create glassmorphism CSS panels with live preview. Tune backdrop-filter blur, saturation, RGBA background, and border opacity. Copy the complete CSS class for your project."
         path="/glass-generator"
-        keywords="glassmorphism generator, css glass effect, backdrop filter generator, frosted glass css, blur effect builder, glassmorphism css tool"
+        keywords="glassmorphism generator, glassmorphism css, frosted glass css, backdrop filter generator, blur effect builder, glass effect css online"
       />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">

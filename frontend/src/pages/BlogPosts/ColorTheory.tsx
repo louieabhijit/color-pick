@@ -475,6 +475,28 @@ const ColorTheory = () => {
             </div>
           </motion.div>
 
+          {/* Tool CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="mt-12 rounded-2xl p-8 border border-indigo-200/40 dark:border-indigo-500/20"
+            style={{ background: 'rgba(99,102,241,0.06)' }}
+          >
+            <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">Apply color theory instantly</h3>
+            <p className="text-[var(--text-muted)] mb-6 text-sm">Explore complementary, analogous, and triadic schemes with these free tools.</p>
+            <div className="flex flex-wrap gap-3">
+              <a href="/palettes" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">
+                Color Palette Generator →
+              </a>
+              <a href="/tint-shade" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-indigo-300 dark:border-indigo-600 text-indigo-600 dark:text-indigo-400 text-sm font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors">
+                Tint &amp; Shade Generator
+              </a>
+              <a href="/gradient-generator" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-indigo-300 dark:border-indigo-600 text-indigo-600 dark:text-indigo-400 text-sm font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors">
+                CSS Gradient Generator
+              </a>
+            </div>
+          </motion.div>
+
           {/* Final ad placement */}
         </div>
       </article>

@@ -80,10 +80,10 @@ const BoxShadowGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Box Shadow Generator"
+        title="CSS Box Shadow Generator"
         description="Build multi-layer CSS box shadows with live preview. Stack up to 5 layers, control x/y offset, blur, spread, color, opacity and inset. Copy the full box-shadow CSS rule instantly."
         path="/box-shadow"
-        keywords="box shadow generator, css box shadow, multi-layer shadow, shadow builder, css shadow tool, drop shadow generator"
+        keywords="css box shadow generator, box shadow generator online, multi-layer shadow, drop shadow css, shadow builder, css shadow tool"
       />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">
