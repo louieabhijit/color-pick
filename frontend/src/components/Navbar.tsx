@@ -146,7 +146,7 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
       >
         {active && (
           <motion.div layoutId="nav-pill"
-            className="absolute inset-0 rounded-lg bg-white/60 dark:bg-white/8 shadow-sm border border-white/50 dark:border-white/10"
+            className="absolute inset-0 rounded-lg bg-white/60 dark:bg-indigo-500/20 shadow-sm border border-white/50 dark:border-indigo-400/30"
             style={{ backdropFilter: 'blur(8px)' }}
             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
           />
@@ -249,7 +249,7 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
                     <motion.div key={item.href} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.04 }}>
                       <Link to={item.href}
                         className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200
-                          ${active ? 'bg-white/60 dark:bg-white/8 text-indigo-600 dark:text-violet-400 shadow-sm' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/30 dark:hover:bg-white/6'}`}
+                          ${active ? 'bg-white/60 dark:bg-indigo-500/20 text-indigo-600 dark:text-violet-400 shadow-sm border border-transparent dark:border-indigo-400/25' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/30 dark:hover:bg-white/6'}`}
                       >{item.name}</Link>
                     </motion.div>
                   );
@@ -275,7 +275,7 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
                     >
                       <Link to={href}
                         className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200
-                          ${active ? 'bg-white/60 dark:bg-white/8 text-indigo-600 dark:text-violet-400 shadow-sm' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/30 dark:hover:bg-white/6'}`}
+                          ${active ? 'bg-white/60 dark:bg-indigo-500/20 text-indigo-600 dark:text-violet-400 shadow-sm border border-transparent dark:border-indigo-400/25' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/30 dark:hover:bg-white/6'}`}
                       >
                         <span className={`${active ? 'text-indigo-500' : 'text-[var(--text-muted)]'}`}>
                           <Icon className="w-4 h-4" />
