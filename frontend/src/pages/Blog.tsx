@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 interface BlogPost {
   id: string;
@@ -181,12 +181,19 @@ interface BlogProps {}
 const Blog: React.FC<BlogProps> = () => {
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>Color Design Blog | Color Pick</title>
-        <link rel="canonical" href={window.location.href} />
-        <meta name="description" content="Explore the latest insights, tutorials, and best practices in color theory, design tools, and accessibility." />
-        <meta name="keywords" content="color theory, color design, color tools, color accessibility, color psychology, design blog" />
-      </Helmet>
+      <PageSEO
+        title="Color Design Blog"
+        description="Explore tutorials and insights on colour theory, WCAG accessibility, brand palettes, psychology of colour, and how to make the most of ColorPeek's design tools."
+        path="/blog"
+        keywords="color design blog, color theory tutorials, wcag accessibility, color psychology, brand color palette, design tips"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'Blog',
+          name: 'Color Design Blog | ColorPeek',
+          url: 'https://color-peek.com/blog',
+          publisher: { '@type': 'Organization', name: 'ColorPeek', url: 'https://color-peek.com' },
+        }}
+      />
 
       <Navbar onColorSelect={() => {}} />
       

@@ -1,7 +1,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -128,10 +128,12 @@ const GradientGenerator = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet>
-        <title>CSS Gradient Generator | ColorPeek</title>
-        <meta name="description" content="Generate beautiful linear, radial, and conic CSS gradients with a live preview editor. Copy CSS or Tailwind output instantly." />
-      </Helmet>
+      <PageSEO
+        title="CSS Gradient Generator"
+        description="Generate beautiful linear, radial, and conic CSS gradients with a live preview editor. Add up to 8 colour stops, choose from 8 presets, and copy the CSS or Tailwind arbitrary class instantly."
+        path="/gradient-generator"
+        keywords="css gradient generator, linear gradient, radial gradient, conic gradient, tailwind gradient, gradient builder, css background generator"
+      />
       <Navbar onColorSelect={() => {}} />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-6xl mx-auto">

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 import {
   IconPalettes,
   IconGradients,
@@ -159,10 +159,20 @@ const card = {
 
 const Tools = () => (
   <div className="min-h-screen w-full">
-    <Helmet>
-      <title>Color Tools | ColorPeek</title>
-      <meta name="description" content="Free color tools for designers and developers — gradient generator, tint & shade scale, color blindness simulator, palette browser and more." />
-    </Helmet>
+    <PageSEO
+      title="Color Tools for Designers & Developers"
+      description="Free colour tools for designers and developers — gradient generator, tint & shade scale, colour converter, box shadow builder, glassmorphism generator, font pairing, type scale, and more."
+      path="/tools"
+      keywords="color tools, css tools, design tools, gradient generator, color converter, box shadow generator, glass effect, type scale, font pairing, free design tools"
+      schema={{
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Color Tools for Designers & Developers | ColorPeek',
+        description: 'A complete suite of free colour tools for designers and developers.',
+        url: 'https://color-peek.com/tools',
+        publisher: { '@type': 'Organization', name: 'ColorPeek', url: 'https://color-peek.com' },
+      }}
+    />
     <Navbar onColorSelect={() => {}} />
 
     <main className="pt-24 pb-20 px-4 sm:px-6 max-w-6xl mx-auto">

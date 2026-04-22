@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 // ── Color utilities ──────────────────────────────────────────────────────────
 
@@ -125,10 +125,12 @@ const TintShadeGenerator = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet>
-        <title>Tint & Shade Generator | ColorPeek</title>
-        <meta name="description" content="Generate a full 50–900 color scale from any base color. Export as CSS variables, Tailwind config, or SCSS." />
-      </Helmet>
+      <PageSEO
+        title="Tint & Shade Generator"
+        description="Generate a complete 50–900 colour scale from any base colour, just like Tailwind's built-in palettes. Export as CSS custom properties, Tailwind config, or SCSS variables in one click."
+        path="/tint-shade"
+        keywords="tint shade generator, color scale generator, tailwind color palette, css color variables, color ramp, 50 900 color scale"
+      />
       <Navbar onColorSelect={() => {}} />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">

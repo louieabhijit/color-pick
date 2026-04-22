@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 // ── Color blindness matrices ──────────────────────────────────────────────────
 // Each row: [rR, rG, rB,  gR, gG, gB,  bR, bG, bB]
@@ -128,10 +128,12 @@ const ColorBlindnessSimulator = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet>
-        <title>Color Blindness Simulator | ColorPeek</title>
-        <meta name="description" content="Simulate how your color palette appears to people with different types of color vision deficiency including deuteranopia, protanopia, and tritanopia." />
-      </Helmet>
+      <PageSEO
+        title="Color Blindness Simulator"
+        description="Simulate how your colour palette appears to people with deuteranopia, protanopia, tritanopia and 4 more vision types. Uses accurate RGB matrix transforms for WCAG-compliant accessible design."
+        path="/color-blindness"
+        keywords="color blindness simulator, deuteranopia, protanopia, tritanopia, color vision deficiency, wcag accessibility, color accessibility checker"
+      />
       <Navbar onColorSelect={() => {}} />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-6xl mx-auto">

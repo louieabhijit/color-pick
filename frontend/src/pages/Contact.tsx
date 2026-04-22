@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import type { ComponentType } from 'react';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 import Toast from '../components/Toast';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaCheck } from 'react-icons/fa';
 
@@ -125,12 +125,12 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet>
-        <title>Contact Us | Color Pick</title>
-        <link rel="canonical" href={window.location.href} />
-        <meta name="description" content="Get in touch with the ColorPeek team. We're here to help with your color design needs, technical support, and partnership opportunities." />
-        <meta name="keywords" content="contact, support, color design help, technical support, partnership" />
-      </Helmet>
+      <PageSEO
+        title="Contact ColorPeek"
+        description="Get in touch with the ColorPeek team for support, feedback, or partnership enquiries. We are here to help with all your colour design and tooling needs."
+        path="/contact"
+        keywords="contact colorpeek, color tool support, design tool feedback, color picker help"
+      />
       <Navbar onColorSelect={handleColorSelect} />
       
       

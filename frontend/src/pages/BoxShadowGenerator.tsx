@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 interface ShadowLayer {
   id: string;
@@ -79,7 +79,12 @@ const BoxShadowGenerator = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet><title>Box Shadow Generator | ColorPeek</title></Helmet>
+      <PageSEO
+        title="Box Shadow Generator"
+        description="Build multi-layer CSS box shadows with live preview. Stack up to 5 layers, control x/y offset, blur, spread, color, opacity and inset. Copy the full box-shadow CSS rule instantly."
+        path="/box-shadow"
+        keywords="box shadow generator, css box shadow, multi-layer shadow, shadow builder, css shadow tool, drop shadow generator"
+      />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">

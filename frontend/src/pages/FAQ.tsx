@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 interface FAQItem {
@@ -88,10 +88,18 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet>
-        <title>FAQ | Color Pick</title>
-        <meta name="description" content="Frequently Asked Questions about Color Pick - Get answers to common questions about our color palette generator and tools." />
-      </Helmet>
+      <PageSEO
+        title="Frequently Asked Questions"
+        description="Answers to common questions about ColorPeek — how to extract palettes from images, use the color tools, export results, and more. Free browser-based, no sign-up required."
+        path="/faq"
+        keywords="colorpeek faq, color palette generator help, color tools questions, how to extract colors from image"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          name: 'ColorPeek FAQ',
+          url: 'https://color-peek.com/faq',
+        }}
+      />
       <Navbar onColorSelect={handleColorSelect} />
       
       

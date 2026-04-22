@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 const HEX_RE = /#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b/g;
 const RGB_RE = /rgb\s*\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)/gi;
@@ -141,7 +141,12 @@ const PaletteFromURL = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet><title>Palette from URL | ColorPeek</title></Helmet>
+      <PageSEO
+        title="Palette from URL"
+        description="Extract every color from any website URL or pasted CSS and HTML. Automatically finds HEX, RGB, and HSL values, deduplicates them, and lets you export the result as CSS variables."
+        path="/palette-url"
+        keywords="extract colors from website, palette from url, css color extractor, website color palette, color scraper, extract hex from css"
+      />
       <Navbar onColorSelect={() => {}} />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">

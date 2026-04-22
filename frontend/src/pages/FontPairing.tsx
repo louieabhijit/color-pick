@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 interface Pairing {
   name: string;
@@ -172,7 +172,12 @@ module.exports = {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet><title>Font Pairing Tool | ColorPeek</title></Helmet>
+      <PageSEO
+        title="Font Pairing Tool"
+        description="Discover curated Google Font pairings with live preview. Browse 10 heading and body font combinations, customise colours, and copy the Google Fonts import link or Tailwind config."
+        path="/font-pairing"
+        keywords="font pairing tool, google fonts combinations, typography pairing, heading body font, font combination generator, best font pairings 2025"
+      />
       <Navbar onColorSelect={() => {}} />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-6xl mx-auto">

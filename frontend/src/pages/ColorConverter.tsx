@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 // ── Conversion math ──────────────────────────────────────────────────────────
 
@@ -146,7 +146,12 @@ const ColorConverter = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet><title>Color Converter | ColorPeek</title></Helmet>
+      <PageSEO
+        title="Color Converter"
+        description="Convert any color between HEX, RGB, HSL, HSV, CMYK and OKLCH instantly. Supports modern CSS Color Level 4 with OKLCH via sRGB linearization. Free, no sign-up."
+        path="/color-converter"
+        keywords="color converter, hex to rgb, rgb to hsl, hsl to cmyk, oklch converter, css color formats, color format converter online"
+      />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">

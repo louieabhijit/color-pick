@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 interface SwatchColor {
   id: string;
@@ -159,7 +159,12 @@ const PaletteExporter = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet><title>Palette Exporter | ColorPeek</title></Helmet>
+      <PageSEO
+        title="Palette Exporter"
+        description="Build a custom color palette with up to 16 named swatches and export it as CSS variables, SCSS, JSON, Tailwind config, SVG, or PNG. Load from presets or design from scratch."
+        path="/palette-exporter"
+        keywords="color palette exporter, export color palette, palette to css, palette to json, palette to svg, palette download, color swatch export"
+      />
       <Navbar onColorSelect={() => {}} />
 
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">

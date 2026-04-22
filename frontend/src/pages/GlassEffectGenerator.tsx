@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 function hexToRgb(hex: string) {
   const h = hex.replace('#', '');
@@ -59,7 +59,12 @@ const GlassEffectGenerator = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet><title>Glass Effect Generator | ColorPeek</title></Helmet>
+      <PageSEO
+        title="Glass Effect Generator"
+        description="Create glassmorphism CSS panels with live preview. Tune backdrop-filter blur, saturation, RGBA background, and border opacity. Copy the complete CSS class for your project."
+        path="/glass-generator"
+        keywords="glassmorphism generator, css glass effect, backdrop filter generator, frosted glass css, blur effect builder, glassmorphism css tool"
+      />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">

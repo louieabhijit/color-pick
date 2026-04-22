@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
-import { Helmet } from 'react-helmet-async';
+import PageSEO from '../components/PageSEO';
 import { FaLightbulb, FaCode, FaPalette, FaRocket } from 'react-icons/fa';
 
 const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
@@ -70,12 +70,12 @@ const About = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet>
-        <title>About ColorPeek | Color Pick</title>
-        <link rel="canonical" href={window.location.href} />
-        <meta name="description" content="Learn about ColorPeek's mission to empower creators with intelligent color tools and innovative design solutions." />
-        <meta name="keywords" content="color tools, design solutions, color analysis, color extraction, color harmonies" />
-      </Helmet>
+      <PageSEO
+        title="About ColorPeek"
+        description="Learn about ColorPeek's mission to empower designers and developers with intelligent colour tools — from palette extraction and harmony generation to accessibility simulation and export."
+        path="/about"
+        keywords="about colorpeek, color palette tool, color extraction app, design tool, color picker online"
+      />
       <Navbar onColorSelect={handleColorSelect} />
       
       

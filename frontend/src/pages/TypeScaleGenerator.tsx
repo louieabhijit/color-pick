@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 const RATIOS = [
   { label: 'Minor Second',   value: 1.067 },
@@ -72,7 +72,12 @@ const TypeScaleGenerator = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet><title>Type Scale Generator | ColorPeek</title></Helmet>
+      <PageSEO
+        title="Type Scale Generator"
+        description="Generate a modular typographic scale from any base size and ratio. Choose from 8 musical scale ratios, preview all 10 steps live, then export as CSS variables, Tailwind fontSize, or SCSS."
+        path="/type-scale"
+        keywords="type scale generator, modular type scale, typographic scale, css font size, tailwind font scale, typography tool"
+      />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">

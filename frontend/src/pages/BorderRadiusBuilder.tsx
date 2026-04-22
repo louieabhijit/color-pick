@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 
 type Unit = 'px' | '%' | 'rem';
 
@@ -60,7 +60,12 @@ const BorderRadiusBuilder = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <Helmet><title>Border Radius Builder | ColorPeek</title></Helmet>
+      <PageSEO
+        title="Border Radius Builder"
+        description="Visually design any CSS border-radius shape with live preview. Control all four corners independently, switch between px, %, and rem units, and copy the optimised CSS shorthand."
+        path="/border-radius"
+        keywords="border radius builder, css border radius generator, rounded corners css, border radius tool, css shape builder"
+      />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-4xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">
