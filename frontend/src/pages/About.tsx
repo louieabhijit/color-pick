@@ -151,8 +151,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 
-                      rounded-2xl p-8 md:p-12 mb-16"
+            className="glass-card rounded-2xl p-8 md:p-12 mb-16 border border-indigo-200/40 dark:border-indigo-500/20"
           >
             <h2 className="text-3xl font-bold mb-6 text-[var(--text-primary)]">Our Mission</h2>
             <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -170,8 +169,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 
-                      dark:border-gray-700"
+            className="glass-card rounded-2xl p-8 md:p-12 border border-white/40 dark:border-white/10"
           >
             <h2 className="text-3xl font-bold mb-6 text-[var(--text-primary)]">Our Technology</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

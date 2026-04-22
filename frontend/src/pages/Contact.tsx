@@ -16,8 +16,7 @@ const ContactCard = ({ icon: Icon, title, details }: ContactInfo) => (
   <motion.div
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
-    className="glass-card p-6 shadow-sm hover:shadow-md 
-               transition-all duration-300 border border-gray-100 dark:border-gray-700"
+    className="glass-card p-6 transition-all duration-300 border border-white/40 dark:border-white/10 hover:border-indigo-300/40 dark:hover:border-indigo-500/30"
   >
     <div className="flex items-start space-x-4">
       <div className="bg-gradient-to-br from-indigo-500 to-purple-500 p-3 rounded-lg">
@@ -59,10 +58,7 @@ const InputField = ({ label, type, name, value, onChange, required = true }: Inp
         onChange={onChange}
         required={required}
         rows={6}
-        className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
-                 bg-white dark:bg-gray-700 text-[var(--text-primary)]
-                 focus:ring-2 focus:ring-indigo-500 focus:border-transparent
-                 transition-colors duration-200 resize-none"
+        className="glass-input w-full resize-none"
       />
     ) : (
       <input
@@ -72,10 +68,7 @@ const InputField = ({ label, type, name, value, onChange, required = true }: Inp
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 
-                 bg-white dark:bg-gray-700 text-[var(--text-primary)]
-                 focus:ring-2 focus:ring-indigo-500 focus:border-transparent
-                 transition-colors duration-200"
+        className="glass-input w-full"
       />
     )}
   </motion.div>

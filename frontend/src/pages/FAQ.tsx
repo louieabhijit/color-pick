@@ -104,7 +104,7 @@ const FAQ = () => {
       
       
       <main className="pt-16 pb-8">
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <motion.div
@@ -138,7 +138,7 @@ const FAQ = () => {
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                       selectedCategory === category
                         ? 'bg-indigo-600 text-white'
-                        : 'bg-white dark:bg-gray-800 text-[var(--text-secondary)] hover:bg-gray-100 dark:hover:bg-gray-700'
+                        : 'glass-button text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                     }`}
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -160,11 +160,11 @@ const FAQ = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
+                  className="glass-card rounded-2xl overflow-hidden border border-white/40 dark:border-white/10"
                 >
                   <button
                     onClick={() => toggleItem(faq.question)}
-                    className="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
+                    className="w-full text-left px-6 py-4 flex items-center justify-between hover:bg-white/20 dark:hover:bg-white/5 transition-colors"
                   >
                     <span className="text-lg font-medium text-[var(--text-primary)]">
                       {faq.question}
@@ -212,7 +212,7 @@ const FAQ = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-12 text-center bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
+              className="mt-12 text-center glass-card rounded-2xl p-8 border border-white/40 dark:border-white/10"
             >
               <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">
                 Still have questions?

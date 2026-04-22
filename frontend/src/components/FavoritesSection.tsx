@@ -21,8 +21,8 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
         </svg>
         <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
           Favorites
-        </span><span className="ml-2 text-sm font-normal text-gray-500">Click color to see details</span>
-        <span className="ml-2 text-sm font-normal text-gray-500">
+        </span><span className="ml-2 text-sm font-normal text-[var(--text-muted)]">Click color to see details</span>
+        <span className="ml-2 text-sm font-normal text-[var(--text-muted)]">
           ({favorites.length}/10)
         </span>
       </h2>
@@ -65,7 +65,7 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
                          bg-gray-500/20 hover:bg-red-500"
               >
                 <svg 
-                  className="w-2 h-2 text-gray-600 group-hover:text-white transition-colors duration-200" 
+                  className="w-2 h-2 text-[var(--text-muted)] group-hover:text-white transition-colors duration-200"
                   viewBox="0 0 24 24" 
                   fill="none" 
                   stroke="currentColor"
