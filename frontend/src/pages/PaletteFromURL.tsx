@@ -16,8 +16,19 @@ function luminance(hex: string) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
-// Proxy makes cross-origin images readable by canvas
-const IMG_PROXY = 'https://corsproxy.io/?';
+// Proxy candidates tried in order until one loads successfully
+function proxyUrl(raw: string, attempt: number): string | null {
+  const enc = encodeURIComponent(raw);
+  const bare = raw.replace(/^https?:\/\//, '');
+  switch (attempt) {
+    case 0: return raw;                                              // direct (works if server has CORS headers)
+    case 1: return `https://images.weserv.nl/?url=${bare}`;         // dedicated image proxy, very reliable
+    case 2: return `https://wsrv.nl/?url=${bare}`;                  // same service, alt domain
+    case 3: return `https://corsproxy.io/?${enc}`;                  // general CORS proxy
+    case 4: return `https://api.allorigins.win/raw?url=${enc}`;     // last resort
+    default: return null;
+  }
+}
 
 const COLOR_COUNTS = [4, 6, 8, 10, 12, 16];
 
@@ -42,24 +53,37 @@ const PaletteFromURL = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const hiddenImgRef = useRef<HTMLImageElement>(null);
 
-  const extractFromImg = useCallback((src: string) => {
+  // Try each proxy in sequence until the image loads
+  const tryLoadWithProxy = useCallback((rawUrl: string, attempt = 0) => {
+    const src = proxyUrl(rawUrl, attempt);
+    if (!src) {
+      setError('Could not load the image through any proxy. Try downloading it and using the Upload tab instead.');
+      setLoading(false);
+      return;
+    }
+
     const img = hiddenImgRef.current!;
     img.crossOrigin = 'anonymous';
+
     img.onload = () => {
+      // Update preview to the working src
+      setPreviewSrc(src);
       try {
         const ct = new ColorThief();
         const palette = ct.getPalette(img, colorCount) ?? [];
         setColors(palette.map(([r, g, b]) => rgbToHex(r, g, b)));
         setError('');
       } catch {
-        setError('Could not extract colors — the image may be too small or protected.');
+        setError('Could not extract colours — the image may be too small.');
       }
       setLoading(false);
     };
+
     img.onerror = () => {
-      setError('Failed to load the image. Check the URL and try again.');
-      setLoading(false);
+      // Silently try the next proxy
+      tryLoadWithProxy(rawUrl, attempt + 1);
     };
+
     img.src = src;
   }, [colorCount]);
 
@@ -69,10 +93,9 @@ const PaletteFromURL = () => {
     setError('');
     setColors([]);
     setSelected(new Set());
-    const proxied = `${IMG_PROXY}${encodeURIComponent(url.trim())}`;
-    setPreviewSrc(proxied);
-    extractFromImg(proxied);
-  }, [url, extractFromImg]);
+    setPreviewSrc('');
+    tryLoadWithProxy(url.trim());
+  }, [url, tryLoadWithProxy]);
 
   const handleFile = useCallback((file: File) => {
     if (!file.type.startsWith('image/')) {
@@ -85,8 +108,8 @@ const PaletteFromURL = () => {
     setSelected(new Set());
     const objectUrl = URL.createObjectURL(file);
     setPreviewSrc(objectUrl);
-    extractFromImg(objectUrl);
-  }, [extractFromImg]);
+    tryLoadWithProxy(objectUrl);
+  }, [tryLoadWithProxy]);
 
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -230,9 +253,10 @@ const PaletteFromURL = () => {
 
               {/* Image preview */}
               <div className="lg:col-span-2 glass-card p-3 rounded-2xl">
-                <img src={previewSrc} alt="Source"
-                  className="w-full h-56 object-cover rounded-xl"
-                  onError={() => setError('Failed to display the image.')}/>
+                {previewSrc && (
+                  <img src={previewSrc} alt="Source"
+                    className="w-full h-56 object-cover rounded-xl"/>
+                )}
                 {colors.length > 0 && (
                   <div className="flex rounded-xl overflow-hidden mt-3 h-8">
                     {colors.map(hex => (
