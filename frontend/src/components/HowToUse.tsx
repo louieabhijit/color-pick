@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
 
 const stagger = {
   hidden: {},
@@ -55,10 +54,52 @@ const steps = [
 ];
 
 const features = [
-  { title: "Color Harmonies", description: "Complementary, analogous, and triadic color combinations.", icon: "🎨" },
-  { title: "Contrast Checker", description: "Ensure your colors meet WCAG accessibility standards.", icon: "👁️" },
-  { title: "Code Snippets", description: "Get code in CSS, SCSS, TailwindCSS, React, and more.", icon: "💻" },
-  { title: "Color Variations", description: "Generate tints, shades, and tones of any selected color.", icon: "🌈" }
+  {
+    title: "Color Harmonies",
+    description: "Complementary, analogous, and triadic color combinations.",
+    gradient: "from-indigo-500 to-violet-500",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Contrast Checker",
+    description: "Ensure your colors meet WCAG accessibility standards.",
+    gradient: "from-violet-500 to-fuchsia-500",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/>
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 9v6M9 12h6" strokeWidth={1.2} opacity="0.5"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Code Snippets",
+    description: "Get code in CSS, SCSS, TailwindCSS, React, and more.",
+    gradient: "from-fuchsia-500 to-rose-500",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10 20l4-16M6 16l-4-4 4-4M18 8l4 4-4 4"/>
+      </svg>
+    ),
+  },
+  {
+    title: "Color Variations",
+    description: "Generate tints, shades, and tones of any selected color.",
+    gradient: "from-rose-500 to-orange-400",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2"  y="5" width="4" height="14" rx="2" opacity="0.25" fill="currentColor" stroke="none"/>
+        <rect x="7"  y="5" width="4" height="14" rx="2" opacity="0.45" fill="currentColor" stroke="none"/>
+        <rect x="12" y="5" width="4" height="14" rx="2" opacity="0.65" fill="currentColor" stroke="none"/>
+        <rect x="17" y="5" width="5" height="14" rx="2" opacity="0.90" fill="currentColor" stroke="none"/>
+      </svg>
+    ),
+  },
 ];
 
 const HowToUse = () => (
@@ -146,7 +187,9 @@ const HowToUse = () => (
             className="glass-card card-shine glow-ring p-7 h-full border border-white/40 dark:border-white/10
                        hover:border-indigo-300/50 dark:hover:border-indigo-500/30 transition-colors duration-300"
           >
-            <div className="text-3xl mb-4">{feature.icon}</div>
+            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center text-white mb-5 shadow-sm`}>
+              {feature.icon}
+            </div>
             <h3 className="text-base font-semibold mb-2 text-[var(--text-primary)]">
               {feature.title}
             </h3>
