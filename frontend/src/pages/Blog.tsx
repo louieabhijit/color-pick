@@ -173,6 +173,160 @@ const blogPosts: BlogPost[] = [
       name: 'Design Expert',
       avatar: 'https://ui-avatars.com/api/?name=Design+Expert&background=random'
     }
+  },
+  {
+    id: '13',
+    slug: 'css-box-shadow-examples',
+    title: '10 CSS Box Shadow Examples Every Developer Should Know',
+    description: 'Go beyond basic drop shadows. Learn to create multi-layer, colored, inset, and neumorphic box shadows with copy-paste CSS code examples.',
+    date: 'April 22, 2026',
+    readTime: '8 min read',
+    category: 'CSS',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Alex Rivera', avatar: 'https://ui-avatars.com/api/?name=Alex+Rivera&background=6366f1&color=fff' }
+  },
+  {
+    id: '14',
+    slug: 'glassmorphism-ui-design-tutorial',
+    title: 'Glassmorphism CSS Tutorial: Build Stunning Frosted Glass UI',
+    description: 'A complete guide to building glassmorphism UI with CSS backdrop-filter, RGBA backgrounds, and border transparency. Includes live code examples.',
+    date: 'April 22, 2026',
+    readTime: '10 min read',
+    category: 'UI Design',
+    image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Maya Patel', avatar: 'https://ui-avatars.com/api/?name=Maya+Patel&background=8b5cf6&color=fff' }
+  },
+  {
+    id: '15',
+    slug: 'best-google-font-pairings-2025',
+    title: '15 Best Google Font Pairings for Websites in 2025',
+    description: 'Discover the top Google Font combinations for editorial, tech, and humanist design styles. Includes import links, pairing rules, and live previews.',
+    date: 'April 22, 2026',
+    readTime: '12 min read',
+    category: 'Typography',
+    image: 'https://images.unsplash.com/photo-1467189741621-5973f25b9ced?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Sarah Chen', avatar: 'https://ui-avatars.com/api/?name=Sarah+Chen&background=ec4899&color=fff' }
+  },
+  {
+    id: '16',
+    slug: 'css-gradient-background-ideas',
+    title: '30 CSS Gradient Background Ideas with Code Examples',
+    description: 'Explore linear, radial, conic, and mesh gradient backgrounds with ready-to-use CSS. From subtle fades to bold statement gradients.',
+    date: 'April 22, 2026',
+    readTime: '10 min read',
+    category: 'CSS',
+    image: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Jordan Lee', avatar: 'https://ui-avatars.com/api/?name=Jordan+Lee&background=f59e0b&color=fff' }
+  },
+  {
+    id: '17',
+    slug: 'tailwind-css-color-palette-guide',
+    title: 'Tailwind CSS Color Palette: Complete Guide to Custom Colors',
+    description: 'Learn how to customize Tailwind colors, generate a full 50–900 scale from one hex, and export your palette as a Tailwind config.',
+    date: 'April 22, 2026',
+    readTime: '11 min read',
+    category: 'Tailwind CSS',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Marcus Johnson', avatar: 'https://ui-avatars.com/api/?name=Marcus+Johnson&background=10b981&color=fff' }
+  },
+  {
+    id: '18',
+    slug: 'hex-to-rgb-color-conversion-guide',
+    title: 'HEX to RGB and Beyond: The Complete Color Format Guide',
+    description: 'Master every CSS color format — HEX, RGB, HSL, CMYK, and OKLCH. Learn when to use each and how to convert between them.',
+    date: 'April 22, 2026',
+    readTime: '9 min read',
+    category: 'Developer Tools',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Priya Sharma', avatar: 'https://ui-avatars.com/api/?name=Priya+Sharma&background=ef4444&color=fff' }
+  },
+  {
+    id: '19',
+    slug: 'css-border-radius-examples',
+    title: 'CSS Border Radius: 12 Creative Shapes, Tricks & Examples',
+    description: 'Go beyond rounded corners — create organic blobs, pills, squircles, and asymmetric shapes with CSS border-radius. Includes 12 copy-paste examples.',
+    date: 'April 22, 2026',
+    readTime: '8 min read',
+    category: 'CSS',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Alex Rivera', avatar: 'https://ui-avatars.com/api/?name=Alex+Rivera&background=6366f1&color=fff' }
+  },
+  {
+    id: '20',
+    slug: 'web-typography-type-scale-guide',
+    title: 'Perfect Web Typography: How to Build a Modular Type Scale',
+    description: 'Understand scale ratios, calculate harmonious font sizes mathematically, and implement your type scale in CSS, SCSS, and Tailwind.',
+    date: 'April 22, 2026',
+    readTime: '10 min read',
+    category: 'Typography',
+    image: 'https://images.unsplash.com/photo-1503437313881-503a91226402?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Sarah Chen', avatar: 'https://ui-avatars.com/api/?name=Sarah+Chen&background=ec4899&color=fff' }
+  },
+  {
+    id: '21',
+    slug: 'dark-mode-color-palette-design',
+    title: "Designing Dark Mode Color Palettes: A Complete Developer's Guide",
+    description: 'Learn surface levels, elevation, semantic color tokens, and how to map brand colors to dark mode. Includes complete CSS custom property examples.',
+    date: 'April 22, 2026',
+    readTime: '12 min read',
+    category: 'Dark Mode',
+    image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Kai Nakamura', avatar: 'https://ui-avatars.com/api/?name=Kai+Nakamura&background=1e1b4b&color=fff' }
+  },
+  {
+    id: '22',
+    slug: 'color-palette-from-photo-guide',
+    title: 'How to Extract a Color Palette from Any Photo (Step-by-Step)',
+    description: 'Learn how dominant color extraction works, how to pick the right image, and how to map extracted colors to design roles in your project.',
+    date: 'April 22, 2026',
+    readTime: '9 min read',
+    category: 'Color Extraction',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Sofia Martínez', avatar: 'https://ui-avatars.com/api/?name=Sofia+Martinez&background=f97316&color=fff' }
+  },
+  {
+    id: '23',
+    slug: 'ui-color-trends-2025',
+    title: "UI Color Trends 2025: What's Shaping Modern Digital Design",
+    description: 'From earthy neutrals and botanical greens to AI gradients and neo-brutalism palettes — the color trends defining UI design in 2025.',
+    date: 'April 22, 2026',
+    readTime: '10 min read',
+    category: 'Design Trends',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Zoe Williams', avatar: 'https://ui-avatars.com/api/?name=Zoe+Williams&background=a855f7&color=fff' }
+  },
+  {
+    id: '24',
+    slug: 'color-contrast-accessibility-guide',
+    title: "Color Contrast & WCAG Compliance: The Developer's Accessibility Guide",
+    description: 'Measure contrast ratios, meet WCAG 2.2 AA/AAA, simulate color blindness, and build accessible UIs that work for everyone.',
+    date: 'April 22, 2026',
+    readTime: '11 min read',
+    category: 'Accessibility',
+    image: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Priya Sharma', avatar: 'https://ui-avatars.com/api/?name=Priya+Sharma&background=ef4444&color=fff' }
+  },
+  {
+    id: '25',
+    slug: 'pastel-color-palettes-web-design',
+    title: 'Pastel Color Palettes for Modern Web Design: 8 Beautiful Collections',
+    description: '8 curated pastel palettes — Spring Blossom, Scandinavian Mist, Candy Pop, Desert Dawn, and more. Includes hex codes and usage tips.',
+    date: 'April 22, 2026',
+    readTime: '8 min read',
+    category: 'Color Palette',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Sofia Martínez', avatar: 'https://ui-avatars.com/api/?name=Sofia+Martinez&background=f97316&color=fff' }
+  },
+  {
+    id: '26',
+    slug: 'design-token-color-system',
+    title: 'How to Build a Color Design System with Tokens',
+    description: 'Create a scalable color system with two-layer design tokens: primitives and semantics. Covers CSS variables, Tailwind config, dark mode, and export workflow.',
+    date: 'April 22, 2026',
+    readTime: '13 min read',
+    category: 'Design System',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop',
+    author: { name: 'Marcus Johnson', avatar: 'https://ui-avatars.com/api/?name=Marcus+Johnson&background=10b981&color=fff' }
   }
 ];
 

@@ -38,6 +38,20 @@ import DIYColorPalettes from './pages/BlogPosts/DIYColorPalettes'
 import CulturalColors from './pages/BlogPosts/CulturalColors'
 import ColorPerception from './pages/BlogPosts/ColorPerception'
 import ColorHarmonyGuide from './pages/BlogPosts/ColorHarmonyGuide'
+import CSSBoxShadowExamples from './pages/BlogPosts/CSSBoxShadowExamples'
+import GlassmorphismTutorial from './pages/BlogPosts/GlassmorphismTutorial'
+import GoogleFontPairings from './pages/BlogPosts/GoogleFontPairings'
+import CSSGradientIdeas from './pages/BlogPosts/CSSGradientIdeas'
+import TailwindColorPaletteGuide from './pages/BlogPosts/TailwindColorPaletteGuide'
+import HexToRGBGuide from './pages/BlogPosts/HexToRGBGuide'
+import CSSBorderRadiusExamples from './pages/BlogPosts/CSSBorderRadiusExamples'
+import WebTypographyGuide from './pages/BlogPosts/WebTypographyGuide'
+import DarkModeColorPalette from './pages/BlogPosts/DarkModeColorPalette'
+import ColorPaletteFromPhoto from './pages/BlogPosts/ColorPaletteFromPhoto'
+import UIColorTrends2025 from './pages/BlogPosts/UIColorTrends2025'
+import ColorContrastGuide from './pages/BlogPosts/ColorContrastGuide'
+import PastelColorPalettes from './pages/BlogPosts/PastelColorPalettes'
+import DesignTokenColorSystem from './pages/BlogPosts/DesignTokenColorSystem'
 import GradientGenerator from './pages/GradientGenerator'
 import TintShadeGenerator from './pages/TintShadeGenerator'
 import ColorBlindnessSimulator from './pages/ColorBlindnessSimulator'
@@ -311,6 +325,20 @@ const App: React.FC = () => {
               <Route path="/blog/cultural-significance-of-colors" element={<CulturalColors />} />
               <Route path="/blog/science-behind-color-perception" element={<ColorPerception />} />
               <Route path="/blog/what-is-color-harmony-a-beginners-guide-for-designers" element={<ColorHarmonyGuide />} />
+              <Route path="/blog/css-box-shadow-examples" element={<CSSBoxShadowExamples />} />
+              <Route path="/blog/glassmorphism-ui-design-tutorial" element={<GlassmorphismTutorial />} />
+              <Route path="/blog/best-google-font-pairings-2025" element={<GoogleFontPairings />} />
+              <Route path="/blog/css-gradient-background-ideas" element={<CSSGradientIdeas />} />
+              <Route path="/blog/tailwind-css-color-palette-guide" element={<TailwindColorPaletteGuide />} />
+              <Route path="/blog/hex-to-rgb-color-conversion-guide" element={<HexToRGBGuide />} />
+              <Route path="/blog/css-border-radius-examples" element={<CSSBorderRadiusExamples />} />
+              <Route path="/blog/web-typography-type-scale-guide" element={<WebTypographyGuide />} />
+              <Route path="/blog/dark-mode-color-palette-design" element={<DarkModeColorPalette />} />
+              <Route path="/blog/color-palette-from-photo-guide" element={<ColorPaletteFromPhoto />} />
+              <Route path="/blog/ui-color-trends-2025" element={<UIColorTrends2025 />} />
+              <Route path="/blog/color-contrast-accessibility-guide" element={<ColorContrastGuide />} />
+              <Route path="/blog/pastel-color-palettes-web-design" element={<PastelColorPalettes />} />
+              <Route path="/blog/design-token-color-system" element={<DesignTokenColorSystem />} />
               <Route path="/tools" element={<Tools />} />
               <Route path="/gradient-generator" element={<GradientGenerator />} />
               <Route path="/tint-shade" element={<TintShadeGenerator />} />
