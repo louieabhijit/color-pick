@@ -60,9 +60,21 @@ const PageSEO = ({ title, description, path, keywords, schema }: PageSEOProps) =
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="twitter:site" content="@colorpeek" />
 
-      {/* JSON-LD */}
+      {/* JSON-LD — main schema */}
       <script type="application/ld+json">
         {JSON.stringify(schema ?? defaultSchema)}
+      </script>
+
+      {/* JSON-LD — BreadcrumbList */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+            { '@type': 'ListItem', position: 2, name: title.split('|')[0].trim(), item: canonical },
+          ],
+        })}
       </script>
     </Helmet>
   );

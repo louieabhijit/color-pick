@@ -167,6 +167,78 @@ const HomePage = ({
     {/* ── gradient divider ── */}
     <div className="gradient-divider mx-4 sm:mx-8 my-4" />
 
+    {/* ── SEO H1 + Intro ── */}
+    <section className="py-10 px-4 sm:px-6 text-center">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-3">
+          Free Online Color &amp; CSS Design Tools
+        </h1>
+        <p className="text-[var(--text-secondary)] leading-relaxed">
+          ColorPeek is a free suite of design tools for designers and developers. Generate color palettes,
+          build CSS gradients and shadows, test for color blindness accessibility, calculate type scales,
+          and export everything in production-ready code — no sign-up required.
+        </p>
+      </div>
+    </section>
+
+    {/* ── Tools Directory ── */}
+    <section className="py-8 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto">
+        {[
+          {
+            category: 'Color Tools',
+            tools: [
+              { path: '/palettes',        name: 'Color Palettes',            desc: 'Browse & copy curated color palettes',       icon: '🎨' },
+              { path: '/tint-shade',       name: 'Tint & Shade Generator',    desc: 'Generate full 50–900 color scales',          icon: '🎭' },
+              { path: '/color-blindness',  name: 'Color Blindness Simulator', desc: 'Test accessibility for 7 vision types',      icon: '👁️' },
+              { path: '/color-converter',  name: 'Color Converter',           desc: 'Convert HEX, RGB, HSL, OKLCH & more',        icon: '🔄' },
+              { path: '/palette-url',      name: 'Extract Colors from Image', desc: 'Pull palettes from any photo or URL',        icon: '📸' },
+              { path: '/palette-exporter', name: 'Palette Exporter',          desc: 'Export to CSS, Tailwind, SCSS & JSON',       icon: '📦' },
+            ],
+          },
+          {
+            category: 'CSS Generators',
+            tools: [
+              { path: '/gradient-generator', name: 'Gradient Generator',      desc: 'Build custom linear & radial gradients',     icon: '✨' },
+              { path: '/box-shadow',          name: 'Box Shadow Generator',    desc: 'Build multi-layer CSS shadows',              icon: '🌑' },
+              { path: '/border-radius',       name: 'Border Radius Builder',   desc: 'Visually design CSS rounded corners',        icon: '⬜' },
+              { path: '/glass-generator',     name: 'Glassmorphism Generator', desc: 'Create frosted glass CSS effects',           icon: '🪟' },
+            ],
+          },
+          {
+            category: 'Typography',
+            tools: [
+              { path: '/type-scale',   name: 'Type Scale Calculator', desc: 'Calculate modular typography scales', icon: '🔤' },
+              { path: '/font-pairing', name: 'Font Pairing Tool',      desc: 'Find Google Fonts that work together', icon: '🖋️' },
+            ],
+          },
+          {
+            category: 'Explore',
+            tools: [
+              { path: '/gradients', name: 'Gradient Library', desc: 'Browse hundreds of CSS gradient examples', icon: '🌈' },
+            ],
+          },
+        ].map(({ category, tools }) => (
+          <div key={category} className="mb-8">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] mb-3 px-1">{category}</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {tools.map(tool => (
+                <a key={tool.path} href={tool.path}
+                  className="glass-card p-4 rounded-2xl flex flex-col gap-1.5 hover:scale-[1.02] hover:shadow-lg transition-all duration-200 no-underline group">
+                  <span className="text-xl">{tool.icon}</span>
+                  <span className="font-semibold text-sm text-[var(--text-primary)] group-hover:text-indigo-500 transition-colors leading-tight">{tool.name}</span>
+                  <span className="text-xs text-[var(--text-muted)] leading-snug">{tool.desc}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* ── gradient divider ── */}
+    <div className="gradient-divider mx-4 sm:mx-8 my-2" />
+
     {/* ── Compact Hero / About band ── */}
     <section className="py-16 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">

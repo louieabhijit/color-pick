@@ -18,6 +18,18 @@ const BG_PRESETS = [
   'radial-gradient(ellipse at 30% 30%, #6366f1 0%, #1e1b4b 100%)',
 ];
 
+// Defined outside component so React never remounts the input element on re-render
+const GlassSlider = ({ label, value, min = 0, max, onChange }: { label: string; value: number; min?: number; max: number; onChange: (v: number) => void }) => (
+  <div className="flex items-center gap-3">
+    <span className="text-xs text-[var(--text-muted)] w-24 flex-shrink-0">{label}</span>
+    <input type="range" min={min} max={max} value={value}
+      onInput={e => onChange(+(e.target as HTMLInputElement).value)}
+      onChange={e => onChange(+e.target.value)}
+      className="flex-1 accent-indigo-500"/>
+    <span className="text-xs font-mono text-[var(--text-primary)] w-10 text-right">{value}</span>
+  </div>
+);
+
 const GlassEffectGenerator = () => {
   const [blur, setBlur] = useState(12);
   const [bgOpacity, setBgOpacity] = useState(18);
@@ -50,17 +62,6 @@ const GlassEffectGenerator = () => {
 
   const copy = (text: string, id: string) => { navigator.clipboard.writeText(text); setCopied(id); setTimeout(() => setCopied(null), 1800); };
 
-  const Slider = ({ label, value, min = 0, max, onChange }: { label: string; value: number; min?: number; max: number; onChange: (v: number) => void }) => (
-    <div className="flex items-center gap-3">
-      <span className="text-xs text-[var(--text-muted)] w-24 flex-shrink-0">{label}</span>
-      <input type="range" min={min} max={max} value={value}
-        onInput={e => onChange(+(e.target as HTMLInputElement).value)}
-        onChange={e => onChange(+e.target.value)}
-        className="flex-1 accent-indigo-500"/>
-      <span className="text-xs font-mono text-[var(--text-primary)] w-10 text-right">{value}</span>
-    </div>
-  );
-
   return (
     <div className="min-h-screen w-full">
       <PageSEO
@@ -84,7 +85,7 @@ const GlassEffectGenerator = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">
           <span className="section-label mb-3 inline-block">CSS Tool</span>
           <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-3 text-[var(--text-primary)]">
-            Glass Effect <span className="gradient-text">Generator</span>
+            Glassmorphism <span className="gradient-text">CSS Generator</span>
           </h1>
           <p className="text-[var(--text-muted)]">Build glassmorphism panels with live preview — <code className="text-indigo-500">backdrop-filter</code> + <code className="text-indigo-500">rgba</code>.</p>
         </motion.div>
@@ -125,21 +126,21 @@ const GlassEffectGenerator = () => {
           <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.15 }}
             className="glass-card p-6 space-y-5">
             <p className="text-sm font-semibold text-[var(--text-secondary)]">Controls</p>
-            <Slider label="Blur" value={blur} max={40} onChange={setBlur}/>
-            <Slider label="Saturation %" value={saturation} min={100} max={300} onChange={setSaturation}/>
+            <GlassSlider label="Blur" value={blur} max={40} onChange={setBlur}/>
+            <GlassSlider label="Saturation %" value={saturation} min={100} max={300} onChange={setSaturation}/>
             <div className="flex items-center gap-3">
               <span className="text-xs text-[var(--text-muted)] w-24">BG Color</span>
               <input type="color" value={bgColor} onChange={e => setBgColor(e.target.value)}
                 className="w-9 h-9 rounded-xl border border-white/20 cursor-pointer bg-transparent p-0.5"/>
               <span className="text-xs font-mono text-[var(--text-muted)]">{bgColor}</span>
             </div>
-            <Slider label="BG Opacity %" value={bgOpacity} max={80} onChange={setBgOpacity}/>
+            <GlassSlider label="BG Opacity %" value={bgOpacity} max={80} onChange={setBgOpacity}/>
             <div className="flex items-center gap-3">
               <span className="text-xs text-[var(--text-muted)] w-24">Border Color</span>
               <input type="color" value={borderColor} onChange={e => setBorderColor(e.target.value)}
                 className="w-9 h-9 rounded-xl border border-white/20 cursor-pointer bg-transparent p-0.5"/>
             </div>
-            <Slider label="Border Opacity %" value={borderOpacity} max={80} onChange={setBorderOpacity}/>
+            <GlassSlider label="Border Opacity %" value={borderOpacity} max={80} onChange={setBorderOpacity}/>
             <div className="flex items-center gap-3 pt-1">
               <span className="text-xs text-[var(--text-muted)] w-24">Box Shadow</span>
               <button onClick={() => setShadow(!shadow)}

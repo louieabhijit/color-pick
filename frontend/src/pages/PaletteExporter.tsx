@@ -182,7 +182,7 @@ const PaletteExporter = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">
           <span className="section-label mb-3 inline-block">Color Tool</span>
           <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-3 text-[var(--text-primary)]">
-            Palette <span className="gradient-text">Exporter</span>
+            Color Palette <span className="gradient-text">Exporter</span>
           </h1>
           <p className="text-[var(--text-muted)] max-w-lg mx-auto">Build a custom palette and export it as CSS variables, SCSS, JSON, Tailwind config, SVG, or PNG.</p>
         </motion.div>

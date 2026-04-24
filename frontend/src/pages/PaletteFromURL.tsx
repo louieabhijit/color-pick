@@ -168,7 +168,7 @@ const PaletteFromURL = () => {
           className="text-center mb-10">
           <span className="section-label mb-3 inline-block">Color Tool</span>
           <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-3 text-[var(--text-primary)]">
-            Palette <span className="gradient-text">from Image</span>
+            Extract Colors <span className="gradient-text">from Website</span>
           </h1>
           <p className="text-[var(--text-muted)] max-w-lg mx-auto">
             Extract dominant colours from any image URL or uploaded photo using ColorThief.

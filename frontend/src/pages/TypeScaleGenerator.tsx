@@ -94,7 +94,7 @@ const TypeScaleGenerator = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">
           <span className="section-label mb-3 inline-block">Typography Tool</span>
           <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-3 text-[var(--text-primary)]">
-            Type Scale <span className="gradient-text">Generator</span>
+            Type Scale <span className="gradient-text">Calculator</span>
           </h1>
           <p className="text-[var(--text-muted)]">Set a base size and ratio to generate a harmonious modular type scale.</p>
         </motion.div>

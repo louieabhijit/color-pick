@@ -82,7 +82,7 @@ const BorderRadiusBuilder = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-center mb-10">
           <span className="section-label mb-3 inline-block">CSS Tool</span>
           <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-3 text-[var(--text-primary)]">
-            Border Radius <span className="gradient-text">Builder</span>
+            CSS Border <span className="gradient-text">Radius Generator</span>
           </h1>
           <p className="text-[var(--text-muted)]">Visually build any border-radius shape and copy the CSS output.</p>
         </motion.div>
