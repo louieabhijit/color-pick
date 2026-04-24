@@ -113,7 +113,7 @@ const TOOL_PATHS = MOBILE_TOOLS.map(t => t.href).concat('/tools');
 const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) => {
   const [isDark, setIsDark] = useState<boolean>(() => {
     const saved = localStorage.getItem('colorpeek-theme');
-    return saved !== null ? saved === 'dark' : true;
+    return saved !== null ? saved === 'dark' : false;
   });
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
