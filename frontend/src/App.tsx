@@ -78,7 +78,6 @@ import ToolsSidebar from './components/ToolsSidebar'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import ScrollToTop from './components/ScrollToTop'
-import ToolLayout from './components/ToolLayout'
 import defaultImage from './assets/default1.jpg'
 
 interface HomePageProps {
@@ -432,33 +431,30 @@ const App: React.FC = () => {
               <Route path="/blog/color-contrast-accessibility-guide" element={<ColorContrastGuide />} />
               <Route path="/blog/pastel-color-palettes-web-design" element={<PastelColorPalettes />} />
               <Route path="/blog/design-token-color-system" element={<DesignTokenColorSystem />} />
-              {/* ── Tool pages — rendered inside ToolLayout (sidebar on left) ── */}
-              <Route element={<ToolLayout />}>
-                <Route path="/tools" element={<Tools />} />
-                <Route path="/palettes" element={<ColorPalettes />} />
-                <Route path="/gradients" element={<Gradients />} />
-                <Route path="/gradient-generator" element={<GradientGenerator />} />
-                <Route path="/tint-shade" element={<TintShadeGenerator />} />
-                <Route path="/color-blindness" element={<ColorBlindnessSimulator />} />
-                <Route path="/color-converter" element={<ColorConverter />} />
-                <Route path="/border-radius" element={<BorderRadiusBuilder />} />
-                <Route path="/box-shadow" element={<BoxShadowGenerator />} />
-                <Route path="/glass-generator" element={<GlassEffectGenerator />} />
-                <Route path="/type-scale" element={<TypeScaleGenerator />} />
-                <Route path="/font-pairing" element={<FontPairing />} />
-                <Route path="/palette-url" element={<PaletteFromURL />} />
-                <Route path="/palette-exporter" element={<PaletteExporter />} />
-                <Route path="/contrast-checker" element={<ContrastCheckerPage />} />
-                <Route path="/text-shadow" element={<TextShadowGenerator />} />
-                <Route path="/color-harmonies" element={<ColorHarmonies />} />
-                <Route path="/random-color" element={<RandomColorGenerator />} />
-                <Route path="/color-mixer" element={<ColorMixer />} />
-                <Route path="/color-name" element={<ColorNameFinder />} />
-                <Route path="/css-filter" element={<CSSFilterGenerator />} />
-                <Route path="/spacing-scale" element={<SpacingScaleGenerator />} />
-                <Route path="/flexbox" element={<FlexboxGenerator />} />
-                <Route path="/grid" element={<GridGenerator />} />
-              </Route>
+              <Route path="/tools" element={<Tools />} />
+              <Route path="/palettes" element={<ColorPalettes />} />
+              <Route path="/gradients" element={<Gradients />} />
+              <Route path="/gradient-generator" element={<GradientGenerator />} />
+              <Route path="/tint-shade" element={<TintShadeGenerator />} />
+              <Route path="/color-blindness" element={<ColorBlindnessSimulator />} />
+              <Route path="/color-converter" element={<ColorConverter />} />
+              <Route path="/border-radius" element={<BorderRadiusBuilder />} />
+              <Route path="/box-shadow" element={<BoxShadowGenerator />} />
+              <Route path="/glass-generator" element={<GlassEffectGenerator />} />
+              <Route path="/type-scale" element={<TypeScaleGenerator />} />
+              <Route path="/font-pairing" element={<FontPairing />} />
+              <Route path="/palette-url" element={<PaletteFromURL />} />
+              <Route path="/palette-exporter" element={<PaletteExporter />} />
+              <Route path="/contrast-checker" element={<ContrastCheckerPage />} />
+              <Route path="/text-shadow" element={<TextShadowGenerator />} />
+              <Route path="/color-harmonies" element={<ColorHarmonies />} />
+              <Route path="/random-color" element={<RandomColorGenerator />} />
+              <Route path="/color-mixer" element={<ColorMixer />} />
+              <Route path="/color-name" element={<ColorNameFinder />} />
+              <Route path="/css-filter" element={<CSSFilterGenerator />} />
+              <Route path="/spacing-scale" element={<SpacingScaleGenerator />} />
+              <Route path="/flexbox" element={<FlexboxGenerator />} />
+              <Route path="/grid" element={<GridGenerator />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 
