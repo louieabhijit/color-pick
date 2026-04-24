@@ -61,10 +61,20 @@ const BorderRadiusBuilder = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Border Radius Builder"
-        description="Visually design any CSS border-radius shape with live preview. Control all four corners independently, switch between px, %, and rem units, and copy the optimised CSS shorthand."
+        title="CSS Border Radius Builder — Rounded Corners Generator"
+        description="Visually design any CSS border-radius shape with live preview. Control all four corners independently, switch between px, %, and rem units, copy optimized CSS shorthand. Free at ColorPeek."
         path="/border-radius"
-        keywords="css border radius builder, border radius generator, rounded corners css, border radius tool, css shape builder, border radius online"
+        keywords="css border radius generator, rounded corners css, border radius builder, css shape tool, border radius online, css corner radius"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'CSS Border Radius Builder | ColorPeek', description: 'Visually design any CSS border-radius with live preview and copy the CSS shorthand.', url: 'https://color-peek.com/border-radius', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+            { '@type': 'FAQPage', mainEntity: [
+              { '@type': 'Question', name: 'What does CSS border-radius do?', acceptedAnswer: { '@type': 'Answer', text: 'The CSS border-radius property rounds the corners of an element. You can set all four corners to the same value for a uniform effect, or control each corner independently for custom shapes like teardrops, leaves, and squircles.' } },
+              { '@type': 'Question', name: 'What is a squircle in CSS?', acceptedAnswer: { '@type': 'Answer', text: 'A squircle is a shape between a square and a circle, created with a high border-radius (around 25–35%) applied to all corners. Apple popularized squircles for app icons; they appear more organic than simple rounded squares.' } },
+            ]},
+          ],
+        }}
       />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-4xl mx-auto">
@@ -142,6 +152,47 @@ const BorderRadiusBuilder = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Border Radius Builder</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Choose a preset shape (None, Small, Medium, Large, Pill, Squircle, Leaf, etc.) to start quickly.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Toggle Linked mode to adjust all corners together, or Free mode to control each corner independently.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Switch between px, %, and rem units using the unit buttons.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Use the color picker to change the preview box color and visualize your shape in context.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click Copy to copy the optimized CSS shorthand (e.g., <code className="text-indigo-400">border-radius: 16px 4px;</code>).</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is CSS Border Radius?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">The CSS <code className="text-indigo-400">border-radius</code> property rounds the corners of an element's box. You can specify a single value for all four corners, two values for the top-left/bottom-right and top-right/bottom-left pairs, or up to four individual values for complete control. Percentage values (like <code className="text-indigo-400">50%</code>) create circular or elliptical shapes. The property is widely used for buttons, cards, avatars, and decorative shapes. Using rem units ties corner sizes to the user's base font size, which respects accessibility preferences. The shorthand syntax automatically optimizes when corners share values — so <code className="text-indigo-400">border-radius: 16px 16px 16px 16px</code> compresses to <code className="text-indigo-400">border-radius: 16px</code>.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I make a perfect circle with CSS?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Set <code className="text-indigo-400">border-radius: 50%</code> on an element with equal width and height. The 50% value creates a fully circular shape regardless of the element's size in pixels.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the border-radius shorthand syntax?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">With 4 values: top-left, top-right, bottom-right, bottom-left (clockwise). With 2 values: top-left & bottom-right, top-right & bottom-left. With 1 value: all four corners. The builder auto-generates the most compact shorthand for your settings.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I use border-radius in Tailwind CSS?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. Tailwind has built-in classes: <code className="text-indigo-400">rounded</code>, <code className="text-indigo-400">rounded-lg</code>, <code className="text-indigo-400">rounded-full</code>, etc. For custom values, use arbitrary syntax: <code className="text-indigo-400">rounded-[30px_4px]</code>.</p>
+              </details>
+            </div>
+          </div>
+
+          <p className="text-sm text-[var(--text-muted)] text-center">
+            Also explore: <a href="/box-shadow" className="text-indigo-500 hover:underline">Box Shadow Generator</a> · <a href="/glass-generator" className="text-indigo-500 hover:underline">Glassmorphism Generator</a> · <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a>
+          </p>
         </div>
       </main>
     </div>

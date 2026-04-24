@@ -129,10 +129,20 @@ const ColorBlindnessSimulator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Color Blindness Simulator"
-        description="Simulate how your colour palette appears to people with deuteranopia, protanopia, tritanopia and 4 more vision types. Uses accurate RGB matrix transforms for WCAG-compliant accessible design."
+        title="Color Blindness Simulator — Test Color Accessibility Online"
+        description="Preview how your colors look to people with deuteranopia, protanopia, tritanopia, and 4 other vision types. Uses accurate RGB matrix transforms for WCAG-compliant accessible design. Free at ColorPeek."
         path="/color-blindness"
-        keywords="color blindness simulator, deuteranopia, protanopia, tritanopia, color vision deficiency, wcag accessibility, color accessibility checker"
+        keywords="color blindness simulator, deuteranopia simulator, protanopia, tritanopia, color vision deficiency, wcag accessibility, color accessibility checker"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'Color Blindness Simulator | ColorPeek', description: 'Simulate color vision deficiency to build accessible designs.', url: 'https://color-peek.com/color-blindness', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+            { '@type': 'FAQPage', mainEntity: [
+              { '@type': 'Question', name: 'What is deuteranopia?', acceptedAnswer: { '@type': 'Answer', text: 'Deuteranopia is the most common form of color blindness, affecting about 1 in 12 men. People with deuteranopia cannot distinguish red and green hues, seeing them as shades of yellow and brown instead.' } },
+              { '@type': 'Question', name: 'How many people have color blindness?', acceptedAnswer: { '@type': 'Answer', text: 'Approximately 300 million people worldwide have some form of color vision deficiency, representing about 8% of males and 0.5% of females.' } },
+            ]},
+          ],
+        }}
       />
       <Navbar onColorSelect={() => {}} />
 
@@ -304,6 +314,50 @@ const ColorBlindnessSimulator = () => {
           </div>
         </motion.div>
 
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Color Blindness Simulator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Your current palette is displayed across 7 vision types simultaneously in a grid.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Click any color swatch to edit it with a color picker — the grid updates in real time.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Compare Normal Vision against Deuteranopia, Protanopia, Tritanopia, Achromatopsia, and more.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Look for swatches that look identical in any row — those color pairs may be indistinguishable to affected users.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Follow the accessibility tips below the grid to adjust your palette for better contrast and distinction.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is Color Blindness?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Color blindness, or color vision deficiency (CVD), occurs when the cone cells in the eye are missing or respond differently to certain wavelengths of light. The most common type is red-green color blindness, affecting around 8% of males. Deuteranopia (missing green cones) and protanopia (missing red cones) cause red and green to look similar — often appearing as shades of yellow, brown, or gray. Tritanopia (rare, affects blue-yellow) and achromatopsia (complete color blindness, very rare) present different challenges. For designers, this means relying on color alone to convey meaning — like a red error indicator or a green success state — can be inaccessible. WCAG 2.1 guideline 1.4.1 requires that color is not the only visual means of conveying information. Always pair color cues with icons, patterns, or text labels.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between deuteranopia and deuteranomaly?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Deuteranopia is the complete absence of green-sensitive cones. Deuteranomaly is a milder form where green-sensitive cones respond to longer wavelengths than normal. Both cause red-green confusion, but deuteranomaly is the more common and typically less severe condition.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How accurate is the simulation?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">The simulator uses established RGB matrix transforms derived from published color vision research. These are the same algorithms used by professional accessibility tools and represent the best approximation available for screen displays.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What WCAG guideline covers color accessibility?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">WCAG 2.1 Success Criterion 1.4.1 (Use of Color) requires that color is not the only visual means of conveying information. SC 1.4.3 requires a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What are the best color pairs for color-blind users?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Blue-orange and blue-red pairings work well for most types of color blindness. Avoid red-green combinations for critical information. Adding patterns, icons, or text labels alongside color cues ensures all users can distinguish content.</p>
+              </details>
+            </div>
+          </div>
+
+          <p className="text-sm text-[var(--text-muted)] text-center">
+            Also explore: <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/color-converter" className="text-indigo-500 hover:underline">Color Converter</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a>
+          </p>
+        </div>
       </main>
     </div>
   );

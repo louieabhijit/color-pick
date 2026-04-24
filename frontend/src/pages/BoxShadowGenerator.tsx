@@ -80,10 +80,20 @@ const BoxShadowGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Box Shadow Generator"
-        description="Build multi-layer CSS box shadows with live preview. Stack up to 5 layers, control x/y offset, blur, spread, color, opacity and inset. Copy the full box-shadow CSS rule instantly."
+        title="CSS Box Shadow Generator — Multi-Layer Shadow Builder"
+        description="Build multi-layer CSS box shadows with live preview. Stack up to 5 layers, control x/y offset, blur, spread, color, opacity, and inset. Copy the full CSS rule instantly. Free at ColorPeek."
         path="/box-shadow"
-        keywords="css box shadow generator, box shadow generator online, multi-layer shadow, drop shadow css, shadow builder, css shadow tool"
+        keywords="css box shadow generator, box shadow builder, multi-layer shadow css, drop shadow generator, inset shadow css, shadow tool online"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'CSS Box Shadow Generator | ColorPeek', description: 'Build multi-layer CSS box shadows with live preview.', url: 'https://color-peek.com/box-shadow', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+            { '@type': 'FAQPage', mainEntity: [
+              { '@type': 'Question', name: 'What is an inset box shadow?', acceptedAnswer: { '@type': 'Answer', text: 'An inset box shadow appears inside the element\'s border rather than outside it. It creates a pressed or embossed visual effect, as if light is shining from inside. Use the Inset toggle in the layer editor to enable it.' } },
+              { '@type': 'Question', name: 'Why use multiple shadow layers?', acceptedAnswer: { '@type': 'Answer', text: 'Layering multiple shadows — one tight and dark, one wide and light — creates more realistic, material-like depth. This technique, popularized by Google\'s Material Design, avoids harsh single-shadow artifacts.' } },
+            ]},
+          ],
+        }}
       />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-5xl mx-auto">
@@ -185,6 +195,47 @@ const BoxShadowGenerator = () => {
               </motion.div>
             )}
           </motion.div>
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Box Shadow Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Choose a preset (Soft, Deep, Glow, Layered, Inner) or start from a blank layer.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Click + Add to stack multiple shadow layers for more realistic depth effects.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Select a layer and use the sliders to adjust X offset, Y offset, blur radius, and spread.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Pick a shadow color and set opacity. Toggle Inset for inner shadows.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Use the background and card color pickers to test your shadow in context, then click Copy.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is CSS Box Shadow?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">The CSS <code className="text-indigo-400">box-shadow</code> property adds one or more shadow effects around an element. Each shadow is defined by X offset (horizontal), Y offset (vertical), blur radius (softness), spread radius (size), and color. Positive X values push the shadow right; positive Y values push it down. Larger blur values create softer, more diffuse shadows. A positive spread makes the shadow larger than the element; negative spread creates a tighter look. The <code className="text-indigo-400">inset</code> keyword flips the shadow to the inside. You can stack as many layers as needed, separated by commas — a common technique is combining a tight, dark primary shadow with a wide, lighter ambient shadow to simulate realistic lighting. Box shadows are rendered by the GPU and don't affect page layout.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between blur and spread in box-shadow?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Blur controls how soft/diffuse the shadow edges are — higher blur means a more gradual fade. Spread controls the overall size of the shadow before blurring — positive spread grows it, negative spread shrinks it. They are independent: a large blur with negative spread gives an atmospheric glow; no blur with positive spread gives a hard offset copy.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Does box-shadow affect layout or take up space?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">No. Box shadows are visual-only and do not affect the document layout or the element's box model. Neighboring elements are not pushed by a shadow, and the shadow does not influence scrollable area. Use <code className="text-indigo-400">filter: drop-shadow()</code> if you need a shadow that follows non-rectangular shapes.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I create a glow effect with box-shadow?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Set X and Y offsets to 0, use a large blur radius, set a positive spread, and choose a saturated color (e.g., <code className="text-indigo-400">rgba(99,102,241,0.6)</code>). The "Glow" preset in this tool demonstrates this exact configuration.</p>
+              </details>
+            </div>
+          </div>
+
+          <p className="text-sm text-[var(--text-muted)] text-center">
+            Also explore: <a href="/border-radius" className="text-indigo-500 hover:underline">Border Radius Builder</a> · <a href="/glass-generator" className="text-indigo-500 hover:underline">Glassmorphism Generator</a> · <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a>
+          </p>
         </div>
       </main>
     </div>

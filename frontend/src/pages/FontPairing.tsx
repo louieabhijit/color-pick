@@ -173,10 +173,20 @@ module.exports = {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Font Pairing Tool"
-        description="Discover curated Google Font pairings with live preview. Browse 10 heading and body font combinations, customise colours, and copy the Google Fonts import link or Tailwind config."
+        title="Font Pairing Tool — Find Google Fonts That Work Together"
+        description="Discover curated Google Font pairings with live preview. Browse 20+ heading and body font combinations, customize text and colors, copy the Google Fonts import or Tailwind config. Free at ColorPeek."
         path="/font-pairing"
-        keywords="font pairing tool, google fonts combinations, typography pairing, heading body font, font combination generator, best font pairings 2025"
+        keywords="font pairing tool, google font combinations, typography pairing, heading body font pairings, best font pairings 2025, google fonts for web"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'Font Pairing Tool | ColorPeek', description: 'Discover curated Google Font pairings with live preview and copy-ready code.', url: 'https://color-peek.com/font-pairing', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+            { '@type': 'FAQPage', mainEntity: [
+              { '@type': 'Question', name: 'What makes a good font pairing?', acceptedAnswer: { '@type': 'Answer', text: 'A good font pairing creates contrast and hierarchy without clash. A common rule is to pair a serif heading font with a sans-serif body font (or vice versa), ensuring the two fonts have different personalities but share similar x-height or proportions for visual harmony.' } },
+              { '@type': 'Question', name: 'Are Google Fonts free to use commercially?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All Google Fonts are licensed under open-source licenses (SIL Open Font License or Apache License 2.0), making them free for personal and commercial use including web, print, and products.' } },
+            ]},
+          ],
+        }}
       />
       <Navbar onColorSelect={() => {}} />
 
@@ -307,6 +317,47 @@ module.exports = {
               </>
             )}
           </motion.div>
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Font Pairing Tool</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Filter pairings by tag — Elegant, Modern, Minimal, Editorial, Friendly, or Technical.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Click any pairing card to load a live preview with heading and body text samples.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Edit the preview text and adjust heading/body colors to match your brand.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Copy the Google Fonts HTML <code className="text-indigo-400">&lt;link&gt;</code> tag to add the fonts to your project.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Copy the Tailwind config snippet to add the fonts as custom font families.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is Font Pairing?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Font pairing is the art of selecting two or more typefaces that complement each other to create visual hierarchy and harmony in a design. The most reliable approach is contrast: pair a high-personality display or serif font for headings with a clean, neutral sans-serif for body text. The pairing works when the fonts are distinct enough to create hierarchy, yet share enough visual DNA (similar x-height, stroke width, or mood) to feel cohesive. Classic combinations like Playfair Display + Source Sans, or Merriweather + Open Sans, have been refined over years of UI design practice. Beyond serif/sans contrast, you can also pair fonts based on weight contrast (a thin display with a medium body) or style contrast (a geometric sans with a humanist sans). Google Fonts provides over 1,000 free typefaces, making it the most widely used font source for web projects.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How many fonts should I use in one design?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Most designs work best with 2 fonts: one for headings and one for body. Adding a third font for a special purpose (like monospace for code) is acceptable, but more than 3 typefaces rarely improves a design and usually creates visual noise.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Do Google Fonts slow down my website?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Loading Google Fonts adds an external request, which can add ~100–300ms latency. To minimize impact: load only the weights you use, add <code className="text-indigo-400">display=swap</code> to the URL, and consider self-hosting the font files for critical performance scenarios.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between serif and sans-serif?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Serif fonts have small decorative strokes ("serifs") at the ends of letter forms (e.g., Times New Roman, Playfair Display). Sans-serif fonts have clean, stroke-free endings (e.g., Arial, Inter). Serifs feel traditional and authoritative; sans-serifs feel modern and clean. Screen legibility is generally equivalent for both at display sizes.</p>
+              </details>
+            </div>
+          </div>
+
+          <p className="text-sm text-[var(--text-muted)] text-center">
+            Also explore: <a href="/type-scale" className="text-indigo-500 hover:underline">Type Scale Generator</a> · <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a>
+          </p>
         </div>
       </main>
     </div>

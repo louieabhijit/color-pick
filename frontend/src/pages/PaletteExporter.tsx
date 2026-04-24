@@ -160,10 +160,20 @@ const PaletteExporter = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Palette Exporter"
-        description="Build a custom color palette with up to 16 named swatches and export it as CSS variables, SCSS, JSON, Tailwind config, SVG, or PNG. Load from presets or design from scratch."
+        title="Palette Exporter — Export Colors to CSS, Tailwind, SCSS & More"
+        description="Build a custom color palette with up to 16 named swatches and export as CSS variables, SCSS, JSON, Tailwind config, SVG, or PNG. Load from presets or design from scratch. Free at ColorPeek."
         path="/palette-exporter"
-        keywords="color palette exporter, export color palette, palette to css, palette to json, palette to svg, palette download, color swatch export"
+        keywords="color palette exporter, export palette css, palette to tailwind, color palette to scss, palette json export, color swatch downloader"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'Palette Exporter | ColorPeek', description: 'Build and export custom color palettes as CSS, Tailwind, SCSS, JSON, SVG, or PNG.', url: 'https://color-peek.com/palette-exporter', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+            { '@type': 'FAQPage', mainEntity: [
+              { '@type': 'Question', name: 'What export formats does the Palette Exporter support?', acceptedAnswer: { '@type': 'Answer', text: 'The tool exports palettes as CSS custom properties, SCSS variables, JSON (for design tokens), Tailwind CSS config, SVG swatches, and PNG image. Each format is ready to paste into your project.' } },
+              { '@type': 'Question', name: 'Can I name each color in the palette?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Each swatch has an editable name that becomes the variable name in CSS, SCSS, and JSON exports (e.g., --color-primary, $color-primary, "primary"). Names are sanitized automatically for valid variable syntax.' } },
+            ]},
+          ],
+        }}
       />
       <Navbar onColorSelect={() => {}} />
 
@@ -338,6 +348,47 @@ const PaletteExporter = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Palette Exporter</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Start by loading a preset palette or name your palette and add swatches from scratch.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Click any swatch to open a color picker and change its color. Edit its name for meaningful variable names.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Add up to 16 swatches with the + Add Color button.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Choose an export format: CSS Variables, SCSS, JSON, Tailwind Config, SVG, or PNG.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click Copy or Download to get your palette in the chosen format.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What are Color Palette Exports?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">A palette export converts your set of chosen colors into a format your codebase or design tools can consume directly. CSS custom properties (<code className="text-indigo-400">--color-primary: #6366f1</code>) are the most versatile web format — defined once in <code className="text-indigo-400">:root</code>, they cascade to every element and can be updated with JavaScript for dynamic theming. SCSS variables work similarly for Sass-based projects. JSON exports represent design tokens — a format compatible with tools like Style Dictionary, Figma Tokens, and Amazon Style Dictionary for cross-platform design systems. Tailwind config exports let you add named colors directly to <code className="text-indigo-400">theme.extend.colors</code>, making them available as Tailwind utilities. SVG exports create a visual swatch card you can share or embed. PNG exports let you save a visual reference of your palette as an image file.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I import a CSS variable palette into a project?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Copy the CSS export and paste it inside a <code className="text-indigo-400">:root &#123; &#125;</code> block in your global stylesheet. Then use the variables throughout your CSS: <code className="text-indigo-400">background: var(--color-primary)</code>. They work in any browser that supports CSS custom properties (all modern browsers).</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I import this palette into Figma?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Use the JSON export with a Figma plugin like Figma Tokens or Variables Importer to import your palette as local variables or styles. SVG exports can be placed directly as reference swatches in any Figma file.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between CSS variables and SCSS variables?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">CSS custom properties (<code className="text-indigo-400">--var: value</code>) are resolved at runtime in the browser and can be changed dynamically with JavaScript. SCSS variables (<code className="text-indigo-400">$var: value</code>) are compiled at build time and cannot be changed after compilation — but SCSS offers powerful functions like <code className="text-indigo-400">lighten()</code> and <code className="text-indigo-400">darken()</code> for palette manipulation during development.</p>
+              </details>
+            </div>
+          </div>
+
+          <p className="text-sm text-[var(--text-muted)] text-center">
+            Also explore: <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a> · <a href="/palette-url" className="text-indigo-500 hover:underline">Extract Colors from Image</a>
+          </p>
         </div>
       </main>
     </div>

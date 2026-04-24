@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch } from 'culori';
@@ -340,11 +341,40 @@ const Gradients = () => {
     { value: 'mostViewed', label: 'Most Viewed', icon: FaEye }
   ];
 
+  const gradientsSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebApplication',
+        name: 'CSS Gradient Library | ColorPeek',
+        description: 'Browse hundreds of beautiful CSS gradients for web and app design. Filter by type, copy the CSS code, and use instantly in your project.',
+        url: 'https://color-peek.com/gradients',
+        applicationCategory: 'DesignApplication',
+        operatingSystem: 'Any',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is a CSS gradient?', acceptedAnswer: { '@type': 'Answer', text: 'A CSS gradient is a smooth color transition defined in CSS using linear-gradient(), radial-gradient(), or conic-gradient(). They are used as backgrounds, overlays, and decorative elements without needing any image files.' } },
+          { '@type': 'Question', name: 'How do I use a gradient in CSS?', acceptedAnswer: { '@type': 'Answer', text: 'Copy the gradient code and use it as a background property: background: linear-gradient(135deg, #6366f1, #8b5cf6). You can apply it to any element.' } },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen w-full">
+      <PageSEO
+        title="CSS Gradient Library — Browse Free Gradient Backgrounds"
+        description="Discover hundreds of beautiful CSS gradients for web and app design. Filter by style, copy the CSS or Tailwind code, and use it directly in your project. Free gradient library at ColorPeek."
+        path="/gradients"
+        keywords="css gradients, gradient backgrounds, linear gradient css, gradient library, web design gradients, free gradient css"
+        schema={gradientsSchema}
+      />
       <Navbar onColorSelect={() => {}} />
-      
-      
+
+
       {/* Sticky Header */}
       <div className="sticky top-16 z-30 bg-white dark:bg-gray-900 shadow-sm">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 py-4">
@@ -601,8 +631,53 @@ const Gradients = () => {
           </div>
         </div>
       </main>
+
+      {/* SEO Content */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-8">
+        <div className="glass-card p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Gradient Library</h2>
+          <ol className="space-y-3">
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Browse the gallery or filter by type — linear, radial, diagonal, vibrant, subtle, dark, and more.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Sort by Newest, Most Liked, or Most Viewed to find trending gradients.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Click the copy icon on any gradient card to copy the CSS <code className="text-indigo-400">background</code> property.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Paste the CSS directly into your stylesheet or Tailwind arbitrary value.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Need a custom gradient? Use the <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a> to build your own.</li>
+          </ol>
+        </div>
+
+        <div className="glass-card p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a CSS Gradient?</h2>
+          <p className="text-[var(--text-secondary)] leading-relaxed">A CSS gradient is a smooth, programmatic color transition defined entirely in CSS — no image files needed. The <code className="text-indigo-400">linear-gradient()</code> function transitions between colors along a straight line at any angle. The <code className="text-indigo-400">radial-gradient()</code> radiates outward from a center point, while <code className="text-indigo-400">conic-gradient()</code> sweeps around a center like a color wheel. Gradients are used everywhere in modern UI design: as hero backgrounds, card overlays, button fills, text effects, and decorative accents. They're supported in all modern browsers, render crisply at any resolution, and add depth without increasing page weight. You can stack multiple gradient layers using comma-separated values to create complex mesh and duotone effects.</p>
+        </div>
+
+        <div className="glass-card p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-3">
+            <details className="border border-white/20 rounded-xl overflow-hidden">
+              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I use these gradients in commercial projects?</summary>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. All gradients in the ColorPeek library are free for personal and commercial use. No attribution required.</p>
+            </details>
+            <details className="border border-white/20 rounded-xl overflow-hidden">
+              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I add a gradient to text in CSS?</summary>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">Use <code className="text-indigo-400">background: linear-gradient(...)</code> combined with <code className="text-indigo-400">-webkit-background-clip: text</code> and <code className="text-indigo-400">-webkit-text-fill-color: transparent</code> on the element. This clips the gradient to the text shape.</p>
+            </details>
+            <details className="border border-white/20 rounded-xl overflow-hidden">
+              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between linear and radial gradients?</summary>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">A linear gradient transitions colors along a straight line (top to bottom, left to right, or any angle). A radial gradient emanates outward from a center point in an elliptical or circular pattern.</p>
+            </details>
+            <details className="border border-white/20 rounded-xl overflow-hidden">
+              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I animate a CSS gradient?</summary>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">CSS doesn't directly animate gradient stops, but you can animate <code className="text-indigo-400">background-position</code> on an oversized gradient, or use CSS custom properties with <code className="text-indigo-400">@property</code> to register and animate the color values in modern browsers.</p>
+            </details>
+          </div>
+        </div>
+
+        <p className="text-sm text-[var(--text-muted)] text-center">
+          Also explore: <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a> · <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/glass-generator" className="text-indigo-500 hover:underline">Glassmorphism Generator</a>
+        </p>
+      </section>
     </div>
   );
 };
 
-export default Gradients; 
+export default Gradients;

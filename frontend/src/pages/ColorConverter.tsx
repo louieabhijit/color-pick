@@ -147,10 +147,20 @@ const ColorConverter = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Color Converter"
-        description="Convert any color between HEX, RGB, HSL, HSV, CMYK and OKLCH instantly. Supports modern CSS Color Level 4 with OKLCH via sRGB linearization. Free, no sign-up."
+        title="Color Converter — HEX to RGB, HSL, HSV, CMYK & OKLCH"
+        description="Convert any color between HEX, RGB, HSL, HSV, CMYK, and OKLCH instantly. Supports modern CSS Color Level 4. Paste any format and get all others with one click. Free at ColorPeek."
         path="/color-converter"
-        keywords="color converter, hex to rgb, rgb to hsl, hsl to cmyk, oklch converter, css color formats, color format converter online"
+        keywords="color converter, hex to rgb, rgb to hsl, hsl to hex, hsl to cmyk, oklch converter, color format converter online, css color formats"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'Color Converter | ColorPeek', description: 'Convert any color between HEX, RGB, HSL, HSV, CMYK, and OKLCH instantly.', url: 'https://color-peek.com/color-converter', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+            { '@type': 'FAQPage', mainEntity: [
+              { '@type': 'Question', name: 'What color formats does the converter support?', acceptedAnswer: { '@type': 'Answer', text: 'The converter supports HEX, RGB, HSL, HSV, CMYK, and OKLCH — all common formats used in CSS, design tools, and print workflows.' } },
+              { '@type': 'Question', name: 'What is OKLCH color?', acceptedAnswer: { '@type': 'Answer', text: 'OKLCH is a perceptually uniform color space defined in CSS Color Level 4. It represents colors using Lightness, Chroma, and Hue in a way that better matches human vision, making it ideal for generating accessible color scales.' } },
+            ]},
+          ],
+        }}
       />
       <Navbar onColorSelect={() => {}} />
       <main className="pt-24 pb-16 px-4 sm:px-6 max-w-3xl mx-auto">
@@ -209,6 +219,47 @@ const ColorConverter = () => {
             ))}
           </div>
         </motion.div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Color Converter</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Paste or type any color value into the input field — HEX, RGB, HSL, or HSV all work.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>The tool auto-detects the format and instantly converts to all other color formats.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Click the Copy button next to any format row to copy that value to your clipboard.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>A live color swatch shows you the actual color as you type.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Use OKLCH values in modern CSS with <code className="text-indigo-400">color(oklch L C H)</code> syntax for wider color gamut support.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What are Color Formats?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Different tools and workflows use different ways to represent the same color. HEX (<code className="text-indigo-400">#6366f1</code>) is the most common format in web development, expressing red, green, and blue channels as two-digit hexadecimal values. RGB (<code className="text-indigo-400">rgb(99, 102, 241)</code>) uses decimal 0–255 values and maps directly to screen hardware. HSL (<code className="text-indigo-400">hsl(239, 84%, 67%)</code>) describes color in terms of Hue (color angle), Saturation, and Lightness — much closer to how humans think about color, making it ideal for generating palettes programmatically. HSV (Hue, Saturation, Value) is used in many design tool color pickers. CMYK (Cyan, Magenta, Yellow, Key/Black) is the print industry standard. OKLCH is a modern perceptually-uniform format from CSS Color Level 4, great for accessible color system design.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the most common color format in CSS?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">HEX is the most widely used CSS color format, followed by RGB and HSL. Modern CSS also supports OKLCH and color() for wide-gamut displays. All are valid CSS color values and render identically in browsers.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Why does CMYK not convert to exactly the same HEX value?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">CMYK is a subtractive color model for print, while HEX/RGB is additive for screens. The color gamuts don't perfectly overlap — some CMYK colors are outside the sRGB screen gamut, and some screen colors can't be reproduced in print. Conversions are approximations.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the advantage of using HSL over HEX?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">HSL makes it easy to programmatically lighten or darken a color by changing just the L (lightness) value, or shift hues by adjusting H (hue). This is why CSS variables and design systems often store colors in HSL for dynamic theming.</p>
+              </details>
+            </div>
+          </div>
+
+          <p className="text-sm text-[var(--text-muted)] text-center">
+            Also explore: <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a> · <a href="/color-blindness" className="text-indigo-500 hover:underline">Color Blindness Simulator</a> · <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a>
+          </p>
+        </div>
       </main>
     </div>
   );

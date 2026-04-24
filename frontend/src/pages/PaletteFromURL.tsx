@@ -143,10 +143,20 @@ const PaletteFromURL = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Palette from Image URL"
-        description="Extract a beautiful colour palette from any image URL or uploaded photo using ColorThief. Get up to 16 dominant colours and export as CSS variables, with live preview."
+        title="Extract Colors from Image — Palette from Image URL or Photo"
+        description="Extract a color palette from any image URL or uploaded photo using ColorThief. Get up to 16 dominant colors, see them live, and export as CSS variables. Free image color extractor at ColorPeek."
         path="/palette-url"
-        keywords="extract colors from image, palette from url, colorthief, image color extractor, dominant colors, color palette generator from image"
+        keywords="extract colors from image, color palette from image, image color extractor, palette from url, dominant color extractor, color picker from photo"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'Color Extractor from Image | ColorPeek', description: 'Extract dominant colors from any image URL or uploaded photo.', url: 'https://color-peek.com/palette-url', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+            { '@type': 'FAQPage', mainEntity: [
+              { '@type': 'Question', name: 'How does the color extraction work?', acceptedAnswer: { '@type': 'Answer', text: 'The tool uses ColorThief, a library that analyzes the pixel data of an image using a median cut algorithm to identify the most dominant and visually distinct colors present in the image.' } },
+              { '@type': 'Question', name: 'Can I upload my own image?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. You can upload an image from your device (JPEG, PNG, WebP, GIF) or paste a public image URL. Uploaded images are processed entirely in your browser and never sent to a server.' } },
+            ]},
+          ],
+        }}
       />
       {/* Hidden img used by ColorThief — must be in DOM */}
       <img ref={hiddenImgRef} className="hidden" alt="" aria-hidden="true"/>
@@ -375,6 +385,47 @@ const PaletteFromURL = () => {
             <p className="text-xs text-[var(--text-muted)]">Paste an image URL or upload a photo to extract its colours</p>
           </motion.div>
         )}
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Extract Colors from an Image</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Click the Device tab to upload an image from your computer, or the URL tab to paste a public image link.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>The tool analyzes the image and extracts up to 16 dominant colors using the ColorThief algorithm.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>View the extracted palette in a live swatch grid alongside the image preview.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Click any color swatch to copy its HEX code to your clipboard.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Export the full palette as CSS custom properties for use in your project.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is Color Extraction?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Color extraction (or color quantization) is the process of algorithmically identifying the most visually prominent colors in an image. This tool uses ColorThief, which applies a median cut algorithm to the image's pixel data. It divides the color space repeatedly, cutting the dimension with the greatest range each time, until it has isolated the requested number of color clusters. The representative color of each cluster — its median — becomes a palette swatch. This technique is widely used by designers to derive color palettes from photography, artwork, brand imagery, and nature. Instead of manually sampling colors with an eyedropper, you get a mathematically derived set of dominant hues that represent the image's true visual palette. These palettes can then be used as the basis for brand color systems, mood boards, and design tokens.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Why does the URL extraction sometimes fail?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Some image URLs block cross-origin requests (CORS). The tool uses a fallback chain of CORS proxy services to bypass this. If all proxies fail, try downloading the image and uploading it directly from your device instead.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Is my uploaded image stored anywhere?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">No. Images uploaded from your device are processed entirely in your browser using the File API and Canvas. No image data is ever sent to any server. URL-based images are fetched through proxy services solely for CORS access, but not stored.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How many colors can I extract?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">The tool extracts up to 16 dominant colors by default. For most images, 6–10 colors capture the key palette. Extracting more colors surfaces subtle hues; extracting fewer shows only the broadest dominant tones.</p>
+              </details>
+            </div>
+          </div>
+
+          <p className="text-sm text-[var(--text-muted)] text-center">
+            Also explore: <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/palette-exporter" className="text-indigo-500 hover:underline">Palette Exporter</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a>
+          </p>
+        </div>
       </main>
     </div>
   );

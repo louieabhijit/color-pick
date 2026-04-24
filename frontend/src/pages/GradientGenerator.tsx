@@ -129,10 +129,20 @@ const GradientGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Gradient Generator"
-        description="Generate beautiful linear, radial, and conic CSS gradients with a live preview editor. Add up to 8 colour stops, choose from 8 presets, and copy the CSS or Tailwind arbitrary class instantly."
+        title="CSS Gradient Generator — Build Custom Linear & Radial Gradients"
+        description="Create linear, radial, and conic CSS gradients visually with a live editor. Add up to 8 color stops, choose angle and type, and copy the ready-to-use CSS or Tailwind code instantly. Free at ColorPeek."
         path="/gradient-generator"
-        keywords="css gradient generator, linear gradient, radial gradient, conic gradient, tailwind gradient, gradient builder, css background generator"
+        keywords="css gradient generator, linear gradient builder, radial gradient tool, conic gradient generator, tailwind gradient, gradient color picker"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebApplication', name: 'CSS Gradient Generator | ColorPeek', description: 'Build custom CSS gradients with a live visual editor.', url: 'https://color-peek.com/gradient-generator', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+            { '@type': 'FAQPage', mainEntity: [
+              { '@type': 'Question', name: 'What gradient types does this tool support?', acceptedAnswer: { '@type': 'Answer', text: 'The generator supports linear-gradient (with adjustable angle), radial-gradient, and conic-gradient. You can add up to 8 color stops per gradient.' } },
+              { '@type': 'Question', name: 'Can I use the output in Tailwind CSS?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The tool outputs a Tailwind arbitrary value like bg-[linear-gradient(...)] that you can paste directly into your className.' } },
+            ]},
+          ],
+        }}
       />
       <Navbar onColorSelect={() => {}} />
 
@@ -429,6 +439,51 @@ const GradientGenerator = () => {
             </div>
 
           </motion.div>
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Gradient Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Choose a gradient type: Linear, Radial, or Conic.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>For linear gradients, set the angle using the slider (0–360°).</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Click any color stop on the gradient bar to change its color or move its position.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Add up to 8 color stops using the + button for complex multi-color gradients.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Copy the CSS or Tailwind output and paste it into your project.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a CSS Gradient Generator?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">A CSS gradient generator lets you build complex color transitions visually, without writing gradient syntax by hand. CSS gradients — defined with <code className="text-indigo-400">linear-gradient()</code>, <code className="text-indigo-400">radial-gradient()</code>, or <code className="text-indigo-400">conic-gradient()</code> — can have unlimited color stops, each at a precise position. Getting this right manually requires trial and error. A visual generator lets you drag stops, pick colors, and see the result in real time. The output is clean, optimized CSS you can paste directly into a stylesheet or use as a Tailwind arbitrary value. Gradients are widely used for hero backgrounds, button fills, card overlays, text effects, and UI depth without any image overhead.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between linear and radial gradients?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Linear gradients transition colors along a straight line at any angle. Radial gradients spread outward from a center point in a circular or elliptical shape. Conic gradients sweep around a center point like a pie chart.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I add more than 2 colors to a gradient?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. This generator supports up to 8 color stops. Each stop has an independent color and position, so you can create rainbow gradients, duotones with a hard stop at 50%, or any complex multi-tone effect.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I use the gradient in Tailwind CSS?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Copy the Tailwind output (e.g., <code className="text-indigo-400">bg-[linear-gradient(135deg,#6366f1_0%,#8b5cf6_100%)]</code>) and add it as a className. Tailwind's arbitrary value syntax supports full CSS gradient strings.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Are gradients better than background images for performance?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Generally yes. CSS gradients are rendered by the GPU with no HTTP request, no compression artifacts, and no resolution constraints. They scale perfectly to any screen size and have zero file size overhead.</p>
+              </details>
+            </div>
+          </div>
+
+          <p className="text-sm text-[var(--text-muted)] text-center">
+            Also explore: <a href="/gradients" className="text-indigo-500 hover:underline">Gradient Library</a> · <a href="/glass-generator" className="text-indigo-500 hover:underline">Glassmorphism Generator</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a>
+          </p>
         </div>
       </main>
     </div>

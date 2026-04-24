@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
+import PageSEO from '../components/PageSEO';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes, FaPlus } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch, formatRgb } from 'culori';
@@ -414,8 +415,38 @@ const ColorPalettes = () => {
     copyToClipboard(color, 'Color copied to clipboard!');
   };
 
+  const palettesSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebApplication',
+        name: 'Color Palette Generator | ColorPeek',
+        description: 'Browse hundreds of curated color palettes for designers and developers. Filter by style, sort by popularity, and copy any palette in one click.',
+        url: 'https://color-peek.com/palettes',
+        applicationCategory: 'DesignApplication',
+        operatingSystem: 'Any',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What is a color palette?', acceptedAnswer: { '@type': 'Answer', text: 'A color palette is a curated set of colors used together in a design. Good palettes create visual harmony and convey the right mood or brand identity.' } },
+          { '@type': 'Question', name: 'How many colors should a palette have?', acceptedAnswer: { '@type': 'Answer', text: 'Most design palettes have 3–6 colors: a primary, secondary, accent, and a few neutrals. Simpler is often better for maintaining visual consistency.' } },
+          { '@type': 'Question', name: 'How do I copy a color from a palette?', acceptedAnswer: { '@type': 'Answer', text: 'Click any color swatch to copy its HEX code to your clipboard. You can also click the copy icon on a palette card to copy all colors at once.' } },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen w-full">
+      <PageSEO
+        title="Color Palette Generator — Browse & Copy Free Palettes"
+        description="Explore hundreds of curated color palettes for designers and developers. Filter by mood, sort by popularity, and copy any swatch or full palette in one click. Free at ColorPeek."
+        path="/palettes"
+        keywords="color palette generator, free color palettes, design color schemes, color combinations, palette for designers, hex color palettes"
+        schema={palettesSchema}
+      />
       <Navbar onColorSelect={handleColorSelect} />
       
       
@@ -669,6 +700,51 @@ const ColorPalettes = () => {
           </div>
         </div>
       </main>
+
+      {/* SEO Content */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-8">
+        <div className="glass-card p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Color Palette Generator</h2>
+          <ol className="space-y-3">
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Browse the palette gallery or use the search bar to find palettes by name or tag.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Open the sidebar to filter by category — pastel, neon, earth, dark, corporate, and more.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Sort results by Newest, Most Liked, or Most Viewed to surface trending palettes.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Click any color swatch to instantly copy its HEX code to your clipboard.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click the copy icon on a palette card to copy all colors in the palette at once.</li>
+          </ol>
+        </div>
+
+        <div className="glass-card p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a Color Palette?</h2>
+          <p className="text-[var(--text-secondary)] leading-relaxed">A color palette is a carefully selected group of colors that work harmoniously together. In design, a palette establishes the visual identity of a project — from websites and mobile apps to logos and marketing materials. A well-chosen palette typically includes a primary color (the dominant brand color), a secondary color (for accents and highlights), and one or more neutral tones (backgrounds, text, borders). Most UI design systems use 4–8 colors to keep interfaces consistent and readable. Color palettes can follow formal rules from color theory — such as complementary, analogous, or triadic schemes — or be inspired by nature, art, photography, or cultural traditions. Starting with a strong palette reduces decision fatigue and ensures every screen in your product feels cohesive.</p>
+        </div>
+
+        <div className="glass-card p-8 rounded-2xl">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-3">
+            <details className="border border-white/20 rounded-xl overflow-hidden">
+              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How many colors should a palette have?</summary>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">Most design palettes use 3–6 colors: a primary, a secondary, an accent, and 1–2 neutrals. This gives enough variety without creating visual chaos. Design systems like Tailwind extend this with a full 50–900 tint/shade scale per hue.</p>
+            </details>
+            <details className="border border-white/20 rounded-xl overflow-hidden">
+              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Are these palettes free to use?</summary>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes — all palettes on ColorPeek are free to use in personal and commercial projects. No attribution required.</p>
+            </details>
+            <details className="border border-white/20 rounded-xl overflow-hidden">
+              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I use a palette in CSS?</summary>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">Copy the HEX codes and define them as CSS custom properties: <code className="text-indigo-400">--color-primary: #6366f1;</code>. Then reference them throughout your stylesheet. Or use our <a href="/palette-exporter" className="text-indigo-500 hover:underline">Palette Exporter</a> to export as a ready-to-paste CSS variables block.</p>
+            </details>
+            <details className="border border-white/20 rounded-xl overflow-hidden">
+              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What's the difference between a color scheme and a palette?</summary>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">A color scheme describes the relationship between colors (complementary, analogous, triadic), while a palette is the actual set of specific color values chosen for a project. A palette is the implementation of a scheme.</p>
+            </details>
+          </div>
+        </div>
+
+        <p className="text-sm text-[var(--text-muted)] text-center">
+          Also explore: <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a> · <a href="/palette-exporter" className="text-indigo-500 hover:underline">Palette Exporter</a> · <a href="/color-converter" className="text-indigo-500 hover:underline">Color Converter</a>
+        </p>
+      </section>
     </div>
   );
 };
