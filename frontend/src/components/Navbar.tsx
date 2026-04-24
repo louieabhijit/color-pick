@@ -112,7 +112,7 @@ const TOOL_PATHS = MOBILE_TOOLS.map(t => t.href).concat('/tools');
 
 const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) => {
   const [isDark, setIsDark] = useState<boolean>(() => {
-    const saved = localStorage.getItem('colorpeek-theme');
+    const saved = localStorage.getItem('colorpeek-theme-v2');
     return saved !== null ? saved === 'dark' : false;
   });
   const [isOpen, setIsOpen] = useState(false);
@@ -121,7 +121,7 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem('colorpeek-theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('colorpeek-theme-v2', isDark ? 'dark' : 'light');
   }, [isDark]);
 
   useEffect(() => {

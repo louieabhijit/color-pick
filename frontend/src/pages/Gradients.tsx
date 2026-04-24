@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch } from 'culori';
@@ -672,9 +673,7 @@ const Gradients = () => {
           </div>
         </div>
 
-        <p className="text-sm text-[var(--text-muted)] text-center">
-          Also explore: <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a> · <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/glass-generator" className="text-indigo-500 hover:underline">Glassmorphism Generator</a>
-        </p>
+        <RelatedTools tools={['/gradient-generator','/glass-generator','/palettes']} />
       </section>
     </div>
   );

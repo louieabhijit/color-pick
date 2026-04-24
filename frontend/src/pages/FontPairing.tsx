@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 interface Pairing {
   name: string;
@@ -355,9 +356,7 @@ module.exports = {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/type-scale" className="text-indigo-500 hover:underline">Type Scale Generator</a> · <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a>
-          </p>
+          <RelatedTools tools={['/type-scale','/palettes','/gradient-generator']} />
         </div>
       </main>
     </div>

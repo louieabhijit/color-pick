@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 interface ShadowLayer {
   id: string;
@@ -233,9 +234,7 @@ const BoxShadowGenerator = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/border-radius" className="text-indigo-500 hover:underline">Border Radius Builder</a> · <a href="/glass-generator" className="text-indigo-500 hover:underline">Glassmorphism Generator</a> · <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a>
-          </p>
+          <RelatedTools tools={['/border-radius','/glass-generator','/gradient-generator']} />
         </div>
       </main>
     </div>

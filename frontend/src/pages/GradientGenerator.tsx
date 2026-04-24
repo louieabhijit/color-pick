@@ -2,6 +2,7 @@ import { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -481,9 +482,7 @@ const GradientGenerator = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/gradients" className="text-indigo-500 hover:underline">Gradient Library</a> · <a href="/glass-generator" className="text-indigo-500 hover:underline">Glassmorphism Generator</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a>
-          </p>
+          <RelatedTools tools={['/gradients','/glass-generator','/color-converter']} />
         </div>
       </main>
     </div>

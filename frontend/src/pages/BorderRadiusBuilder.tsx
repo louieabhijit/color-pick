@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 type Unit = 'px' | '%' | 'rem';
 
@@ -190,9 +191,7 @@ const BorderRadiusBuilder = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/box-shadow" className="text-indigo-500 hover:underline">Box Shadow Generator</a> · <a href="/glass-generator" className="text-indigo-500 hover:underline">Glassmorphism Generator</a> · <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a>
-          </p>
+          <RelatedTools tools={['/box-shadow','/glass-generator','/gradient-generator']} />
         </div>
       </main>
     </div>

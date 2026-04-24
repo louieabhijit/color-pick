@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 // ── Color utilities ──────────────────────────────────────────────────────────
 
@@ -362,9 +363,7 @@ const TintShadeGenerator = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/palette-exporter" className="text-indigo-500 hover:underline">Palette Exporter</a> · <a href="/color-converter" className="text-indigo-500 hover:underline">Color Converter</a>
-          </p>
+          <RelatedTools tools={['/palettes','/color-converter','/color-blindness']} />
         </div>
       </main>
     </div>

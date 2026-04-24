@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 function hexToRgb(hex: string) {
   const h = hex.replace('#', '');
@@ -52,7 +53,10 @@ const GlassEffectGenerator = () => {
   const Slider = ({ label, value, min = 0, max, onChange }: { label: string; value: number; min?: number; max: number; onChange: (v: number) => void }) => (
     <div className="flex items-center gap-3">
       <span className="text-xs text-[var(--text-muted)] w-24 flex-shrink-0">{label}</span>
-      <input type="range" min={min} max={max} value={value} onChange={e => onChange(+e.target.value)} className="flex-1 accent-indigo-500"/>
+      <input type="range" min={min} max={max} value={value}
+        onInput={e => onChange(+(e.target as HTMLInputElement).value)}
+        onChange={e => onChange(+e.target.value)}
+        className="flex-1 accent-indigo-500"/>
       <span className="text-xs font-mono text-[var(--text-primary)] w-10 text-right">{value}</span>
     </div>
   );
@@ -100,7 +104,7 @@ const GlassEffectGenerator = () => {
             {/* Live preview */}
             <div className="relative rounded-2xl overflow-hidden h-72 flex items-center justify-center"
               style={{ background: BG_PRESETS[bgPreset] }}>
-              <div className="rounded-2xl p-6 w-56 transition-all duration-300" style={glassStyle}>
+              <div className="rounded-2xl p-6 w-56" style={{ ...glassStyle, willChange: 'backdrop-filter, background-color, border-color' }}>
                 <div className="w-8 h-8 rounded-full bg-white/30 mb-3"/>
                 <div className="h-3 bg-white/40 rounded mb-2 w-24"/>
                 <div className="h-2 bg-white/25 rounded mb-1.5 w-32"/>
@@ -195,9 +199,7 @@ const GlassEffectGenerator = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a> · <a href="/box-shadow" className="text-indigo-500 hover:underline">Box Shadow Generator</a> · <a href="/border-radius" className="text-indigo-500 hover:underline">Border Radius Builder</a>
-          </p>
+          <RelatedTools tools={['/box-shadow','/border-radius','/gradient-generator']} />
         </div>
       </main>
     </div>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ColorThief from 'colorthief';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 function rgbToHex(r: number, g: number, b: number) {
   return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
@@ -422,9 +423,7 @@ const PaletteFromURL = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/palette-exporter" className="text-indigo-500 hover:underline">Palette Exporter</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a>
-          </p>
+          <RelatedTools tools={['/palettes','/palette-exporter','/color-converter']} />
         </div>
       </main>
     </div>

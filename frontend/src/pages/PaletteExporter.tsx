@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 interface SwatchColor {
   id: string;
@@ -386,9 +387,7 @@ const PaletteExporter = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a> · <a href="/palette-url" className="text-indigo-500 hover:underline">Extract Colors from Image</a>
-          </p>
+          <RelatedTools tools={['/palettes','/palette-url','/color-converter']} />
         </div>
       </main>
     </div>

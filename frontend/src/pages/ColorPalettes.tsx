@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { IconType } from 'react-icons';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes, FaPlus } from 'react-icons/fa';
 import { MdCategory } from 'react-icons/md';
 import { oklch, formatRgb } from 'culori';
@@ -741,9 +742,7 @@ const ColorPalettes = () => {
           </div>
         </div>
 
-        <p className="text-sm text-[var(--text-muted)] text-center">
-          Also explore: <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a> · <a href="/palette-exporter" className="text-indigo-500 hover:underline">Palette Exporter</a> · <a href="/color-converter" className="text-indigo-500 hover:underline">Color Converter</a>
-        </p>
+        <RelatedTools tools={['/tint-shade','/color-blindness','/palette-exporter','/palette-url']} />
       </section>
     </div>
   );

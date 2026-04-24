@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 // ── Color blindness matrices ──────────────────────────────────────────────────
 // Each row: [rR, rG, rB,  gR, gG, gB,  bR, bG, bB]
@@ -354,9 +355,7 @@ const ColorBlindnessSimulator = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a> · <a href="/color-converter" className="text-indigo-500 hover:underline">Color Converter</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a>
-          </p>
+          <RelatedTools tools={['/color-converter','/palettes','/tint-shade']} />
         </div>
       </main>
     </div>

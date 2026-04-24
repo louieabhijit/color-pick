@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 // ── Conversion math ──────────────────────────────────────────────────────────
 
@@ -256,9 +257,7 @@ const ColorConverter = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a> · <a href="/color-blindness" className="text-indigo-500 hover:underline">Color Blindness Simulator</a> · <a href="/palettes" className="text-indigo-500 hover:underline">Color Palettes</a>
-          </p>
+          <RelatedTools tools={['/palettes','/tint-shade','/color-blindness']} />
         </div>
       </main>
     </div>

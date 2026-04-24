@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
+import RelatedTools from '../components/RelatedTools';
 
 const RATIOS = [
   { label: 'Minor Second',   value: 1.067 },
@@ -214,9 +215,7 @@ const TypeScaleGenerator = () => {
             </div>
           </div>
 
-          <p className="text-sm text-[var(--text-muted)] text-center">
-            Also explore: <a href="/font-pairing" className="text-indigo-500 hover:underline">Font Pairing Tool</a> · <a href="/tint-shade" className="text-indigo-500 hover:underline">Tint & Shade Generator</a> · <a href="/color-converter" className="text-indigo-500 hover:underline">Color Converter</a>
-          </p>
+          <RelatedTools tools={['/font-pairing','/palettes','/color-converter']} />
         </div>
       </main>
     </div>
