@@ -249,7 +249,7 @@ const ColorPsychology = () => {
           >
             <h2 className="text-2xl md:text-3xl font-bold">The Power of Color in Marketing</h2>
             <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
-              Color psychology in marketing is more than just aesthetic appeal—it's a powerful tool that 
+              Color psychology in marketing is more than just aesthetic appeal-it's a powerful tool that 
               can influence consumer behavior, drive conversions, and build brand recognition. Understanding 
               how different colors affect customer decisions is crucial for creating effective marketing 
               strategies and designing compelling user experiences.

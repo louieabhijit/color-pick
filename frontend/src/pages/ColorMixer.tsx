@@ -101,7 +101,7 @@ const ColorMixer = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Color Mixer — Blend Two Colors Together"
+        title="Color Mixer - Blend Two Colors Together"
         description="Mix and blend two colors with an adjustable ratio. See the result in real-time. Choose blending in RGB, HSL, or OKLCH color space. Copy the mixed color."
         path="/color-mixer"
         keywords="color mixer, blend colors, color blender online, mix two colors, color interpolation tool"

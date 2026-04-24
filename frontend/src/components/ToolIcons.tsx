@@ -1,4 +1,4 @@
-// Shared SVG icon components — all tools.
+// Shared SVG icon components - all tools.
 // Style: 24×24 viewBox, strokeWidth 1.5, Heroicons-compatible.
 
 interface IconProps { className?: string }

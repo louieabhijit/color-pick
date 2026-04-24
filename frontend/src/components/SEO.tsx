@@ -7,9 +7,9 @@ const SEO = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'ColorPeek — Color Palette Generator & Design Tools',
+    name: 'ColorPeek - Color Palette Generator & Design Tools',
     url: BASE_URL,
-    description: 'Extract colour palettes from images, generate harmonies, check WCAG contrast, and use 13 free design tools — all in your browser, no sign-up required.',
+    description: 'Extract colour palettes from images, generate harmonies, check WCAG contrast, and use 13 free design tools - all in your browser, no sign-up required.',
     applicationCategory: 'DesignApplication',
     operatingSystem: 'Any',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -37,9 +37,9 @@ const SEO = () => {
   return (
     <Helmet>
       {/* Primary */}
-      <title>ColorPeek — Color Palette Generator & Free Design Tools</title>
-      <meta name="title" content="ColorPeek — Color Palette Generator & Free Design Tools" />
-      <meta name="description" content="Extract colour palettes from any image, generate harmonies, check WCAG contrast, and use 13 free CSS & typography tools. Runs entirely in your browser — no sign-up." />
+      <title>ColorPeek - Color Palette Generator & Free Design Tools</title>
+      <meta name="title" content="ColorPeek - Color Palette Generator & Free Design Tools" />
+      <meta name="description" content="Extract colour palettes from any image, generate harmonies, check WCAG contrast, and use 13 free CSS & typography tools. Runs entirely in your browser - no sign-up." />
       <meta name="keywords" content="color palette generator, color picker, color extractor, css tools, gradient generator, box shadow, glassmorphism, type scale, font pairing, wcag contrast checker, free design tools" />
       <meta name="author" content="ColorPeek" />
       <meta name="robots" content="index, follow" />
@@ -51,15 +51,15 @@ const SEO = () => {
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={BASE_URL} />
-      <meta property="og:title" content="ColorPeek — Color Palette Generator & Free Design Tools" />
-      <meta property="og:description" content="Extract colour palettes from any image, generate harmonies, check WCAG contrast, and use 13 free CSS & typography tools. Runs entirely in your browser — no sign-up." />
+      <meta property="og:title" content="ColorPeek - Color Palette Generator & Free Design Tools" />
+      <meta property="og:description" content="Extract colour palettes from any image, generate harmonies, check WCAG contrast, and use 13 free CSS & typography tools. Runs entirely in your browser - no sign-up." />
       <meta property="og:image" content={OG_IMAGE} />
       <meta property="og:site_name" content="ColorPeek" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={BASE_URL} />
-      <meta name="twitter:title" content="ColorPeek — Color Palette Generator & Free Design Tools" />
+      <meta name="twitter:title" content="ColorPeek - Color Palette Generator & Free Design Tools" />
       <meta name="twitter:description" content="Extract colour palettes from any image, generate harmonies, check WCAG contrast, and use 13 free CSS & typography tools." />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="twitter:site" content="@colorpeek" />

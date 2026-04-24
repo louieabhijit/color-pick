@@ -29,7 +29,7 @@ const CSSBoxShadowExamples = () => {
   const metadata = {
     title: '10 CSS Box Shadow Examples Every Developer Should Know',
     description:
-      'Master CSS box shadows with 10 practical examples — from basic drops to neumorphism and glows. Includes copy-paste code snippets for every technique.',
+      'Master CSS box shadows with 10 practical examples - from basic drops to neumorphism and glows. Includes copy-paste code snippets for every technique.',
     author: 'Alex Rivera',
     date: 'April 22, 2026',
     readTime: '8 min read',
@@ -171,10 +171,10 @@ const CSSBoxShadowExamples = () => {
 box-shadow: shadow1, shadow2, shadow3;`}
               </pre>
               <ul className="mt-4 space-y-2 text-[var(--text-secondary)] dark:text-gray-300 text-sm">
-                <li><strong>offset-x / offset-y</strong> — horizontal and vertical displacement (can be negative)</li>
-                <li><strong>blur-radius</strong> — how soft/diffuse the shadow is (0 = hard edge)</li>
-                <li><strong>spread-radius</strong> — expands (+) or contracts (−) the shadow before blurring</li>
-                <li><strong>inset</strong> — renders the shadow inside the element rather than outside</li>
+                <li><strong>offset-x / offset-y</strong> - horizontal and vertical displacement (can be negative)</li>
+                <li><strong>blur-radius</strong> - how soft/diffuse the shadow is (0 = hard edge)</li>
+                <li><strong>spread-radius</strong> - expands (+) or contracts (−) the shadow before blurring</li>
+                <li><strong>inset</strong> - renders the shadow inside the element rather than outside</li>
               </ul>
             </div>
           </motion.section>
@@ -349,35 +349,35 @@ box-shadow: shadow1, shadow2, shadow3;`}
                 shadows (key light + ambient light). Here are the most useful levels:
               </p>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm">
-{`/* Elevation 1 — resting card */
+{`/* Elevation 1 - resting card */
 .elevation-1 {
   box-shadow:
     0 1px 3px rgba(0,0,0,0.12),
     0 1px 2px rgba(0,0,0,0.24);
 }
 
-/* Elevation 2 — hovered card */
+/* Elevation 2 - hovered card */
 .elevation-2 {
   box-shadow:
     0 3px 6px rgba(0,0,0,0.15),
     0 2px 4px rgba(0,0,0,0.12);
 }
 
-/* Elevation 3 — dialogs / drawers */
+/* Elevation 3 - dialogs / drawers */
 .elevation-3 {
   box-shadow:
     0 10px 20px rgba(0,0,0,0.15),
     0 3px 6px rgba(0,0,0,0.10);
 }
 
-/* Elevation 4 — modals */
+/* Elevation 4 - modals */
 .elevation-4 {
   box-shadow:
     0 15px 25px rgba(0,0,0,0.15),
     0 5px 10px rgba(0,0,0,0.05);
 }
 
-/* Elevation 5 — highest priority */
+/* Elevation 5 - highest priority */
 .elevation-5 {
   box-shadow:
     0 20px 40px rgba(0,0,0,0.2);
@@ -396,7 +396,7 @@ box-shadow: shadow1, shadow2, shadow3;`}
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-2">6. Neumorphism Effect</h2>
               <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
-                Neumorphism (soft UI) uses two shadows — one light, one dark — cast in
+                Neumorphism (soft UI) uses two shadows - one light, one dark - cast in
                 opposite directions to simulate physical extrusion from the background.
                 The background color of the element must match the page background.
               </p>
@@ -530,7 +530,7 @@ box-shadow: shadow1, shadow2, shadow3;`}
               <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 <code>text-shadow</code> shares a similar syntax (minus spread-radius)
                 and adds depth or legibility to headings. For SVG icons and irregular
-                shapes, use <code>filter: drop-shadow()</code> instead — it respects
+                shapes, use <code>filter: drop-shadow()</code> instead - it respects
                 the actual alpha channel.
               </p>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm">
@@ -548,7 +548,7 @@ h1 {
     0 0 40px rgba(99, 102, 241, 0.3);
 }
 
-/* SVG / irregular shape — use filter instead */
+/* SVG / irregular shape - use filter instead */
 .icon {
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
 }`}

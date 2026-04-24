@@ -107,7 +107,7 @@ const CSSFilterGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Filter Generator — Blur, Contrast, Sepia & More"
+        title="CSS Filter Generator - Blur, Contrast, Sepia & More"
         description="Create CSS filter effects visually. Adjust blur, brightness, contrast, grayscale, sepia, hue-rotate, saturate, and invert. Copy the CSS code instantly."
         path="/css-filter"
         keywords="css filter generator, blur filter css, brightness contrast css, sepia filter, hue rotate css, css image filter tool"

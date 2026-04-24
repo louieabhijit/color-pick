@@ -137,7 +137,7 @@ const RandomColorGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Random Color Generator — Get Random Colors Instantly"
+        title="Random Color Generator - Get Random Colors Instantly"
         description="Generate random colors with one click. Get HEX, RGB, and HSL values. Lock colors you like and keep generating. Filter by hue, saturation, or lightness."
         path="/random-color"
         keywords="random color generator, random hex color, random palette generator, color randomizer online"

@@ -69,7 +69,7 @@ const DesignTokenColorSystem = () => {
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
             <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3"><FaLayerGroup className="text-indigo-500" /> What Are Design Tokens?</h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Design tokens are named variables that store design decisions — colors, spacing, typography, shadows — in a single source of truth. Instead of hardcoding <code className="text-indigo-500">#4f46e5</code> scattered across 50 files, you define it once as <code className="text-indigo-500">--color-brand-primary</code> and reference that name everywhere. When the brand color changes, you update one value.
+              Design tokens are named variables that store design decisions - colors, spacing, typography, shadows - in a single source of truth. Instead of hardcoding <code className="text-indigo-500">#4f46e5</code> scattered across 50 files, you define it once as <code className="text-indigo-500">--color-brand-primary</code> and reference that name everywhere. When the brand color changes, you update one value.
             </p>
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4">What you'll build</h3>
@@ -87,10 +87,10 @@ const DesignTokenColorSystem = () => {
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="my-12">
             <h2 className="text-2xl md:text-3xl font-bold">Layer 1: Primitive Tokens</h2>
             <p className="text-[var(--text-secondary)] mt-4">
-              Primitive tokens are your raw color scale — every shade of every color in your palette, named by hue and numeric value. They don't carry meaning yet, they're just the full inventory. Think of them as the paint supply.
+              Primitive tokens are your raw color scale - every shade of every color in your palette, named by hue and numeric value. They don't carry meaning yet, they're just the full inventory. Think of them as the paint supply.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-6">
-              <h3 className="font-semibold mb-4">CSS Custom Properties — Primitives</h3>
+              <h3 className="font-semibold mb-4">CSS Custom Properties - Primitives</h3>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">{`:root {
   /* Indigo scale */
   --color-indigo-50:  #eef2ff;
@@ -119,11 +119,11 @@ const DesignTokenColorSystem = () => {
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="my-12">
             <h2 className="text-2xl md:text-3xl font-bold">Layer 2: Semantic Tokens</h2>
             <p className="text-[var(--text-secondary)] mt-4">
-              Semantic tokens reference primitives and assign purpose. They answer "what is this color for?" — not "what color is it?". This layer enables dark mode: you keep the same semantic name but point it at a different primitive.
+              Semantic tokens reference primitives and assign purpose. They answer "what is this color for?" - not "what color is it?". This layer enables dark mode: you keep the same semantic name but point it at a different primitive.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-6">
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">{`:root {
-  /* Light mode — semantic layer */
+  /* Light mode - semantic layer */
   --color-bg-base:       var(--color-neutral-0);
   --color-bg-surface:    var(--color-neutral-50);
   --color-bg-elevated:   var(--color-neutral-100);
@@ -141,7 +141,7 @@ const DesignTokenColorSystem = () => {
 }
 
 .dark {
-  /* Dark mode — same names, different primitives */
+  /* Dark mode - same names, different primitives */
   --color-bg-base:       var(--color-neutral-950);
   --color-bg-surface:    var(--color-neutral-900);
   --color-bg-elevated:   #1e1e2e; /* custom dark surface */
@@ -219,11 +219,11 @@ module.exports = {
             <p className="text-[var(--text-secondary)] mt-4">Here's a practical workflow for building your token system using ColorPeek's tools:</p>
             <ol className="mt-6 space-y-4 text-[var(--text-secondary)]">
               {[
-                "Generate your brand color scale (50–900) using the Tint & Shade Generator — one base hex produces the full primitive scale.",
-                "Add up to 16 named swatches in the Palette Exporter — assign semantic names like 'bg-base', 'brand-primary', 'text-secondary'.",
-                "Export as CSS variables or Tailwind config with one click — paste directly into your project.",
+                "Generate your brand color scale (50–900) using the Tint & Shade Generator - one base hex produces the full primitive scale.",
+                "Add up to 16 named swatches in the Palette Exporter - assign semantic names like 'bg-base', 'brand-primary', 'text-secondary'.",
+                "Export as CSS variables or Tailwind config with one click - paste directly into your project.",
                 "For dark mode, duplicate the export and adjust the semantic layer to point darker primitives at the appropriate values.",
-                "Commit the token file as a shared source of truth — both designers (via Figma tokens) and developers reference it.",
+                "Commit the token file as a shared source of truth - both designers (via Figma tokens) and developers reference it.",
               ].map((step, i) => (
                 <li key={i} className="flex gap-4">
                   <span className="flex-shrink-0 w-7 h-7 rounded-full bg-indigo-600 text-white text-sm font-bold flex items-center justify-center">{i + 1}</span>
@@ -254,7 +254,7 @@ module.exports = {
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mt-12 rounded-2xl p-8 border border-indigo-200/40 dark:border-indigo-500/20" style={{ background: 'rgba(99,102,241,0.06)' }}>
             <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">Build your token system now</h3>
-            <p className="text-[var(--text-muted)] mb-6 text-sm">Generate a full color scale, name your tokens, and export as CSS variables, Tailwind config, or JSON — all free.</p>
+            <p className="text-[var(--text-muted)] mb-6 text-sm">Generate a full color scale, name your tokens, and export as CSS variables, Tailwind config, or JSON - all free.</p>
             <div className="flex flex-wrap gap-3">
               <a href="/palette-exporter" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">Palette Exporter →</a>
               <a href="/tint-shade" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-indigo-300 dark:border-indigo-600 text-indigo-600 dark:text-indigo-400 text-sm font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-500/10 transition-colors">Tint &amp; Shade Generator</a>

@@ -89,7 +89,7 @@ const FlexboxGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Flexbox Generator — Visual Layout Builder"
+        title="CSS Flexbox Generator - Visual Layout Builder"
         description="Build CSS Flexbox layouts visually. Set direction, alignment, wrapping, and gap. Add items, adjust flex-grow/shrink/basis. Copy clean CSS code."
         path="/flexbox"
         keywords="css flexbox generator, flexbox layout builder, flexbox visual editor, flex container generator, css flex code"

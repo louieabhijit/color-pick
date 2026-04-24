@@ -146,7 +146,7 @@ const ColorNameFinder = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Color Name Finder — Find the Name of Any Color"
+        title="Color Name Finder - Find the Name of Any Color"
         description="Enter a HEX, RGB, or HSL color and find its closest named color. Search over 200 color names including all CSS named colors and common design color names."
         path="/color-name"
         keywords="color name finder, what is this color called, css color names, find color name by hex, nearest named color"

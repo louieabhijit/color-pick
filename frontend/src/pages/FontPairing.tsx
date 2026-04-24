@@ -114,7 +114,7 @@ const PREVIEW_TEXTS = {
   body: [
     'Great typography sets the tone for your entire design. The right pairing creates visual hierarchy and guides the reader naturally through your content.',
     'Color and type work together to communicate mood, brand personality, and hierarchy. Choose pairings that complement your palette.',
-    'Every font has a personality. When two typefaces share complementary qualities — contrast, rhythm, and proportion — the result feels inevitable.',
+    'Every font has a personality. When two typefaces share complementary qualities - contrast, rhythm, and proportion - the result feels inevitable.',
   ],
 };
 
@@ -174,7 +174,7 @@ module.exports = {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Font Pairing Tool — Find Google Fonts That Work Together"
+        title="Font Pairing Tool - Find Google Fonts That Work Together"
         description="Discover curated Google Font pairings with live preview. Browse 20+ heading and body font combinations, customize text and colors, copy the Google Fonts import or Tailwind config. Free at ColorPeek."
         path="/font-pairing"
         keywords="font pairing tool, google font combinations, typography pairing, heading body font pairings, best font pairings 2025, google fonts for web"
@@ -325,7 +325,7 @@ module.exports = {
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Font Pairing Tool</h2>
             <ol className="space-y-3">
-              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Filter pairings by tag — Elegant, Modern, Minimal, Editorial, Friendly, or Technical.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Filter pairings by tag - Elegant, Modern, Minimal, Editorial, Friendly, or Technical.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Click any pairing card to load a live preview with heading and body text samples.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Edit the preview text and adjust heading/body colors to match your brand.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Copy the Google Fonts HTML <code className="text-indigo-400">&lt;link&gt;</code> tag to add the fonts to your project.</li>

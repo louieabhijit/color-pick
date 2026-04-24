@@ -117,7 +117,7 @@ const ContrastChecker = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Color Contrast Checker — WCAG AA & AAA Compliance"
+        title="Color Contrast Checker - WCAG AA & AAA Compliance"
         description="Check color contrast ratios for WCAG 2.1 accessibility compliance. Test text and background color combinations for AA and AAA standards. Free online tool."
         path="/contrast-checker"
         keywords="color contrast checker, wcag contrast ratio, accessibility contrast, aa aaa compliance, text background contrast"
@@ -206,7 +206,7 @@ const ContrastChecker = () => {
               <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] mb-1">Contrast Ratio</p>
               <p className="text-6xl font-bold text-[var(--text-primary)] mb-1">{ratioStr}</p>
               <p className="text-sm text-[var(--text-muted)]">
-                {ratio >= 7 ? 'AAA — Excellent' : ratio >= 4.5 ? 'AA — Good' : ratio >= 3 ? 'AA Large — Marginal' : 'Fails WCAG'}
+                {ratio >= 7 ? 'AAA - Excellent' : ratio >= 4.5 ? 'AA - Good' : ratio >= 3 ? 'AA Large - Marginal' : 'Fails WCAG'}
               </p>
             </div>
 
@@ -246,7 +246,7 @@ const ContrastChecker = () => {
               Normal body text at 16px. The quick brown fox jumps over the lazy dog.
               Good typography ensures readability for all users.
             </p>
-            <p className="text-sm" style={{ color: fg }}>Small text at 14px — used for captions, labels, and secondary content.</p>
+            <p className="text-sm" style={{ color: fg }}>Small text at 14px - used for captions, labels, and secondary content.</p>
             <div className="flex flex-wrap gap-3">
               <button className="px-4 py-2 rounded-lg text-sm font-medium border" style={{ backgroundColor: fg, color: bg }}>Primary Button</button>
               <button className="px-4 py-2 rounded-lg text-sm font-medium border" style={{ borderColor: fg, color: fg, backgroundColor: 'transparent' }}>Outline Button</button>

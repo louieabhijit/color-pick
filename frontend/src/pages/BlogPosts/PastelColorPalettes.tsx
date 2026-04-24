@@ -17,7 +17,7 @@ const PastelColorPalettes = () => {
 
   const metadata = {
     title: "Pastel Color Palettes for Modern Web Design: 8 Beautiful Collections",
-    description: "Discover 8 curated pastel color palettes for web design — from soft spring florals to muted Scandinavian neutrals. Includes hex codes, CSS variables, and pairing tips.",
+    description: "Discover 8 curated pastel color palettes for web design - from soft spring florals to muted Scandinavian neutrals. Includes hex codes, CSS variables, and pairing tips.",
     author: "Sofia Martínez",
     date: "April 22, 2026",
     readTime: "8 min read",
@@ -168,7 +168,7 @@ const PastelColorPalettes = () => {
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
             <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3"><FaPalette className="text-indigo-500" /> Why Pastel Palettes Work So Well</h2>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-              Pastels are colors with high lightness and low-to-medium saturation — they're essentially colors mixed with significant white. They're visually restful, which is why they dominate wellness, lifestyle, and consumer apps. Unlike vibrant colors that demand attention, pastels invite the eye to linger. They also pair beautifully with white space, making them a natural fit for modern minimal layouts.
+              Pastels are colors with high lightness and low-to-medium saturation - they're essentially colors mixed with significant white. They're visually restful, which is why they dominate wellness, lifestyle, and consumer apps. Unlike vibrant colors that demand attention, pastels invite the eye to linger. They also pair beautifully with white space, making them a natural fit for modern minimal layouts.
             </p>
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4 flex items-center gap-2"><FaHeart className="text-pink-400" /> What makes a good pastel palette?</h3>
@@ -190,7 +190,7 @@ const PastelColorPalettes = () => {
                 <motion.div key={palette.name} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 + index * 0.06 }} className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg">
                   <div className="flex h-16">
                     {palette.colors.map((c) => (
-                      <div key={c.hex} className="flex-1" style={{ backgroundColor: c.hex }} title={`${c.name} — ${c.hex}`} />
+                      <div key={c.hex} className="flex-1" style={{ backgroundColor: c.hex }} title={`${c.name} - ${c.hex}`} />
                     ))}
                   </div>
                   <div className="p-5">
@@ -219,13 +219,13 @@ const PastelColorPalettes = () => {
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }} className="my-12">
             <h2 className="text-2xl md:text-3xl font-bold">Accessibility Warning: Pastels & Contrast</h2>
             <p className="text-[var(--text-secondary)] mt-4">
-              The biggest pitfall with pastel palettes is contrast. Pastel-on-pastel or pastel-on-white combinations almost never pass WCAG AA (4.5:1 for text). Always pair pastels with dark text — use a near-black like <code className="text-indigo-500">#1a1a2e</code> or <code className="text-indigo-500">#2d2d3e</code> rather than a tinted gray. Use the darker shades in your tint/shade scale for CTAs and important elements.
+              The biggest pitfall with pastel palettes is contrast. Pastel-on-pastel or pastel-on-white combinations almost never pass WCAG AA (4.5:1 for text). Always pair pastels with dark text - use a near-black like <code className="text-indigo-500">#1a1a2e</code> or <code className="text-indigo-500">#2d2d3e</code> rather than a tinted gray. Use the darker shades in your tint/shade scale for CTAs and important elements.
             </p>
             <div className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-6">
               <h3 className="text-xl font-semibold mb-4">Key Takeaways</h3>
               <ul className="space-y-2 text-[var(--text-secondary)]">
-                <li>• Never use pastel text on a white background — it won't pass contrast</li>
-                <li>• Use pastels as backgrounds, cards, and accent fills — not for text</li>
+                <li>• Never use pastel text on a white background - it won't pass contrast</li>
+                <li>• Use pastels as backgrounds, cards, and accent fills - not for text</li>
                 <li>• A deep version of your accent (500–700 shade) works well for CTAs</li>
                 <li>• Test your palette in both light and dark mode</li>
                 <li>• Export your palette as CSS variables for consistent reuse across your project</li>

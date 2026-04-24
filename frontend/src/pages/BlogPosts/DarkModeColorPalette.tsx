@@ -100,13 +100,13 @@ const DarkModeColorPalette = () => {
               1. Why Dark Mode Is More Than Just Inverting Colors
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              A common misconception among developers starting out with dark mode is that it's simply a matter of flipping the color scale — making backgrounds dark and text light. Hit <code>filter: invert(1)</code> on the <code>body</code> and you're done, right? Wrong. That approach creates garish, inconsistent experiences that actually strain the eyes more than a well-lit screen.
+              A common misconception among developers starting out with dark mode is that it's simply a matter of flipping the color scale - making backgrounds dark and text light. Hit <code>filter: invert(1)</code> on the <code>body</code> and you're done, right? Wrong. That approach creates garish, inconsistent experiences that actually strain the eyes more than a well-lit screen.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               True dark mode design is a deliberate system. It accounts for how the human eye perceives luminance differently in low-light environments, how UI elements need to communicate depth without relying on drop shadows the same way they do in light mode, and how colors that work brilliantly on a white canvas can feel overwhelming or washed-out on a dark one.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Consider the difference: in light mode, depth is communicated by shadows — a card sits above a background because it has a drop shadow. In dark mode, shadows on dark surfaces are nearly invisible, so depth must instead be communicated through surface color itself. The card appears lighter than the background, not by a shadow, but by its surface tone.
+              Consider the difference: in light mode, depth is communicated by shadows - a card sits above a background because it has a drop shadow. In dark mode, shadows on dark surfaces are nearly invisible, so depth must instead be communicated through surface color itself. The card appears lighter than the background, not by a shadow, but by its surface tone.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-3">Light Mode vs. Dark Mode: Key Differences</h3>
@@ -134,7 +134,7 @@ const DarkModeColorPalette = () => {
               </div>
             </div>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed">
-              Google's Material Design guidelines recommend a background of <strong>#121212</strong> as the base dark surface — not pure black. Pure black (#000000) creates a harsh contrast that can cause eye strain, and it doesn't allow for the elevation system to function properly because there's nowhere lower to go.
+              Google's Material Design guidelines recommend a background of <strong>#121212</strong> as the base dark surface - not pure black. Pure black (#000000) creates a harsh contrast that can cause eye strain, and it doesn't allow for the elevation system to function properly because there's nowhere lower to go.
             </p>
           </motion.section>
 
@@ -172,7 +172,7 @@ const DarkModeColorPalette = () => {
                     <div style={{ backgroundColor: item.hex }} className="w-16 h-8 rounded-lg flex-shrink-0 border border-white/10" />
                     <div>
                       <p className="text-sm font-medium text-[var(--text-primary)] dark:text-gray-200">{item.level}</p>
-                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} — {item.label}</p>
+                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} - {item.label}</p>
                     </div>
                   </div>
                 ))}
@@ -195,19 +195,19 @@ const DarkModeColorPalette = () => {
               3. Text Contrast Rules for Dark Mode
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              The WCAG (Web Content Accessibility Guidelines) require a minimum contrast ratio of <strong>4.5:1</strong> for normal text (AA compliance) and <strong>7:1</strong> for AAA compliance. For large text (18px+ bold or 24px+ regular), AA requires just 3:1. These rules apply equally to dark mode — but the challenge is different.
+              The WCAG (Web Content Accessibility Guidelines) require a minimum contrast ratio of <strong>4.5:1</strong> for normal text (AA compliance) and <strong>7:1</strong> for AAA compliance. For large text (18px+ bold or 24px+ regular), AA requires just 3:1. These rules apply equally to dark mode - but the challenge is different.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              On a light background, near-black text (#1A1A1A on #FFFFFF) scores an enormous 18.5:1 ratio — far exceeding even AAA requirements. On a dark background, you might assume that pure white on pure black (#FFFFFF on #000000) is perfect. And mathematically it is — 21:1 is the maximum possible ratio. But pure white text on pure black causes a "halation" effect where the extreme contrast makes the letters appear to glow, creating eye strain during extended reading.
+              On a light background, near-black text (#1A1A1A on #FFFFFF) scores an enormous 18.5:1 ratio - far exceeding even AAA requirements. On a dark background, you might assume that pure white on pure black (#FFFFFF on #000000) is perfect. And mathematically it is - 21:1 is the maximum possible ratio. But pure white text on pure black causes a "halation" effect where the extreme contrast makes the letters appear to glow, creating eye strain during extended reading.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Recommended Dark Mode Text Colors</h3>
               <div className="space-y-4">
                 {[
-                  { label: 'Primary Text', hex: '#E8E8F0', desc: 'Main body text — off-white with a subtle cool tint, contrast ~15:1 on #121212', contrast: '~15:1' },
-                  { label: 'Secondary Text', hex: '#A0A0B0', desc: 'Captions, metadata, labels — readable but clearly subordinate', contrast: '~7:1' },
+                  { label: 'Primary Text', hex: '#E8E8F0', desc: 'Main body text - off-white with a subtle cool tint, contrast ~15:1 on #121212', contrast: '~15:1' },
+                  { label: 'Secondary Text', hex: '#A0A0B0', desc: 'Captions, metadata, labels - readable but clearly subordinate', contrast: '~7:1' },
                   { label: 'Disabled Text', hex: '#606070', desc: 'Disabled states, placeholder text', contrast: '~3:1' },
-                  { label: 'Hint Text', hex: '#4A4A5A', desc: 'Very subtle hints — only for decorative contexts, not real content', contrast: '<2:1' },
+                  { label: 'Hint Text', hex: '#4A4A5A', desc: 'Very subtle hints - only for decorative contexts, not real content', contrast: '<2:1' },
                 ].map((item) => (
                   <div key={item.hex} className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-24 text-center">
@@ -226,7 +226,7 @@ const DarkModeColorPalette = () => {
               The key insight: <strong>never use pure #FFFFFF as your primary body text in dark mode</strong>. Instead, use a slightly warm or cool off-white like <code>#E8E8F0</code> or <code>#F0EFE9</code>. This subtle softening reduces halation while maintaining excellent contrast ratios well above AA requirements.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed">
-              Similarly, avoid using secondary text that's too dim — many designers make the mistake of using mid-gray text on dark backgrounds, producing contrast ratios below 3:1 that fail accessibility standards entirely.
+              Similarly, avoid using secondary text that's too dim - many designers make the mistake of using mid-gray text on dark backgrounds, producing contrast ratios below 3:1 that fail accessibility standards entirely.
             </p>
           </motion.section>
 
@@ -242,10 +242,10 @@ const DarkModeColorPalette = () => {
               4. Semantic Color Tokens for Dark Mode
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Hard-coding color values like <code>#1E1E1E</code> directly into your components is a recipe for a maintenance nightmare. Instead, the modern approach is to define <strong>semantic color tokens</strong> — named variables that describe the role of a color, not its specific value.
+              Hard-coding color values like <code>#1E1E1E</code> directly into your components is a recipe for a maintenance nightmare. Instead, the modern approach is to define <strong>semantic color tokens</strong> - named variables that describe the role of a color, not its specific value.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              The distinction: a primitive token is <code>gray-900: #121212</code>. A semantic token is <code>background-base: var(--gray-900)</code>. The component uses <code>background-base</code>, and when you switch to dark mode, you only change what <code>background-base</code> points to — the component itself needs no modification.
+              The distinction: a primitive token is <code>gray-900: #121212</code>. A semantic token is <code>background-base: var(--gray-900)</code>. The component uses <code>background-base</code>, and when you switch to dark mode, you only change what <code>background-base</code> points to - the component itself needs no modification.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Core Semantic Token Categories</h3>
@@ -253,36 +253,36 @@ const DarkModeColorPalette = () => {
                 <div>
                   <p className="font-semibold text-indigo-600 dark:text-indigo-400 mb-3 text-sm uppercase tracking-wider">Background Tokens</p>
                   <ul className="space-y-2 text-sm text-[var(--text-secondary)] dark:text-gray-300">
-                    <li><code className="text-indigo-500">--bg-base</code> — Page background</li>
-                    <li><code className="text-indigo-500">--bg-surface</code> — Cards, panels</li>
-                    <li><code className="text-indigo-500">--bg-overlay</code> — Modals, dialogs</li>
-                    <li><code className="text-indigo-500">--bg-sunken</code> — Inputs, code blocks</li>
+                    <li><code className="text-indigo-500">--bg-base</code> - Page background</li>
+                    <li><code className="text-indigo-500">--bg-surface</code> - Cards, panels</li>
+                    <li><code className="text-indigo-500">--bg-overlay</code> - Modals, dialogs</li>
+                    <li><code className="text-indigo-500">--bg-sunken</code> - Inputs, code blocks</li>
                   </ul>
                 </div>
                 <div>
                   <p className="font-semibold text-indigo-600 dark:text-indigo-400 mb-3 text-sm uppercase tracking-wider">Text Tokens</p>
                   <ul className="space-y-2 text-sm text-[var(--text-secondary)] dark:text-gray-300">
-                    <li><code className="text-indigo-500">--text-primary</code> — Headings, body</li>
-                    <li><code className="text-indigo-500">--text-secondary</code> — Captions, labels</li>
-                    <li><code className="text-indigo-500">--text-disabled</code> — Disabled states</li>
-                    <li><code className="text-indigo-500">--text-inverse</code> — Text on colored buttons</li>
+                    <li><code className="text-indigo-500">--text-primary</code> - Headings, body</li>
+                    <li><code className="text-indigo-500">--text-secondary</code> - Captions, labels</li>
+                    <li><code className="text-indigo-500">--text-disabled</code> - Disabled states</li>
+                    <li><code className="text-indigo-500">--text-inverse</code> - Text on colored buttons</li>
                   </ul>
                 </div>
                 <div>
                   <p className="font-semibold text-indigo-600 dark:text-indigo-400 mb-3 text-sm uppercase tracking-wider">Border Tokens</p>
                   <ul className="space-y-2 text-sm text-[var(--text-secondary)] dark:text-gray-300">
-                    <li><code className="text-indigo-500">--border-default</code> — Standard dividers</li>
-                    <li><code className="text-indigo-500">--border-strong</code> — Emphasized borders</li>
-                    <li><code className="text-indigo-500">--border-focus</code> — Focus rings</li>
+                    <li><code className="text-indigo-500">--border-default</code> - Standard dividers</li>
+                    <li><code className="text-indigo-500">--border-strong</code> - Emphasized borders</li>
+                    <li><code className="text-indigo-500">--border-focus</code> - Focus rings</li>
                   </ul>
                 </div>
                 <div>
                   <p className="font-semibold text-indigo-600 dark:text-indigo-400 mb-3 text-sm uppercase tracking-wider">Brand / Interactive Tokens</p>
                   <ul className="space-y-2 text-sm text-[var(--text-secondary)] dark:text-gray-300">
-                    <li><code className="text-indigo-500">--color-primary</code> — Primary actions</li>
-                    <li><code className="text-indigo-500">--color-primary-hover</code> — Hover state</li>
-                    <li><code className="text-indigo-500">--color-danger</code> — Errors, destructive</li>
-                    <li><code className="text-indigo-500">--color-success</code> — Confirmations</li>
+                    <li><code className="text-indigo-500">--color-primary</code> - Primary actions</li>
+                    <li><code className="text-indigo-500">--color-primary-hover</code> - Hover state</li>
+                    <li><code className="text-indigo-500">--color-danger</code> - Errors, destructive</li>
+                    <li><code className="text-indigo-500">--color-success</code> - Confirmations</li>
                   </ul>
                 </div>
               </div>
@@ -313,21 +313,21 @@ const DarkModeColorPalette = () => {
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Brand Color Adaptation: Indigo Example</h3>
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs font-semibold text-[var(--text-muted)] dark:text-gray-400 uppercase tracking-wider mb-2">Light Mode — Button Primary</p>
+                  <p className="text-xs font-semibold text-[var(--text-muted)] dark:text-gray-400 uppercase tracking-wider mb-2">Light Mode - Button Primary</p>
                   <div className="flex items-center gap-3">
                     <div style={{ backgroundColor: '#4F46E5' }} className="w-full h-12 rounded-lg" />
                     <code className="text-sm text-[var(--text-secondary)] dark:text-gray-300 whitespace-nowrap">#4F46E5</code>
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-[var(--text-muted)] dark:text-gray-400 uppercase tracking-wider mb-2">Dark Mode — Button Primary (lighter, same energy)</p>
+                  <p className="text-xs font-semibold text-[var(--text-muted)] dark:text-gray-400 uppercase tracking-wider mb-2">Dark Mode - Button Primary (lighter, same energy)</p>
                   <div className="flex items-center gap-3">
                     <div style={{ backgroundColor: '#818CF8' }} className="w-full h-12 rounded-lg" />
                     <code className="text-sm text-[var(--text-secondary)] dark:text-gray-300 whitespace-nowrap">#818CF8</code>
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-[var(--text-muted)] dark:text-gray-400 uppercase tracking-wider mb-2">Dark Mode — Subtle Background / Container</p>
+                  <p className="text-xs font-semibold text-[var(--text-muted)] dark:text-gray-400 uppercase tracking-wider mb-2">Dark Mode - Subtle Background / Container</p>
                   <div className="flex items-center gap-3">
                     <div style={{ backgroundColor: '#312E81' }} className="w-full h-12 rounded-lg" />
                     <code className="text-sm text-[var(--text-secondary)] dark:text-gray-300 whitespace-nowrap">#312E81</code>
@@ -339,7 +339,7 @@ const DarkModeColorPalette = () => {
               </p>
             </div>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed">
-              For status colors — success green, danger red, warning yellow — apply the same principle. Use lighter, less saturated tones in dark mode. A full-saturation red (#EF4444) works as a danger state in light mode, but <code>#FCA5A5</code> (red-300) communicates the same urgency on dark backgrounds while maintaining comfortable contrast.
+              For status colors - success green, danger red, warning yellow - apply the same principle. Use lighter, less saturated tones in dark mode. A full-saturation red (#EF4444) works as a danger state in light mode, but <code>#FCA5A5</code> (red-300) communicates the same urgency on dark backgrounds while maintaining comfortable contrast.
             </p>
           </motion.section>
 
@@ -372,7 +372,7 @@ const DarkModeColorPalette = () => {
                     <div style={{ backgroundColor: item.hex }} className="w-14 h-10 rounded-lg flex-shrink-0 border border-white/10" />
                     <div>
                       <code className="text-xs text-indigo-400">{item.name}</code>
-                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} — {item.desc}</p>
+                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} - {item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -390,7 +390,7 @@ const DarkModeColorPalette = () => {
                     <div style={{ backgroundColor: item.hex }} className="w-14 h-10 rounded-lg flex-shrink-0 border border-white/10" />
                     <div>
                       <code className="text-xs text-indigo-400">{item.name}</code>
-                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} — {item.desc}</p>
+                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} - {item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -410,7 +410,7 @@ const DarkModeColorPalette = () => {
                     <div style={{ backgroundColor: item.hex }} className="w-14 h-10 rounded-lg flex-shrink-0 border border-white/10" />
                     <div>
                       <code className="text-xs text-indigo-400">{item.name}</code>
-                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} — {item.desc}</p>
+                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} - {item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -427,7 +427,7 @@ const DarkModeColorPalette = () => {
                     <div style={{ backgroundColor: item.hex }} className="w-14 h-10 rounded-lg flex-shrink-0 border border-white/10" />
                     <div>
                       <code className="text-xs text-indigo-400">{item.name}</code>
-                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} — {item.desc}</p>
+                      <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{item.hex} - {item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -533,7 +533,7 @@ const DarkModeColorPalette = () => {
 }`}
             </pre>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mt-4">
-              Notice that components never reference a raw color value — only token names. When you toggle the <code>.dark</code> class on your <code>&lt;html&gt;</code> element (common in React with a theme context), every component automatically receives the correct values. No component-level conditional styling needed.
+              Notice that components never reference a raw color value - only token names. When you toggle the <code>.dark</code> class on your <code>&lt;html&gt;</code> element (common in React with a theme context), every component automatically receives the correct values. No component-level conditional styling needed.
             </p>
           </motion.section>
 
@@ -587,7 +587,7 @@ const DarkModeColorPalette = () => {
           >
             <h3 className="text-xl font-bold text-[var(--text-primary)] dark:text-white mb-2">Build Your Dark Mode Palette with ColorPeek</h3>
             <p className="text-[var(--text-secondary)] dark:text-gray-400 mb-6">
-              Use ColorPeek's tools to generate, preview, and export a complete dark mode color system — from surface levels to semantic tokens.
+              Use ColorPeek's tools to generate, preview, and export a complete dark mode color system - from surface levels to semantic tokens.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="/palettes" className="inline-flex items-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">

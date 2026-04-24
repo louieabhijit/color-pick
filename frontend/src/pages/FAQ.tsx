@@ -90,7 +90,7 @@ const FAQ = () => {
     <div className="min-h-screen w-full">
       <PageSEO
         title="Frequently Asked Questions"
-        description="Answers to common questions about ColorPeek — how to extract palettes from images, use the color tools, export results, and more. Free browser-based, no sign-up required."
+        description="Answers to common questions about ColorPeek - how to extract palettes from images, use the color tools, export results, and more. Free browser-based, no sign-up required."
         path="/faq"
         keywords="colorpeek faq, color palette generator help, color tools questions, how to extract colors from image"
         schema={{

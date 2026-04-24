@@ -118,7 +118,7 @@ const ColorTheory = () => {
           >
             <h2 className="text-2xl md:text-3xl font-bold">Understanding Color Theory: The Foundation of Design</h2>
             <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
-              Color theory is more than just understanding the color wheel—it's about mastering the art of visual communication. 
+              Color theory is more than just understanding the color wheel-it's about mastering the art of visual communication. 
               In this comprehensive guide, we'll explore how colors interact, influence emotions, and create meaningful designs 
               that resonate with your audience.
             </p>

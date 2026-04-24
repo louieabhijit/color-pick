@@ -406,7 +406,7 @@ const WCAGColorContrast = () => {
           >
             <h2 className="text-2xl md:text-3xl font-bold">Final Thoughts</h2>
             <p className="text-[var(--text-secondary)] mt-4">
-              Implementing proper color contrast isn't just about following guidelines—it's about creating 
+              Implementing proper color contrast isn't just about following guidelines-it's about creating 
               an inclusive web that everyone can access and enjoy. By understanding and applying WCAG 2.1 
               contrast requirements, you're not only improving accessibility but also enhancing the overall 
               user experience of your designs.

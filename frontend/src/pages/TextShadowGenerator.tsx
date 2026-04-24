@@ -120,7 +120,7 @@ const TextShadowGenerator = () => {
     <div className="min-h-screen w-full">
       {fontUrl && <link rel="stylesheet" href={fontUrl}/>}
       <PageSEO
-        title="CSS Text Shadow Generator — Visual Editor"
+        title="CSS Text Shadow Generator - Visual Editor"
         description="Create CSS text-shadow effects visually. Adjust offset, blur, and color. Layer multiple shadows for advanced effects. Copy production-ready CSS code."
         path="/text-shadow"
         keywords="css text shadow generator, text shadow effect, glow text css, text shadow online, css typography effects"

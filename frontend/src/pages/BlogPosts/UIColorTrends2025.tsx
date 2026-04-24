@@ -14,7 +14,7 @@ const UIColorTrends2025 = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   const metadata = {
     title: "UI Color Trends 2025: What's Shaping Modern Digital Design",
-    description: "Explore the biggest color trends defining UI and web design in 2025 — from earthy neutrals and digital moss to neon accents, AI-inspired gradients, and neo-brutalism palettes.",
+    description: "Explore the biggest color trends defining UI and web design in 2025 - from earthy neutrals and digital moss to neon accents, AI-inspired gradients, and neo-brutalism palettes.",
     author: "Zoe Williams",
     date: "April 22, 2026",
     readTime: "10 min read",
@@ -100,7 +100,7 @@ const UIColorTrends2025 = () => {
               1. Why Color Trends Matter for Digital Products
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Color trends in UI design aren't just aesthetic fashion. They reflect deeper shifts in culture, technology, and user psychology. When a color direction becomes widespread across leading digital products — from app icons to marketing sites to SaaS dashboards — users begin to associate those colors with specific emotions, trust signals, and product quality signals.
+              Color trends in UI design aren't just aesthetic fashion. They reflect deeper shifts in culture, technology, and user psychology. When a color direction becomes widespread across leading digital products - from app icons to marketing sites to SaaS dashboards - users begin to associate those colors with specific emotions, trust signals, and product quality signals.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               In 2025, several converging forces are shaping which colors feel "right" for digital products. The post-pandemic recalibration toward nature and authenticity is still producing earthy, organic palettes. The explosion of generative AI products has created a visual language of electric gradients and iridescence. And a youth-culture backlash against clinical minimalism has fueled bold neo-brutalist and candy-tone aesthetics simultaneously.
@@ -113,19 +113,19 @@ const UIColorTrends2025 = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-[var(--text-secondary)] dark:text-gray-300">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">🌿</span>
-                  <div><strong>Nature as antidote</strong> — Digital fatigue is pushing users toward natural, grounding colors in interfaces they spend the most time in.</div>
+                  <div><strong>Nature as antidote</strong> - Digital fatigue is pushing users toward natural, grounding colors in interfaces they spend the most time in.</div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">🤖</span>
-                  <div><strong>AI aesthetic language</strong> — Generative AI tools have popularized a specific visual identity: electric purples, iridescent gradients, deep navy.</div>
+                  <div><strong>AI aesthetic language</strong> - Generative AI tools have popularized a specific visual identity: electric purples, iridescent gradients, deep navy.</div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">🎨</span>
-                  <div><strong>Anti-minimalism</strong> — Reaction against years of beige-and-white minimalism. Bold, high-contrast, even ugly-intentional color choices are gaining ground.</div>
+                  <div><strong>Anti-minimalism</strong> - Reaction against years of beige-and-white minimalism. Bold, high-contrast, even ugly-intentional color choices are gaining ground.</div>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">✨</span>
-                  <div><strong>Gen-Z palette expression</strong> — Younger users and creators bring candy tones, retro pastels, and playful irreverence into mainstream product design.</div>
+                  <div><strong>Gen-Z palette expression</strong> - Younger users and creators bring candy tones, retro pastels, and playful irreverence into mainstream product design.</div>
                 </div>
               </div>
             </div>
@@ -143,10 +143,10 @@ const UIColorTrends2025 = () => {
               Trend 1: Earthy &amp; Organic Neutrals
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              The shift toward earthy, organic neutrals has been building since 2021 and shows no sign of fading. Warm beiges, sun-dried clay, dusty terracottas, and sandy ochres dominate the landing pages of wellness brands, sustainable companies, premium e-commerce, and food startups in 2025. These colors communicate authenticity, warmth, and groundedness — the antithesis of cold corporate minimalism.
+              The shift toward earthy, organic neutrals has been building since 2021 and shows no sign of fading. Warm beiges, sun-dried clay, dusty terracottas, and sandy ochres dominate the landing pages of wellness brands, sustainable companies, premium e-commerce, and food startups in 2025. These colors communicate authenticity, warmth, and groundedness - the antithesis of cold corporate minimalism.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              What's evolved in 2025 is the sophistication of the application. Early versions of this trend produced somewhat muddy, unrefined interfaces. The current generation uses earthy colors with precision — as carefully balanced systems rather than simply swapping white backgrounds for beige. Expect to see warm neutrals paired with dark, rich typography (espresso browns instead of gray-blacks) and a single terracotta or rust accent used sparingly for CTAs.
+              What's evolved in 2025 is the sophistication of the application. Early versions of this trend produced somewhat muddy, unrefined interfaces. The current generation uses earthy colors with precision - as carefully balanced systems rather than simply swapping white backgrounds for beige. Expect to see warm neutrals paired with dark, rich typography (espresso browns instead of gray-blacks) and a single terracotta or rust accent used sparingly for CTAs.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Earthy Neutrals Palette 2025</h3>
@@ -183,10 +183,10 @@ const UIColorTrends2025 = () => {
               Trend 2: Digital Moss &amp; Botanical Greens
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Green has been making a slow, steady return to digital design for several years, but 2025 marks its most confident mainstream moment. Specifically, muted, desaturated greens — moss, sage, olive, forest — rather than the vivid, artificial greens of early-2010s infographics. These are greens that feel grown, not printed.
+              Green has been making a slow, steady return to digital design for several years, but 2025 marks its most confident mainstream moment. Specifically, muted, desaturated greens - moss, sage, olive, forest - rather than the vivid, artificial greens of early-2010s infographics. These are greens that feel grown, not printed.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Botanical greens communicate health, growth, sustainability, and calm — a perfect fit for the mental wellness, fintech (prosperity, growth), health tech, and green-economy sectors that are all expanding rapidly. They also pair extraordinarily well with both warm neutrals (earthy palette above) and deep charcoals, giving them remarkable versatility as a system color.
+              Botanical greens communicate health, growth, sustainability, and calm - a perfect fit for the mental wellness, fintech (prosperity, growth), health tech, and green-economy sectors that are all expanding rapidly. They also pair extraordinarily well with both warm neutrals (earthy palette above) and deep charcoals, giving them remarkable versatility as a system color.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Digital Moss &amp; Botanical Palette 2025</h3>
@@ -223,7 +223,7 @@ const UIColorTrends2025 = () => {
               Trend 3: AI-Inspired Gradients
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              The visual identity of AI products has crystallized around a specific aesthetic in 2025: deep indigo-to-violet-to-fuchsia gradients, often with a slightly iridescent, almost pearlescent quality. Think OpenAI, Anthropic, Midjourney, Cursor — there's a shared visual language of electric intelligence that moves through purple-adjacent color space.
+              The visual identity of AI products has crystallized around a specific aesthetic in 2025: deep indigo-to-violet-to-fuchsia gradients, often with a slightly iridescent, almost pearlescent quality. Think OpenAI, Anthropic, Midjourney, Cursor - there's a shared visual language of electric intelligence that moves through purple-adjacent color space.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               These gradients work because they're distinct from both the cold blues of legacy enterprise software and the warm oranges of consumer apps. They occupy a unique position: futuristic but not sterile, premium but not cold. The multi-stop gradients (indigo → violet → fuchsia → magenta) create a sense of spectral energy that users have come to associate with intelligence and capability.
@@ -250,7 +250,7 @@ const UIColorTrends2025 = () => {
                 style={{ background: 'linear-gradient(135deg, #3730A3, #6D28D9, #9333EA, #C026D3, #E11D9A)' }}
               />
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
-{`/* AI-Inspired Gradient — CSS */
+{`/* AI-Inspired Gradient - CSS */
 .hero-gradient {
   background: linear-gradient(
     135deg,
@@ -297,7 +297,7 @@ const UIColorTrends2025 = () => {
               Trend 4: Neo-Brutalism Colors
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Neo-brutalism in UI design borrows its aesthetic from architectural brutalism: raw, unadorned, unapologetically bold. Its color language is equally uncompromising. Hard black (#000000 or very near it) as both text and border. Electric yellow, vivid coral, or raw cyan as a single dominant accent. Stark white as a background. The combination is visually arresting — even intentionally ugly in a way that demands attention.
+              Neo-brutalism in UI design borrows its aesthetic from architectural brutalism: raw, unadorned, unapologetically bold. Its color language is equally uncompromising. Hard black (#000000 or very near it) as both text and border. Electric yellow, vivid coral, or raw cyan as a single dominant accent. Stark white as a background. The combination is visually arresting - even intentionally ugly in a way that demands attention.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
               Neo-brutalism exploded in niche design circles in 2022–2023 and has been moving steadily into mainstream product design in 2025, particularly in the creator economy, fintech startups, and anything targeting a young, design-literate audience that finds polished minimalism boring. Products like Figma plugins, indie SaaS tools, and music platforms have adopted neo-brutalist palettes to signal rawness and authenticity.
@@ -323,7 +323,7 @@ const UIColorTrends2025 = () => {
                 ))}
               </div>
               <p className="text-sm text-[var(--text-secondary)] dark:text-gray-400">
-                <strong>Usage rule:</strong> In neo-brutalism, borders are thick (2–4px solid black), shadows are offset and hard (no blur: <code>4px 4px 0 #000</code>), and the accent color is used in large blocks — not just accents. This is not a system for the timid.
+                <strong>Usage rule:</strong> In neo-brutalism, borders are thick (2–4px solid black), shadows are offset and hard (no blur: <code>4px 4px 0 #000</code>), and the accent color is used in large blocks - not just accents. This is not a system for the timid.
               </p>
             </div>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
@@ -364,10 +364,10 @@ const UIColorTrends2025 = () => {
               Trend 5: Soft Pastels &amp; Candy Tones
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Diametrically opposite to neo-brutalism in spirit but equally prominent in 2025 is the pastel and candy tone movement — driven heavily by Gen-Z design sensibility and the visual language of platforms like TikTok, BeReal, and emerging social apps. These palettes are light, airy, and emotionally warm: bubblegum pink, soft lavender, mint green, baby blue, peach.
+              Diametrically opposite to neo-brutalism in spirit but equally prominent in 2025 is the pastel and candy tone movement - driven heavily by Gen-Z design sensibility and the visual language of platforms like TikTok, BeReal, and emerging social apps. These palettes are light, airy, and emotionally warm: bubblegum pink, soft lavender, mint green, baby blue, peach.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              The 2025 version of this trend is more sophisticated than the pastel minimalism of 2018–2019. Rather than a monochrome pastel wash, current implementations combine multiple candy tones in energetic ways — a lavender background with a coral button and mint card — creating a sense of playfulness and vibrancy that still reads as contemporary rather than childish.
+              The 2025 version of this trend is more sophisticated than the pastel minimalism of 2018–2019. Rather than a monochrome pastel wash, current implementations combine multiple candy tones in energetic ways - a lavender background with a coral button and mint card - creating a sense of playfulness and vibrancy that still reads as contemporary rather than childish.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Soft Pastels &amp; Candy Palette 2025</h3>
@@ -405,10 +405,10 @@ const UIColorTrends2025 = () => {
               Trend 6: Dark Mode Chromatic Accents
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Dark mode isn't new, but the way designers are using color within dark mode has matured significantly in 2025. The defining characteristic of this trend is the use of a single vivid chromatic accent — electric cyan, neon green, warm amber, or hot pink — popped against a deep navy or charcoal background. The rest of the palette is deliberately muted and desaturated, making the single accent color feel electrifying by contrast.
+              Dark mode isn't new, but the way designers are using color within dark mode has matured significantly in 2025. The defining characteristic of this trend is the use of a single vivid chromatic accent - electric cyan, neon green, warm amber, or hot pink - popped against a deep navy or charcoal background. The rest of the palette is deliberately muted and desaturated, making the single accent color feel electrifying by contrast.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              This approach is distinct from earlier dark mode design that simply used a brand color on a dark background. The 2025 version deliberately maximizes the contrast between the base darkness and the accent's luminance — creating the visual sensation of a light source within the interface. Developer tools (terminal apps, code editors, monitoring dashboards) pioneered this aesthetic, and it has moved into consumer-facing products as dark mode adoption has hit majority status among tech-adjacent users.
+              This approach is distinct from earlier dark mode design that simply used a brand color on a dark background. The 2025 version deliberately maximizes the contrast between the base darkness and the accent's luminance - creating the visual sensation of a light source within the interface. Developer tools (terminal apps, code editors, monitoring dashboards) pioneered this aesthetic, and it has moved into consumer-facing products as dark mode adoption has hit majority status among tech-adjacent users.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">Dark Mode Chromatic Palette Examples</h3>
@@ -484,11 +484,11 @@ const UIColorTrends2025 = () => {
               <div className="space-y-5">
                 <div>
                   <h3 className="text-base font-semibold text-[var(--text-primary)] dark:text-white mb-2">Separate structure from surface</h3>
-                  <p className="text-sm text-[var(--text-secondary)] dark:text-gray-300">Your typographic scale, spacing system, and component architecture should be timeless. Color is the surface — it can be refreshed without a full redesign. Build your design system so swapping a palette is a token change, not a component change.</p>
+                  <p className="text-sm text-[var(--text-secondary)] dark:text-gray-300">Your typographic scale, spacing system, and component architecture should be timeless. Color is the surface - it can be refreshed without a full redesign. Build your design system so swapping a palette is a token change, not a component change.</p>
                 </div>
                 <div>
                   <h3 className="text-base font-semibold text-[var(--text-primary)] dark:text-white mb-2">Extract the principle, not the hex</h3>
-                  <p className="text-sm text-[var(--text-secondary)] dark:text-gray-300">The principle of "earthy neutrals" — warm, grounding, authentic — will outlast the specific hex values popular today. Use that principle to guide your color direction, and your palette will remain relevant even as the specific trend values shift.</p>
+                  <p className="text-sm text-[var(--text-secondary)] dark:text-gray-300">The principle of "earthy neutrals" - warm, grounding, authentic - will outlast the specific hex values popular today. Use that principle to guide your color direction, and your palette will remain relevant even as the specific trend values shift.</p>
                 </div>
                 <div>
                   <h3 className="text-base font-semibold text-[var(--text-primary)] dark:text-white mb-2">Use trends in accent positions</h3>
@@ -515,12 +515,12 @@ const UIColorTrends2025 = () => {
             </h2>
             <div className="my-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl">
               <ul className="space-y-3 text-[var(--text-secondary)] dark:text-gray-300 mb-0">
-                <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">01</span><span><strong>Earthy neutrals</strong> continue to dominate wellness, food, and sustainability verticals — warm beige and terracotta over cold gray.</span></li>
-                <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">02</span><span><strong>Digital moss</strong> has moved from niche to mainstream — muted greens signal growth, health, and sustainability at scale.</span></li>
+                <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">01</span><span><strong>Earthy neutrals</strong> continue to dominate wellness, food, and sustainability verticals - warm beige and terracotta over cold gray.</span></li>
+                <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">02</span><span><strong>Digital moss</strong> has moved from niche to mainstream - muted greens signal growth, health, and sustainability at scale.</span></li>
                 <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">03</span><span><strong>AI gradients</strong> (indigo → violet → fuchsia) have created a new visual language for intelligence and capability in tech products.</span></li>
-                <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">04</span><span><strong>Neo-brutalism</strong> is the anti-trend trend — raw black, electric yellow, thick borders, and intentional visual aggression signal authenticity.</span></li>
+                <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">04</span><span><strong>Neo-brutalism</strong> is the anti-trend trend - raw black, electric yellow, thick borders, and intentional visual aggression signal authenticity.</span></li>
                 <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">05</span><span><strong>Candy pastels</strong> have matured from monochrome minimalism into energetic multi-tone systems for Gen-Z-oriented products.</span></li>
-                <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">06</span><span><strong>Dark mode chromatic accents</strong> — single vivid pops against deep neutrals — define the premium developer and tech aesthetic.</span></li>
+                <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">06</span><span><strong>Dark mode chromatic accents</strong> - single vivid pops against deep neutrals - define the premium developer and tech aesthetic.</span></li>
                 <li className="flex items-start gap-2"><span className="text-indigo-500 font-bold mt-0.5">07</span><span><strong>Don't chase hex values.</strong> Extract the principle from each trend and apply it in positions (accents, marketing layers) that can be refreshed as trends evolve.</span></li>
               </ul>
             </div>
@@ -552,7 +552,7 @@ const UIColorTrends2025 = () => {
           >
             <h3 className="text-xl font-bold text-[var(--text-primary)] dark:text-white mb-2">Build 2025-Ready Palettes with ColorPeek</h3>
             <p className="text-[var(--text-secondary)] dark:text-gray-400 mb-6">
-              Explore curated 2025 trend palettes, generate AI-inspired gradients, and export your color system in any format — all in one tool.
+              Explore curated 2025 trend palettes, generate AI-inspired gradients, and export your color system in any format - all in one tool.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="/palettes" className="inline-flex items-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">

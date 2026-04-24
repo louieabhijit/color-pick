@@ -103,7 +103,7 @@ const GridGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Grid Generator — Visual Grid Layout Builder"
+        title="CSS Grid Generator - Visual Grid Layout Builder"
         description="Build CSS Grid layouts visually. Define rows, columns, gaps, and place items. Copy production-ready CSS and HTML code."
         path="/grid"
         keywords="css grid generator, css grid layout builder, grid template columns, grid visual editor, css grid code generator"

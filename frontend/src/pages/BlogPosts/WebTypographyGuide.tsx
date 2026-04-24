@@ -138,7 +138,7 @@ const WebTypographyGuide = () => {
             transition={{ delay: 0.4 }}
             className="text-xl text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-8"
           >
-            Pick any design that feels polished and professional — the text sizes are
+            Pick any design that feels polished and professional - the text sizes are
             almost certainly following a mathematical system. A modular type scale
             takes a single base size and a ratio, and generates every heading and body
             size automatically. The result is visual harmony that "just feels right."
@@ -159,12 +159,12 @@ const WebTypographyGuide = () => {
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               A <strong>modular type scale</strong> is a set of font sizes derived from
               a base size multiplied repeatedly by a fixed ratio. Every size in the
-              scale has a mathematical relationship to every other size — creating visual
+              scale has a mathematical relationship to every other size - creating visual
               rhythm and hierarchy that feels intentional.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
-              When designers choose font sizes arbitrarily — say, 13px for captions,
-              17px for body, 22px for subheadings, 31px for headings — each size is
+              When designers choose font sizes arbitrarily - say, 13px for captions,
+              17px for body, 22px for subheadings, 31px for headings - each size is
               correct in isolation but the <em>spacing between sizes</em> feels
               inconsistent. The visual step from body to subheading doesn't match the
               step from subheading to heading, creating subtle visual noise.
@@ -205,8 +205,8 @@ const WebTypographyGuide = () => {
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               The ratio determines how dramatic the size jumps are. Smaller ratios
-              (1.067, 1.125) create subtle hierarchy — good for text-heavy apps. Larger
-              ratios (1.414, 1.618) create bold, expressive headings — good for
+              (1.067, 1.125) create subtle hierarchy - good for text-heavy apps. Larger
+              ratios (1.414, 1.618) create bold, expressive headings - good for
               marketing sites.
             </p>
 
@@ -247,8 +247,8 @@ const WebTypographyGuide = () => {
                 {
                   name: 'Golden Ratio',
                   ratio: '1.618',
-                  musicRef: 'φ — the golden ratio',
-                  desc: 'Very dramatic jumps. Use sparingly — display headings stand out boldly.',
+                  musicRef: 'φ - the golden ratio',
+                  desc: 'Very dramatic jumps. Use sparingly - display headings stand out boldly.',
                   sizes: ['10px', '16px', '26px', '42px', '67px'],
                   tone: 'dramatic',
                 },
@@ -325,12 +325,12 @@ Step +6 = 16 × 1.333^6    = 16 × 5.610 = 89.8px → 5xl`}
               <a href="/type-scale" className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">
                 Type Scale Generator
               </a>{' '}
-              does this calculation automatically — you pick your base and ratio, and it
+              does this calculation automatically - you pick your base and ratio, and it
               outputs a complete scale you can copy.
             </p>
           </motion.div>
 
-          {/* Section 4 — Scale Table */}
+          {/* Section 4 - Scale Table */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -402,7 +402,7 @@ Step +6 = 16 × 1.333^6    = 16 × 5.610 = 89.8px → 5xl`}
               This makes theme switching (larger/smaller base for accessibility) trivial.
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
-{`/* Perfect Fourth scale — base 16px / ratio 1.333 */
+{`/* Perfect Fourth scale - base 16px / ratio 1.333 */
 :root {
   --font-size-xs:   0.563rem;   /*  ~9px  */
   --font-size-sm:   0.750rem;   /* ~12px  */
@@ -425,7 +425,7 @@ h4          { font-size: var(--font-size-xl);  }
 .caption    { font-size: var(--font-size-sm);  }
 .legal      { font-size: var(--font-size-xs);  }
 
-/* Accessibility override — boost base for vision impairment */
+/* Accessibility override - boost base for vision impairment */
 @media (prefers-larger-text) {
   :root { font-size: 18px; } /* entire scale scales proportionally */
 }`}
@@ -489,7 +489,7 @@ module.exports = {
               7. Responsive Type Scales with clamp()
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
-              The CSS <code>clamp()</code> function enables truly fluid typography —
+              The CSS <code>clamp()</code> function enables truly fluid typography -
               font sizes that smoothly scale between a minimum and maximum value based on
               viewport width, without any breakpoints.
             </p>
@@ -591,7 +591,7 @@ h2 {
   font-weight: 700;
 }
 
-/* Body — optimized for long-form reading */
+/* Body - optimized for long-form reading */
 body {
   font-size: var(--font-size-base);   /* 16px */
   line-height: 1.65;
@@ -655,7 +655,7 @@ body {
             </h3>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Pick a base size, choose a ratio, and instantly get a complete type scale
-              with CSS variables, Tailwind config, and SCSS output — plus fluid{' '}
+              with CSS variables, Tailwind config, and SCSS output - plus fluid{' '}
               <code>clamp()</code> values for responsive typography.
             </p>
             <div className="flex flex-wrap gap-4">

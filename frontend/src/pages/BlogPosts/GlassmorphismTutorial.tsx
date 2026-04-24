@@ -30,7 +30,7 @@ const GlassmorphismTutorial = () => {
   const metadata = {
     title: 'Glassmorphism CSS Tutorial: Build Stunning Frosted Glass UI',
     description:
-      'Learn glassmorphism step-by-step — from backdrop-filter basics to full frosted glass cards with browser support notes and common pitfalls to avoid.',
+      'Learn glassmorphism step-by-step - from backdrop-filter basics to full frosted glass cards with browser support notes and common pitfalls to avoid.',
     author: 'Maya Patel',
     date: 'April 22, 2026',
     readTime: '10 min read',
@@ -155,11 +155,11 @@ const GlassmorphismTutorial = () => {
               <li>A complete step-by-step frosted glass card with full code</li>
               <li>Light vs dark mode glassmorphism differences</li>
               <li>Common mistakes and exactly how to avoid them</li>
-              <li>When glassmorphism enhances UX — and when it hurts it</li>
+              <li>When glassmorphism enhances UX - and when it hurts it</li>
             </ul>
           </motion.div>
 
-          {/* Section 1 — What is glassmorphism */}
+          {/* Section 1 - What is glassmorphism */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ const GlassmorphismTutorial = () => {
             </div>
           </motion.section>
 
-          {/* Section 2 — Core CSS properties */}
+          {/* Section 2 - Core CSS properties */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -221,7 +221,7 @@ const GlassmorphismTutorial = () => {
               <h3 className="font-bold text-lg mb-2">1. <code>backdrop-filter: blur()</code></h3>
               <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-3">
                 This is the star of the show. It blurs everything rendered behind the
-                element — not the element's own content. Values between <code>8px</code>
+                element - not the element's own content. Values between <code>8px</code>
                 and <code>20px</code> produce the most realistic frosted-glass look.
               </p>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm mb-6">
@@ -263,7 +263,7 @@ background: rgba(15, 15, 25, 0.35);`}
             </div>
           </motion.section>
 
-          {/* Section 3 — Browser support */}
+          {/* Section 3 - Browser support */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -306,7 +306,7 @@ background: rgba(15, 15, 25, 0.35);`}
                             </span>
                           )}
                         </td>
-                        <td className="p-3 text-[var(--text-muted)] dark:text-gray-400">{row.note ?? '—'}</td>
+                        <td className="p-3 text-[var(--text-muted)] dark:text-gray-400">{row.note ?? '-'}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -319,7 +319,7 @@ background: rgba(15, 15, 25, 0.35);`}
             </div>
           </motion.section>
 
-          {/* Section 4 — Full example */}
+          {/* Section 4 - Full example */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -346,7 +346,7 @@ background: rgba(15, 15, 25, 0.35);`}
 
               <h3 className="font-bold text-lg mb-2">Full CSS</h3>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm mb-6">
-{`/* 1. Colorful background wrapper — glass needs something to blur */
+{`/* 1. Colorful background wrapper - glass needs something to blur */
 .glass-wrapper {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -390,7 +390,7 @@ background: rgba(15, 15, 25, 0.35);`}
             </div>
           </motion.section>
 
-          {/* Section 5 — Light vs Dark */}
+          {/* Section 5 - Light vs Dark */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -445,7 +445,7 @@ background: rgba(15, 15, 25, 0.35);`}
             </div>
           </motion.section>
 
-          {/* Section 6 — Common mistakes */}
+          {/* Section 6 - Common mistakes */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -470,7 +470,7 @@ background: rgba(15, 15, 25, 0.35);`}
                   },
                   {
                     mistake: 'Too many glass layers stacked',
-                    fix: 'Each blur layer has a rendering cost. Limit nesting — one or two glass layers per viewport is usually the maximum before performance degrades on mobile.',
+                    fix: 'Each blur layer has a rendering cost. Limit nesting - one or two glass layers per viewport is usually the maximum before performance degrades on mobile.',
                   },
                   {
                     mistake: 'Opacity set on the element not the background color',
@@ -489,7 +489,7 @@ background: rgba(15, 15, 25, 0.35);`}
             </div>
           </motion.section>
 
-          {/* Section 7 — When to use */}
+          {/* Section 7 - When to use */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -548,7 +548,7 @@ background: rgba(15, 15, 25, 0.35);`}
             <h3 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">Key Takeaways</h3>
             <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
               <li>Four properties: <code>backdrop-filter</code>, rgba background, border, and box-shadow</li>
-              <li>Always place glass elements on colourful backgrounds — they need content to blur</li>
+              <li>Always place glass elements on colourful backgrounds - they need content to blur</li>
               <li>Include <code>-webkit-backdrop-filter</code> for full Safari support</li>
               <li>Limit to 1–2 glass layers per viewport to maintain performance</li>
               <li>Add <code>prefers-reduced-transparency</code> fallback for accessibility</li>
@@ -601,7 +601,7 @@ background: rgba(15, 15, 25, 0.35);`}
               Build Glass Effects Visually
             </h3>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
-              Dial in your blur, opacity, border, and background with real-time preview —
+              Dial in your blur, opacity, border, and background with real-time preview -
               then copy the production-ready CSS with one click.
             </p>
             <div className="flex flex-wrap gap-4">

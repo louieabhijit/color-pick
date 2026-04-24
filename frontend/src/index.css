@@ -16,7 +16,7 @@ body {
 
 /* ─── Design Tokens ──────────────────────────────────────────── */
 :root {
-  /* Glass — light mode: clean white frosted panels */
+  /* Glass - light mode: clean white frosted panels */
   --glass-bg:           rgba(255, 255, 255, 0.52);
   --glass-bg-hover:     rgba(255, 255, 255, 0.68);
   --glass-bg-strong:    rgba(255, 255, 255, 0.75);
@@ -51,7 +51,7 @@ body {
   --text-secondary: #4a4a6a;
   --text-muted:     #8888aa;
 
-  /* Page background — rich purple-to-blue-to-rose gradient */
+  /* Page background - rich purple-to-blue-to-rose gradient */
   --page-bg-start:  #ddd6fe;  /* violet-200 */
   --page-bg-mid1:   #c7d2fe;  /* indigo-200 */
   --page-bg-mid2:   #bfdbfe;  /* blue-200 */
@@ -309,7 +309,7 @@ body {
     flex-shrink: 0;
   }
 
-  /* Shimmer on card — apply to a pseudo via wrapper */
+  /* Shimmer on card - apply to a pseudo via wrapper */
   .card-shine {
     position: relative;
     overflow: hidden;

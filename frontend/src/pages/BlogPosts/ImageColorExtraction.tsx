@@ -366,7 +366,7 @@ const ImageColorExtraction = () => {
             className="mt-12 rounded-2xl p-8 border border-indigo-200/40 dark:border-indigo-500/20"
             style={{ background: 'rgba(99,102,241,0.06)' }}
           >
-            <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">Try it yourself — free</h3>
+            <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">Try it yourself - free</h3>
             <p className="text-[var(--text-muted)] mb-6 text-sm">Extract a palette from any image or URL right now, then export it in the format you need.</p>
             <div className="flex flex-wrap gap-3">
               <a href="/palette-url" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">

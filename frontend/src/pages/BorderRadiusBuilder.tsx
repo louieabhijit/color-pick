@@ -62,7 +62,7 @@ const BorderRadiusBuilder = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Border Radius Builder — Rounded Corners Generator"
+        title="CSS Border Radius Builder - Rounded Corners Generator"
         description="Visually design any CSS border-radius shape with live preview. Control all four corners independently, switch between px, %, and rem units, copy optimized CSS shorthand. Free at ColorPeek."
         path="/border-radius"
         keywords="css border radius generator, rounded corners css, border radius builder, css shape tool, border radius online, css corner radius"
@@ -170,7 +170,7 @@ const BorderRadiusBuilder = () => {
 
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is CSS Border Radius?</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">The CSS <code className="text-indigo-400">border-radius</code> property rounds the corners of an element's box. You can specify a single value for all four corners, two values for the top-left/bottom-right and top-right/bottom-left pairs, or up to four individual values for complete control. Percentage values (like <code className="text-indigo-400">50%</code>) create circular or elliptical shapes. The property is widely used for buttons, cards, avatars, and decorative shapes. Using rem units ties corner sizes to the user's base font size, which respects accessibility preferences. The shorthand syntax automatically optimizes when corners share values — so <code className="text-indigo-400">border-radius: 16px 16px 16px 16px</code> compresses to <code className="text-indigo-400">border-radius: 16px</code>.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">The CSS <code className="text-indigo-400">border-radius</code> property rounds the corners of an element's box. You can specify a single value for all four corners, two values for the top-left/bottom-right and top-right/bottom-left pairs, or up to four individual values for complete control. Percentage values (like <code className="text-indigo-400">50%</code>) create circular or elliptical shapes. The property is widely used for buttons, cards, avatars, and decorative shapes. Using rem units ties corner sizes to the user's base font size, which respects accessibility preferences. The shorthand syntax automatically optimizes when corners share values - so <code className="text-indigo-400">border-radius: 16px 16px 16px 16px</code> compresses to <code className="text-indigo-400">border-radius: 16px</code>.</p>
           </div>
 
           <div className="glass-card p-8 rounded-2xl">

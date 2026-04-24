@@ -65,7 +65,7 @@ const GlassEffectGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Glassmorphism CSS Generator — Create Frosted Glass UI Effects"
+        title="Glassmorphism CSS Generator - Create Frosted Glass UI Effects"
         description="Create glassmorphism CSS panels with live preview. Tune backdrop-filter blur, saturation, RGBA background opacity, and border. Copy the complete CSS class for your project. Free at ColorPeek."
         path="/glass-generator"
         keywords="glassmorphism generator, glassmorphism css, frosted glass effect css, backdrop filter blur, glass morphism ui, glass card css"
@@ -74,7 +74,7 @@ const GlassEffectGenerator = () => {
           '@graph': [
             { '@type': 'WebApplication', name: 'Glassmorphism CSS Generator | ColorPeek', description: 'Create glassmorphism CSS panels with backdrop-filter blur and live preview.', url: 'https://color-peek.com/glass-generator', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
             { '@type': 'FAQPage', mainEntity: [
-              { '@type': 'Question', name: 'What is glassmorphism?', acceptedAnswer: { '@type': 'Answer', text: 'Glassmorphism is a UI design trend that uses frosted glass effects — semi-transparent backgrounds with backdrop blur — to create depth and layers. It was popularized by Apple\'s macOS Big Sur and has become a staple in modern web UI.' } },
+              { '@type': 'Question', name: 'What is glassmorphism?', acceptedAnswer: { '@type': 'Answer', text: 'Glassmorphism is a UI design trend that uses frosted glass effects - semi-transparent backgrounds with backdrop blur - to create depth and layers. It was popularized by Apple\'s macOS Big Sur and has become a staple in modern web UI.' } },
               { '@type': 'Question', name: 'Is backdrop-filter supported in all browsers?', acceptedAnswer: { '@type': 'Answer', text: 'backdrop-filter is supported in all modern browsers including Chrome, Safari, Edge, and Firefox. Some older versions of Firefox required a flag to enable it. The -webkit- prefix is still needed for Safari compatibility.' } },
             ]},
           ],
@@ -87,7 +87,7 @@ const GlassEffectGenerator = () => {
           <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-3 text-[var(--text-primary)]">
             Glassmorphism <span className="gradient-text">CSS Generator</span>
           </h1>
-          <p className="text-[var(--text-muted)]">Build glassmorphism panels with live preview — <code className="text-indigo-500">backdrop-filter</code> + <code className="text-indigo-500">rgba</code>.</p>
+          <p className="text-[var(--text-muted)]">Build glassmorphism panels with live preview - <code className="text-indigo-500">backdrop-filter</code> + <code className="text-indigo-500">rgba</code>.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-6">
@@ -170,7 +170,7 @@ const GlassEffectGenerator = () => {
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Glassmorphism Generator</h2>
             <ol className="space-y-3">
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Choose a background preset (gradient options at the top) to set a vivid backdrop for your glass panel.</li>
-              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Adjust the Blur slider to control the backdrop-filter intensity — higher values create a stronger frosted effect.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Adjust the Blur slider to control the backdrop-filter intensity - higher values create a stronger frosted effect.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Set the Background Opacity to control how transparent the glass panel is.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Adjust Border Opacity for a subtle or pronounced glass edge. Toggle the shadow for depth.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click "Copy Full CSS" to get the complete ready-to-use CSS class, or copy individual properties.</li>
@@ -179,7 +179,7 @@ const GlassEffectGenerator = () => {
 
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is Glassmorphism?</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">Glassmorphism is a visual design style that creates the illusion of frosted or frosted glass — semi-transparent panels with a blurred view of the content behind them. The effect is achieved in CSS using <code className="text-indigo-400">backdrop-filter: blur()</code> (which blurs elements behind the container), a semi-transparent <code className="text-indigo-400">background-color</code> (usually RGBA white or black at low opacity), and a subtle border with low opacity. Apple popularized this style in macOS Big Sur in 2020, and it quickly spread to web UI, iOS apps, and Windows 11. Glassmorphism creates natural depth and layering without heavy shadows, making interfaces feel modern and airy. It works best over colorful or blurred photographic backgrounds where the blur effect is clearly visible.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Glassmorphism is a visual design style that creates the illusion of frosted or frosted glass - semi-transparent panels with a blurred view of the content behind them. The effect is achieved in CSS using <code className="text-indigo-400">backdrop-filter: blur()</code> (which blurs elements behind the container), a semi-transparent <code className="text-indigo-400">background-color</code> (usually RGBA white or black at low opacity), and a subtle border with low opacity. Apple popularized this style in macOS Big Sur in 2020, and it quickly spread to web UI, iOS apps, and Windows 11. Glassmorphism creates natural depth and layering without heavy shadows, making interfaces feel modern and airy. It works best over colorful or blurred photographic backgrounds where the blur effect is clearly visible.</p>
           </div>
 
           <div className="glass-card p-8 rounded-2xl">
@@ -187,7 +187,7 @@ const GlassEffectGenerator = () => {
             <div className="space-y-3">
               <details className="border border-white/20 rounded-xl overflow-hidden">
                 <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Why doesn't the glass effect show on a white background?</summary>
-                <p className="px-5 pb-4 text-[var(--text-secondary)]">The frosted glass effect requires a colorful or detailed background to be visible — if the backdrop is plain white or a single solid color, the blur has nothing to distort and the effect is invisible. Always use the effect over gradients, images, or complex backgrounds.</p>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">The frosted glass effect requires a colorful or detailed background to be visible - if the backdrop is plain white or a single solid color, the blur has nothing to distort and the effect is invisible. Always use the effect over gradients, images, or complex backgrounds.</p>
               </details>
               <details className="border border-white/20 rounded-xl overflow-hidden">
                 <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I apply glassmorphism to a card in Tailwind CSS?</summary>
@@ -195,7 +195,7 @@ const GlassEffectGenerator = () => {
               </details>
               <details className="border border-white/20 rounded-xl overflow-hidden">
                 <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Does backdrop-filter affect performance?</summary>
-                <p className="px-5 pb-4 text-[var(--text-secondary)]">Backdrop-filter is GPU-accelerated in modern browsers, making it generally performant. However, applying it to many overlapping elements or on low-end devices can cause frame rate drops. Use it sparingly — one or two glass panels per view is usually fine.</p>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Backdrop-filter is GPU-accelerated in modern browsers, making it generally performant. However, applying it to many overlapping elements or on low-end devices can cause frame rate drops. Use it sparingly - one or two glass panels per view is usually fine.</p>
               </details>
             </div>
           </div>

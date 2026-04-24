@@ -161,7 +161,7 @@ const PaletteExporter = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Palette Exporter — Export Colors to CSS, Tailwind, SCSS & More"
+        title="Palette Exporter - Export Colors to CSS, Tailwind, SCSS & More"
         description="Build a custom color palette with up to 16 named swatches and export as CSS variables, SCSS, JSON, Tailwind config, SVG, or PNG. Load from presets or design from scratch. Free at ColorPeek."
         path="/palette-exporter"
         keywords="color palette exporter, export palette css, palette to tailwind, color palette to scss, palette json export, color swatch downloader"
@@ -366,7 +366,7 @@ const PaletteExporter = () => {
 
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What are Color Palette Exports?</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">A palette export converts your set of chosen colors into a format your codebase or design tools can consume directly. CSS custom properties (<code className="text-indigo-400">--color-primary: #6366f1</code>) are the most versatile web format — defined once in <code className="text-indigo-400">:root</code>, they cascade to every element and can be updated with JavaScript for dynamic theming. SCSS variables work similarly for Sass-based projects. JSON exports represent design tokens — a format compatible with tools like Style Dictionary, Figma Tokens, and Amazon Style Dictionary for cross-platform design systems. Tailwind config exports let you add named colors directly to <code className="text-indigo-400">theme.extend.colors</code>, making them available as Tailwind utilities. SVG exports create a visual swatch card you can share or embed. PNG exports let you save a visual reference of your palette as an image file.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">A palette export converts your set of chosen colors into a format your codebase or design tools can consume directly. CSS custom properties (<code className="text-indigo-400">--color-primary: #6366f1</code>) are the most versatile web format - defined once in <code className="text-indigo-400">:root</code>, they cascade to every element and can be updated with JavaScript for dynamic theming. SCSS variables work similarly for Sass-based projects. JSON exports represent design tokens - a format compatible with tools like Style Dictionary, Figma Tokens, and Amazon Style Dictionary for cross-platform design systems. Tailwind config exports let you add named colors directly to <code className="text-indigo-400">theme.extend.colors</code>, making them available as Tailwind utilities. SVG exports create a visual swatch card you can share or embed. PNG exports let you save a visual reference of your palette as an image file.</p>
           </div>
 
           <div className="glass-card p-8 rounded-2xl">
@@ -382,7 +382,7 @@ const PaletteExporter = () => {
               </details>
               <details className="border border-white/20 rounded-xl overflow-hidden">
                 <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between CSS variables and SCSS variables?</summary>
-                <p className="px-5 pb-4 text-[var(--text-secondary)]">CSS custom properties (<code className="text-indigo-400">--var: value</code>) are resolved at runtime in the browser and can be changed dynamically with JavaScript. SCSS variables (<code className="text-indigo-400">$var: value</code>) are compiled at build time and cannot be changed after compilation — but SCSS offers powerful functions like <code className="text-indigo-400">lighten()</code> and <code className="text-indigo-400">darken()</code> for palette manipulation during development.</p>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">CSS custom properties (<code className="text-indigo-400">--var: value</code>) are resolved at runtime in the browser and can be changed dynamically with JavaScript. SCSS variables (<code className="text-indigo-400">$var: value</code>) are compiled at build time and cannot be changed after compilation - but SCSS offers powerful functions like <code className="text-indigo-400">lighten()</code> and <code className="text-indigo-400">darken()</code> for palette manipulation during development.</p>
               </details>
             </div>
           </div>

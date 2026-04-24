@@ -72,7 +72,7 @@ const SpacingScaleGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Spacing Scale Generator — Design System Spacing"
+        title="Spacing Scale Generator - Design System Spacing"
         description="Generate a consistent spacing scale for your design system. Choose a base value and ratio, preview the scale visually, and export as CSS or Tailwind config."
         path="/spacing-scale"
         keywords="spacing scale generator, design system spacing, css spacing variables, tailwind spacing config, design tokens spacing"

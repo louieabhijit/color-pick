@@ -129,7 +129,7 @@ const ColorHarmonies = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Color Harmonies Generator — Complementary, Analogous & More"
+        title="Color Harmonies Generator - Complementary, Analogous & More"
         description="Generate color harmonies from any base color. Get complementary, analogous, triadic, split-complementary, and tetradic color schemes instantly."
         path="/color-harmonies"
         keywords="color harmonies generator, complementary colors, analogous colors, triadic color scheme, color wheel generator"

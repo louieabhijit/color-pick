@@ -101,13 +101,13 @@ const ColorPaletteFromPhoto = () => {
               1. Why Photos Are the Best Source of Natural Color Palettes
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Human color perception evolved in a world of natural light, earth, sky, and living things. Our eyes find color relationships from the real world inherently harmonious because nature itself is a master colorist — every sunset, ocean scene, or forest landscape contains colors that coexist in perfect, context-aware balance.
+              Human color perception evolved in a world of natural light, earth, sky, and living things. Our eyes find color relationships from the real world inherently harmonious because nature itself is a master colorist - every sunset, ocean scene, or forest landscape contains colors that coexist in perfect, context-aware balance.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Algorithmically generated color palettes, while useful, often feel slightly artificial because they follow mathematical models of harmony (complementary, triadic, analogous) that approximate but don't fully replicate the complexity of real-world color interaction. A photograph of the Atacama Desert at golden hour contains warm ochres, cool shadow purples, and dusty mid-tones that no color wheel algorithm would spontaneously combine — yet together they feel completely natural.
+              Algorithmically generated color palettes, while useful, often feel slightly artificial because they follow mathematical models of harmony (complementary, triadic, analogous) that approximate but don't fully replicate the complexity of real-world color interaction. A photograph of the Atacama Desert at golden hour contains warm ochres, cool shadow purples, and dusty mid-tones that no color wheel algorithm would spontaneously combine - yet together they feel completely natural.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              This is why so many of the most beloved design systems — from Airbnb's "Bélo" to Notion's warm neutrals to Spotify's dark mode — have photographic and real-world sources at the heart of their color inspiration. Even when the final palette is highly abstracted and digitally refined, the origin story usually begins with a photograph.
+              This is why so many of the most beloved design systems - from Airbnb's "Bélo" to Notion's warm neutrals to Spotify's dark mode - have photographic and real-world sources at the heart of their color inspiration. Even when the final palette is highly abstracted and digitally refined, the origin story usually begins with a photograph.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-3">Why Photo-Derived Palettes Work</h3>
@@ -122,7 +122,7 @@ const ColorPaletteFromPhoto = () => {
                 </div>
                 <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
                   <p className="font-semibold text-[var(--text-primary)] dark:text-white mb-2">Unique Identity</p>
-                  <p>Photo-derived palettes are specific and distinctive — far less likely to look like "every other design tool default."</p>
+                  <p>Photo-derived palettes are specific and distinctive - far less likely to look like "every other design tool default."</p>
                 </div>
               </div>
             </div>
@@ -140,10 +140,10 @@ const ColorPaletteFromPhoto = () => {
               2. How Dominant Color Extraction Works
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Modern color extraction tools — including ColorPeek's palette extractor — use a technique called <strong>k-means clustering</strong> applied to the color space of an image. Here's what that actually means in plain terms.
+              Modern color extraction tools - including ColorPeek's palette extractor - use a technique called <strong>k-means clustering</strong> applied to the color space of an image. Here's what that actually means in plain terms.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-4">
-              Every pixel in an image has an RGB color value — essentially a point in 3D color space where the axes are Red, Green, and Blue. A 1000×800 photograph has 800,000 such points. K-means clustering groups these points into <em>k</em> clusters by finding the <em>k</em> centroids (center points) that minimize the total distance from every point to its nearest centroid. Each centroid becomes one of your extracted colors.
+              Every pixel in an image has an RGB color value - essentially a point in 3D color space where the axes are Red, Green, and Blue. A 1000×800 photograph has 800,000 such points. K-means clustering groups these points into <em>k</em> clusters by finding the <em>k</em> centroids (center points) that minimize the total distance from every point to its nearest centroid. Each centroid becomes one of your extracted colors.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8">
               <h3 className="text-lg font-semibold text-[var(--text-primary)] dark:text-white mb-4">The Extraction Pipeline</h3>
@@ -159,7 +159,7 @@ const ColorPaletteFromPhoto = () => {
                   <span className="flex-shrink-0 w-7 h-7 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 rounded-full flex items-center justify-center text-sm font-bold">2</span>
                   <div>
                     <p className="font-semibold text-[var(--text-primary)] dark:text-gray-200">Color Space Conversion</p>
-                    <p className="text-sm">Pixels are converted to LAB or HSL color space, which is perceptually uniform — meaning distances between colors correspond more closely to how different humans perceive them.</p>
+                    <p className="text-sm">Pixels are converted to LAB or HSL color space, which is perceptually uniform - meaning distances between colors correspond more closely to how different humans perceive them.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -231,7 +231,7 @@ const ColorPaletteFromPhoto = () => {
                   <span className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">5</span>
                   <div>
                     <p className="font-semibold text-[var(--text-primary)] dark:text-white">Assign Semantic Roles (Optional)</p>
-                    <p className="text-sm mt-1">Label each color with a role — primary, secondary, accent, background, surface, text — so the export reflects your design system's token structure.</p>
+                    <p className="text-sm mt-1">Label each color with a role - primary, secondary, accent, background, surface, text - so the export reflects your design system's token structure.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -301,7 +301,7 @@ const ColorPaletteFromPhoto = () => {
               </div>
             </div>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed">
-              The single most important factor: <strong>contrast within the image</strong>. An image with multiple distinct color regions — e.g., a landscape with a golden sky, green hills, and a blue river — will produce a rich, varied palette. A photo that's mostly one color (an extreme close-up of red fabric, for example) will produce a palette of nearly identical shades.
+              The single most important factor: <strong>contrast within the image</strong>. An image with multiple distinct color regions - e.g., a landscape with a golden sky, green hills, and a blue river - will produce a rich, varied palette. A photo that's mostly one color (an extreme close-up of red fabric, for example) will produce a palette of nearly identical shades.
             </p>
           </motion.section>
 
@@ -342,7 +342,7 @@ const ColorPaletteFromPhoto = () => {
               </div>
             </div>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed">
-              A practical workflow: extract 8–10 colors, then manually curate down to the 4–6 you'll actually use. The extras serve as a reference for edge cases — hover states, disabled states, subtle backgrounds — without cluttering your primary design token set.
+              A practical workflow: extract 8–10 colors, then manually curate down to the 4–6 you'll actually use. The extras serve as a reference for edge cases - hover states, disabled states, subtle backgrounds - without cluttering your primary design token set.
             </p>
           </motion.section>
 
@@ -366,10 +366,10 @@ const ColorPaletteFromPhoto = () => {
                 {[
                   { role: 'Primary', criteria: 'The most visually dominant or emotionally resonant color from the palette. Use for CTAs, key buttons, links, and brand moments.', tip: 'Should have enough saturation to feel intentional and branded.' },
                   { role: 'Secondary', criteria: 'The second-most prominent color. Use for section headings, supporting UI elements, and secondary buttons.', tip: 'Should contrast with or complement the primary without competing.' },
-                  { role: 'Accent', criteria: 'A high-energy or unexpected color from the palette — often the most saturated. Use sparingly for notifications, badges, highlights.', tip: 'Less than 5% of the visual area. Its power comes from rarity.' },
-                  { role: 'Background', criteria: 'The lightest or most neutral color. In light mode, near-white; in dark mode, near-dark-gray.', tip: 'Often the least interesting color from the palette — that\'s intentional.' },
+                  { role: 'Accent', criteria: 'A high-energy or unexpected color from the palette - often the most saturated. Use sparingly for notifications, badges, highlights.', tip: 'Less than 5% of the visual area. Its power comes from rarity.' },
+                  { role: 'Background', criteria: 'The lightest or most neutral color. In light mode, near-white; in dark mode, near-dark-gray.', tip: 'Often the least interesting color from the palette - that\'s intentional.' },
                   { role: 'Surface', criteria: 'A slightly deeper shade than background, for cards, panels, and containers.', tip: 'Just 5–10% darker/lighter than background to create quiet separation.' },
-                  { role: 'Text', criteria: 'Near-black (light mode) or near-white (dark mode). Rarely comes from the photo itself — usually a neutral near the photo\'s shadow tones.', tip: 'Ensure 4.5:1 contrast against your background color.' },
+                  { role: 'Text', criteria: 'Near-black (light mode) or near-white (dark mode). Rarely comes from the photo itself - usually a neutral near the photo\'s shadow tones.', tip: 'Ensure 4.5:1 contrast against your background color.' },
                 ].map((item) => (
                   <div key={item.role} className="flex items-start gap-4 pb-4 border-b border-gray-100 dark:border-gray-700 last:border-0 last:pb-0">
                     <div className="flex-shrink-0 px-3 py-1 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 rounded-lg text-sm font-semibold">{item.role}</div>
@@ -467,7 +467,7 @@ module.exports = {
               8. Inspiration: Real-World Extraction Examples
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-6">
-              Let's walk through three real-world photo types and the palettes they yield — along with how to apply each one in a UI context.
+              Let's walk through three real-world photo types and the palettes they yield - along with how to apply each one in a UI context.
             </p>
             <div className="space-y-8">
 
@@ -550,7 +550,7 @@ module.exports = {
           >
             <h3 className="text-xl font-bold text-[var(--text-primary)] dark:text-white mb-2">Extract Your First Photo Palette Now</h3>
             <p className="text-[var(--text-secondary)] dark:text-gray-400 mb-6">
-              Upload any image and get a beautiful, export-ready color palette in seconds — free, no signup required.
+              Upload any image and get a beautiful, export-ready color palette in seconds - free, no signup required.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="/palette-url" className="inline-flex items-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">

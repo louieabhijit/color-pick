@@ -253,10 +253,10 @@ const CulturalColors = () => {
               />
             </div>
             <p className="mb-4">
-              Color is more than a visual element—it's a cultural language. When understood and respected, it can enhance communication, deepen connections, and ensure global relevance.
+              Color is more than a visual element-it's a cultural language. When understood and respected, it can enhance communication, deepen connections, and ensure global relevance.
             </p>
             <p className="mb-4">
-              For designers and marketers alike, a color is never just a color—it's a message. And with tools like <a href="https://color-peek.com" className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Color-Peek</a>, you can explore and apply these meanings with both creativity and cultural sensitivity.
+              For designers and marketers alike, a color is never just a color-it's a message. And with tools like <a href="https://color-peek.com" className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Color-Peek</a>, you can explore and apply these meanings with both creativity and cultural sensitivity.
             </p>
           </section>
 

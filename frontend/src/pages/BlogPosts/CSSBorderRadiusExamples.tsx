@@ -127,7 +127,7 @@ const CSSBorderRadiusExamples = () => {
           >
             Most developers use <code>border-radius</code> for one thing: rounded
             corners on cards and buttons. But <code>border-radius</code> is actually
-            one of CSS's most expressive properties — capable of producing circles,
+            one of CSS's most expressive properties - capable of producing circles,
             pills, organic blobs, teardrops, leaves, and asymmetric shapes that bring
             modern UI design to life. This guide breaks down the full syntax and
             delivers 12 ready-to-use shape recipes.
@@ -142,11 +142,11 @@ const CSSBorderRadiusExamples = () => {
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg my-8"
           >
             <h2 className="text-2xl font-bold mb-4 text-[var(--text-primary)] dark:text-white">
-              1. Beyond <code>border-radius: 8px</code> — The Full Syntax
+              1. Beyond <code>border-radius: 8px</code> - The Full Syntax
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               The shorthand <code>border-radius</code> accepts up to 8 values separated
-              by a forward slash — 4 for the <strong>horizontal radii</strong> and 4 for
+              by a forward slash - 4 for the <strong>horizontal radii</strong> and 4 for
               the <strong>vertical radii</strong> of each corner. This is what enables
               elliptical (egg-shaped) corners and organic blobs.
             </p>
@@ -160,7 +160,7 @@ border-radius: 16px 8px;
 /* 4 values: top-left | top-right | bottom-right | bottom-left */
 border-radius: 16px 8px 24px 4px;
 
-/* The slash syntax — horizontal / vertical radii */
+/* The slash syntax - horizontal / vertical radii */
 /* Each corner can have a different ellipse shape */
 border-radius: 40px 20px 50px 30px / 20px 40px 30px 50px;
               /*  ←── horizontal ──→   ←──── vertical ────→ */`}
@@ -186,7 +186,7 @@ border-radius: 40px 20px 50px 30px / 20px 40px 30px 50px;
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Each corner has its own longhand property. Each longhand also accepts two
-              values — horizontal and vertical radii separated by a space:
+              values - horizontal and vertical radii separated by a space:
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
 {`/* Longhand individual corner properties */
@@ -208,7 +208,7 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
             </pre>
           </motion.div>
 
-          {/* Section 3 — 12 Examples */}
+          {/* Section 3 - 12 Examples */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +261,7 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">2. Pill / Capsule</h3>
                     <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
-                      A very large radius that always exceeds the element's height — creating
+                      A very large radius that always exceeds the element's height - creating
                       a fully rounded "pill". Used for tags and badge buttons.
                     </p>
                     <pre className="bg-gray-900 text-green-400 p-3 rounded-xl text-xs font-mono overflow-x-auto">
@@ -286,7 +286,7 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">3. Squircle (App Icon Shape)</h3>
                     <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
-                      The shape used by iOS app icons — between a square and a circle.
+                      The shape used by iOS app icons - between a square and a circle.
                       CSS can approximate it with a large percentage radius.
                     </p>
                     <pre className="bg-gray-900 text-green-400 p-3 rounded-xl text-xs font-mono overflow-x-auto">
@@ -484,7 +484,7 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-[var(--text-primary)] dark:text-white mb-2">10. Badge Shape</h3>
                     <p className="text-[var(--text-secondary)] dark:text-gray-400 text-sm mb-3">
-                      Diagonal pattern with small/large alternating corners — creates a
+                      Diagonal pattern with small/large alternating corners - creates a
                       "folded label" feel. Works well for version badges and status tags.
                     </p>
                     <pre className="bg-gray-900 text-green-400 p-3 rounded-xl text-xs font-mono overflow-x-auto">
@@ -726,7 +726,7 @@ border-radius: 16px 16px 4px 4px / 32px 32px 4px 4px;
             </h3>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               Use ColorPeek's interactive Border Radius tool to drag corners, preview
-              shapes in real time, and copy production-ready CSS — no guesswork required.
+              shapes in real time, and copy production-ready CSS - no guesswork required.
             </p>
             <div className="flex flex-wrap gap-4">
               <a

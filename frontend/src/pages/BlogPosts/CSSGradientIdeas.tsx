@@ -35,7 +35,7 @@ const CSSGradientIdeas = () => {
   const metadata = {
     title: '30 CSS Gradient Background Ideas with Code Examples',
     description:
-      'Explore 30 stunning CSS gradient backgrounds — linear, radial, conic, mesh, and animated — with ready-to-copy code for every example.',
+      'Explore 30 stunning CSS gradient backgrounds - linear, radial, conic, mesh, and animated - with ready-to-copy code for every example.',
     author: 'Jordan Lee',
     date: 'April 22, 2026',
     readTime: '10 min read',
@@ -48,42 +48,42 @@ const CSSGradientIdeas = () => {
     {
       name: 'Ocean Breeze',
       css: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      description: 'Cool blue-violet diagonal — a perennial favourite for hero sections.',
+      description: 'Cool blue-violet diagonal - a perennial favourite for hero sections.',
     },
     {
       name: 'Sunset Horizon',
       css: 'linear-gradient(to right, #f093fb 0%, #f5576c 100%)',
-      description: 'Warm pink-to-coral — excellent for lifestyle and beauty brands.',
+      description: 'Warm pink-to-coral - excellent for lifestyle and beauty brands.',
     },
     {
       name: 'Emerald Forest',
       css: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
-      description: 'Fresh teal-to-mint — great for wellness, finance, and eco products.',
+      description: 'Fresh teal-to-mint - great for wellness, finance, and eco products.',
     },
     {
       name: 'Midnight Blue',
       css: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)',
-      description: 'Deep navy multi-stop — ideal for dark-mode hero sections and app backgrounds.',
+      description: 'Deep navy multi-stop - ideal for dark-mode hero sections and app backgrounds.',
     },
     {
       name: 'Golden Hour',
       css: 'linear-gradient(to right, #f7971e 0%, #ffd200 100%)',
-      description: 'Warm amber-to-gold — high energy for CTAs, pricing cards, and promotions.',
+      description: 'Warm amber-to-gold - high energy for CTAs, pricing cards, and promotions.',
     },
     {
       name: 'Cotton Candy',
       css: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
-      description: 'Soft pastel peach — gentle and approachable for onboarding and empty states.',
+      description: 'Soft pastel peach - gentle and approachable for onboarding and empty states.',
     },
     {
       name: 'Electric Violet',
       css: 'linear-gradient(to bottom right, #7928ca 0%, #ff0080 100%)',
-      description: 'Bold purple-to-pink — the signature gradient of the web 3.0 aesthetic.',
+      description: 'Bold purple-to-pink - the signature gradient of the web 3.0 aesthetic.',
     },
     {
       name: 'Arctic Dawn',
       css: 'linear-gradient(160deg, #0093E9 0%, #80D0C7 100%)',
-      description: 'Sky-blue to teal — clean and corporate, excellent for SaaS dashboards.',
+      description: 'Sky-blue to teal - clean and corporate, excellent for SaaS dashboards.',
     },
   ];
 
@@ -91,22 +91,22 @@ const CSSGradientIdeas = () => {
     {
       name: 'Solar Flare',
       css: 'radial-gradient(circle at 30% 30%, #ffeaa7 0%, #fd79a8 50%, #6c5ce7 100%)',
-      description: 'Off-center radial burst — creates a dramatic focal point.',
+      description: 'Off-center radial burst - creates a dramatic focal point.',
     },
     {
       name: 'Deep Space',
       css: 'radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-      description: 'Dark elliptical glow — perfect for space, gaming, and tech themes.',
+      description: 'Dark elliptical glow - perfect for space, gaming, and tech themes.',
     },
     {
       name: 'Spotlight',
       css: 'radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.4) 0%, transparent 70%)',
-      description: 'Transparent radial from top — overlay on dark backgrounds for a spotlight effect.',
+      description: 'Transparent radial from top - overlay on dark backgrounds for a spotlight effect.',
     },
     {
       name: 'Sunrise Glow',
       css: 'radial-gradient(circle at 50% 100%, #ff9a9e 0%, #fecfef 40%, #ffecd2 80%, transparent 100%)',
-      description: 'Radial rising from bottom — simulates warm morning light on a page.',
+      description: 'Radial rising from bottom - simulates warm morning light on a page.',
     },
   ];
 
@@ -114,17 +114,17 @@ const CSSGradientIdeas = () => {
     {
       name: 'Color Wheel',
       css: 'conic-gradient(from 0deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00)',
-      description: 'Full spectrum conic — used for color pickers, creative portfolio backgrounds.',
+      description: 'Full spectrum conic - used for color pickers, creative portfolio backgrounds.',
     },
     {
       name: 'Pie Chart',
       css: 'conic-gradient(#6366f1 0% 30%, #ec4899 30% 60%, #f59e0b 60% 80%, #10b981 80% 100%)',
-      description: 'Hard-stop conic — useful for pie chart visualizations without SVG.',
+      description: 'Hard-stop conic - useful for pie chart visualizations without SVG.',
     },
     {
       name: 'Angular Sweep',
       css: 'conic-gradient(from 180deg at 50% 50%, #2563eb 0deg, #7c3aed 180deg, #2563eb 360deg)',
-      description: 'Two-tone angular sweep — gives surfaces an energetic rotational feel.',
+      description: 'Two-tone angular sweep - gives surfaces an energetic rotational feel.',
     },
   ];
 
@@ -132,17 +132,17 @@ const CSSGradientIdeas = () => {
     {
       name: 'Neon Diagonal',
       css: 'linear-gradient(45deg, #12c2e9 0%, #c471ed 50%, #f64f59 100%)',
-      description: '45° diagonal with three vibrant stops — popular for landing page heroes.',
+      description: '45° diagonal with three vibrant stops - popular for landing page heroes.',
     },
     {
       name: 'Muted Diagonal',
       css: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)',
-      description: 'Soft 135° pastel — works beautifully as a card or modal background.',
+      description: 'Soft 135° pastel - works beautifully as a card or modal background.',
     },
     {
       name: 'Dark Diagonal',
       css: 'linear-gradient(45deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-      description: 'Dark navy 45° — moody and minimal for dark mode section backgrounds.',
+      description: 'Dark navy 45° - moody and minimal for dark mode section backgrounds.',
     },
   ];
 
@@ -150,17 +150,17 @@ const CSSGradientIdeas = () => {
     {
       name: 'Mesh Aurora',
       css: 'radial-gradient(at 40% 20%, hsla(210,100%,74%,1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%), radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%), radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%), radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%)',
-      description: 'Six overlapping radials — produces an organic aurora-like mesh effect.',
+      description: 'Six overlapping radials - produces an organic aurora-like mesh effect.',
     },
     {
       name: 'Pastel Mesh',
       css: 'radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 1) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%), radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%), radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%), radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%)',
-      description: 'Pastel radial blend — soft and contemporary, great for landing pages.',
+      description: 'Pastel radial blend - soft and contemporary, great for landing pages.',
     },
     {
       name: 'Warm Mesh',
       css: 'radial-gradient(at 40% 40%, hsla(28, 100%, 74%, 1) 0px, transparent 50%), radial-gradient(at 90% 10%, hsla(0, 100%, 68%, 1) 0px, transparent 50%), radial-gradient(at 10% 90%, hsla(45, 100%, 68%, 1) 0px, transparent 50%), radial-gradient(at 80% 80%, hsla(340, 100%, 76%, 1) 0px, transparent 50%)',
-      description: 'Warm amber-coral mesh — ideal for food, wellness, and creative brands.',
+      description: 'Warm amber-coral mesh - ideal for food, wellness, and creative brands.',
     },
   ];
 
@@ -310,20 +310,20 @@ const CSSGradientIdeas = () => {
               <h2 className="text-2xl font-bold mb-4">CSS Gradient Quick Reference</h2>
               <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
                 CSS provides three native gradient functions. All are values for the
-                <code> background</code> or <code>background-image</code> property —
+                <code> background</code> or <code>background-image</code> property -
                 they are images, not colors.
               </p>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm">
-{`/* Linear — straight direction */
+{`/* Linear - straight direction */
 background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
-/* Radial — outward from a center point */
+/* Radial - outward from a center point */
 background: radial-gradient(shape size at position, color-stop1, color-stop2, ...);
 
-/* Conic — rotates around a center point */
+/* Conic - rotates around a center point */
 background: conic-gradient(from angle at position, color-stop1, color-stop2, ...);
 
-/* Multiple gradients — comma-separated, first is topmost */
+/* Multiple gradients - comma-separated, first is topmost */
 background:
   radial-gradient(...),
   linear-gradient(...);`}
@@ -377,7 +377,7 @@ background:
           >
             <h2 className="text-2xl font-bold mb-2 mt-4">Conic Gradients</h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
-              Conic gradients rotate color stops around a central point — like the
+              Conic gradients rotate color stops around a central point - like the
               hands of a clock sweeping through hues. They're perfect for pie charts,
               color pickers, and angular abstract backgrounds.
             </p>
@@ -440,7 +440,7 @@ background:
                 <code> background-position</code>, or by animating a hue-rotate filter.
               </p>
 
-              <h3 className="font-bold mb-2">Method 1 — Moving background-position</h3>
+              <h3 className="font-bold mb-2">Method 1 - Moving background-position</h3>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm mb-6">
 {`.animated-gradient {
   background: linear-gradient(
@@ -458,7 +458,7 @@ background:
 }`}
               </pre>
 
-              <h3 className="font-bold mb-2">Method 2 — hue-rotate filter</h3>
+              <h3 className="font-bold mb-2">Method 2 - hue-rotate filter</h3>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm mb-6">
 {`.hue-animated {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -471,9 +471,9 @@ background:
 }`}
               </pre>
 
-              <h3 className="font-bold mb-2">Method 3 — CSS custom property + @property</h3>
+              <h3 className="font-bold mb-2">Method 3 - CSS custom property + @property</h3>
               <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm">
-{`/* Modern approach — fully interpolatable */
+{`/* Modern approach - fully interpolatable */
 @property --angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -505,7 +505,7 @@ background:
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">Tips for Accessible Gradient Text</h2>
               <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
-                Gradient backgrounds create variable contrast — the contrast ratio at
+                Gradient backgrounds create variable contrast - the contrast ratio at
                 one end may pass WCAG AA while the other end fails. Follow these
                 practices to keep your gradients accessible.
               </p>
@@ -527,7 +527,7 @@ background:
                 </li>
                 <li className="flex gap-2">
                   <span className="text-green-500 font-bold flex-shrink-0">4.</span>
-                  Avoid placing body text directly on a vibrant multi-stop gradient —
+                  Avoid placing body text directly on a vibrant multi-stop gradient -
                   reserve it for decorative sections only.
                 </li>
               </ul>
@@ -570,7 +570,7 @@ background:
           >
             <h3 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-200">Key Takeaways</h3>
             <ul className="space-y-2 text-[var(--text-secondary)] dark:text-gray-300">
-              <li>CSS gradients are <code>background-image</code> values — they stack like images</li>
+              <li>CSS gradients are <code>background-image</code> values - they stack like images</li>
               <li>Layer multiple radials to create organic mesh effects without libraries</li>
               <li>Animate gradients via <code>background-position</code> or <code>@property --angle</code></li>
               <li>Always check contrast at both ends of a gradient before placing text</li>
@@ -626,7 +626,7 @@ background:
             </h3>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-6">
               ColorPeek's gradient tools let you build, tweak, and save beautiful
-              gradients with live preview — then copy the CSS instantly or browse
+              gradients with live preview - then copy the CSS instantly or browse
               curated community palettes for inspiration.
             </p>
             <div className="flex flex-wrap gap-4">

@@ -130,7 +130,7 @@ const GradientGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Gradient Generator — Build Custom Linear & Radial Gradients"
+        title="CSS Gradient Generator - Build Custom Linear & Radial Gradients"
         description="Create linear, radial, and conic CSS gradients visually with a live editor. Add up to 8 color stops, choose angle and type, and copy the ready-to-use CSS or Tailwind code instantly. Free at ColorPeek."
         path="/gradient-generator"
         keywords="css gradient generator, linear gradient builder, radial gradient tool, conic gradient generator, tailwind gradient, gradient color picker"
@@ -457,7 +457,7 @@ const GradientGenerator = () => {
 
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a CSS Gradient Generator?</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">A CSS gradient generator lets you build complex color transitions visually, without writing gradient syntax by hand. CSS gradients — defined with <code className="text-indigo-400">linear-gradient()</code>, <code className="text-indigo-400">radial-gradient()</code>, or <code className="text-indigo-400">conic-gradient()</code> — can have unlimited color stops, each at a precise position. Getting this right manually requires trial and error. A visual generator lets you drag stops, pick colors, and see the result in real time. The output is clean, optimized CSS you can paste directly into a stylesheet or use as a Tailwind arbitrary value. Gradients are widely used for hero backgrounds, button fills, card overlays, text effects, and UI depth without any image overhead.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">A CSS gradient generator lets you build complex color transitions visually, without writing gradient syntax by hand. CSS gradients - defined with <code className="text-indigo-400">linear-gradient()</code>, <code className="text-indigo-400">radial-gradient()</code>, or <code className="text-indigo-400">conic-gradient()</code> - can have unlimited color stops, each at a precise position. Getting this right manually requires trial and error. A visual generator lets you drag stops, pick colors, and see the result in real time. The output is clean, optimized CSS you can paste directly into a stylesheet or use as a Tailwind arbitrary value. Gradients are widely used for hero backgrounds, button fills, card overlays, text effects, and UI depth without any image overhead.</p>
           </div>
 
           <div className="glass-card p-8 rounded-2xl">

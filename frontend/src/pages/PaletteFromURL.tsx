@@ -75,7 +75,7 @@ const PaletteFromURL = () => {
         setColors(palette.map(([r, g, b]) => rgbToHex(r, g, b)));
         setError('');
       } catch {
-        setError('Could not extract colours — the image may be too small.');
+        setError('Could not extract colours - the image may be too small.');
       }
       setLoading(false);
     };
@@ -144,7 +144,7 @@ const PaletteFromURL = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Extract Colors from Image — Palette from Image URL or Photo"
+        title="Extract Colors from Image - Palette from Image URL or Photo"
         description="Extract a color palette from any image URL or uploaded photo using ColorThief. Get up to 16 dominant colors, see them live, and export as CSS variables. Free image color extractor at ColorPeek."
         path="/palette-url"
         keywords="extract colors from image, color palette from image, image color extractor, palette from url, dominant color extractor, color picker from photo"
@@ -159,7 +159,7 @@ const PaletteFromURL = () => {
           ],
         }}
       />
-      {/* Hidden img used by ColorThief — must be in DOM */}
+      {/* Hidden img used by ColorThief - must be in DOM */}
       <img ref={hiddenImgRef} className="hidden" alt="" aria-hidden="true"/>
       <Navbar onColorSelect={() => {}} />
 
@@ -402,7 +402,7 @@ const PaletteFromURL = () => {
 
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is Color Extraction?</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">Color extraction (or color quantization) is the process of algorithmically identifying the most visually prominent colors in an image. This tool uses ColorThief, which applies a median cut algorithm to the image's pixel data. It divides the color space repeatedly, cutting the dimension with the greatest range each time, until it has isolated the requested number of color clusters. The representative color of each cluster — its median — becomes a palette swatch. This technique is widely used by designers to derive color palettes from photography, artwork, brand imagery, and nature. Instead of manually sampling colors with an eyedropper, you get a mathematically derived set of dominant hues that represent the image's true visual palette. These palettes can then be used as the basis for brand color systems, mood boards, and design tokens.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Color extraction (or color quantization) is the process of algorithmically identifying the most visually prominent colors in an image. This tool uses ColorThief, which applies a median cut algorithm to the image's pixel data. It divides the color space repeatedly, cutting the dimension with the greatest range each time, until it has isolated the requested number of color clusters. The representative color of each cluster - its median - becomes a palette swatch. This technique is widely used by designers to derive color palettes from photography, artwork, brand imagery, and nature. Instead of manually sampling colors with an eyedropper, you get a mathematically derived set of dominant hues that represent the image's true visual palette. These palettes can then be used as the basis for brand color systems, mood boards, and design tokens.</p>
           </div>
 
           <div className="glass-card p-8 rounded-2xl">

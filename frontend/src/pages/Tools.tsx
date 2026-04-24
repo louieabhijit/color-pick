@@ -25,7 +25,7 @@ const TOOLS: Tool[] = [
     name: 'Color Palettes',
     href: '/palettes',
     description: 'Curated collections of harmonious palettes',
-    longDesc: 'Browse hundreds of hand-crafted, harmonious color palettes. Copy any color in HEX, RGB, or HSL — ready to drop straight into your project.',
+    longDesc: 'Browse hundreds of hand-crafted, harmonious color palettes. Copy any color in HEX, RGB, or HSL - ready to drop straight into your project.',
     tags: ['Browse', 'Inspiration', 'HEX / RGB / HSL'],
     icon: <IconPalettes className="w-6 h-6" />,
     gradient: 'from-indigo-500 to-violet-500',
@@ -43,7 +43,7 @@ const TOOLS: Tool[] = [
     name: 'Gradient Generator',
     href: '/gradient-generator',
     description: 'Build custom linear, radial & conic gradients',
-    longDesc: 'Drag color stops, set angle, switch between linear, radial, and conic modes. Exports clean CSS or a Tailwind arbitrary class — no extra dependencies.',
+    longDesc: 'Drag color stops, set angle, switch between linear, radial, and conic modes. Exports clean CSS or a Tailwind arbitrary class - no extra dependencies.',
     tags: ['Linear', 'Radial', 'Conic', 'CSS + Tailwind'],
     icon: <IconGradientGenerator className="w-6 h-6" />,
     gradient: 'from-fuchsia-500 to-rose-500',
@@ -52,7 +52,7 @@ const TOOLS: Tool[] = [
     name: 'Tint & Shade Generator',
     href: '/tint-shade',
     description: 'Generate a full 50–900 scale from any base color',
-    longDesc: "Enter any base color and get a complete ten-step scale — just like Tailwind's built-in palettes. Export as CSS custom properties, Tailwind config, or SCSS variables.",
+    longDesc: "Enter any base color and get a complete ten-step scale - just like Tailwind's built-in palettes. Export as CSS custom properties, Tailwind config, or SCSS variables.",
     tags: ['Color Scale', 'CSS Vars', 'Tailwind', 'SCSS'],
     icon: <IconTintShade className="w-6 h-6" />,
     gradient: 'from-rose-500 to-orange-500',
@@ -61,7 +61,7 @@ const TOOLS: Tool[] = [
     name: 'Color Blindness Simulator',
     href: '/color-blindness',
     description: 'Preview your palette through 7 vision types',
-    longDesc: 'See exactly how your colors appear to people with deuteranopia, protanopia, tritanopia, and more — using accurate RGB matrix transforms, not just CSS filters.',
+    longDesc: 'See exactly how your colors appear to people with deuteranopia, protanopia, tritanopia, and more - using accurate RGB matrix transforms, not just CSS filters.',
     tags: ['Accessibility', 'WCAG', 'Deuteranopia', 'Protanopia'],
     icon: <IconColorBlindness className="w-6 h-6" />,
     gradient: 'from-orange-500 to-amber-400',
@@ -70,7 +70,7 @@ const TOOLS: Tool[] = [
     name: 'Color Converter',
     href: '/color-converter',
     description: 'Convert between HEX, RGB, HSL, HSV, CMYK and OKLCH',
-    longDesc: 'Paste any color in any format and instantly see every other format. Includes modern OKLCH conversion via sRGB linearization — great for CSS Color Level 4.',
+    longDesc: 'Paste any color in any format and instantly see every other format. Includes modern OKLCH conversion via sRGB linearization - great for CSS Color Level 4.',
     tags: ['HEX', 'RGB', 'HSL', 'CMYK', 'OKLCH'],
     icon: <IconColorConverter className="w-6 h-6" />,
     gradient: 'from-cyan-500 to-blue-500',
@@ -79,7 +79,7 @@ const TOOLS: Tool[] = [
     name: 'Box Shadow Generator',
     href: '/box-shadow',
     description: 'Build multi-layer box shadows with live preview',
-    longDesc: 'Stack up to 5 shadow layers, control x/y offset, blur, spread, color, opacity and inset — then copy the full CSS rule in one click.',
+    longDesc: 'Stack up to 5 shadow layers, control x/y offset, blur, spread, color, opacity and inset - then copy the full CSS rule in one click.',
     tags: ['CSS', 'Multi-layer', 'Presets', 'Live preview'],
     icon: <IconBoxShadow className="w-6 h-6" />,
     gradient: 'from-blue-500 to-indigo-500',
@@ -88,7 +88,7 @@ const TOOLS: Tool[] = [
     name: 'Glass Effect Generator',
     href: '/glass-generator',
     description: 'Build glassmorphism panels with backdrop-filter',
-    longDesc: 'Tune blur, saturation, background color/opacity, and border — live preview on five gradient backgrounds. Copy the complete CSS class instantly.',
+    longDesc: 'Tune blur, saturation, background color/opacity, and border - live preview on five gradient backgrounds. Copy the complete CSS class instantly.',
     tags: ['CSS', 'Glassmorphism', 'backdrop-filter', 'rgba'],
     icon: <IconGlassEffect className="w-6 h-6" />,
     gradient: 'from-indigo-400 to-sky-400',
@@ -115,7 +115,7 @@ const TOOLS: Tool[] = [
     name: 'Font Pairing',
     href: '/font-pairing',
     description: 'Discover Google Font pairings with live preview',
-    longDesc: '10 curated heading/body font pairings — filter by style, preview with your own text and colors, then copy the Google Fonts import link or Tailwind config.',
+    longDesc: '10 curated heading/body font pairings - filter by style, preview with your own text and colors, then copy the Google Fonts import link or Tailwind config.',
     tags: ['Typography', 'Google Fonts', 'HTML', 'Tailwind'],
     icon: <IconFontPairing className="w-6 h-6" />,
     gradient: 'from-rose-400 to-fuchsia-500',
@@ -124,7 +124,7 @@ const TOOLS: Tool[] = [
     name: 'Palette from URL',
     href: '/palette-url',
     description: 'Extract all colors from a website or pasted CSS',
-    longDesc: 'Enter a URL or paste CSS/HTML directly — the tool parses every HEX, RGB, and HSL value, deduplicates them, and lets you select favorites for export.',
+    longDesc: 'Enter a URL or paste CSS/HTML directly - the tool parses every HEX, RGB, and HSL value, deduplicates them, and lets you select favorites for export.',
     tags: ['Extract', 'HEX', 'RGB', 'HSL'],
     icon: <IconPaletteURL className="w-6 h-6" />,
     gradient: 'from-emerald-500 to-teal-500',
@@ -178,7 +178,7 @@ const TOOLS: Tool[] = [
     name: 'Color Mixer',
     href: '/color-mixer',
     description: 'Blend two colors with adjustable ratio',
-    longDesc: 'Pick two colors and blend them at any ratio. Choose between RGB, HSL, or OKLCH blend modes — each produces visibly different results. Preview 5–11 intermediate steps as a gradient strip.',
+    longDesc: 'Pick two colors and blend them at any ratio. Choose between RGB, HSL, or OKLCH blend modes - each produces visibly different results. Preview 5–11 intermediate steps as a gradient strip.',
     tags: ['Blend', 'RGB', 'HSL', 'OKLCH', 'Steps'],
     icon: <IconColorMixer className="w-6 h-6" />,
     gradient: 'from-indigo-500 to-pink-500',
@@ -196,7 +196,7 @@ const TOOLS: Tool[] = [
     name: 'CSS Filter Generator',
     href: '/css-filter',
     description: 'Blur, brightness, contrast, sepia and more',
-    longDesc: 'Adjust all nine CSS filter properties with live sliders — blur, brightness, contrast, grayscale, hue-rotate, invert, opacity, saturate, sepia — plus drop-shadow. Preview on built-in or uploaded images.',
+    longDesc: 'Adjust all nine CSS filter properties with live sliders - blur, brightness, contrast, grayscale, hue-rotate, invert, opacity, saturate, sepia - plus drop-shadow. Preview on built-in or uploaded images.',
     tags: ['CSS', 'filter', 'Blur', 'Image', 'Presets'],
     icon: <IconCSSFilter className="w-6 h-6" />,
     gradient: 'from-sky-500 to-blue-600',
@@ -243,7 +243,7 @@ const Tools = () => (
   <div className="min-h-screen w-full">
     <PageSEO
       title="Color Tools for Designers & Developers"
-      description="Free colour tools for designers and developers — gradient generator, tint & shade scale, colour converter, box shadow builder, glassmorphism generator, font pairing, type scale, and more."
+      description="Free colour tools for designers and developers - gradient generator, tint & shade scale, colour converter, box shadow builder, glassmorphism generator, font pairing, type scale, and more."
       path="/tools"
       keywords="color tools, css tools, design tools, gradient generator, color converter, box shadow generator, glass effect, type scale, font pairing, free design tools"
       schema={{
@@ -269,7 +269,7 @@ const Tools = () => (
           Color Tools for <span className="gradient-text">Designers & Developers</span>
         </h1>
         <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
-          Everything you need to work with color — from palette discovery to accessibility testing.
+          Everything you need to work with color - from palette discovery to accessibility testing.
           All tools are free, run entirely in the browser, and require no sign-up.
         </p>
       </motion.div>

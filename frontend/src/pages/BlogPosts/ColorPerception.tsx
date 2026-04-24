@@ -120,7 +120,7 @@ const ColorPerception = () => {
           {/* Introduction */}
           <section className="mb-16">
             <p className="lead text-xl text-[var(--text-secondary)]">
-              Color is not a property of objects themselves but rather a perceptual phenomenon created by our brains. When we say something is "blue," we're describing how our eyes and brain interpret a specific wavelength of light. Understanding the science behind color perception and vision isn't just fascinating—it's essential for fields ranging from digital design to neuroscience, photography, ophthalmology, and artificial intelligence.
+              Color is not a property of objects themselves but rather a perceptual phenomenon created by our brains. When we say something is "blue," we're describing how our eyes and brain interpret a specific wavelength of light. Understanding the science behind color perception and vision isn't just fascinating-it's essential for fields ranging from digital design to neuroscience, photography, ophthalmology, and artificial intelligence.
             </p>
           </section>
 
@@ -139,7 +139,7 @@ const ColorPerception = () => {
               <p className="text-sm text-gray-500 mt-2 italic text-center">The visible spectrum of light ranges from violet to red</p>
             </div>
             <p className="mb-4">
-              Color begins with light. Light is a form of electromagnetic radiation that travels in waves. These waves vary in length, and the visible spectrum—what humans can see—ranges from about 380 to 740 nanometers (nm).
+              Color begins with light. Light is a form of electromagnetic radiation that travels in waves. These waves vary in length, and the visible spectrum-what humans can see-ranges from about 380 to 740 nanometers (nm).
             </p>
             <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl mb-6">
               <ul className="list-none space-y-3">

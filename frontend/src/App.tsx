@@ -123,7 +123,7 @@ const HomePage = ({
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row w-full gap-4 items-start">
 
-          {/* Left Column — image & upload (35%) */}
+          {/* Left Column - image & upload (35%) */}
           <motion.div
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
@@ -140,7 +140,7 @@ const HomePage = ({
             </div>
           </motion.div>
 
-          {/* Center Column — analysis panels (43%) */}
+          {/* Center Column - analysis panels (43%) */}
           <motion.div
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -162,7 +162,7 @@ const HomePage = ({
             </div>
           </motion.div>
 
-          {/* Right Sidebar — tools (22%) — sticky */}
+          {/* Right Sidebar - tools (22%) - sticky */}
           <motion.div
             initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.15 }}
@@ -187,7 +187,7 @@ const HomePage = ({
         <p className="text-[var(--text-secondary)] leading-relaxed">
           ColorPeek is a free suite of design tools for designers and developers. Generate color palettes,
           build CSS gradients and shadows, test for color blindness accessibility, calculate type scales,
-          and export everything in production-ready code — no sign-up required.
+          and export everything in production-ready code - no sign-up required.
         </p>
       </div>
     </section>
@@ -274,11 +274,11 @@ const HomePage = ({
           <div className="lg:w-1/2">
             <span className="section-label mb-4 inline-block">What is ColorPeek?</span>
             <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4 text-[var(--text-primary)] leading-snug">
-              Extract <span className="gradient-text">any color</span> from<br/>any image — instantly
+              Extract <span className="gradient-text">any color</span> from<br/>any image - instantly
             </h2>
             <p className="text-[var(--text-secondary)] leading-relaxed">
               Upload an image or paste a URL and ColorPeek extracts the dominant palette,
-              generates harmonies, checks WCAG contrast, and produces copy-ready code snippets —
+              generates harmonies, checks WCAG contrast, and produces copy-ready code snippets -
               all running locally in your browser, no sign-up required.
             </p>
           </div>

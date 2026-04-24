@@ -5,7 +5,7 @@ interface PageSEOProps {
   description: string;
   path: string;
   keywords?: string;
-  /** JSON-LD structured data object — serialized automatically */
+  /** JSON-LD structured data object - serialized automatically */
   schema?: object;
 }
 
@@ -60,12 +60,12 @@ const PageSEO = ({ title, description, path, keywords, schema }: PageSEOProps) =
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="twitter:site" content="@colorpeek" />
 
-      {/* JSON-LD — main schema */}
+      {/* JSON-LD - main schema */}
       <script type="application/ld+json">
         {JSON.stringify(schema ?? defaultSchema)}
       </script>
 
-      {/* JSON-LD — BreadcrumbList */}
+      {/* JSON-LD - BreadcrumbList */}
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',

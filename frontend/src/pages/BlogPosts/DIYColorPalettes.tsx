@@ -108,13 +108,13 @@ const DIYColorPalettes = () => {
           {/* Introduction */}
           <section className="mb-16">
             <p className="mb-4">
-              Whether you're designing a website, building a brand, decorating your home, or curating your next art project, choosing the right color palette can make or break your outcome. But finding the perfect combination of colors isn't always easy—especially if you're not a trained designer.
+              Whether you're designing a website, building a brand, decorating your home, or curating your next art project, choosing the right color palette can make or break your outcome. But finding the perfect combination of colors isn't always easy-especially if you're not a trained designer.
             </p>
             <p className="mb-4">
               That's where Color-Peek comes in.
             </p>
             <p className="mb-4">
-              In this comprehensive guide, we'll walk you through how to create stunning, personalized color palettes using Color-Peek—your free, user-friendly online tool. Plus, we'll share pro tips, SEO insights, and best practices to make your DIY palette creation both creative and effective.
+              In this comprehensive guide, we'll walk you through how to create stunning, personalized color palettes using Color-Peek-your free, user-friendly online tool. Plus, we'll share pro tips, SEO insights, and best practices to make your DIY palette creation both creative and effective.
             </p>
           </section>
 
@@ -174,7 +174,7 @@ const DIYColorPalettes = () => {
 
             <h3 className="text-xl font-bold mb-4">1. Start with an Image or a Vision</h3>
             <p className="mb-4">
-              If you have an image that inspires you—a photo from your travels, a piece of artwork, or even a screenshot—you can upload it directly into Color-Peek. This lets you extract natural, harmonious colors already balanced by real-life lighting and composition.
+              If you have an image that inspires you-a photo from your travels, a piece of artwork, or even a screenshot-you can upload it directly into Color-Peek. This lets you extract natural, harmonious colors already balanced by real-life lighting and composition.
             </p>
             <p className="mb-4 italic">
               Tip: Images with natural lighting and a consistent color theme yield the best results.
@@ -282,10 +282,10 @@ const DIYColorPalettes = () => {
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">🧾 Conclusion</h2>
             <p className="mb-4">
-              Design isn't about rules—it's about resonance. With Color-Peek, creating your own palette is more than a design task; it's a creative exploration. By using real-world inspiration, accessibility tools, and personal flair, your custom color palette can elevate any project you touch.
+              Design isn't about rules-it's about resonance. With Color-Peek, creating your own palette is more than a design task; it's a creative exploration. By using real-world inspiration, accessibility tools, and personal flair, your custom color palette can elevate any project you touch.
             </p>
             <p className="mb-4">
-              Whether you're branding a business or decorating your studio apartment, your color choices matter—and Color-Peek is here to help you make them count.
+              Whether you're branding a business or decorating your studio apartment, your color choices matter-and Color-Peek is here to help you make them count.
             </p>
             <p className="mb-4">
               Ready to create your first palette? <a href="https://color-peek.com/palettes" className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Head to Color-Peek</a> and start experimenting. Your colors, your rules.

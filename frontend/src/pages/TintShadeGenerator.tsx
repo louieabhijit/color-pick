@@ -127,7 +127,7 @@ const TintShadeGenerator = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Tint & Shade Generator — Generate Color Variations Online"
+        title="Tint & Shade Generator - Generate Color Variations Online"
         description="Generate a complete 50–900 tint and shade scale from any base color, just like Tailwind CSS palettes. Export as CSS variables, Tailwind config, or SCSS in one click. Free at ColorPeek."
         path="/tint-shade"
         keywords="tint shade generator, tint generator, shade generator, color scale, tailwind color palette generator, css color variables, color ramp tool"
@@ -156,7 +156,7 @@ const TintShadeGenerator = () => {
             Tint & Shade <span className="gradient-text">Generator</span>
           </h1>
           <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
-            Generate a complete 50–900 color scale from any base color — just like Tailwind CSS.
+            Generate a complete 50–900 color scale from any base color - just like Tailwind CSS.
             Click any swatch to copy its hex code.
           </p>
         </motion.div>
@@ -329,7 +329,7 @@ const TintShadeGenerator = () => {
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Tint & Shade Generator</h2>
             <ol className="space-y-3">
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Enter any HEX color value in the input field or use the color picker to select your base color.</li>
-              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>The tool instantly generates a 50–900 color scale — lighter tints at the top, darker shades at the bottom.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>The tool instantly generates a 50–900 color scale - lighter tints at the top, darker shades at the bottom.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Click any swatch to copy its individual HEX code to your clipboard.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Use the Export section to copy the full scale as CSS variables, Tailwind config, or SCSS variables.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Paste the Tailwind config into <code className="text-indigo-400">theme.extend.colors</code> to use your custom scale in your project.</li>
@@ -338,7 +338,7 @@ const TintShadeGenerator = () => {
 
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What are Tints and Shades?</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">A tint is created by adding white to a color, progressively lightening it. A shade is created by adding black, progressively darkening it. Together, tints and shades form a continuous lightness ramp that gives designers a full vocabulary for any hue — from near-white background washes to near-black text tones. Design systems like Tailwind CSS, Material Design, and Ant Design use this pattern to define a 10-step palette (50, 100, 200 ... 900) for every brand color. The 500 value is usually the true base color, values below 500 are tints, and values above are shades. Having a complete scale ensures you always have a subtle background variant, a hover state, and a dark pressed state available, all harmoniously derived from your brand color.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">A tint is created by adding white to a color, progressively lightening it. A shade is created by adding black, progressively darkening it. Together, tints and shades form a continuous lightness ramp that gives designers a full vocabulary for any hue - from near-white background washes to near-black text tones. Design systems like Tailwind CSS, Material Design, and Ant Design use this pattern to define a 10-step palette (50, 100, 200 ... 900) for every brand color. The 500 value is usually the true base color, values below 500 are tints, and values above are shades. Having a complete scale ensures you always have a subtle background variant, a hover state, and a dark pressed state available, all harmoniously derived from your brand color.</p>
           </div>
 
           <div className="glass-card p-8 rounded-2xl">
@@ -350,7 +350,7 @@ const TintShadeGenerator = () => {
               </details>
               <details className="border border-white/20 rounded-xl overflow-hidden">
                 <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How does this differ from opacity?</summary>
-                <p className="px-5 pb-4 text-[var(--text-secondary)]">Opacity changes transparency, not the color itself — the underlying element or background shows through. Tints and shades produce fully opaque colors by blending with white or black, which means they look consistent on any background.</p>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Opacity changes transparency, not the color itself - the underlying element or background shows through. Tints and shades produce fully opaque colors by blending with white or black, which means they look consistent on any background.</p>
               </details>
               <details className="border border-white/20 rounded-xl overflow-hidden">
                 <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I export the scale for design tools like Figma?</summary>
@@ -358,7 +358,7 @@ const TintShadeGenerator = () => {
               </details>
               <details className="border border-white/20 rounded-xl overflow-hidden">
                 <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Is the WCAG contrast ratio maintained across the scale?</summary>
-                <p className="px-5 pb-4 text-[var(--text-secondary)]">Not automatically — but lighter tints (50–200) are generally safe for backgrounds with dark text, and darker shades (700–900) work for text on light backgrounds. Use the <a href="/color-blindness" className="text-indigo-500 hover:underline">Color Blindness Simulator</a> to verify your combinations.</p>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Not automatically - but lighter tints (50–200) are generally safe for backgrounds with dark text, and darker shades (700–900) work for text on light backgrounds. Use the <a href="/color-blindness" className="text-indigo-500 hover:underline">Color Blindness Simulator</a> to verify your combinations.</p>
               </details>
             </div>
           </div>

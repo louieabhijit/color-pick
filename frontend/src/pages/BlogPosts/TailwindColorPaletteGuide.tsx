@@ -125,7 +125,7 @@ const TailwindColorPaletteGuide = () => {
             transition={{ delay: 0.4 }}
             className="text-xl text-[var(--text-secondary)] dark:text-gray-300 leading-relaxed mb-8"
           >
-            Tailwind CSS ships with an impressive built-in color palette — 22 named hues,
+            Tailwind CSS ships with an impressive built-in color palette - 22 named hues,
             each spanning 11 shades from 50 to 950. But real-world projects have brand
             colors, design systems, and accessibility requirements that go beyond what
             any generic palette can offer. In this guide you'll learn how to extend,
@@ -146,9 +146,9 @@ const TailwindColorPaletteGuide = () => {
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Tailwind's default palette is excellent as a starting point, but it was
               designed to be generic and broadly applicable. The moment you're building
-              a product with a brand identity — a specific teal that matches your logo,
+              a product with a brand identity - a specific teal that matches your logo,
               a warm neutral that feels premium, or a red that meets WCAG contrast on
-              dark backgrounds — you'll hit the limits of the defaults.
+              dark backgrounds - you'll hit the limits of the defaults.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               Common pain points with the default palette include:
@@ -166,7 +166,7 @@ const TailwindColorPaletteGuide = () => {
               </li>
               <li>
                 <strong>No design token integration:</strong> Modern design systems use
-                tokens (e.g. Figma variables) that map to specific values — not
+                tokens (e.g. Figma variables) that map to specific values - not
                 framework-specific shade numbers.
               </li>
               <li>
@@ -242,7 +242,7 @@ const TailwindColorPaletteGuide = () => {
             </div>
 
             <p className="text-[var(--text-secondary)] dark:text-gray-300">
-              The <strong>500 shade is always the "pure" hue</strong> — your base color
+              The <strong>500 shade is always the "pure" hue</strong> - your base color
               at full saturation. Shades below 500 mix in white; shades above 500 mix in
               black (though the exact method Tailwind uses is more perceptually nuanced
               than simple tinting).
@@ -266,11 +266,11 @@ const TailwindColorPaletteGuide = () => {
             </p>
             <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)] dark:text-gray-300 space-y-1">
               <li>
-                <code>theme.extend.colors</code> — <strong>adds</strong> your colors
+                <code>theme.extend.colors</code> - <strong>adds</strong> your colors
                 alongside the defaults (recommended)
               </li>
               <li>
-                <code>theme.colors</code> — <strong>replaces</strong> the entire palette
+                <code>theme.colors</code> - <strong>replaces</strong> the entire palette
                 (use only if you want full control)
               </li>
             </ul>
@@ -318,7 +318,7 @@ module.exports = {
               For Tailwind v4 (CSS-first config):
             </p>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
-{`/* app.css — Tailwind v4 uses CSS variables natively */
+{`/* app.css - Tailwind v4 uses CSS variables natively */
 @import "tailwindcss";
 
 @theme {
@@ -367,7 +367,7 @@ module.exports = {
                   base L, shade 950 → L 8%
                 </li>
                 <li>
-                  Adjust <strong>saturation</strong> slightly — tints desaturate a bit,
+                  Adjust <strong>saturation</strong> slightly - tints desaturate a bit,
                   shades stay punchy
                 </li>
                 <li>Convert each stop back to hex for Tailwind compatibility</li>
@@ -395,7 +395,7 @@ brand: {
 
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mt-4">
               The key advantage of a generated scale over manually chosen values is
-              <strong> perceptual uniformity</strong> — the visual step between adjacent
+              <strong> perceptual uniformity</strong> - the visual step between adjacent
               shades feels equal, which makes your UI look polished and intentional.
             </p>
           </motion.div>
@@ -413,7 +413,7 @@ brand: {
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
               A <strong>design token</strong> is a named variable that stores a design
-              decision — <code>color.brand.primary</code>, <code>color.surface.default</code>,
+              decision - <code>color.brand.primary</code>, <code>color.surface.default</code>,
               <code>spacing.layout.gutter</code>. Utility classes like{' '}
               <code>bg-indigo-600</code> are implementation details; tokens are the
               intent.
@@ -486,8 +486,8 @@ module.exports = {
               6. Exporting Your Palette as Tailwind Config
             </h2>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
-              Once you've built and refined your color palette — whether in ColorPeek's
-              palette builder, a Figma file, or by hand — the final step is exporting it
+              Once you've built and refined your color palette - whether in ColorPeek's
+              palette builder, a Figma file, or by hand - the final step is exporting it
               in a format you can paste directly into your project.
             </p>
             <p className="text-[var(--text-secondary)] dark:text-gray-300 mb-4">
@@ -498,12 +498,12 @@ module.exports = {
               supports multiple output formats from a single palette:
             </p>
             <ul className="list-disc list-inside space-y-2 text-[var(--text-secondary)] dark:text-gray-300 mb-6">
-              <li><strong>Tailwind config</strong> — <code>theme.extend.colors</code> object</li>
-              <li><strong>Tailwind v4 CSS</strong> — <code>@theme</code> block with CSS variables</li>
-              <li><strong>CSS custom properties</strong> — for any CSS framework or vanilla projects</li>
-              <li><strong>SCSS variables</strong> — for SASS-based projects</li>
-              <li><strong>JSON / Style Dictionary</strong> — for design token pipelines</li>
-              <li><strong>Figma tokens plugin format</strong> — for design-to-code sync</li>
+              <li><strong>Tailwind config</strong> - <code>theme.extend.colors</code> object</li>
+              <li><strong>Tailwind v4 CSS</strong> - <code>@theme</code> block with CSS variables</li>
+              <li><strong>CSS custom properties</strong> - for any CSS framework or vanilla projects</li>
+              <li><strong>SCSS variables</strong> - for SASS-based projects</li>
+              <li><strong>JSON / Style Dictionary</strong> - for design token pipelines</li>
+              <li><strong>Figma tokens plugin format</strong> - for design-to-code sync</li>
             </ul>
             <pre className="bg-gray-900 text-green-400 p-4 rounded-xl overflow-x-auto text-sm font-mono">
 {`/* Exported as CSS custom properties */
@@ -523,7 +523,7 @@ module.exports = {
             </pre>
           </motion.div>
 
-          {/* Section 7 — Key Takeaways */}
+          {/* Section 7 - Key Takeaways */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -537,11 +537,11 @@ module.exports = {
               <ul className="space-y-3">
                 {[
                   "Use theme.extend.colors to add brand colors without losing Tailwind defaults.",
-                  "The numeric scale (50–950) maps to perceptual lightness steps — 500 is always your base hue.",
+                  "The numeric scale (50–950) maps to perceptual lightness steps - 500 is always your base hue.",
                   "Generate a full 11-shade scale from one hex using ColorPeek's Tint & Shade Generator for visual consistency.",
-                  "Layer semantic token names on top of your raw scale — change one value, update the whole product.",
+                  "Layer semantic token names on top of your raw scale - change one value, update the whole product.",
                   "Export in multiple formats (Tailwind config, CSS vars, SCSS, JSON) so every tool in your pipeline stays in sync.",
-                  "Tailwind v4 replaces tailwind.config.js with a CSS-first @theme block — plan your token architecture accordingly.",
+                  "Tailwind v4 replaces tailwind.config.js with a CSS-first @theme block - plan your token architecture accordingly.",
                 ].map((point, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-500 text-white text-xs flex items-center justify-center font-bold mt-0.5">

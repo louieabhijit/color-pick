@@ -31,23 +31,23 @@ const ColorContrastGuide = () => {
   const shareOnLinkedIn = () => window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}&title=${metadata.title}`, '_blank');
 
   const standards = [
-    { level: "AA — Normal text", ratio: "4.5:1", passes: true, example: "Body copy, labels, inputs" },
-    { level: "AA — Large text (18px+)", ratio: "3:1", passes: true, example: "Headings, hero text" },
-    { level: "AA — UI components", ratio: "3:1", passes: true, example: "Borders, icons, focus rings" },
-    { level: "AAA — Normal text", ratio: "7:1", passes: true, example: "Critical body copy" },
-    { level: "AAA — Large text", ratio: "4.5:1", passes: true, example: "Enhanced headings" },
+    { level: "AA - Normal text", ratio: "4.5:1", passes: true, example: "Body copy, labels, inputs" },
+    { level: "AA - Large text (18px+)", ratio: "3:1", passes: true, example: "Headings, hero text" },
+    { level: "AA - UI components", ratio: "3:1", passes: true, example: "Borders, icons, focus rings" },
+    { level: "AAA - Normal text", ratio: "7:1", passes: true, example: "Critical body copy" },
+    { level: "AAA - Large text", ratio: "4.5:1", passes: true, example: "Enhanced headings" },
   ];
 
   const badPairs = [
-    { bg: "#ffffff", fg: "#aaaaaa", ratio: "2.3:1", label: "Gray on White — FAIL" },
-    { bg: "#0000ff", fg: "#ff0000", ratio: "1.0:1", label: "Red on Blue — FAIL" },
-    { bg: "#ffff00", fg: "#ffffff", ratio: "1.1:1", label: "White on Yellow — FAIL" },
+    { bg: "#ffffff", fg: "#aaaaaa", ratio: "2.3:1", label: "Gray on White - FAIL" },
+    { bg: "#0000ff", fg: "#ff0000", ratio: "1.0:1", label: "Red on Blue - FAIL" },
+    { bg: "#ffff00", fg: "#ffffff", ratio: "1.1:1", label: "White on Yellow - FAIL" },
   ];
 
   const goodPairs = [
-    { bg: "#1a1a2e", fg: "#e8e8f8", ratio: "14.5:1", label: "Light on Dark — AAA" },
-    { bg: "#4f46e5", fg: "#ffffff", ratio: "5.9:1", label: "White on Indigo — AA" },
-    { bg: "#ffffff", fg: "#1d4ed8", ratio: "7.2:1", label: "Blue on White — AAA" },
+    { bg: "#1a1a2e", fg: "#e8e8f8", ratio: "14.5:1", label: "Light on Dark - AAA" },
+    { bg: "#4f46e5", fg: "#ffffff", ratio: "5.9:1", label: "White on Indigo - AA" },
+    { bg: "#ffffff", fg: "#1d4ed8", ratio: "7.2:1", label: "Blue on White - AAA" },
   ];
 
   return (
@@ -185,7 +185,7 @@ function contrastRatio(L1: number, L2: number) {
           <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="my-12">
             <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-3"><FaEye className="text-indigo-500" /> Color Blindness & Palette Design</h2>
             <p className="text-[var(--text-secondary)] mt-4">
-              Contrast ratio alone doesn't cover color blindness. Deuteranopia (red-green) affects 6% of men — if you rely on red vs green to convey status (error vs success), color-blind users won't see the difference. Always pair color with another visual cue: an icon, a label, or a pattern.
+              Contrast ratio alone doesn't cover color blindness. Deuteranopia (red-green) affects 6% of men - if you rely on red vs green to convey status (error vs success), color-blind users won't see the difference. Always pair color with another visual cue: an icon, a label, or a pattern.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg mt-6 space-y-4">
               <h3 className="font-semibold text-lg">The 4 most common types:</h3>
@@ -193,7 +193,7 @@ function contrastRatio(L1: number, L2: number) {
                 { name: "Deuteranopia", pct: "~6% of men", desc: "Reduced sensitivity to green. Red and green look similar." },
                 { name: "Protanopia", pct: "~2% of men", desc: "Reduced sensitivity to red. Reds appear dark/brownish." },
                 { name: "Tritanopia", pct: "~0.01%", desc: "Rare. Blue and yellow are confused." },
-                { name: "Achromatopsia", pct: "~0.003%", desc: "Complete color blindness — sees only grayscale." },
+                { name: "Achromatopsia", pct: "~0.003%", desc: "Complete color blindness - sees only grayscale." },
               ].map((t, i) => (
                 <div key={i} className="flex gap-4 items-start">
                   <div className="w-2 h-2 rounded-full bg-indigo-500 mt-2 flex-shrink-0" />
@@ -212,10 +212,10 @@ function contrastRatio(L1: number, L2: number) {
             <div className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 p-6 rounded-2xl mt-6">
               <h3 className="text-xl font-semibold mb-4">Before you ship, verify:</h3>
               <ul className="space-y-2 text-[var(--text-secondary)]">
-                <li>• All body text meets 4.5:1 (AA) — aim for 7:1 (AAA) where possible</li>
+                <li>• All body text meets 4.5:1 (AA) - aim for 7:1 (AAA) where possible</li>
                 <li>• Large text (18px+) meets 3:1 minimum</li>
                 <li>• Interactive element borders/focus rings meet 3:1 against their background</li>
-                <li>• Never convey information with color alone — add icons or labels</li>
+                <li>• Never convey information with color alone - add icons or labels</li>
                 <li>• Test your UI through deuteranopia and protanopia simulations</li>
                 <li>• Check contrast in both light and dark mode</li>
                 <li>• Placeholder text must also meet contrast requirements</li>

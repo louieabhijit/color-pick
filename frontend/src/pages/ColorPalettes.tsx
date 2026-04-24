@@ -442,7 +442,7 @@ const ColorPalettes = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="Color Palette Generator — Browse & Copy Free Palettes"
+        title="Color Palette Generator - Browse & Copy Free Palettes"
         description="Explore hundreds of curated color palettes for designers and developers. Filter by mood, sort by popularity, and copy any swatch or full palette in one click. Free at ColorPeek."
         path="/palettes"
         keywords="color palette generator, free color palettes, design color schemes, color combinations, palette for designers, hex color palettes"
@@ -708,7 +708,7 @@ const ColorPalettes = () => {
           <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Color Palette Generator</h2>
           <ol className="space-y-3">
             <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Browse the palette gallery or use the search bar to find palettes by name or tag.</li>
-            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Open the sidebar to filter by category — pastel, neon, earth, dark, corporate, and more.</li>
+            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Open the sidebar to filter by category - pastel, neon, earth, dark, corporate, and more.</li>
             <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Sort results by Newest, Most Liked, or Most Viewed to surface trending palettes.</li>
             <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Click any color swatch to instantly copy its HEX code to your clipboard.</li>
             <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click the copy icon on a palette card to copy all colors in the palette at once.</li>
@@ -717,7 +717,7 @@ const ColorPalettes = () => {
 
         <div className="glass-card p-8 rounded-2xl">
           <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a Color Palette?</h2>
-          <p className="text-[var(--text-secondary)] leading-relaxed">A color palette is a carefully selected group of colors that work harmoniously together. In design, a palette establishes the visual identity of a project — from websites and mobile apps to logos and marketing materials. A well-chosen palette typically includes a primary color (the dominant brand color), a secondary color (for accents and highlights), and one or more neutral tones (backgrounds, text, borders). Most UI design systems use 4–8 colors to keep interfaces consistent and readable. Color palettes can follow formal rules from color theory — such as complementary, analogous, or triadic schemes — or be inspired by nature, art, photography, or cultural traditions. Starting with a strong palette reduces decision fatigue and ensures every screen in your product feels cohesive.</p>
+          <p className="text-[var(--text-secondary)] leading-relaxed">A color palette is a carefully selected group of colors that work harmoniously together. In design, a palette establishes the visual identity of a project - from websites and mobile apps to logos and marketing materials. A well-chosen palette typically includes a primary color (the dominant brand color), a secondary color (for accents and highlights), and one or more neutral tones (backgrounds, text, borders). Most UI design systems use 4–8 colors to keep interfaces consistent and readable. Color palettes can follow formal rules from color theory - such as complementary, analogous, or triadic schemes - or be inspired by nature, art, photography, or cultural traditions. Starting with a strong palette reduces decision fatigue and ensures every screen in your product feels cohesive.</p>
         </div>
 
         <div className="glass-card p-8 rounded-2xl">
@@ -729,7 +729,7 @@ const ColorPalettes = () => {
             </details>
             <details className="border border-white/20 rounded-xl overflow-hidden">
               <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Are these palettes free to use?</summary>
-              <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes — all palettes on ColorPeek are free to use in personal and commercial projects. No attribution required.</p>
+              <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes - all palettes on ColorPeek are free to use in personal and commercial projects. No attribution required.</p>
             </details>
             <details className="border border-white/20 rounded-xl overflow-hidden">
               <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I use a palette in CSS?</summary>

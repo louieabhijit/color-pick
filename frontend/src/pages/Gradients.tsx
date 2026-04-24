@@ -158,10 +158,10 @@ const GradientCard = ({ gradient, glassMode }: { gradient: Gradient; glassMode: 
       className="group relative cursor-pointer rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:shadow-black/15 transition-shadow duration-300"
       style={{ aspectRatio: '4 / 5' }}
     >
-      {/* Pure gradient — the star of the card */}
+      {/* Pure gradient - the star of the card */}
       <div className="absolute inset-0" style={{ background: gradient.css }} />
 
-      {/* Glass overlay — animates in when glassMode is on */}
+      {/* Glass overlay - animates in when glassMode is on */}
       <motion.div
         animate={{
           opacity: glassMode ? 1 : 0,
@@ -179,7 +179,7 @@ const GradientCard = ({ gradient, glassMode }: { gradient: Gradient; glassMode: 
         }}
       />
 
-      {/* Bottom name strip — always visible, minimal */}
+      {/* Bottom name strip - always visible, minimal */}
       <div
         className="absolute bottom-0 left-0 right-0 px-4 pt-8 pb-4"
         style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 100%)' }}
@@ -192,7 +192,7 @@ const GradientCard = ({ gradient, glassMode }: { gradient: Gradient; glassMode: 
         </p>
       </div>
 
-      {/* Hover copy overlay — fades in on hover */}
+      {/* Hover copy overlay - fades in on hover */}
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         <motion.div
           whileTap={{ scale: 0.94 }}
@@ -279,8 +279,8 @@ const Gradients = () => {
   return (
     <div className="min-h-screen w-full">
       <PageSEO
-        title="CSS Gradient Library — Browse Free Gradient Backgrounds"
-        description="Discover beautiful CSS gradients for web and app design. Browse by style — vibrant, subtle, dark, ocean, sunset, cosmic, and more. Copy CSS with one click. Free at ColorPeek."
+        title="CSS Gradient Library - Browse Free Gradient Backgrounds"
+        description="Discover beautiful CSS gradients for web and app design. Browse by style - vibrant, subtle, dark, ocean, sunset, cosmic, and more. Copy CSS with one click. Free at ColorPeek."
         path="/gradients"
         keywords="css gradients, gradient backgrounds, linear gradient css, gradient library, web design gradients, free css gradients"
         schema={gradientsSchema}
@@ -300,7 +300,7 @@ const Gradients = () => {
             CSS Gradient <span className="gradient-text">Library</span>
           </h1>
           <p className="text-[var(--text-muted)] max-w-xl mx-auto">
-            {ALL_GRADIENTS.length}+ curated CSS gradients. Click any card to copy the CSS — ready to paste into your stylesheet.
+            {ALL_GRADIENTS.length}+ curated CSS gradients. Click any card to copy the CSS - ready to paste into your stylesheet.
           </p>
         </motion.div>
 
@@ -420,8 +420,8 @@ const Gradients = () => {
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Gradient Library</h2>
             <ol className="space-y-3">
-              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Browse the gallery or filter by style — Vibrant, Subtle, Dark, Ocean, Sunset, Cosmic, and more.</li>
-              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Hover over any card and click "Copy CSS" — or click the copy icon in the card footer.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Browse the gallery or filter by style - Vibrant, Subtle, Dark, Ocean, Sunset, Cosmic, and more.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Hover over any card and click "Copy CSS" - or click the copy icon in the card footer.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>The copied value is a ready-to-paste <code className="text-indigo-400">background: linear-gradient(…)</code> CSS rule.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>For Tailwind, wrap it as an arbitrary value: <code className="text-indigo-400">bg-[linear-gradient(135deg,#6366f1,#ec4899)]</code>.</li>
               <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Need a custom gradient? Use the <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a> to build your own.</li>
@@ -430,7 +430,7 @@ const Gradients = () => {
 
           <div className="glass-card p-8 rounded-2xl">
             <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a CSS Gradient?</h2>
-            <p className="text-[var(--text-secondary)] leading-relaxed">A CSS gradient is a smooth color transition generated entirely in CSS — no images needed. <code className="text-indigo-400">linear-gradient()</code> transitions colors along a straight line at any angle. <code className="text-indigo-400">radial-gradient()</code> radiates outward from a center point. Both render at any resolution and have zero file size overhead. Gradients are used everywhere in modern UI: hero backgrounds, card overlays, button fills, text effects, and decorative borders. You can stack multiple gradient layers using comma-separated values for complex mesh and duotone effects.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">A CSS gradient is a smooth color transition generated entirely in CSS - no images needed. <code className="text-indigo-400">linear-gradient()</code> transitions colors along a straight line at any angle. <code className="text-indigo-400">radial-gradient()</code> radiates outward from a center point. Both render at any resolution and have zero file size overhead. Gradients are used everywhere in modern UI: hero backgrounds, card overlays, button fills, text effects, and decorative borders. You can stack multiple gradient layers using comma-separated values for complex mesh and duotone effects.</p>
           </div>
 
           <div className="glass-card p-8 rounded-2xl">

@@ -279,7 +279,7 @@ const BrandColorPalette = () => {
             style={{ background: 'rgba(99,102,241,0.06)' }}
           >
             <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">Build your brand palette now</h3>
-            <p className="text-[var(--text-muted)] mb-6 text-sm">Create, name, and export your brand colors as CSS variables, Tailwind config, or JSON — free.</p>
+            <p className="text-[var(--text-muted)] mb-6 text-sm">Create, name, and export your brand colors as CSS variables, Tailwind config, or JSON - free.</p>
             <div className="flex flex-wrap gap-3">
               <a href="/palette-exporter" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">
                 Palette Exporter →

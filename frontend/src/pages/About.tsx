@@ -72,7 +72,7 @@ const About = () => {
     <div className="min-h-screen w-full">
       <PageSEO
         title="About ColorPeek"
-        description="Learn about ColorPeek's mission to empower designers and developers with intelligent colour tools — from palette extraction and harmony generation to accessibility simulation and export."
+        description="Learn about ColorPeek's mission to empower designers and developers with intelligent colour tools - from palette extraction and harmony generation to accessibility simulation and export."
         path="/about"
         keywords="about colorpeek, color palette tool, color extraction app, design tool, color picker online"
       />

@@ -123,7 +123,7 @@ const ColorAccessibility = () => {
           {/* Introduction */}
           <section className="mb-16">
             <p className="mb-4">
-              Color is integral to design—it captivates users, communicates messages, and enhances user experiences. But for millions around the globe, colors aren't perceived in the same way. Approximately 8% of men and 0.5% of women worldwide are color blind, highlighting the essential need for color accessibility in design.
+              Color is integral to design-it captivates users, communicates messages, and enhances user experiences. But for millions around the globe, colors aren't perceived in the same way. Approximately 8% of men and 0.5% of women worldwide are color blind, highlighting the essential need for color accessibility in design.
             </p>
             <p className="mb-4">
               In this comprehensive guide, we'll explore how to design effectively for color-blind users, ensuring inclusivity and optimal usability.
@@ -169,7 +169,7 @@ const ColorAccessibility = () => {
               Ensuring designs are accessible to color-blind individuals enhances usability, compliance with regulations, and broadens your potential audience.
             </p>
             <p className="mb-4">
-              Accessibility isn't just ethical—it's practical. Inclusive designs improve the user experience for everyone, often resulting in clearer and more intuitive designs overall.
+              Accessibility isn't just ethical-it's practical. Inclusive designs improve the user experience for everyone, often resulting in clearer and more intuitive designs overall.
             </p>
           </section>
 
@@ -273,7 +273,7 @@ const ColorAccessibility = () => {
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Conclusion</h2>
             <p className="mb-4">
-              Designing with color accessibility in mind isn't just a niche consideration—it's a universal necessity. By adhering to accessible design principles, selecting effective color palettes, and using robust verification tools, designers can create inclusive experiences that are effective for everyone, regardless of color vision ability.
+              Designing with color accessibility in mind isn't just a niche consideration-it's a universal necessity. By adhering to accessible design principles, selecting effective color palettes, and using robust verification tools, designers can create inclusive experiences that are effective for everyone, regardless of color vision ability.
             </p>
             <p className="mb-4">
               Start incorporating these principles today to build designs that resonate with and include everyone.
