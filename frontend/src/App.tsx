@@ -67,6 +67,7 @@ import Tools from './pages/Tools'
 import ToolsSidebar from './components/ToolsSidebar'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
+import ScrollToTop from './components/ScrollToTop'
 import defaultImage from './assets/default1.jpg'
 
 interface HomePageProps {
@@ -359,6 +360,7 @@ const App: React.FC = () => {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <HotToaster />
         <ClipboardProvider>
           <div className="page-bg min-h-screen w-full">
