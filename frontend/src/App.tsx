@@ -63,6 +63,16 @@ import TypeScaleGenerator from './pages/TypeScaleGenerator'
 import FontPairing from './pages/FontPairing'
 import PaletteFromURL from './pages/PaletteFromURL'
 import PaletteExporter from './pages/PaletteExporter'
+import ContrastCheckerPage from './pages/ContrastChecker'
+import TextShadowGenerator from './pages/TextShadowGenerator'
+import ColorHarmonies from './pages/ColorHarmonies'
+import RandomColorGenerator from './pages/RandomColorGenerator'
+import ColorMixer from './pages/ColorMixer'
+import ColorNameFinder from './pages/ColorNameFinder'
+import CSSFilterGenerator from './pages/CSSFilterGenerator'
+import SpacingScaleGenerator from './pages/SpacingScaleGenerator'
+import FlexboxGenerator from './pages/FlexboxGenerator'
+import GridGenerator from './pages/GridGenerator'
 import Tools from './pages/Tools'
 import ToolsSidebar from './components/ToolsSidebar'
 import { ClipboardProvider } from './context/ClipboardContext'
@@ -195,6 +205,11 @@ const HomePage = ({
               { path: '/color-converter',  name: 'Color Converter',           desc: 'Convert HEX, RGB, HSL, OKLCH & more',        icon: '🔄' },
               { path: '/palette-url',      name: 'Extract Colors from Image', desc: 'Pull palettes from any photo or URL',        icon: '📸' },
               { path: '/palette-exporter', name: 'Palette Exporter',          desc: 'Export to CSS, Tailwind, SCSS & JSON',       icon: '📦' },
+              { path: '/contrast-checker', name: 'Contrast Checker',          desc: 'WCAG AA/AAA color contrast testing',         icon: '⚖️' },
+              { path: '/color-harmonies',  name: 'Color Harmonies',           desc: 'Complementary, triadic & more schemes',      icon: '🎡' },
+              { path: '/random-color',     name: 'Random Color Generator',    desc: 'Generate random colors instantly',           icon: '🎲' },
+              { path: '/color-mixer',      name: 'Color Mixer',               desc: 'Blend two colors with adjustable ratio',     icon: '🧪' },
+              { path: '/color-name',       name: 'Color Name Finder',         desc: 'Find the name of any color value',           icon: '🏷️' },
             ],
           },
           {
@@ -204,13 +219,18 @@ const HomePage = ({
               { path: '/box-shadow',          name: 'Box Shadow Generator',    desc: 'Build multi-layer CSS shadows',              icon: '🌑' },
               { path: '/border-radius',       name: 'Border Radius Builder',   desc: 'Visually design CSS rounded corners',        icon: '⬜' },
               { path: '/glass-generator',     name: 'Glassmorphism Generator', desc: 'Create frosted glass CSS effects',           icon: '🪟' },
+              { path: '/text-shadow',         name: 'Text Shadow Generator',   desc: 'CSS text-shadow with multi-layer support',   icon: '💬' },
+              { path: '/css-filter',          name: 'CSS Filter Generator',    desc: 'Blur, contrast, sepia & more',               icon: '🔮' },
+              { path: '/flexbox',             name: 'Flexbox Generator',       desc: 'Visual CSS flex layout builder',             icon: '📦' },
+              { path: '/grid',                name: 'CSS Grid Generator',      desc: 'Visual CSS grid layout builder',             icon: '🔲' },
             ],
           },
           {
             category: 'Typography',
             tools: [
               { path: '/type-scale',   name: 'Type Scale Calculator', desc: 'Calculate modular typography scales', icon: '🔤' },
-              { path: '/font-pairing', name: 'Font Pairing Tool',      desc: 'Find Google Fonts that work together', icon: '🖋️' },
+              { path: '/font-pairing',      name: 'Font Pairing Tool',       desc: 'Find Google Fonts that work together', icon: '🖋️' },
+              { path: '/spacing-scale',     name: 'Spacing Scale Generator', desc: 'Design system spacing tokens',         icon: '📐' },
             ],
           },
           {
@@ -425,6 +445,16 @@ const App: React.FC = () => {
               <Route path="/font-pairing" element={<FontPairing />} />
               <Route path="/palette-url" element={<PaletteFromURL />} />
               <Route path="/palette-exporter" element={<PaletteExporter />} />
+              <Route path="/contrast-checker" element={<ContrastCheckerPage />} />
+              <Route path="/text-shadow" element={<TextShadowGenerator />} />
+              <Route path="/color-harmonies" element={<ColorHarmonies />} />
+              <Route path="/random-color" element={<RandomColorGenerator />} />
+              <Route path="/color-mixer" element={<ColorMixer />} />
+              <Route path="/color-name" element={<ColorNameFinder />} />
+              <Route path="/css-filter" element={<CSSFilterGenerator />} />
+              <Route path="/spacing-scale" element={<SpacingScaleGenerator />} />
+              <Route path="/flexbox" element={<FlexboxGenerator />} />
+              <Route path="/grid" element={<GridGenerator />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 
