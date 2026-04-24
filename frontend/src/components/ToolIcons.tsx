@@ -145,14 +145,120 @@ export const IconBorderRadius = ({ className = 'w-5 h-5' }: IconProps) => (
 export const IconPaletteExporter = ({ className = 'w-5 h-5' }: IconProps) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
        strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    {/* Palette dots */}
     <circle cx="7"  cy="8"  r="1.5" fill="currentColor" stroke="none" opacity="0.8"/>
     <circle cx="12" cy="6"  r="1.5" fill="currentColor" stroke="none" opacity="0.6"/>
     <circle cx="17" cy="8"  r="1.5" fill="currentColor" stroke="none" opacity="0.4"/>
-    {/* Download arrow */}
     <path d="M12 13 L12 20"/>
     <path d="M9 17 L12 20 L15 17"/>
-    {/* Base line */}
     <path d="M5 21 L19 21"/>
+  </svg>
+);
+
+export const IconContrastChecker = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M12 3 A9 9 0 0 1 12 21" fill="currentColor" stroke="none" opacity="0.85"/>
+    <line x1="12" y1="3" x2="12" y2="21"/>
+  </svg>
+);
+
+export const IconTextShadow = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 18L9 6l4 12" opacity="0.3" strokeDasharray="3 2" strokeWidth="2"/>
+    <path d="M3 16L7 4l4 12"/>
+    <path d="M4.5 12h5"/>
+    <line x1="16" y1="4" x2="16" y2="20"/>
+    <line x1="13" y1="4" x2="19" y2="4"/>
+  </svg>
+);
+
+export const IconColorHarmonies = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <circle cx="12" cy="5"  r="2" fill="currentColor" stroke="none"/>
+    <circle cx="19" cy="16" r="2" fill="currentColor" stroke="none" opacity="0.6"/>
+    <circle cx="5"  cy="16" r="2" fill="currentColor" stroke="none" opacity="0.6"/>
+    <line x1="12" y1="7" x2="17.5" y2="14.5" strokeOpacity="0.4"/>
+    <line x1="12" y1="7" x2="6.5"  y2="14.5" strokeOpacity="0.4"/>
+  </svg>
+);
+
+export const IconRandomColor = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="3"/>
+    <circle cx="8.5"  cy="8.5"  r="1.25" fill="currentColor" stroke="none"/>
+    <circle cx="15.5" cy="8.5"  r="1.25" fill="currentColor" stroke="none"/>
+    <circle cx="8.5"  cy="15.5" r="1.25" fill="currentColor" stroke="none"/>
+    <circle cx="15.5" cy="15.5" r="1.25" fill="currentColor" stroke="none"/>
+    <circle cx="12"   cy="12"   r="1.25" fill="currentColor" stroke="none" opacity="0.5"/>
+  </svg>
+);
+
+export const IconColorMixer = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="8"  cy="12" r="5" fill="currentColor" stroke="none" opacity="0.35"/>
+    <circle cx="16" cy="12" r="5" fill="currentColor" stroke="none" opacity="0.35"/>
+    <path d="M11 9 Q12 7.5 13 9 Q14 10.5 13 12 Q12 13.5 11 12 Q10 10.5 11 9Z" fill="currentColor" stroke="none" opacity="0.7"/>
+    <circle cx="8"  cy="12" r="5"/>
+    <circle cx="16" cy="12" r="5"/>
+  </svg>
+);
+
+export const IconColorName = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 7h10a2 2 0 012 2v6a2 2 0 01-2 2H7l-4-5 4-5z"/>
+    <circle cx="14" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+    <line x1="9" y1="10" x2="11" y2="10"/>
+    <line x1="9" y1="14" x2="11" y2="14"/>
+  </svg>
+);
+
+export const IconCSSFilter = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="3" y1="6"  x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+    <circle cx="8"  cy="6"  r="2" fill="var(--glass-bg)" stroke="currentColor"/>
+    <circle cx="15" cy="12" r="2" fill="var(--glass-bg)" stroke="currentColor"/>
+    <circle cx="10" cy="18" r="2" fill="var(--glass-bg)" stroke="currentColor"/>
+  </svg>
+);
+
+export const IconSpacingScale = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="4"  y1="7"  x2="6"  y2="7"  strokeWidth="3"/>
+    <line x1="4"  y1="11" x2="9"  y2="11" strokeWidth="3"/>
+    <line x1="4"  y1="15" x2="13" y2="15" strokeWidth="3"/>
+    <line x1="4"  y1="19" x2="20" y2="19" strokeWidth="3"/>
+    <line x1="3"  y1="4"  x2="3"  y2="21" strokeWidth="1.5" opacity="0.4"/>
+  </svg>
+);
+
+export const IconFlexbox = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="5" width="20" height="14" rx="2"/>
+    <rect x="4"  y="9"  width="4" height="6" rx="1"/>
+    <rect x="10" y="9" width="4" height="6" rx="1"/>
+    <rect x="16" y="9" width="4" height="6" rx="1"/>
+  </svg>
+);
+
+export const IconGrid = ({ className = 'w-5 h-5' }: IconProps) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <line x1="3"  y1="10" x2="21" y2="10"/>
+    <line x1="3"  y1="17" x2="21" y2="17"/>
+    <line x1="10" y1="3"  x2="10" y2="21"/>
+    <line x1="17" y1="3"  x2="17" y2="21"/>
   </svg>
 );

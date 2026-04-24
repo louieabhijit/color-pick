@@ -1,19 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  IconPalettes,
-  IconGradients,
-  IconGradientGenerator,
-  IconTintShade,
-  IconColorBlindness,
-  IconColorConverter,
-  IconPaletteURL,
-  IconFontPairing,
-  IconTypeScale,
-  IconBoxShadow,
-  IconGlassEffect,
-  IconBorderRadius,
-  IconPaletteExporter,
+  IconPalettes, IconGradients, IconGradientGenerator, IconTintShade,
+  IconColorBlindness, IconColorConverter, IconPaletteURL, IconFontPairing,
+  IconTypeScale, IconBoxShadow, IconGlassEffect, IconBorderRadius, IconPaletteExporter,
+  IconContrastChecker, IconTextShadow, IconColorHarmonies, IconRandomColor,
+  IconColorMixer, IconColorName, IconCSSFilter, IconSpacingScale, IconFlexbox, IconGrid,
 } from './ToolIcons';
 
 interface ToolItem {
@@ -28,34 +20,44 @@ const TOOL_GROUPS: { label: string; tools: ToolItem[] }[] = [
   {
     label: 'Color',
     tools: [
-      { name: 'Palettes',       href: '/palettes',         desc: 'Curated collections',        Icon: IconPalettes,        gradient: 'from-indigo-500 to-violet-500' },
-      { name: 'Color Converter',href: '/color-converter',  desc: 'HEX · RGB · HSL · OKLCH',    Icon: IconColorConverter,  gradient: 'from-cyan-500 to-blue-500' },
-      { name: 'Tint & Shade',   href: '/tint-shade',       desc: '50–900 scale generator',     Icon: IconTintShade,       gradient: 'from-rose-500 to-orange-500' },
-      { name: 'Palette from URL',href: '/palette-url',     desc: 'Extract from CSS or URL',    Icon: IconPaletteURL,      gradient: 'from-emerald-500 to-teal-500' },
-      { name: 'Palette Exporter',href: '/palette-exporter',desc: 'Export CSS · JSON · SVG',    Icon: IconPaletteExporter, gradient: 'from-amber-400 to-orange-500' },
+      { name: 'Palettes',        href: '/palettes',          desc: 'Curated collections',         Icon: IconPalettes,         gradient: 'from-indigo-500 to-violet-500' },
+      { name: 'Color Converter', href: '/color-converter',   desc: 'HEX · RGB · HSL · OKLCH',     Icon: IconColorConverter,   gradient: 'from-cyan-500 to-blue-500' },
+      { name: 'Tint & Shade',    href: '/tint-shade',        desc: '50–900 scale generator',      Icon: IconTintShade,        gradient: 'from-rose-500 to-orange-500' },
+      { name: 'Color Harmonies', href: '/color-harmonies',   desc: 'Complementary, triadic…',     Icon: IconColorHarmonies,   gradient: 'from-pink-500 to-rose-500' },
+      { name: 'Color Mixer',     href: '/color-mixer',       desc: 'Blend two colors',            Icon: IconColorMixer,       gradient: 'from-indigo-500 to-pink-500' },
+      { name: 'Random Color',    href: '/random-color',      desc: 'Generate random colors',      Icon: IconRandomColor,      gradient: 'from-emerald-400 to-teal-500' },
+      { name: 'Color Name',      href: '/color-name',        desc: 'Find any color\'s name',      Icon: IconColorName,        gradient: 'from-yellow-400 to-orange-400' },
+      { name: 'Palette from URL',href: '/palette-url',       desc: 'Extract from image or URL',   Icon: IconPaletteURL,       gradient: 'from-emerald-500 to-teal-500' },
+      { name: 'Palette Exporter',href: '/palette-exporter',  desc: 'Export CSS · JSON · SVG',     Icon: IconPaletteExporter,  gradient: 'from-amber-400 to-orange-500' },
     ],
   },
   {
     label: 'CSS',
     tools: [
-      { name: 'Gradients',      href: '/gradients',        desc: 'CSS gradient presets',        Icon: IconGradients,       gradient: 'from-violet-500 to-fuchsia-500' },
-      { name: 'Gradient Gen.',  href: '/gradient-generator',desc: 'Linear, radial & conic',    Icon: IconGradientGenerator,gradient: 'from-fuchsia-500 to-rose-500' },
-      { name: 'Box Shadow',     href: '/box-shadow',       desc: 'Multi-layer shadows',         Icon: IconBoxShadow,       gradient: 'from-blue-500 to-indigo-500' },
-      { name: 'Glass Effect',   href: '/glass-generator',  desc: 'backdrop-filter builder',    Icon: IconGlassEffect,     gradient: 'from-indigo-400 to-sky-400' },
-      { name: 'Border Radius',  href: '/border-radius',    desc: 'Shape any corner',            Icon: IconBorderRadius,    gradient: 'from-violet-500 to-indigo-400' },
+      { name: 'Gradients',       href: '/gradients',         desc: 'CSS gradient presets',        Icon: IconGradients,        gradient: 'from-violet-500 to-fuchsia-500' },
+      { name: 'Gradient Gen.',   href: '/gradient-generator',desc: 'Linear, radial & conic',      Icon: IconGradientGenerator,gradient: 'from-fuchsia-500 to-rose-500' },
+      { name: 'Box Shadow',      href: '/box-shadow',        desc: 'Multi-layer shadows',         Icon: IconBoxShadow,        gradient: 'from-blue-500 to-indigo-500' },
+      { name: 'Text Shadow',     href: '/text-shadow',       desc: 'CSS text-shadow effects',     Icon: IconTextShadow,       gradient: 'from-violet-600 to-purple-700' },
+      { name: 'CSS Filters',     href: '/css-filter',        desc: 'Blur, contrast, sepia…',      Icon: IconCSSFilter,        gradient: 'from-sky-500 to-blue-600' },
+      { name: 'Glass Effect',    href: '/glass-generator',   desc: 'backdrop-filter builder',     Icon: IconGlassEffect,      gradient: 'from-indigo-400 to-sky-400' },
+      { name: 'Border Radius',   href: '/border-radius',     desc: 'Shape any corner',            Icon: IconBorderRadius,     gradient: 'from-violet-500 to-indigo-400' },
+      { name: 'Flexbox',         href: '/flexbox',           desc: 'Flex layout builder',         Icon: IconFlexbox,          gradient: 'from-orange-500 to-amber-500' },
+      { name: 'CSS Grid',        href: '/grid',              desc: 'Grid layout builder',         Icon: IconGrid,             gradient: 'from-rose-500 to-red-500' },
     ],
   },
   {
     label: 'Typography',
     tools: [
-      { name: 'Type Scale',     href: '/type-scale',       desc: 'Modular scale generator',    Icon: IconTypeScale,       gradient: 'from-fuchsia-500 to-violet-500' },
-      { name: 'Font Pairing',   href: '/font-pairing',     desc: 'Google Fonts combos',        Icon: IconFontPairing,     gradient: 'from-rose-400 to-fuchsia-500' },
+      { name: 'Type Scale',      href: '/type-scale',        desc: 'Modular scale generator',     Icon: IconTypeScale,        gradient: 'from-fuchsia-500 to-violet-500' },
+      { name: 'Font Pairing',    href: '/font-pairing',      desc: 'Google Fonts combos',         Icon: IconFontPairing,      gradient: 'from-rose-400 to-fuchsia-500' },
+      { name: 'Spacing Scale',   href: '/spacing-scale',     desc: 'Design system spacing',       Icon: IconSpacingScale,     gradient: 'from-teal-500 to-cyan-500' },
     ],
   },
   {
     label: 'Accessibility',
     tools: [
-      { name: 'Color Blindness',href: '/color-blindness',  desc: '7 vision simulations',       Icon: IconColorBlindness,  gradient: 'from-orange-500 to-amber-400' },
+      { name: 'Contrast Checker',href: '/contrast-checker',  desc: 'WCAG AA & AAA testing',       Icon: IconContrastChecker,  gradient: 'from-slate-600 to-slate-800' },
+      { name: 'Color Blindness', href: '/color-blindness',   desc: '7 vision simulations',        Icon: IconColorBlindness,   gradient: 'from-orange-500 to-amber-400' },
     ],
   },
 ];
