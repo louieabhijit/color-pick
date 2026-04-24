@@ -1,366 +1,279 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect, useRef, useCallback } from 'react';
-import type { IconType } from 'react-icons';
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
 import RelatedTools from '../components/RelatedTools';
-import { FaFilter, FaHeart, FaCopy, FaSearch, FaClock, FaEye, FaBars, FaTimes } from 'react-icons/fa';
-import { MdCategory } from 'react-icons/md';
-import { oklch } from 'culori';
 import toast from 'react-hot-toast';
 
-interface IconProps {
-  icon: IconType;
-  className?: string;
-}
+// ── Curated gradient data ─────────────────────────────────────────────────────
 
 interface Gradient {
   id: string;
   name: string;
-  colors: string[];
+  css: string;       // full CSS background value
+  colors: string[];  // hex stops for swatch display
   category: string;
-  tags: string[];
-  likes: number;
-  views: number;
-  description: string;
-  createdAt: Date;
 }
 
-const Icon = ({ icon: IconComponent, className }: IconProps) => {
-  return <IconComponent className={className} />;
-};
+const GRADIENT_DATA: Omit<Gradient, 'id'>[] = [
+  // Vibrant
+  { name: 'Aurora',       colors: ['#6366f1','#8b5cf6','#ec4899'], css: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%)', category: 'vibrant' },
+  { name: 'Candy',        colors: ['#f43f5e','#a855f7'],            css: 'linear-gradient(135deg, #f43f5e 0%, #a855f7 100%)',             category: 'vibrant' },
+  { name: 'Neon Burst',   colors: ['#22d3ee','#a855f7','#f59e0b'], css: 'linear-gradient(135deg, #22d3ee 0%, #a855f7 50%, #f59e0b 100%)', category: 'vibrant' },
+  { name: 'Tropical',     colors: ['#10b981','#3b82f6'],            css: 'linear-gradient(135deg, #10b981 0%, #3b82f6 100%)',             category: 'vibrant' },
+  { name: 'Citrus',       colors: ['#f97316','#eab308'],            css: 'linear-gradient(135deg, #f97316 0%, #eab308 100%)',             category: 'vibrant' },
+  { name: 'Electric',     colors: ['#06b6d4','#6366f1'],            css: 'linear-gradient(135deg, #06b6d4 0%, #6366f1 100%)',             category: 'vibrant' },
+  { name: 'Watermelon',   colors: ['#f43f5e','#fb923c'],            css: 'linear-gradient(135deg, #f43f5e 0%, #fb923c 100%)',             category: 'vibrant' },
+  { name: 'Cosmic Berry', colors: ['#7c3aed','#db2777'],            css: 'linear-gradient(135deg, #7c3aed 0%, #db2777 100%)',             category: 'vibrant' },
+  { name: 'Lime Punch',   colors: ['#84cc16','#06b6d4'],            css: 'linear-gradient(135deg, #84cc16 0%, #06b6d4 100%)',             category: 'vibrant' },
+  { name: 'Flamingo',     colors: ['#ec4899','#f97316'],            css: 'linear-gradient(135deg, #ec4899 0%, #f97316 100%)',             category: 'vibrant' },
+  { name: 'Ocean Fire',   colors: ['#0ea5e9','#f43f5e'],            css: 'linear-gradient(135deg, #0ea5e9 0%, #f43f5e 100%)',             category: 'vibrant' },
+  { name: 'Plasma',       colors: ['#8b5cf6','#f43f5e','#f97316'],  css: 'linear-gradient(135deg, #8b5cf6 0%, #f43f5e 50%, #f97316 100%)', category: 'vibrant' },
 
-// Categories with their descriptions
-const categories = {
-  'linear': 'Smooth linear color transitions',
-  'radial': 'Circular gradient patterns',
-  'angular': 'Rotating color transitions',
-  'diagonal': 'Diagonal color flows',
-  'mesh': 'Complex multi-point gradients',
-  'vibrant': 'Bold and energetic transitions',
-  'subtle': 'Soft and gentle color shifts',
-  'dark': 'Deep and moody gradients',
-  'light': 'Bright and airy transitions',
-  'rainbow': 'Multi-color spectrum gradients'
-};
+  // Pastel / Subtle
+  { name: 'Cotton Candy', colors: ['#fbcfe8','#c7d2fe'],            css: 'linear-gradient(135deg, #fbcfe8 0%, #c7d2fe 100%)',             category: 'subtle' },
+  { name: 'Lavender Mist',colors: ['#ede9fe','#dbeafe'],            css: 'linear-gradient(135deg, #ede9fe 0%, #dbeafe 100%)',             category: 'subtle' },
+  { name: 'Peach Bliss',  colors: ['#fed7aa','#fde68a'],            css: 'linear-gradient(135deg, #fed7aa 0%, #fde68a 100%)',             category: 'subtle' },
+  { name: 'Mint Cream',   colors: ['#d1fae5','#bfdbfe'],            css: 'linear-gradient(135deg, #d1fae5 0%, #bfdbfe 100%)',             category: 'subtle' },
+  { name: 'Rose Quartz',  colors: ['#fce7f3','#ede9fe'],            css: 'linear-gradient(135deg, #fce7f3 0%, #ede9fe 100%)',             category: 'subtle' },
+  { name: 'Baby Blue',    colors: ['#bfdbfe','#c7d2fe'],            css: 'linear-gradient(135deg, #bfdbfe 0%, #c7d2fe 100%)',             category: 'subtle' },
+  { name: 'Buttercup',    colors: ['#fef9c3','#fde68a'],            css: 'linear-gradient(135deg, #fef9c3 0%, #fde68a 100%)',             category: 'subtle' },
+  { name: 'Sakura',       colors: ['#fda4af','#c4b5fd'],            css: 'linear-gradient(135deg, #fda4af 0%, #c4b5fd 100%)',             category: 'subtle' },
+  { name: 'Morning Dew',  colors: ['#cffafe','#d1fae5'],            css: 'linear-gradient(135deg, #cffafe 0%, #d1fae5 100%)',             category: 'subtle' },
+  { name: 'Blush',        colors: ['#fecdd3','#fde8d8'],            css: 'linear-gradient(135deg, #fecdd3 0%, #fde8d8 100%)',             category: 'subtle' },
 
-// Gradient name generation
-const adjectives = [
-  'Cosmic', 'Ethereal', 'Mystic', 'Aurora', 'Nebula', 'Solar', 'Lunar', 'Ocean',
-  'Forest', 'Desert', 'Arctic', 'Tropical', 'Crystal', 'Prism', 'Plasma', 'Neon',
-  'Velvet', 'Silk', 'Vapor', 'Storm', 'Dawn', 'Dusk', 'Twilight', 'Horizon'
+  // Dark
+  { name: 'Midnight',     colors: ['#0f172a','#1e1b4b'],            css: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)',             category: 'dark' },
+  { name: 'Obsidian',     colors: ['#111827','#1f2937'],            css: 'linear-gradient(135deg, #111827 0%, #1f2937 100%)',             category: 'dark' },
+  { name: 'Night Sky',    colors: ['#0c0a1a','#1e1b4b','#4c1d95'], css: 'linear-gradient(135deg, #0c0a1a 0%, #1e1b4b 50%, #4c1d95 100%)', category: 'dark' },
+  { name: 'Charcoal Glow',colors: ['#18181b','#3f3f46'],            css: 'linear-gradient(135deg, #18181b 0%, #3f3f46 100%)',             category: 'dark' },
+  { name: 'Deep Space',   colors: ['#020617','#0c0a1a','#1e1b4b'], css: 'linear-gradient(135deg, #020617 0%, #0c0a1a 50%, #1e1b4b 100%)', category: 'dark' },
+  { name: 'Abyss',        colors: ['#000000','#1e293b'],            css: 'linear-gradient(135deg, #000000 0%, #1e293b 100%)',             category: 'dark' },
+  { name: 'Midnight Rose',colors: ['#1c0513','#3b0764'],            css: 'linear-gradient(135deg, #1c0513 0%, #3b0764 100%)',             category: 'dark' },
+  { name: 'Storm',        colors: ['#1e293b','#334155'],            css: 'linear-gradient(160deg, #1e293b 0%, #334155 100%)',             category: 'dark' },
+  { name: 'Dark Forest',  colors: ['#052e16','#14532d'],            css: 'linear-gradient(135deg, #052e16 0%, #14532d 100%)',             category: 'dark' },
+  { name: 'Void',         colors: ['#030712','#4c1d95'],            css: 'linear-gradient(135deg, #030712 0%, #4c1d95 100%)',             category: 'dark' },
+
+  // Ocean / Blue
+  { name: 'Ocean Depth',  colors: ['#0284c7','#0c4a6e'],            css: 'linear-gradient(135deg, #0284c7 0%, #0c4a6e 100%)',             category: 'ocean' },
+  { name: 'Aegean',       colors: ['#0ea5e9','#1e40af'],            css: 'linear-gradient(135deg, #0ea5e9 0%, #1e40af 100%)',             category: 'ocean' },
+  { name: 'Tidal Wave',   colors: ['#22d3ee','#0ea5e9','#2563eb'], css: 'linear-gradient(135deg, #22d3ee 0%, #0ea5e9 50%, #2563eb 100%)', category: 'ocean' },
+  { name: 'Aqua Dream',   colors: ['#06b6d4','#0284c7'],            css: 'linear-gradient(135deg, #06b6d4 0%, #0284c7 100%)',             category: 'ocean' },
+  { name: 'Bioluminescent',colors:['#ecfdf5','#06b6d4','#0284c7'], css: 'linear-gradient(135deg, #ecfdf5 0%, #06b6d4 50%, #0284c7 100%)', category: 'ocean' },
+  { name: 'Deep Blue',    colors: ['#1d4ed8','#1e3a8a'],            css: 'linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%)',             category: 'ocean' },
+  { name: 'Lagoon',       colors: ['#14b8a6','#0ea5e9'],            css: 'linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%)',             category: 'ocean' },
+  { name: 'Pacific',      colors: ['#0891b2','#1e40af'],            css: 'linear-gradient(135deg, #0891b2 0%, #1e40af 100%)',             category: 'ocean' },
+
+  // Sunset / Warm
+  { name: 'Sunset',       colors: ['#f97316','#ef4444','#ec4899'], css: 'linear-gradient(135deg, #f97316 0%, #ef4444 50%, #ec4899 100%)', category: 'sunset' },
+  { name: 'Golden Hour',  colors: ['#fbbf24','#f97316'],            css: 'linear-gradient(135deg, #fbbf24 0%, #f97316 100%)',             category: 'sunset' },
+  { name: 'Desert Dawn',  colors: ['#fcd34d','#fb923c','#f43f5e'], css: 'linear-gradient(135deg, #fcd34d 0%, #fb923c 50%, #f43f5e 100%)', category: 'sunset' },
+  { name: 'Amber Glow',   colors: ['#f59e0b','#d97706'],            css: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',             category: 'sunset' },
+  { name: 'Dusk',         colors: ['#fb923c','#7c3aed'],            css: 'linear-gradient(135deg, #fb923c 0%, #7c3aed 100%)',             category: 'sunset' },
+  { name: 'Bonfire',      colors: ['#ef4444','#f97316','#fbbf24'], css: 'linear-gradient(135deg, #ef4444 0%, #f97316 50%, #fbbf24 100%)', category: 'sunset' },
+  { name: 'Lava',         colors: ['#7f1d1d','#ef4444'],            css: 'linear-gradient(135deg, #7f1d1d 0%, #ef4444 100%)',             category: 'sunset' },
+  { name: 'Creamsicle',   colors: ['#fde68a','#fb923c'],            css: 'linear-gradient(135deg, #fde68a 0%, #fb923c 100%)',             category: 'sunset' },
+
+  // Nature / Green
+  { name: 'Forest',       colors: ['#166534','#15803d'],            css: 'linear-gradient(135deg, #166534 0%, #15803d 100%)',             category: 'nature' },
+  { name: 'Spring Meadow',colors: ['#86efac','#4ade80'],            css: 'linear-gradient(135deg, #86efac 0%, #4ade80 100%)',             category: 'nature' },
+  { name: 'Emerald',      colors: ['#10b981','#065f46'],            css: 'linear-gradient(135deg, #10b981 0%, #065f46 100%)',             category: 'nature' },
+  { name: 'Sage',         colors: ['#d1fae5','#6ee7b7','#34d399'],  css: 'linear-gradient(135deg, #d1fae5 0%, #6ee7b7 50%, #34d399 100%)', category: 'nature' },
+  { name: 'Jungle',       colors: ['#14532d','#065f46'],            css: 'linear-gradient(135deg, #14532d 0%, #065f46 100%)',             category: 'nature' },
+  { name: 'Avocado',      colors: ['#84cc16','#4d7c0f'],            css: 'linear-gradient(135deg, #84cc16 0%, #4d7c0f 100%)',             category: 'nature' },
+  { name: 'Seafoam',      colors: ['#6ee7b7','#67e8f9'],            css: 'linear-gradient(135deg, #6ee7b7 0%, #67e8f9 100%)',             category: 'nature' },
+
+  // Purple / Cosmic
+  { name: 'Nebula',       colors: ['#4c1d95','#6d28d9','#c026d3'], css: 'linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #c026d3 100%)', category: 'cosmic' },
+  { name: 'Galaxy',       colors: ['#1e1b4b','#4c1d95','#6d28d9'], css: 'linear-gradient(135deg, #1e1b4b 0%, #4c1d95 50%, #6d28d9 100%)', category: 'cosmic' },
+  { name: 'Supernova',    colors: ['#7c3aed','#db2777','#f97316'], css: 'linear-gradient(135deg, #7c3aed 0%, #db2777 50%, #f97316 100%)', category: 'cosmic' },
+  { name: 'Violet Haze',  colors: ['#8b5cf6','#6366f1'],            css: 'linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%)',             category: 'cosmic' },
+  { name: 'Ultraviolet',  colors: ['#4f46e5','#7c3aed'],            css: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)',             category: 'cosmic' },
+  { name: 'Cosmos',       colors: ['#0f172a','#4c1d95','#c026d3'], css: 'linear-gradient(160deg, #0f172a 0%, #4c1d95 50%, #c026d3 100%)', category: 'cosmic' },
+  { name: 'Stardust',     colors: ['#6d28d9','#a21caf'],            css: 'linear-gradient(135deg, #6d28d9 0%, #a21caf 100%)',             category: 'cosmic' },
+
+  // Minimal / Neutral
+  { name: 'Silver',       colors: ['#f1f5f9','#cbd5e1'],            css: 'linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%)',             category: 'minimal' },
+  { name: 'Ash',          colors: ['#e2e8f0','#94a3b8'],            css: 'linear-gradient(135deg, #e2e8f0 0%, #94a3b8 100%)',             category: 'minimal' },
+  { name: 'Graphite',     colors: ['#374151','#6b7280'],            css: 'linear-gradient(135deg, #374151 0%, #6b7280 100%)',             category: 'minimal' },
+  { name: 'Pearl',        colors: ['#ffffff','#f1f5f9'],            css: 'linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)',             category: 'minimal' },
+  { name: 'Slate',        colors: ['#475569','#1e293b'],            css: 'linear-gradient(135deg, #475569 0%, #1e293b 100%)',             category: 'minimal' },
+  { name: 'Linen',        colors: ['#fef3c7','#fef9ee'],            css: 'linear-gradient(135deg, #fef3c7 0%, #fef9ee 100%)',             category: 'minimal' },
+
+  // Rainbow / Multi-color
+  { name: 'Prism',        colors: ['#ef4444','#f97316','#eab308','#22c55e','#3b82f6','#8b5cf6'], css: 'linear-gradient(135deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6)', category: 'rainbow' },
+  { name: 'Spectrum',     colors: ['#f43f5e','#a855f7','#3b82f6'], css: 'linear-gradient(135deg, #f43f5e 0%, #a855f7 50%, #3b82f6 100%)', category: 'rainbow' },
+  { name: 'Holographic',  colors: ['#67e8f9','#c4b5fd','#fbcfe8'], css: 'linear-gradient(135deg, #67e8f9 0%, #c4b5fd 50%, #fbcfe8 100%)', category: 'rainbow' },
+  { name: 'Unicorn',      colors: ['#f9a8d4','#c4b5fd','#93c5fd'], css: 'linear-gradient(135deg, #f9a8d4 0%, #c4b5fd 50%, #93c5fd 100%)', category: 'rainbow' },
+  { name: 'Opal',         colors: ['#bfdbfe','#c4b5fd','#fbcfe8','#fde68a'], css: 'linear-gradient(135deg, #bfdbfe, #c4b5fd, #fbcfe8, #fde68a)', category: 'rainbow' },
+  { name: 'Pride',        colors: ['#ef4444','#f97316','#fbbf24','#22c55e','#3b82f6','#8b5cf6'], css: 'linear-gradient(135deg, #ef4444, #f97316, #fbbf24, #22c55e, #3b82f6, #8b5cf6)', category: 'rainbow' },
+
+  // Radial
+  { name: 'Solar Flare',  colors: ['#fbbf24','#ef4444'],            css: 'radial-gradient(ellipse at center, #fbbf24 0%, #ef4444 100%)',   category: 'radial' },
+  { name: 'Glow Core',    colors: ['#8b5cf6','#1e1b4b'],            css: 'radial-gradient(ellipse at center, #8b5cf6 0%, #1e1b4b 100%)',   category: 'radial' },
+  { name: 'Iris',         colors: ['#06b6d4','#0f172a'],            css: 'radial-gradient(ellipse at 30% 30%, #06b6d4 0%, #0f172a 100%)', category: 'radial' },
+  { name: 'Ember',        colors: ['#fde68a','#f97316','#7f1d1d'],  css: 'radial-gradient(ellipse at center, #fde68a 0%, #f97316 50%, #7f1d1d 100%)', category: 'radial' },
+  { name: 'Spotlight',    colors: ['#ffffff','#6366f1'],            css: 'radial-gradient(ellipse at 40% 40%, #ffffff 0%, #6366f1 100%)',   category: 'radial' },
+  { name: 'Ring Light',   colors: ['#e0f2fe','#0ea5e9','#0c4a6e'], css: 'radial-gradient(ellipse at center, #e0f2fe 0%, #0ea5e9 50%, #0c4a6e 100%)', category: 'radial' },
 ];
 
-const themes = [
-  'Flow', 'Wave', 'Stream', 'Pulse', 'Glow', 'Drift', 'Shift', 'Blend',
-  'Fusion', 'Aura', 'Haze', 'Mist', 'Beam', 'Ray', 'Flux', 'Tide',
-  'Wisp', 'Cloud', 'Breeze', 'Current', 'Ripple', 'Surge', 'Swirl', 'Vortex'
+// Assign IDs
+const ALL_GRADIENTS: Gradient[] = GRADIENT_DATA.map((g, i) => ({ ...g, id: `g-${i}` }));
+
+const CATEGORIES = [
+  { key: 'all',     label: 'All' },
+  { key: 'vibrant', label: 'Vibrant' },
+  { key: 'subtle',  label: 'Subtle' },
+  { key: 'dark',    label: 'Dark' },
+  { key: 'ocean',   label: 'Ocean' },
+  { key: 'sunset',  label: 'Sunset' },
+  { key: 'nature',  label: 'Nature' },
+  { key: 'cosmic',  label: 'Cosmic' },
+  { key: 'minimal', label: 'Minimal' },
+  { key: 'rainbow', label: 'Rainbow' },
+  { key: 'radial',  label: 'Radial' },
 ];
 
-const generateGradientName = (index: number, category: string): { name: string, description: string } => {
-  const adjIndex = Math.floor(index / themes.length) % adjectives.length;
-  const themeIndex = index % themes.length;
-  const adj = adjectives[adjIndex];
-  const theme = themes[themeIndex];
-  
-  let description = '';
-  switch (category) {
-    case 'linear':
-      description = 'A smooth linear gradient transition perfect for modern interfaces';
-      break;
-    case 'radial':
-      description = 'Circular gradient pattern radiating from the center';
-      break;
-    case 'angular':
-      description = 'Dynamic rotating gradient creating a unique visual effect';
-      break;
-    case 'diagonal':
-      description = 'Diagonal flowing gradient for dynamic layouts';
-      break;
-    case 'mesh':
-      description = 'Complex multi-point gradient creating a mesh-like effect';
-      break;
-    case 'vibrant':
-      description = 'Bold and energetic gradient transitions';
-      break;
-    case 'subtle':
-      description = 'Soft and gentle gradient shifts for elegant designs';
-      break;
-    case 'dark':
-      description = 'Deep and moody gradient perfect for dark themes';
-      break;
-    case 'light':
-      description = 'Bright and airy gradient transitions';
-      break;
-    case 'rainbow':
-      description = 'Multi-color spectrum gradient inspired by rainbows';
-      break;
-  }
+const ITEMS_PER_PAGE = 24;
 
-  return {
-    name: `${adj} ${theme}`,
-    description
-  };
-};
+// ── Component ─────────────────────────────────────────────────────────────────
 
-// Function to generate OkLCH gradient colors
-const generateOkLCHGradient = (baseHue: number, category: string): string[] => {
-  const colors: string[] = [];
-  
-  const generateColor = (l: number, c: number, h: number) => {
-    return `oklch(${l}% ${c} ${h})`;
+const GradientCard = ({ gradient }: { gradient: Gradient }) => {
+  const [copied, setCopied] = useState(false);
+
+  const copy = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const css = `background: ${gradient.css};`;
+    navigator.clipboard.writeText(css);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1800);
+    toast.success('CSS copied!', { duration: 1500, position: 'bottom-center' });
   };
 
-  switch(category) {
-    case 'linear':
-    case 'diagonal':
-      // Smooth transitions
-      colors.push(generateColor(60, 0.15, baseHue));
-      colors.push(generateColor(70, 0.2, (baseHue + 30) % 360));
-      break;
-      
-    case 'radial':
-    case 'angular':
-      // More contrasting transitions
-      colors.push(generateColor(50, 0.25, baseHue));
-      colors.push(generateColor(80, 0.15, (baseHue + 60) % 360));
-      break;
-      
-    case 'mesh':
-      // Complex transitions
-      colors.push(generateColor(55, 0.2, baseHue));
-      colors.push(generateColor(65, 0.25, (baseHue + 45) % 360));
-      colors.push(generateColor(75, 0.15, (baseHue + 90) % 360));
-      break;
-      
-    case 'vibrant':
-      // Bold colors
-      colors.push(generateColor(65, 0.3, baseHue));
-      colors.push(generateColor(60, 0.35, (baseHue + 40) % 360));
-      break;
-      
-    case 'subtle':
-      // Soft colors
-      colors.push(generateColor(75, 0.1, baseHue));
-      colors.push(generateColor(80, 0.08, (baseHue + 20) % 360));
-      break;
-      
-    case 'dark':
-      // Deep colors
-      colors.push(generateColor(30, 0.15, baseHue));
-      colors.push(generateColor(40, 0.2, (baseHue + 30) % 360));
-      break;
-      
-    case 'light':
-      // Bright colors
-      colors.push(generateColor(85, 0.1, baseHue));
-      colors.push(generateColor(90, 0.08, (baseHue + 25) % 360));
-      break;
-      
-    case 'rainbow':
-      // Multiple colors
-      colors.push(generateColor(65, 0.25, baseHue));
-      colors.push(generateColor(70, 0.3, (baseHue + 60) % 360));
-      colors.push(generateColor(75, 0.25, (baseHue + 120) % 360));
-      break;
-      
-    default:
-      colors.push(generateColor(60, 0.2, baseHue));
-      colors.push(generateColor(70, 0.15, (baseHue + 30) % 360));
-  }
-  
-  return colors;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -4, scale: 1.01 }}
+      transition={{ duration: 0.25 }}
+      className="group glass-card rounded-2xl overflow-hidden border border-white/30 dark:border-white/8 hover:border-indigo-300/40 dark:hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10"
+    >
+      {/* Gradient swatch */}
+      <div
+        className="h-36 w-full relative"
+        style={{ background: gradient.css }}
+      >
+        {/* Copy button — appears on hover */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <motion.button
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.94 }}
+            onClick={copy}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white border border-white/40 shadow-lg"
+            style={{ backdropFilter: 'blur(12px)', backgroundColor: 'rgba(0,0,0,0.25)' }}
+          >
+            {copied ? (
+              <>
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
+                </svg>
+                Copied!
+              </>
+            ) : (
+              <>
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                Copy CSS
+              </>
+            )}
+          </motion.button>
+        </div>
+
+        {/* Category badge */}
+        <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full text-[10px] font-semibold text-white capitalize"
+          style={{ backdropFilter: 'blur(8px)', backgroundColor: 'rgba(0,0,0,0.25)' }}>
+          {gradient.category}
+        </span>
+      </div>
+
+      {/* Footer */}
+      <div className="px-4 py-3 flex items-center justify-between">
+        <div>
+          <p className="text-sm font-semibold text-[var(--text-primary)] leading-tight">{gradient.name}</p>
+          <div className="flex gap-1 mt-1.5">
+            {gradient.colors.slice(0, 5).map((c, i) => (
+              <div key={i} className="w-3.5 h-3.5 rounded-full border border-white/30 shadow-sm flex-shrink-0"
+                style={{ backgroundColor: c }}/>
+            ))}
+          </div>
+        </div>
+        <motion.button
+          whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.94 }}
+          onClick={copy}
+          className="glass-button p-2 rounded-xl flex-shrink-0"
+          title="Copy CSS"
+        >
+          {copied ? (
+            <svg className="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
+            </svg>
+          ) : (
+            <svg className="w-3.5 h-3.5 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+            </svg>
+          )}
+        </motion.button>
+      </div>
+    </motion.div>
+  );
 };
 
-// Generate all gradients
-const generateAllGradients = (): Gradient[] => {
-  const gradients: Gradient[] = [];
-  const categoryNames = Object.keys(categories);
-  const now = new Date();
-  
-  for(let i = 0; i < 5000; i++) {
-    const category = categoryNames[i % categoryNames.length];
-    const baseHue = (i * 37) % 360; // Use golden ratio to distribute hues
-    const { name, description } = generateGradientName(i, category);
-    
-    // Generate random but realistic stats
-    const daysOld = Math.floor(Math.random() * 365);
-    const createdAt = new Date(now.getTime() - (daysOld * 24 * 60 * 60 * 1000));
-    const views = Math.floor(Math.random() * 10000) + 100;
-    const likes = Math.floor(views * (Math.random() * 0.4 + 0.1)); // 10-50% of views are likes
-    
-    gradients.push({
-      id: `gradient-${i}`,
-      name,
-      colors: generateOkLCHGradient(baseHue, category),
-      category,
-      tags: [category, i % 2 === 0 ? 'trending' : 'new'],
-      description,
-      likes,
-      views,
-      createdAt
-    });
-  }
-  
-  return gradients;
-};
+// ── Page ──────────────────────────────────────────────────────────────────────
 
 const Gradients = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [favorites, setFavorites] = useState<string[]>([]);
-  const [allGradients] = useState<Gradient[]>(generateAllGradients());
-  const [displayedGradients, setDisplayedGradients] = useState<Gradient[]>([]);
-  const [filteredGradients, setFilteredGradients] = useState<Gradient[]>([]);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [sortBy, setSortBy] = useState<'newest' | 'mostLiked' | 'mostViewed'>('newest');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [category, setCategory] = useState('all');
+  const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const observerTarget = useRef(null);
-  const ITEMS_PER_PAGE = 30;
+  const observerRef = useRef<HTMLDivElement>(null);
 
-  const loadMoreGradients = useCallback(() => {
-    if (loading) return;
-    setLoading(true);
-    
-    const startIndex = (page - 1) * ITEMS_PER_PAGE;
-    const newGradients = filteredGradients.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-    
-    setDisplayedGradients(prev => [...prev, ...newGradients]);
-    setPage(prev => prev + 1);
-    setLoading(false);
-  }, [page, filteredGradients, loading]);
+  const filtered = useMemo(() => {
+    let result = ALL_GRADIENTS;
+    if (category !== 'all') result = result.filter(g => g.category === category);
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      result = result.filter(g => g.name.toLowerCase().includes(q) || g.category.includes(q));
+    }
+    return result;
+  }, [category, search]);
+
+  const displayed = useMemo(() => filtered.slice(0, page * ITEMS_PER_PAGE), [filtered, page]);
+  const hasMore = displayed.length < filtered.length;
+
+  // Reset page when filter changes
+  useEffect(() => { setPage(1); }, [category, search]);
+
+  const loadMore = useCallback(() => {
+    if (hasMore) setPage(p => p + 1);
+  }, [hasMore]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting && displayedGradients.length < filteredGradients.length) {
-          loadMoreGradients();
-        }
-      },
+      entries => { if (entries[0].isIntersecting) loadMore(); },
       { threshold: 0.1 }
     );
-
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
-    }
-
+    if (observerRef.current) observer.observe(observerRef.current);
     return () => observer.disconnect();
-  }, [loadMoreGradients]);
-
-  useEffect(() => {
-    let filtered = allGradients;
-    
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(p => p.category === selectedCategory);
-    }
-    
-    if (searchTerm) {
-      filtered = filtered.filter(p => 
-        p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        p.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        p.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-      );
-    }
-    
-    filtered = [...filtered].sort((a, b) => {
-      switch (sortBy) {
-        case 'newest':
-          return b.createdAt.getTime() - a.createdAt.getTime();
-        case 'mostLiked':
-          return b.likes - a.likes;
-        case 'mostViewed':
-          return b.views - a.views;
-        default:
-          return 0;
-      }
-    });
-    
-    setFilteredGradients(filtered);
-    setDisplayedGradients(filtered.slice(0, ITEMS_PER_PAGE));
-    setPage(2);
-  }, [selectedCategory, searchTerm, allGradients, sortBy]);
-
-  const copyToClipboard = (text: string, message: string) => {
-    navigator.clipboard.writeText(text);
-    toast.success(message, {
-      duration: 2000,
-      position: 'bottom-center',
-      style: {
-        background: '#10B981',
-        color: '#FFFFFF',
-        borderRadius: '8px',
-      },
-    });
-  };
-
-  const copyGradient = (colors: string[]) => {
-    const gradientString = `linear-gradient(to right, ${colors.join(', ')})`;
-    copyToClipboard(gradientString, 'Gradient CSS copied to clipboard!');
-  };
-
-  const toggleFavorite = (id: string) => {
-    setFavorites(prev => {
-      const newFavorites = prev.includes(id) ? 
-        prev.filter(fid => fid !== id) : 
-        [...prev, id];
-      
-      setDisplayedGradients(prevGradients => 
-        prevGradients.map(p => {
-          if (p.id === id) {
-            return {
-              ...p,
-              likes: p.likes + (newFavorites.includes(id) ? 1 : -1)
-            };
-          }
-          return p;
-        })
-      );
-      
-      setFilteredGradients(prevGradients => 
-        prevGradients.map(p => {
-          if (p.id === id) {
-            return {
-              ...p,
-              likes: p.likes + (newFavorites.includes(id) ? 1 : -1)
-            };
-          }
-          return p;
-        })
-      );
-      
-      return newFavorites;
-    });
-  };
-
-  // Sort options
-  const sortOptions = [
-    { value: 'newest', label: 'Newest First', icon: FaClock },
-    { value: 'mostLiked', label: 'Most Liked', icon: FaHeart },
-    { value: 'mostViewed', label: 'Most Viewed', icon: FaEye }
-  ];
+  }, [loadMore]);
 
   const gradientsSchema = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'WebApplication',
-        name: 'CSS Gradient Library | ColorPeek',
-        description: 'Browse hundreds of beautiful CSS gradients for web and app design. Filter by type, copy the CSS code, and use instantly in your project.',
-        url: 'https://color-peek.com/gradients',
-        applicationCategory: 'DesignApplication',
-        operatingSystem: 'Any',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      },
-      {
-        '@type': 'FAQPage',
-        mainEntity: [
-          { '@type': 'Question', name: 'What is a CSS gradient?', acceptedAnswer: { '@type': 'Answer', text: 'A CSS gradient is a smooth color transition defined in CSS using linear-gradient(), radial-gradient(), or conic-gradient(). They are used as backgrounds, overlays, and decorative elements without needing any image files.' } },
-          { '@type': 'Question', name: 'How do I use a gradient in CSS?', acceptedAnswer: { '@type': 'Answer', text: 'Copy the gradient code and use it as a background property: background: linear-gradient(135deg, #6366f1, #8b5cf6). You can apply it to any element.' } },
-        ],
-      },
+      { '@type': 'WebApplication', name: 'CSS Gradient Library | ColorPeek', description: 'Browse beautiful CSS gradients.', url: 'https://color-peek.com/gradients', applicationCategory: 'DesignApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+      { '@type': 'FAQPage', mainEntity: [
+        { '@type': 'Question', name: 'What is a CSS gradient?', acceptedAnswer: { '@type': 'Answer', text: 'A CSS gradient is a smooth color transition using linear-gradient(), radial-gradient(), or conic-gradient(). They are used as backgrounds without image files.' } },
+        { '@type': 'Question', name: 'Can I use these gradients commercially?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All gradients are free for personal and commercial use with no attribution required.' } },
+      ]},
     ],
   };
 
@@ -368,313 +281,142 @@ const Gradients = () => {
     <div className="min-h-screen w-full">
       <PageSEO
         title="CSS Gradient Library — Browse Free Gradient Backgrounds"
-        description="Discover hundreds of beautiful CSS gradients for web and app design. Filter by style, copy the CSS or Tailwind code, and use it directly in your project. Free gradient library at ColorPeek."
+        description="Discover beautiful CSS gradients for web and app design. Browse by style — vibrant, subtle, dark, ocean, sunset, cosmic, and more. Copy CSS with one click. Free at ColorPeek."
         path="/gradients"
-        keywords="css gradients, gradient backgrounds, linear gradient css, gradient library, web design gradients, free gradient css"
+        keywords="css gradients, gradient backgrounds, linear gradient css, gradient library, web design gradients, free css gradients"
         schema={gradientsSchema}
       />
       <Navbar onColorSelect={() => {}} />
 
+      <main className="pt-24 pb-16 px-4 sm:px-6 max-w-7xl mx-auto">
 
-      {/* Sticky Header */}
-      <div className="sticky top-16 z-30 bg-white dark:bg-gray-900 shadow-sm">
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10"
+        >
+          <span className="section-label mb-3 inline-block">CSS Library</span>
+          <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-3 text-[var(--text-primary)]">
+            CSS Gradient <span className="gradient-text">Library</span>
+          </h1>
+          <p className="text-[var(--text-muted)] max-w-xl mx-auto">
+            {ALL_GRADIENTS.length}+ curated CSS gradients. Click any card to copy the CSS — ready to paste into your stylesheet.
+          </p>
+        </motion.div>
+
+        {/* Filters */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="glass-card p-4 rounded-2xl mb-6 flex flex-wrap items-center gap-3"
+        >
+          {/* Category pills */}
+          <div className="flex flex-wrap gap-1.5 flex-1">
+            {CATEGORIES.map(cat => (
               <button
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                key={cat.key}
+                onClick={() => setCategory(cat.key)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-200 ${
+                  category === cat.key
+                    ? 'bg-indigo-500 text-white shadow-sm shadow-indigo-500/25'
+                    : 'glass-button text-[var(--text-muted)] hover:text-[var(--text-primary)]'
+                }`}
               >
-                <Icon icon={isSidebarOpen ? FaTimes : FaBars} className="w-5 h-5" />
-              </button>
-              <div className="flex items-center space-x-2">
-                {sortOptions.map(option => (
-                  <button
-                    key={option.value}
-                    onClick={() => setSortBy(option.value as typeof sortBy)}
-                    className={`px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors
-                             ${sortBy === option.value
-                               ? 'bg-indigo-500 text-white'
-                               : 'bg-gray-100 dark:bg-gray-800 text-[var(--text-secondary)] hover:bg-gray-200 dark:hover:bg-gray-700'
-                             }`}
-                  >
-                    <Icon icon={option.icon} className="w-4 h-4" />
-                    <span>{option.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="relative">
-                <Icon 
-                  icon={FaSearch}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
-                />
-                <input
-                  type="text"
-                  placeholder="Search gradients..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-64 pl-12 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 
-                           bg-white dark:bg-gray-800 text-[var(--text-primary)]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Add spacing div to prevent overlap */}
-      <div className="h-24 bg-white dark:bg-gray-900" />
-
-
-      <main className="relative z-0">
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
-          <div className="flex gap-8">
-            {/* Sidebar */}
-            <AnimatePresence>
-              {isSidebarOpen && (
-                <motion.div
-                  initial={{ width: 0, opacity: 0 }}
-                  animate={{ width: 320, opacity: 1 }}
-                  exit={{ width: 0, opacity: 0 }}
-                  className="shrink-0"
-                >
-                  <div className="w-80 pr-6">
-                    <div className="sticky top-40">
-                      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm divide-y divide-gray-200 dark:divide-gray-700">
-                        {/* Categories Section */}
-                        <div className="p-6">
-                          <h3 className="text-lg font-semibold mb-4 text-[var(--text-primary)] flex items-center">
-                            <Icon icon={MdCategory} className="w-5 h-5 mr-2" />
-                            Categories
-                          </h3>
-                          <div className="space-y-2">
-                            <button
-                              onClick={() => setSelectedCategory('all')}
-                              className={`w-full p-3 rounded-lg text-left transition-all ${
-                                selectedCategory === 'all'
-                                  ? 'bg-indigo-500 text-white'
-                                  : 'bg-gray-100 dark:bg-gray-700 text-[var(--text-primary)] hover:bg-gray-200 dark:hover:bg-gray-600'
-                              }`}
-                            >
-                              <div className="flex items-center justify-between">
-                                <span className="font-medium">All Categories</span>
-                                <span className="text-sm opacity-80">
-                                  {allGradients.length}
-                                </span>
-                              </div>
-                            </button>
-                            {Object.entries(categories).map(([key, description]) => (
-                              <button
-                                key={key}
-                                onClick={() => setSelectedCategory(key === selectedCategory ? 'all' : key)}
-                                className={`w-full p-3 rounded-lg text-left transition-all ${
-                                  key === selectedCategory
-                                    ? 'bg-indigo-500 text-white'
-                                    : 'bg-gray-100 dark:bg-gray-700 text-[var(--text-primary)] hover:bg-gray-200 dark:hover:bg-gray-600'
-                                }`}
-                              >
-                                <div className="flex items-center justify-between">
-                                  <span className="font-medium capitalize">{key}</span>
-                                  <span className="text-sm opacity-80">
-                                    {allGradients.filter(p => p.category === key).length}
-                                  </span>
-                                </div>
-                                <p className="text-sm mt-1 opacity-80 line-clamp-2">
-                                  {description}
-                                </p>
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Stats Section */}
-                        <div className="p-6">
-                          <div className="space-y-2 text-sm">
-                            <div className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                              <span className="text-[var(--text-muted)]">Total Gradients:</span>
-                              <span className="font-medium text-[var(--text-primary)]">{allGradients.length}</span>
-                            </div>
-                            <div className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                              <span className="text-[var(--text-muted)]">Filtered Gradients:</span>
-                              <span className="font-medium text-[var(--text-primary)]">{filteredGradients.length}</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* <div className="p-4"> */}
-                        {/* </div> */}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Gradients Grid */}
-            <div className="flex-1 min-w-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {displayedGradients.map((gradient, index) => (
-                  <React.Fragment key={gradient.id}>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      whileHover={{ y: -5 }}
-                      className="overflow-hidden shadow-lg rounded-2xl aspect-[1.6/1] relative"
-                    >
-                      {/* Background Gradient */}
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          background: `linear-gradient(to right, ${gradient.colors.join(', ')})`
-                        }}
-                      />
-
-                      {/* Glassmorphism Overlay */}
-                      <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] border border-white/20" />
-
-                      {/* Content */}
-                      <div className="relative w-full h-full">
-                        {/* Content Overlay */}
-                        <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                          {/* Top Section */}
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <h3 className="text-2xl font-semibold text-white mb-2 drop-shadow-md">
-                                {gradient.name}
-                              </h3>
-                              <p className="text-sm text-white/90 drop-shadow-md max-w-[80%]">
-                                {gradient.description}
-                              </p>
-                            </div>
-                            <div className="flex space-x-2">
-                              <button
-                                onClick={() => toggleFavorite(gradient.id)}
-                                className={`p-2 rounded-full backdrop-blur-md transition-all duration-300 
-                                  border border-white/20 shadow-lg hover:shadow-xl
-                                  ${favorites.includes(gradient.id)
-                                    ? 'bg-white/30 text-red-500 hover:bg-white/40'
-                                    : 'bg-white/10 text-white hover:bg-white/20'
-                                }`}
-                              >
-                                <Icon icon={FaHeart} className="w-5 h-5" />
-                              </button>
-                              <button
-                                onClick={() => copyGradient(gradient.colors)}
-                                className="p-2 rounded-full bg-white/10 backdrop-blur-md text-white 
-                                         hover:bg-white/20 transition-all duration-300
-                                         border border-white/20 shadow-lg hover:shadow-xl"
-                              >
-                                <Icon icon={FaCopy} className="w-5 h-5" />
-                              </button>
-                            </div>
-                          </div>
-
-                          {/* Bottom Section */}
-                          <div>
-                            <div className="flex items-center justify-between mb-4">
-                              <div className="flex items-center space-x-4">
-                                <div className="flex items-center space-x-1 text-white/90 
-                                            bg-white/10 backdrop-blur-md px-3 py-1 rounded-full
-                                            border border-white/20">
-                                  <Icon icon={FaHeart} className="w-4 h-4" />
-                                  <span>{gradient.likes}</span>
-                                </div>
-                                <div className="flex items-center space-x-1 text-white/90
-                                            bg-white/10 backdrop-blur-md px-3 py-1 rounded-full
-                                            border border-white/20">
-                                  <Icon icon={FaEye} className="w-4 h-4" />
-                                  <span>{gradient.views}</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2">
-                              <span className="px-3 py-1 text-xs font-medium rounded-full 
-                                           bg-white/20 backdrop-blur-md text-white
-                                           border border-white/20 shadow-sm">
-                                {gradient.category}
-                              </span>
-                              {gradient.tags.map(tag => (
-                                <span
-                                  key={`${gradient.id}-${tag}`}
-                                  className="px-3 py-1 text-xs font-medium rounded-full 
-                                           bg-white/10 backdrop-blur-md text-white
-                                           border border-white/20 shadow-sm"
-                                >
-                                  {tag}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-
-                  </React.Fragment>
-                ))}
-              </div>
-              
-              {/* Loading indicator and observer target */}
-              <div ref={observerTarget} className="w-full py-8 flex justify-center">
-                {loading ? (
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-500" />
-                ) : displayedGradients.length < filteredGradients.length ? (
-                  <div className="text-[var(--text-muted)]">Scroll for more</div>
-                ) : (
-                  <div className="text-[var(--text-muted)]">No more gradients</div>
+                {cat.label}
+                {cat.key !== 'all' && (
+                  <span className="ml-1.5 opacity-60 text-[10px]">
+                    {ALL_GRADIENTS.filter(g => g.category === cat.key).length}
+                  </span>
                 )}
-              </div>
+              </button>
+            ))}
+          </div>
 
+          {/* Search */}
+          <div className="relative flex-shrink-0">
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <input
+              type="text"
+              placeholder="Search…"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              className="glass-input pl-9 pr-4 py-1.5 w-40 text-sm"
+            />
+          </div>
+
+          {/* Count */}
+          <span className="text-xs text-[var(--text-muted)] flex-shrink-0">
+            {filtered.length} gradient{filtered.length !== 1 ? 's' : ''}
+          </span>
+        </motion.div>
+
+        {/* Grid */}
+        {displayed.length > 0 ? (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {displayed.map(gradient => (
+              <GradientCard key={gradient.id} gradient={gradient} />
+            ))}
+          </div>
+        ) : (
+          <div className="glass-card rounded-2xl p-16 text-center">
+            <p className="text-2xl mb-2">🎨</p>
+            <p className="text-[var(--text-secondary)] font-medium">No gradients match "{search}"</p>
+            <button onClick={() => setSearch('')} className="mt-3 glass-button px-4 py-2 text-sm font-medium">
+              Clear search
+            </button>
+          </div>
+        )}
+
+        {/* Infinite scroll trigger */}
+        <div ref={observerRef} className="py-8 flex justify-center">
+          {hasMore && (
+            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-indigo-500"/>
+          )}
+        </div>
+
+        {/* SEO Content */}
+        <div className="mt-8 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Gradient Library</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Browse the gallery or filter by style — Vibrant, Subtle, Dark, Ocean, Sunset, Cosmic, and more.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Hover over any card and click "Copy CSS" — or click the copy icon in the card footer.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>The copied value is a ready-to-paste <code className="text-indigo-400">background: linear-gradient(…)</code> CSS rule.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>For Tailwind, wrap it as an arbitrary value: <code className="text-indigo-400">bg-[linear-gradient(135deg,#6366f1,#ec4899)]</code>.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Need a custom gradient? Use the <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a> to build your own.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a CSS Gradient?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed">A CSS gradient is a smooth color transition generated entirely in CSS — no images needed. <code className="text-indigo-400">linear-gradient()</code> transitions colors along a straight line at any angle. <code className="text-indigo-400">radial-gradient()</code> radiates outward from a center point. Both render at any resolution and have zero file size overhead. Gradients are used everywhere in modern UI: hero backgrounds, card overlays, button fills, text effects, and decorative borders. You can stack multiple gradient layers using comma-separated values for complex mesh and duotone effects.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I use these gradients commercially?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. All gradients in the ColorPeek library are free for personal and commercial use with no attribution required.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I add a gradient to text in CSS?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Apply <code className="text-indigo-400">background: linear-gradient(…)</code> combined with <code className="text-indigo-400">-webkit-background-clip: text</code> and <code className="text-indigo-400">-webkit-text-fill-color: transparent</code>.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I use this in Tailwind CSS?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Use Tailwind's arbitrary value syntax: <code className="text-indigo-400">className="bg-[linear-gradient(135deg,#6366f1_0%,#ec4899_100%)]"</code>. Replace spaces with underscores inside brackets.</p>
+              </details>
             </div>
           </div>
+
+          <RelatedTools tools={['/gradient-generator', '/palettes', '/glass-generator']} />
         </div>
+
       </main>
-
-      {/* SEO Content */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-8">
-        <div className="glass-card p-8 rounded-2xl">
-          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Gradient Library</h2>
-          <ol className="space-y-3">
-            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Browse the gallery or filter by type — linear, radial, diagonal, vibrant, subtle, dark, and more.</li>
-            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Sort by Newest, Most Liked, or Most Viewed to find trending gradients.</li>
-            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Click the copy icon on any gradient card to copy the CSS <code className="text-indigo-400">background</code> property.</li>
-            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Paste the CSS directly into your stylesheet or Tailwind arbitrary value.</li>
-            <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Need a custom gradient? Use the <a href="/gradient-generator" className="text-indigo-500 hover:underline">Gradient Generator</a> to build your own.</li>
-          </ol>
-        </div>
-
-        <div className="glass-card p-8 rounded-2xl">
-          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a CSS Gradient?</h2>
-          <p className="text-[var(--text-secondary)] leading-relaxed">A CSS gradient is a smooth, programmatic color transition defined entirely in CSS — no image files needed. The <code className="text-indigo-400">linear-gradient()</code> function transitions between colors along a straight line at any angle. The <code className="text-indigo-400">radial-gradient()</code> radiates outward from a center point, while <code className="text-indigo-400">conic-gradient()</code> sweeps around a center like a color wheel. Gradients are used everywhere in modern UI design: as hero backgrounds, card overlays, button fills, text effects, and decorative accents. They're supported in all modern browsers, render crisply at any resolution, and add depth without increasing page weight. You can stack multiple gradient layers using comma-separated values to create complex mesh and duotone effects.</p>
-        </div>
-
-        <div className="glass-card p-8 rounded-2xl">
-          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            <details className="border border-white/20 rounded-xl overflow-hidden">
-              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I use these gradients in commercial projects?</summary>
-              <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. All gradients in the ColorPeek library are free for personal and commercial use. No attribution required.</p>
-            </details>
-            <details className="border border-white/20 rounded-xl overflow-hidden">
-              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I add a gradient to text in CSS?</summary>
-              <p className="px-5 pb-4 text-[var(--text-secondary)]">Use <code className="text-indigo-400">background: linear-gradient(...)</code> combined with <code className="text-indigo-400">-webkit-background-clip: text</code> and <code className="text-indigo-400">-webkit-text-fill-color: transparent</code> on the element. This clips the gradient to the text shape.</p>
-            </details>
-            <details className="border border-white/20 rounded-xl overflow-hidden">
-              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between linear and radial gradients?</summary>
-              <p className="px-5 pb-4 text-[var(--text-secondary)]">A linear gradient transitions colors along a straight line (top to bottom, left to right, or any angle). A radial gradient emanates outward from a center point in an elliptical or circular pattern.</p>
-            </details>
-            <details className="border border-white/20 rounded-xl overflow-hidden">
-              <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I animate a CSS gradient?</summary>
-              <p className="px-5 pb-4 text-[var(--text-secondary)]">CSS doesn't directly animate gradient stops, but you can animate <code className="text-indigo-400">background-position</code> on an oversized gradient, or use CSS custom properties with <code className="text-indigo-400">@property</code> to register and animate the color values in modern browsers.</p>
-            </details>
-          </div>
-        </div>
-
-        <RelatedTools tools={['/gradient-generator','/glass-generator','/palettes']} />
-      </section>
     </div>
   );
 };
