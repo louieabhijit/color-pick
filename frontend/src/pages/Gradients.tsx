@@ -138,13 +138,11 @@ const ITEMS_PER_PAGE = 24;
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-const GradientCard = ({ gradient }: { gradient: Gradient }) => {
+const GradientCard = ({ gradient, glassMode }: { gradient: Gradient; glassMode: boolean }) => {
   const [copied, setCopied] = useState(false);
 
-  const copy = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const css = `background: ${gradient.css};`;
-    navigator.clipboard.writeText(css);
+  const copy = () => {
+    navigator.clipboard.writeText(`background: ${gradient.css};`);
     setCopied(true);
     setTimeout(() => setCopied(false), 1800);
     toast.success('CSS copied!', { duration: 1500, position: 'bottom-center' });
@@ -152,78 +150,78 @@ const GradientCard = ({ gradient }: { gradient: Gradient }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4, scale: 1.01 }}
-      transition={{ duration: 0.25 }}
-      className="group glass-card rounded-2xl overflow-hidden border border-white/30 dark:border-white/8 hover:border-indigo-300/40 dark:hover:border-indigo-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10"
+      whileHover={{ y: -6, scale: 1.02 }}
+      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      onClick={copy}
+      className="group relative cursor-pointer rounded-3xl overflow-hidden shadow-md hover:shadow-xl hover:shadow-black/15 transition-shadow duration-300"
+      style={{ aspectRatio: '4 / 5' }}
     >
-      {/* Gradient swatch */}
-      <div
-        className="h-36 w-full relative"
-        style={{ background: gradient.css }}
-      >
-        {/* Copy button — appears on hover */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <motion.button
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.94 }}
-            onClick={copy}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white border border-white/40 shadow-lg"
-            style={{ backdropFilter: 'blur(12px)', backgroundColor: 'rgba(0,0,0,0.25)' }}
-          >
-            {copied ? (
-              <>
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
-                </svg>
-                Copied!
-              </>
-            ) : (
-              <>
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                </svg>
-                Copy CSS
-              </>
-            )}
-          </motion.button>
-        </div>
+      {/* Pure gradient — the star of the card */}
+      <div className="absolute inset-0" style={{ background: gradient.css }} />
 
-        {/* Category badge */}
-        <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full text-[10px] font-semibold text-white capitalize"
-          style={{ backdropFilter: 'blur(8px)', backgroundColor: 'rgba(0,0,0,0.25)' }}>
+      {/* Glass overlay — animates in when glassMode is on */}
+      <motion.div
+        animate={{
+          opacity: glassMode ? 1 : 0,
+          backdropFilter: glassMode ? 'blur(14px) saturate(180%)' : 'blur(0px) saturate(100%)',
+        }}
+        transition={{ duration: 0.45, ease: 'easeInOut' }}
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundColor: 'rgba(255, 255, 255, 0.10)',
+          borderTop: '1px solid rgba(255,255,255,0.35)',
+          borderLeft: '1px solid rgba(255,255,255,0.35)',
+          borderRight: '1px solid rgba(255,255,255,0.08)',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          WebkitBackdropFilter: glassMode ? 'blur(14px) saturate(180%)' : 'blur(0px)',
+        }}
+      />
+
+      {/* Bottom name strip — always visible, minimal */}
+      <div
+        className="absolute bottom-0 left-0 right-0 px-4 pt-8 pb-4"
+        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 100%)' }}
+      >
+        <p className="text-sm font-semibold text-white tracking-wide leading-tight">
+          {gradient.name}
+        </p>
+        <p className="text-[10px] text-white/55 capitalize mt-0.5 tracking-widest uppercase">
           {gradient.category}
-        </span>
+        </p>
       </div>
 
-      {/* Footer */}
-      <div className="px-4 py-3 flex items-center justify-between">
-        <div>
-          <p className="text-sm font-semibold text-[var(--text-primary)] leading-tight">{gradient.name}</p>
-          <div className="flex gap-1 mt-1.5">
-            {gradient.colors.slice(0, 5).map((c, i) => (
-              <div key={i} className="w-3.5 h-3.5 rounded-full border border-white/30 shadow-sm flex-shrink-0"
-                style={{ backgroundColor: c }}/>
-            ))}
-          </div>
-        </div>
-        <motion.button
-          whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.94 }}
-          onClick={copy}
-          className="glass-button p-2 rounded-xl flex-shrink-0"
-          title="Copy CSS"
+      {/* Hover copy overlay — fades in on hover */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <motion.div
+          whileTap={{ scale: 0.94 }}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-2xl text-xs font-semibold text-white"
+          style={{
+            backdropFilter: 'blur(20px) saturate(160%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+            backgroundColor: copied ? 'rgba(16, 185, 129, 0.35)' : 'rgba(0, 0, 0, 0.30)',
+            border: copied ? '1px solid rgba(16,185,129,0.5)' : '1px solid rgba(255,255,255,0.3)',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+            transition: 'background-color 0.2s, border-color 0.2s',
+          }}
         >
           {copied ? (
-            <svg className="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
-            </svg>
+            <>
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              Copied!
+            </>
           ) : (
-            <svg className="w-3.5 h-3.5 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-            </svg>
+            <>
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              Copy CSS
+            </>
           )}
-        </motion.button>
+        </motion.div>
       </div>
     </motion.div>
   );
@@ -234,6 +232,7 @@ const GradientCard = ({ gradient }: { gradient: Gradient }) => {
 const Gradients = () => {
   const [category, setCategory] = useState('all');
   const [search, setSearch] = useState('');
+  const [glassMode, setGlassMode] = useState(false);
   const [page, setPage] = useState(1);
   const observerRef = useRef<HTMLDivElement>(null);
 
@@ -347,6 +346,45 @@ const Gradients = () => {
             />
           </div>
 
+          {/* Glass Effect toggle */}
+          <div className="flex items-center gap-2.5 flex-shrink-0 pl-1 border-l border-white/20">
+            <span className="text-xs font-medium text-[var(--text-secondary)] select-none whitespace-nowrap">
+              Glass Effect
+            </span>
+            <button
+              onClick={() => setGlassMode(g => !g)}
+              className="relative flex-shrink-0 focus:outline-none"
+              role="switch"
+              aria-checked={glassMode}
+              title={glassMode ? 'Disable glass effect' : 'Enable glass effect'}
+            >
+              {/* Track */}
+              <div className={`w-11 h-6 rounded-full transition-colors duration-300 ${
+                glassMode
+                  ? 'bg-indigo-500 shadow-inner shadow-indigo-700/40'
+                  : 'bg-black/10 dark:bg-white/10'
+              }`} />
+              {/* Thumb */}
+              <motion.div
+                animate={{ x: glassMode ? 22 : 2 }}
+                transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                className="absolute top-[3px] w-[18px] h-[18px] rounded-full shadow-md flex items-center justify-center"
+                style={{
+                  background: glassMode
+                    ? 'rgba(255,255,255,0.95)'
+                    : 'rgba(255,255,255,0.80)',
+                }}
+              >
+                {/* Mini glass icon on the thumb */}
+                <svg className={`w-2.5 h-2.5 transition-colors duration-200 ${glassMode ? 'text-indigo-500' : 'text-gray-400'}`}
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="3" width="18" height="18" rx="3"/>
+                  <rect x="7" y="7" width="10" height="10" rx="2" strokeOpacity="0.5"/>
+                </svg>
+              </motion.div>
+            </button>
+          </div>
+
           {/* Count */}
           <span className="text-xs text-[var(--text-muted)] flex-shrink-0">
             {filtered.length} gradient{filtered.length !== 1 ? 's' : ''}
@@ -355,9 +393,9 @@ const Gradients = () => {
 
         {/* Grid */}
         {displayed.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {displayed.map(gradient => (
-              <GradientCard key={gradient.id} gradient={gradient} />
+              <GradientCard key={gradient.id} gradient={gradient} glassMode={glassMode} />
             ))}
           </div>
         ) : (
