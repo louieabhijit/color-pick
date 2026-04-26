@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useDropzone } from 'react-dropzone'
 
 interface UploadSectionProps {
@@ -150,7 +151,10 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
   }, [activeTab]);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="glass-card p-6 relative overflow-hidden"
     >
       {/* Subtle inner glow */}
@@ -171,7 +175,7 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
         {/* Upload method tabs */}
         <div className="glass-tab-strip flex gap-1.5 mb-5 p-1">
           {(['device', 'url', 'clipboard'] as const).map((tab) => (
-            <button
+            <motion.button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200
@@ -179,6 +183,8 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                   ? 'glass-tab-active'
                   : 'text-[var(--text-muted)] hover:text-[var(--text-secondary)]'
                 }`}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.96 }}
             >
               {tab === 'device' && (
                 <svg className="w-4 h-4 mr-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -199,14 +205,18 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                 </svg>
               )}
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </button>
+            </motion.button>
           ))}
         </div>
 
         {/* Upload sections */}
-        
-          <div
+        <AnimatePresence mode="wait">
+          <motion.div
             key={activeTab}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
             className="space-y-4"
           >
             {/* Device upload */}
@@ -226,7 +236,12 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                 }}
               >
                 <input {...getInputProps()} aria-label="Upload image for color extraction" />
-                <div
+                <motion.div
+                  initial={false}
+                  animate={{ 
+                    scale: isDragActive || isDragReady ? 1.1 : 1,
+                    y: isDragActive || isDragReady ? -10 : 0
+                  }}
                   className="pointer-events-none"
                 >
                   <svg 
@@ -248,7 +263,7 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                     {isDragActive ? 'Drop your image here' : 'Drag & drop an image here'}
                   </p>
                   <p className="text-sm text-[var(--text-muted)]">or click to select from your device</p>
-                </div>
+                </motion.div>
               </div>
             )}
 
@@ -277,26 +292,30 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                     />
                   </svg>
                 </div>
-                <button
+                <motion.button
                   type="submit"
                   className="w-full px-4 py-3 rounded-xl glass-button-primary flex items-center justify-center gap-2 text-sm"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                           d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
                   <span>Load Image</span>
-                </button>
+                </motion.button>
               </form>
             )}
 
             {/* Clipboard upload */}
             {activeTab === 'clipboard' && (
-              <div
+              <motion.div
                 onClick={handleBoxClick}
                 className="w-full rounded-2xl border-2 border-dashed transition-all duration-300
                          group relative overflow-hidden cursor-pointer flex flex-col items-center justify-center min-h-[200px] py-10"
                 style={{ background: 'rgba(255,255,255,0.25)', borderColor: 'rgba(148,163,184,0.4)' }}
+                whileHover={{ scale: 1.01, borderColor: 'rgba(99,102,241,0.5)' }}
+                whileTap={{ scale: 0.99 }}
               >
                 <button
                   id="clipboard-button"
@@ -306,9 +325,12 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                 />
                 
                 {/* Popup Paste Button */}
-                
+                <AnimatePresence>
                   {showPasteButton && !isPasting && !pasteError && (
-                    <button
+                    <motion.button
+                      initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -20, scale: 0.9 }}
                       onClick={(e) => { e.stopPropagation(); handleManualPaste(); }}
                       className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
                                glass-button-primary px-6 py-3 rounded-2xl flex items-center gap-2 shadow-xl"
@@ -327,9 +349,9 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                         />
                       </svg>
                       <span>Paste Image</span>
-                    </button>
+                    </motion.button>
                   )}
-                
+                </AnimatePresence>
 
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 
                               group-hover:opacity-100 transition-opacity duration-300" />
@@ -354,8 +376,10 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                     />
                   </svg>
                   
-                  <div
+                  <motion.div
                     className="text-center"
+                    animate={isPasting ? { y: -5, opacity: 0.7 } : { y: 0, opacity: 1 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <p className="text-base font-semibold mb-1.5 text-[var(--text-primary)] group-hover:text-indigo-500 transition-colors duration-300">
                       {isPasting ? 'Processing...' : 'Paste from Clipboard'}
@@ -363,13 +387,16 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                     <p className="text-sm text-[var(--text-muted)]">
                       Click here, then press Ctrl+V (Cmd+V on Mac)
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* Error Message */}
-                
+                <AnimatePresence>
                   {pasteError && (
-                    <div 
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
                       className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
                     >
                       <p className="text-sm text-red-500 bg-red-100 dark:bg-red-900/20 
@@ -389,14 +416,17 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                         </svg>
                         {pasteError}
                       </p>
-                    </div>
+                    </motion.div>
                   )}
-                
+                </AnimatePresence>
 
                 {/* Processing Indicator */}
-                
+                <AnimatePresence>
                   {isPasting && !pasteError && (
-                    <div
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       className="absolute inset-0 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm 
                                flex items-center justify-center"
                     >
@@ -408,15 +438,15 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                           Processing image...
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   )}
-                
-              </div>
+                </AnimatePresence>
+              </motion.div>
             )}
-          </div>
-        
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

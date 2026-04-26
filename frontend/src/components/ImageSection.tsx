@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
 import ColorThief from 'colorthief'
 

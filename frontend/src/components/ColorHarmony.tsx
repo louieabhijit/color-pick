@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useClipboard } from '../context/ClipboardContext'
 
@@ -111,7 +112,10 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
 
   if (!selectedColor) {
     return (
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
         className="glass-card p-6 mt-4"
       >
         <div className="flex items-center mb-6">
@@ -133,14 +137,17 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
           <p className="font-medium">No color selected</p>
           <p className="text-sm mt-1">Select a color to view its harmonies</p>
         </div>
-      </div>
+      </motion.div>
     )
   }
 
   const harmonies = calculateColorHarmony(selectedColor)
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       className="glass-card p-6 mt-4"
     >
       <div className="flex items-center justify-between mb-6">
@@ -157,202 +164,256 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
 
       <div className="grid grid-cols-2 gap-4">
         {/* Complementary */}
-        <div 
+        <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
                     border border-white/40 dark:border-white/10/50"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Complementary</p>
           <div className="flex">
             {harmonies.complementary.map((color, index) => (
-              <div
+              <motion.div
                 key={`complementary-${color}-${index}`}
                 className="flex-1 h-12 relative group cursor-pointer"
                 style={{ backgroundColor: color }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
                 onClick={() => handleCopy(color)}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
                             flex items-center justify-center bg-black/40">
-                  <div
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.1 }}
+                    animate={copyState[color] ? { scale: [0.8, 1.2, 0.9] } : { scale: 0.8 }}
+                    transition={copyState[color] ? { duration: 0.3 } : { duration: 0.2 }}
                     className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg relative"
                   >
                     <p className="text-sm font-mono font-medium text-white tracking-wider">
                       {copyState[color] ? 'Copied!' : color}
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
                 {index < harmonies.complementary.length - 1 && (
                   <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-white/10" />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Analogous */}
-        <div 
+        <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
                     border border-white/40 dark:border-white/10/50"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Analogous</p>
           <div className="flex">
             {harmonies.analogous.map((color, index) => (
-              <div
+              <motion.div
                 key={`analogous-${color}-${index}`}
                 className="flex-1 h-12 relative group cursor-pointer"
                 style={{ backgroundColor: color }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
                 onClick={() => handleCopy(color)}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
                             flex items-center justify-center bg-black/40">
-                  <div
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.1 }}
+                    animate={copyState[color] ? { scale: [0.8, 1.2, 0.9] } : { scale: 0.8 }}
+                    transition={copyState[color] ? { duration: 0.3 } : { duration: 0.2 }}
                     className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg relative"
                   >
                     <p className="text-sm font-mono font-medium text-white tracking-wider">
                       {copyState[color] ? 'Copied!' : color}
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
                 {index < harmonies.analogous.length - 1 && (
                   <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-white/10" />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Triadic */}
-        <div 
+        <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
                     border border-white/40 dark:border-white/10/50"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Triadic</p>
           <div className="flex">
             {harmonies.triadic.map((color, index) => (
-              <div
+              <motion.div
                 key={`triadic-${color}-${index}`}
                 className="flex-1 h-12 relative group cursor-pointer"
                 style={{ backgroundColor: color }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
                 onClick={() => handleCopy(color)}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
                             flex items-center justify-center bg-black/40">
-                  <div
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.1 }}
+                    animate={copyState[color] ? { scale: [0.8, 1.2, 0.9] } : { scale: 0.8 }}
+                    transition={copyState[color] ? { duration: 0.3 } : { duration: 0.2 }}
                     className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg relative"
                   >
                     <p className="text-sm font-mono font-medium text-white tracking-wider">
                       {copyState[color] ? 'Copied!' : color}
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
                 {index < harmonies.triadic.length - 1 && (
                   <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-white/10" />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Split Complementary */}
-        <div 
+        <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
                     border border-white/40 dark:border-white/10/50"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Split Complementary</p>
           <div className="flex">
             {harmonies.splitComplementary.map((color, index) => (
-              <div
+              <motion.div
                 key={`split-complementary-${color}-${index}`}
                 className="flex-1 h-12 relative group cursor-pointer"
                 style={{ backgroundColor: color }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
                 onClick={() => handleCopy(color)}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
                             flex items-center justify-center bg-black/40">
-                  <div
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.1 }}
+                    animate={copyState[color] ? { scale: [0.8, 1.2, 0.9] } : { scale: 0.8 }}
+                    transition={copyState[color] ? { duration: 0.3 } : { duration: 0.2 }}
                     className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg relative"
                   >
                     <p className="text-sm font-mono font-medium text-white tracking-wider">
                       {copyState[color] ? 'Copied!' : color}
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
                 {index < harmonies.splitComplementary.length - 1 && (
                   <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-white/10" />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Tetradic */}
-        <div 
+        <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
                     border border-white/40 dark:border-white/10/50"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Tetradic</p>
           <div className="flex">
             {harmonies.tetradic.map((color, index) => (
-              <div
+              <motion.div
                 key={`tetradic-${color}-${index}`}
                 className="flex-1 h-12 relative group cursor-pointer"
                 style={{ backgroundColor: color }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
                 onClick={() => handleCopy(color)}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
                             flex items-center justify-center bg-black/40">
-                  <div
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.1 }}
+                    animate={copyState[color] ? { scale: [0.8, 1.2, 0.9] } : { scale: 0.8 }}
+                    transition={copyState[color] ? { duration: 0.3 } : { duration: 0.2 }}
                     className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg relative"
                   >
                     <p className="text-sm font-mono font-medium text-white tracking-wider">
                       {copyState[color] ? 'Copied!' : color}
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
                 {index < harmonies.tetradic.length - 1 && (
                   <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-white/10" />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Square */}
-        <div 
+        <motion.div 
           className="bg-white dark:bg-gray-800/50 rounded-xl p-4 shadow-lg backdrop-blur-sm
                     border border-white/40 dark:border-white/10/50"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Square</p>
           <div className="flex">
             {harmonies.square.map((color, index) => (
-              <div
+              <motion.div
                 key={`square-${color}-${index}`}
                 className="flex-1 h-12 relative group cursor-pointer"
                 style={{ backgroundColor: color }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
                 onClick={() => handleCopy(color)}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity
                             flex items-center justify-center bg-black/40">
-                  <div
+                  <motion.div
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.1 }}
+                    animate={copyState[color] ? { scale: [0.8, 1.2, 0.9] } : { scale: 0.8 }}
+                    transition={copyState[color] ? { duration: 0.3 } : { duration: 0.2 }}
                     className="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-lg relative"
                   >
                     <p className="text-sm font-mono font-medium text-white tracking-wider">
                       {copyState[color] ? 'Copied!' : color}
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
                 {index < harmonies.square.length - 1 && (
                   <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-white/10" />
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Information Section */}
@@ -392,7 +453,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState, forwardRef, useImperativeHandle, useEffect } from 'react'
 import ColorThief from 'colorthief'
 import { useClipboard } from '../context/ClipboardContext'
@@ -140,7 +141,10 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="glass-card p-6"
     >
       <div className="flex items-center justify-between mb-5">
@@ -156,22 +160,41 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
             <p className="text-xs text-[var(--text-muted)]">Click a color to see its details</p>
           </div>
         </div>
-        <button
+        <motion.button
           onClick={handleRegenerate}
           disabled={isGenerating}
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.94 }}
           className="w-9 h-9 flex items-center justify-center rounded-xl glass-button-primary
                    disabled:opacity-50 disabled:cursor-not-allowed"
           title="Regenerate palette"
         >
           <span className={`text-white text-lg leading-none transition-transform duration-500 ${isGenerating ? 'animate-spin' : 'hover:rotate-180'}`}>↻</span>
-        </button>
+        </motion.button>
       </div>
       
       <div className="h-[300px] flex gap-0 rounded-xl overflow-hidden shadow-lg">
-        
+        <AnimatePresence mode="sync">
           {selectedColors.map((entry, index) => (
-            <div
+            <motion.div
               key={entry.id}
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ 
+                width: `${100 / MAX_COLORS}%`,
+                opacity: 1
+              }}
+              exit={{ 
+                width: 0,
+                opacity: 0,
+                transition: { duration: 0.2 }
+              }}
+              transition={{ 
+                type: "spring",
+                stiffness: 300,
+                damping: 30,
+                mass: 1,
+                delay: index * 0.05
+              }}
               className="relative h-full group cursor-pointer
                        transition-all duration-300 ease-out
                        hover:z-10 hover:shadow-2xl
@@ -183,27 +206,28 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                 onColorSelect(entry.color)
               }}
               style={{
-                width: `${100 / MAX_COLORS}%`,
                 backgroundColor: entry.color,
                 transformOrigin: 'center',
                 transformStyle: 'preserve-3d',
                 perspective: '1000px'
               }}
             >
-              <div
+              <motion.div
                 className="absolute inset-0 w-full h-full transition-transform duration-500
                          group-hover:[transform:translateZ(20px)]"
                 style={{ backgroundColor: entry.color }}
               >
                 {/* Subtle gradient for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10" />
-              </div>
+              </motion.div>
               
               {/* Color info */}
               <div className="absolute inset-0 flex items-center justify-center
                           transition-transform duration-500
                           group-hover:[transform:translateZ(30px)]">
-                <div
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
                   className="w-full h-full flex flex-col items-center relative"
                 >
                   {/* Color name - always visible, slides up on hover */}
@@ -238,7 +262,9 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                     </p>
                   
                     <div className="flex items-center justify-center gap-2">
-                  <button 
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                         className="px-4 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm
                              border border-white/20 hover:border-white/40
                                flex items-center justify-center gap-2
@@ -264,9 +290,11 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                                  group-hover:text-white transition-colors duration-200">
                           Copy
                     </span>
-                  </button>
+                  </motion.button>
 
-                      <button
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                         className="p-1.5 rounded-lg bg-white/10 backdrop-blur-sm
                                border border-white/20 hover:border-white/40
                                shadow-lg hover:shadow-xl"
@@ -293,23 +321,26 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" 
                           />
                         </svg>
-                      </button>
+                      </motion.button>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               {/* Copy feedback */}
-              
-                  <div
+              <AnimatePresence>
+                  <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
                   className="absolute inset-0 flex items-center justify-center"
                   >
                   {/* No need for copiedColor check since the toast will handle it */}
-                  </div>
-              
-            </div>
+                  </motion.div>
+              </AnimatePresence>
+            </motion.div>
           ))}
-        
+        </AnimatePresence>
       </div>
 
       {/* Information Section */}
@@ -348,7 +379,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 })
 

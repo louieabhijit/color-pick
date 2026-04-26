@@ -1,6 +1,11 @@
+import { motion } from 'framer-motion';
 
 const ToolsSection = () => (
-  <section
+  <motion.section
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-60px' }}
+    transition={{ duration: 0.55 }}
     className="py-12"
   >
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -12,13 +17,15 @@ const ToolsSection = () => (
       </div>
 
       <div className="flex justify-center">
-        <a
+        <motion.a
           href="https://jsonformattertool.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="group glass-card card-shine glow-ring border border-white/40 dark:border-white/10
                      hover:border-indigo-300/50 dark:hover:border-indigo-500/30
                      overflow-hidden rounded-2xl max-w-2xl w-full transition-all duration-300"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
         >
           <div className="p-6 relative z-10">
             <div className="flex items-start space-x-4">
@@ -48,10 +55,10 @@ const ToolsSection = () => (
               </div>
             </div>
           </div>
-        </a>
+        </motion.a>
       </div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default ToolsSection;

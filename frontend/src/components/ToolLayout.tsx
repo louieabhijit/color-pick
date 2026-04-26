@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import ToolsSidebar from './ToolsSidebar';
 
 const ToolLayout = () => {
@@ -37,16 +38,20 @@ const ToolLayout = () => {
       </button>
 
       {/* ── Mobile drawer ────────────────────────────────────────────────── */}
-      
+      <AnimatePresence>
         {open && (
           <>
             {/* backdrop */}
-            <div
+            <motion.div
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="xl:hidden fixed inset-0 z-30 bg-black/40 backdrop-blur-sm"
               onClick={() => setOpen(false)}
             />
             {/* drawer panel */}
-            <aside
+            <motion.aside
+              initial={{ x: '-100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }}
+              transition={{ type: 'spring', stiffness: 320, damping: 34 }}
               className="xl:hidden fixed top-0 left-0 bottom-0 w-72 z-40 overflow-y-auto py-5 px-3 pt-16"
               style={{
                 background: 'var(--glass-bg-strong)',
@@ -64,10 +69,10 @@ const ToolLayout = () => {
                 </button>
               </div>
               <ToolsSidebar />
-            </aside>
+            </motion.aside>
           </>
         )}
-      
+      </AnimatePresence>
 
       {/* ── Page content pushed right on desktop ─────────────────────────── */}
       <div className="xl:ml-56">

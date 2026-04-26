@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
+import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import ImageSection from './components/ImageSection'
 import UploadSection from './components/UploadSection'
@@ -102,6 +103,11 @@ interface HomePageProps {
   setFavorites: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
+};
+
 const FEATURES = [
   { label: 'Palette Extraction',  path: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343' },
   { label: 'Harmony Generator',   path: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
@@ -142,7 +148,9 @@ const HomePage = ({
           </div>
 
           {/* Center Column - analysis panels (43%) */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="w-full lg:w-[43%]"
           >
             <div className="space-y-4">
@@ -159,14 +167,16 @@ const HomePage = ({
               <ContrastChecker selectedColor={selectedColor} />
               <ColorCodeSnippets selectedColor={selectedColor} />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Sidebar - tools (22%) - sticky */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
             className="hidden lg:block w-full lg:w-[22%] lg:sticky lg:top-20"
           >
             <ToolsSidebar />
-          </div>
+          </motion.div>
 
         </div>
       </div>
@@ -260,7 +270,11 @@ const HomePage = ({
     {/* ── Compact Hero / About band ── */}
     <section className="py-16 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.55 }}
           className="flex flex-col lg:flex-row items-center gap-12"
         >
           {/* Left: headline */}
@@ -279,8 +293,12 @@ const HomePage = ({
           {/* Right: feature list */}
           <div className="lg:w-1/2 grid grid-cols-2 gap-3">
             {FEATURES.map(({ label, path }) => (
-              <div
+              <motion.div
                 key={label}
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
                 className="flex items-center gap-2.5 glass-card px-3 py-2.5 rounded-xl border border-white/30 dark:border-white/8"
               >
                 <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500/15 to-violet-500/15
@@ -290,10 +308,10 @@ const HomePage = ({
                   </svg>
                 </div>
                 <span className="text-xs font-medium text-[var(--text-secondary)]">{label}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
 
@@ -301,19 +319,27 @@ const HomePage = ({
     <div className="gradient-divider mx-4 sm:mx-8 my-2" />
 
     {/* Blog Carousel */}
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6 }}
     >
       <BlogCarousel />
-    </div>
+    </motion.div>
 
     {/* ── gradient divider ── */}
     <div className="gradient-divider mx-4 sm:mx-8 my-2" />
 
     {/* How to Use */}
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.6 }}
     >
       <HowToUse />
-    </div>
+    </motion.div>
 
     {/* Toast */}
     <Toast message="Favorites limit reached (max 10 colors)" type="warning" isVisible={showToast} />

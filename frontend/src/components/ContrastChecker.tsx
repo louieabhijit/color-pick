@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
 interface ContrastCheckerProps {
@@ -70,7 +71,10 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
 
   if (!selectedColor) {
     return (
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
         className="glass-card p-6 mt-4"
       >
         <div className="flex items-center mb-6">
@@ -92,12 +96,15 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
           <p className="font-medium">No color selected</p>
           <p className="text-sm mt-1">Select a color to check contrast ratios</p>
         </div>
-      </div>
+      </motion.div>
     )
   }
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       className="glass-card p-6 mt-4"
     >
       <div className="flex items-center mb-6">
@@ -216,8 +223,9 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                 Small Text (under 18pt)
               </h3>
               <div className="space-y-3">
-                <div 
+                <motion.div 
                   className={`p-4 rounded-xl ${wcagScores.smallAA ? 'bg-green-500/10' : 'bg-white/40 dark:bg-white/8'}`}
+                  whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">AA Level</span>
@@ -237,10 +245,11 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                   <p className="text-xs text-[var(--text-muted)] mt-1">
                     Minimum ratio: 4.5:1
                   </p>
-                </div>
+                </motion.div>
 
-                <div 
+                <motion.div 
                   className={`p-4 rounded-xl ${wcagScores.smallAAA ? 'bg-green-500/10' : 'bg-white/40 dark:bg-white/8'}`}
+                  whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">AAA Level</span>
@@ -260,7 +269,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                   <p className="text-xs text-[var(--text-muted)] mt-1">
                     Enhanced ratio: 7:1
                   </p>
-                </div>
+                </motion.div>
               </div>
             </div>
 
@@ -270,8 +279,9 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                 Large Text (18pt+)
               </h3>
               <div className="space-y-3">
-                <div 
+                <motion.div 
                   className={`p-4 rounded-xl ${wcagScores.largeAA ? 'bg-green-500/10' : 'bg-white/40 dark:bg-white/8'}`}
+                  whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">AA Level</span>
@@ -291,10 +301,11 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                   <p className="text-xs text-[var(--text-muted)] mt-1">
                     Minimum ratio: 3:1
                   </p>
-                </div>
+                </motion.div>
 
-                <div 
+                <motion.div 
                   className={`p-4 rounded-xl ${wcagScores.largeAAA ? 'bg-green-500/10' : 'bg-white/40 dark:bg-white/8'}`}
+                  whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">AAA Level</span>
@@ -314,7 +325,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
                   <p className="text-xs text-[var(--text-muted)] mt-1">
                     Enhanced ratio: 4.5:1
                   </p>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -357,7 +368,7 @@ const ContrastChecker = ({ selectedColor }: ContrastCheckerProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

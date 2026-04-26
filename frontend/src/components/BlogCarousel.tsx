@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface BlogPost {
   title: string;
@@ -57,14 +58,18 @@ const BlogCarousel = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
           <span className="section-label mb-3 inline-block">From the Blog</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-2 text-[var(--text-primary)]">
             Latest <span className="gradient-text">Articles</span>
           </h2>
-        </div>
+        </motion.div>
 
         <div className="relative">
           {/* Navigation Buttons */}
@@ -96,9 +101,13 @@ const BlogCarousel = () => {
 
           {/* Carousel */}
           <div className="overflow-hidden">
-            
-              <div
+            <AnimatePresence mode="wait">
+              <motion.div
                 key={currentIndex}
+                initial={{ opacity: 0, x: 80 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -80 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className="grid grid-cols-1 md:grid-cols-3 gap-6"
               >
                 {[
@@ -136,8 +145,8 @@ const BlogCarousel = () => {
                     </div>
                   </a>
                 ))}
-              </div>
-            
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Dots */}

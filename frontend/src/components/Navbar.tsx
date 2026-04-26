@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { LinkProps } from 'react-router-dom';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import {
@@ -56,28 +57,31 @@ const ColorInput = ({ onColorSelect }: { onColorSelect: (color: string) => void 
                    ${isError ? 'border-red-400/60' : ''}
                    placeholder:text-[var(--text-muted)] text-[var(--text-primary)]`}
       />
-      <button
+      <motion.button
+        whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
         onClick={handleColorSubmit}
         className="px-4 py-1.5 rounded-xl text-sm font-semibold glass-button-primary"
       >
         Get Info
-      </button>
-      
+      </motion.button>
+      <AnimatePresence>
         {showApplied && (
-          <span
+          <motion.span
+            initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
             className="absolute -bottom-7 left-0 text-xs font-medium text-emerald-500 whitespace-nowrap"
           >
             ✓ Color applied
-          </span>
+          </motion.span>
         )}
         {isError && (
-          <span
+          <motion.span
+            initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
             className="absolute -bottom-7 left-0 text-xs font-medium text-red-400 whitespace-nowrap"
           >
             Invalid hex color
-          </span>
+          </motion.span>
         )}
-      
+      </AnimatePresence>
     </div>
   );
 };
@@ -141,9 +145,10 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
           ${active ? 'text-indigo-600 dark:text-violet-400' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'}`}
       >
         {active && (
-          <div
+          <motion.div layoutId="nav-pill"
             className="absolute inset-0 rounded-lg bg-white/60 dark:bg-indigo-500/20 shadow-sm border border-white/50 dark:border-indigo-400/30"
             style={{ backdropFilter: 'blur(8px)' }}
+            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
           />
         )}
         <span className="relative z-10">{name}</span>
@@ -152,29 +157,37 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
   };
 
   const ThemeToggle = () => (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.92 }}
       onClick={() => setIsDark(!isDark)}
       className="w-9 h-9 flex items-center justify-center rounded-xl glass-button"
       aria-label="Toggle theme"
     >
-      
+      <AnimatePresence mode="wait" initial={false}>
         {isDark ? (
-          <svg style={{ width: 18, height: 18 }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <motion.svg key="moon" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }}
+            exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}
+            style={{ width: 18, height: 18 }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
               d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-          </svg>
+          </motion.svg>
         ) : (
-          <svg className="text-amber-500" style={{ width: 18, height: 18 }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <motion.svg key="sun" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }}
+            exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}
+            className="text-amber-500" style={{ width: 18, height: 18 }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
               d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
+          </motion.svg>
         )}
-      
-    </button>
+      </AnimatePresence>
+    </motion.button>
   );
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'glass-nav' : 'bg-transparent'
       }`}
@@ -199,23 +212,33 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
               <ColorInput onColorSelect={onColorSelect} />
             </div>
             <ThemeToggle />
-            <button
+            <motion.button
+              whileTap={{ scale: 0.92 }}
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden w-9 h-9 flex items-center justify-center rounded-xl glass-button"
               aria-label="Menu"
             >
-              <svg className="w-5 h-5 text-[var(--text-secondary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <motion.svg
+                animate={isOpen ? { rotate: 90 } : { rotate: 0 }}
+                transition={{ duration: 0.2 }}
+                className="w-5 h-5 text-[var(--text-secondary)]"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                   d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
-              </svg>
-            </button>
+              </motion.svg>
+            </motion.button>
           </div>
         </div>
 
         {/* Mobile menu */}
-        
+        <AnimatePresence>
           {isOpen && (
-            <div
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: 'easeInOut' }}
               className="lg:hidden overflow-hidden"
             >
               <div className="glass-card mx-0 mb-4 p-4 space-y-1">
@@ -223,29 +246,32 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
                 {NAV_ITEMS.filter(i => i.href !== '/tools').map((item, i) => {
                   const active = isActive(item.href);
                   return (
-                    <div key={item.href}>
+                    <motion.div key={item.href} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.04 }}>
                       <Link to={item.href}
                         className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200
                           ${active ? 'bg-white/60 dark:bg-indigo-500/20 text-indigo-600 dark:text-violet-400 shadow-sm border border-transparent dark:border-indigo-400/25' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/30 dark:hover:bg-white/6'}`}
                       >{item.name}</Link>
-                    </div>
+                    </motion.div>
                   );
                 })}
 
                 {/* Tools section */}
-                <div
+                <motion.div
+                  initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: NAV_ITEMS.length * 0.04 }}
                   className="pt-3 pb-1"
                 >
                   <div className="flex items-center gap-2 px-4">
                     <span className="text-[10px] font-semibold uppercase tracking-widest text-[var(--text-muted)]">Tools</span>
                     <div className="flex-1 h-px bg-white/20 dark:bg-white/10" />
                   </div>
-                </div>
+                </motion.div>
 
                 {MOBILE_TOOLS.map(({ name, href, Icon }, i) => {
                   const active = location.pathname === href;
                   return (
-                    <div key={href}
+                    <motion.div key={href} initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: (NAV_ITEMS.length + 1 + i) * 0.04 }}
                     >
                       <Link to={href}
                         className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200
@@ -256,7 +282,7 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
                         </span>
                         <span>{name}</span>
                       </Link>
-                    </div>
+                    </motion.div>
                   );
                 })}
 
@@ -264,11 +290,11 @@ const Navbar = ({ onColorSelect }: { onColorSelect: (color: string) => void }) =
                   <ColorInput onColorSelect={onColorSelect} />
                 </div>
               </div>
-            </div>
+            </motion.div>
           )}
-        
+        </AnimatePresence>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 
