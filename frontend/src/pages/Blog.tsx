@@ -168,7 +168,7 @@ const blogPosts: BlogPost[] = [
     date: 'March 30, 2024',
     readTime: '15 min read',
     category: 'Color Theory',
-    image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=2070',
+    image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?q=75&w=800&fm=webp&auto=format&fit=crop',
     author: {
       name: 'Design Expert',
       avatar: 'https://ui-avatars.com/api/?name=Design+Expert&background=random'

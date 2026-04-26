@@ -130,8 +130,8 @@ const ImageSection = ({ selectedImage, onColorSelect }: ImageSectionProps) => {
                 alt="Selected image for color analysis"
                 className="absolute inset-0 w-full h-full object-contain"
                 crossOrigin="anonymous"
-                width="1400"
-                height="800"
+                width="800"
+                height="457"
                 fetchPriority="high"
               />
             </picture>

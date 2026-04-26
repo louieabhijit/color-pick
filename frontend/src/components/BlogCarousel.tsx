@@ -13,35 +13,35 @@ const blogPosts: BlogPost[] = [
   {
     title: 'The Complete Guide to Color Theory for Designers',
     description: 'Master the fundamentals of color theory, from basic principles to practical applications in modern design.',
-    image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?q=75&w=800&fm=webp&auto=format&fit=crop',
     path: '/blog/complete-guide-color-theory-designers',
     date: 'April 29, 2024'
   },
   {
     title: 'Top 5 Free Color Palette Tools for Designers in 2025',
     description: 'Discover the best free color palette generators and tools that will revolutionize your design workflow.',
-    image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?q=75&w=800&fm=webp&auto=format&fit=crop',
     path: '/blog/top-5-free-color-palette-tools-2025',
     date: 'May 1, 2024'
   },
   {
     title: 'How to Extract Colors from an Image for Web Design',
     description: 'Learn professional techniques for extracting beautiful color palettes from images.',
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070',
+    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=75&w=800&fm=webp&auto=format&fit=crop',
     path: '/blog/how-to-extract-colors-from-image',
     date: 'May 3, 2024'
   },
   {
     title: 'WCAG 2.1 Color Contrast Guidelines Explained',
     description: 'Master WCAG 2.1 color contrast requirements for web accessibility.',
-    image: 'https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?q=80&w=2070',
+    image: 'https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?q=75&w=800&fm=webp&auto=format&fit=crop',
     path: '/blog/wcag-color-contrast-guidelines',
     date: 'May 5, 2024'
   },
   {
     title: 'How Color Psychology Influences Customer Behavior',
     description: 'Discover how color psychology impacts consumer decisions and brand perception.',
-    image: 'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=2070',
+    image: 'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=75&w=800&fm=webp&auto=format&fit=crop',
     path: '/blog/color-psychology-customer-behavior',
     date: 'May 7, 2024'
   }
@@ -127,6 +127,10 @@ const BlogCarousel = () => {
                         src={post.image}
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        width="800"
+                        height="534"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent
                                       group-hover:from-black/60 transition-colors duration-300" />
