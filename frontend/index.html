@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Theme: run before any paint to avoid flash -->
     <script>(function(){var t=localStorage.getItem('colorpeek-theme-v2');if(t==='dark'){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}})();</script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -10,31 +13,33 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
     <link rel="manifest" href="/site.webmanifest" />
+
     <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Extract colors from images, generate color palettes, and explore hex codes with Color Peek – the ultimate online color tool."
-    />
-    <meta
-      name="keywords"
-      content="color picker, extract color, color palette generator, hex code, image color tool, Color Peek"
-    />
-    <title>Color Peek - Color Extraction & Palette Generation Tool</title>
+    <meta name="description" content="Extract colors from images, generate color palettes, and explore hex codes with ColorPeek - the ultimate free online color tool." />
+    <meta name="keywords" content="color picker, extract color, color palette generator, hex code, image color tool, ColorPeek" />
+    <title>ColorPeek - Free Color & CSS Design Tools Online</title>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
+    <!-- DNS prefetch / preconnect for third-party origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
+    <!-- Google Analytics — defer so it never blocks rendering -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-GSMXWF15GP');
+      gtag('config', 'G-GSMXWF15GP', { send_page_view: false });
+      // Send page view after paint so it doesn't block LCP
+      window.addEventListener('load', function() { gtag('event', 'page_view'); });
     </script>
 
-    <!-- Google AdSense -->
+    <!-- Google AdSense — async, non-blocking -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643"
       crossorigin="anonymous"></script>
-
   </head>
   <body>
     <div id="root"></div>

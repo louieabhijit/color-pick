@@ -395,6 +395,10 @@ const Blog: React.FC<BlogProps> = () => {
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      width="800"
+                      height="450"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
                     <div className="absolute top-4 left-4">
@@ -411,6 +415,10 @@ const Blog: React.FC<BlogProps> = () => {
                         src={post.author.avatar}
                         alt={post.author.name}
                         className="w-8 h-8 rounded-full"
+                        loading="lazy"
+                        width="32"
+                        height="32"
+                        decoding="async"
                       />
                       <div className="text-sm">
                         <p className="text-[var(--text-primary)] font-medium">

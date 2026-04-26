@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../../components/Navbar';
 import { FaCalendar, FaClock, FaTags, FaShare, FaTwitter, FaFacebook, FaLinkedin, FaArrowUp, FaUniversalAccess, FaMobileAlt, FaDesktop, FaCheck } from 'react-icons/fa';
 import { useState, useEffect } from 'react';

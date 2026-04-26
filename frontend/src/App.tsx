@@ -1,8 +1,7 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import type { FC, ReactNode } from 'react'
 import Navbar from './components/Navbar'
 import ImageSection from './components/ImageSection'
 import UploadSection from './components/UploadSection'
@@ -18,67 +17,78 @@ import HowToUse from './components/HowToUse'
 import BlogCarousel from './components/BlogCarousel'
 import ToolsSection from './components/ToolsSection'
 import Footer from './components/Footer'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Privacy from './pages/Privacy'
-import Terms from './pages/Terms'
-import Cookies from './pages/Cookies'
-import FAQ from './pages/FAQ'
-import ColorPalettes from './pages/ColorPalettes'
-import Gradients from './pages/Gradients'
-import Blog from './pages/Blog'
-import ColorTheory from './pages/BlogPosts/ColorTheory'
-import ColorPaletteTools from './pages/BlogPosts/ColorPaletteTools'
-import ImageColorExtraction from './pages/BlogPosts/ImageColorExtraction'
-import WCAGColorContrast from './pages/BlogPosts/WCAGColorContrast'
-import ColorPsychology from './pages/BlogPosts/ColorPsychology'
-import BrandColorPalette from './pages/BlogPosts/BrandColorPalette'
-import ColorAccessibility from './pages/BlogPosts/ColorAccessibility'
-import DIYColorPalettes from './pages/BlogPosts/DIYColorPalettes'
-import CulturalColors from './pages/BlogPosts/CulturalColors'
-import ColorPerception from './pages/BlogPosts/ColorPerception'
-import ColorHarmonyGuide from './pages/BlogPosts/ColorHarmonyGuide'
-import CSSBoxShadowExamples from './pages/BlogPosts/CSSBoxShadowExamples'
-import GlassmorphismTutorial from './pages/BlogPosts/GlassmorphismTutorial'
-import GoogleFontPairings from './pages/BlogPosts/GoogleFontPairings'
-import CSSGradientIdeas from './pages/BlogPosts/CSSGradientIdeas'
-import TailwindColorPaletteGuide from './pages/BlogPosts/TailwindColorPaletteGuide'
-import HexToRGBGuide from './pages/BlogPosts/HexToRGBGuide'
-import CSSBorderRadiusExamples from './pages/BlogPosts/CSSBorderRadiusExamples'
-import WebTypographyGuide from './pages/BlogPosts/WebTypographyGuide'
-import DarkModeColorPalette from './pages/BlogPosts/DarkModeColorPalette'
-import ColorPaletteFromPhoto from './pages/BlogPosts/ColorPaletteFromPhoto'
-import UIColorTrends2025 from './pages/BlogPosts/UIColorTrends2025'
-import ColorContrastGuide from './pages/BlogPosts/ColorContrastGuide'
-import PastelColorPalettes from './pages/BlogPosts/PastelColorPalettes'
-import DesignTokenColorSystem from './pages/BlogPosts/DesignTokenColorSystem'
-import GradientGenerator from './pages/GradientGenerator'
-import TintShadeGenerator from './pages/TintShadeGenerator'
-import ColorBlindnessSimulator from './pages/ColorBlindnessSimulator'
-import ColorConverter from './pages/ColorConverter'
-import BorderRadiusBuilder from './pages/BorderRadiusBuilder'
-import BoxShadowGenerator from './pages/BoxShadowGenerator'
-import GlassEffectGenerator from './pages/GlassEffectGenerator'
-import TypeScaleGenerator from './pages/TypeScaleGenerator'
-import FontPairing from './pages/FontPairing'
-import PaletteFromURL from './pages/PaletteFromURL'
-import PaletteExporter from './pages/PaletteExporter'
-import ContrastCheckerPage from './pages/ContrastChecker'
-import TextShadowGenerator from './pages/TextShadowGenerator'
-import ColorHarmonies from './pages/ColorHarmonies'
-import RandomColorGenerator from './pages/RandomColorGenerator'
-import ColorMixer from './pages/ColorMixer'
-import ColorNameFinder from './pages/ColorNameFinder'
-import CSSFilterGenerator from './pages/CSSFilterGenerator'
-import SpacingScaleGenerator from './pages/SpacingScaleGenerator'
-import FlexboxGenerator from './pages/FlexboxGenerator'
-import GridGenerator from './pages/GridGenerator'
-import Tools from './pages/Tools'
-import ToolsSidebar from './components/ToolsSidebar'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import ScrollToTop from './components/ScrollToTop'
+import ToolsSidebar from './components/ToolsSidebar'
 import defaultImage from './assets/default1.jpg'
+
+// ── Lazy-loaded pages — loaded only when the route is visited ────────────────
+const About                = lazy(() => import('./pages/About'))
+const Contact              = lazy(() => import('./pages/Contact'))
+const Privacy              = lazy(() => import('./pages/Privacy'))
+const Terms                = lazy(() => import('./pages/Terms'))
+const Cookies              = lazy(() => import('./pages/Cookies'))
+const FAQ                  = lazy(() => import('./pages/FAQ'))
+const ColorPalettes        = lazy(() => import('./pages/ColorPalettes'))
+const Gradients            = lazy(() => import('./pages/Gradients'))
+const Blog                 = lazy(() => import('./pages/Blog'))
+const Tools                = lazy(() => import('./pages/Tools'))
+const GradientGenerator    = lazy(() => import('./pages/GradientGenerator'))
+const TintShadeGenerator   = lazy(() => import('./pages/TintShadeGenerator'))
+const ColorBlindnessSimulator = lazy(() => import('./pages/ColorBlindnessSimulator'))
+const ColorConverter       = lazy(() => import('./pages/ColorConverter'))
+const BorderRadiusBuilder  = lazy(() => import('./pages/BorderRadiusBuilder'))
+const BoxShadowGenerator   = lazy(() => import('./pages/BoxShadowGenerator'))
+const GlassEffectGenerator = lazy(() => import('./pages/GlassEffectGenerator'))
+const TypeScaleGenerator   = lazy(() => import('./pages/TypeScaleGenerator'))
+const FontPairing          = lazy(() => import('./pages/FontPairing'))
+const PaletteFromURL       = lazy(() => import('./pages/PaletteFromURL'))
+const PaletteExporter      = lazy(() => import('./pages/PaletteExporter'))
+const ContrastCheckerPage  = lazy(() => import('./pages/ContrastChecker'))
+const TextShadowGenerator  = lazy(() => import('./pages/TextShadowGenerator'))
+const ColorHarmonies       = lazy(() => import('./pages/ColorHarmonies'))
+const RandomColorGenerator = lazy(() => import('./pages/RandomColorGenerator'))
+const ColorMixer           = lazy(() => import('./pages/ColorMixer'))
+const ColorNameFinder      = lazy(() => import('./pages/ColorNameFinder'))
+const CSSFilterGenerator   = lazy(() => import('./pages/CSSFilterGenerator'))
+const SpacingScaleGenerator = lazy(() => import('./pages/SpacingScaleGenerator'))
+const FlexboxGenerator     = lazy(() => import('./pages/FlexboxGenerator'))
+const GridGenerator        = lazy(() => import('./pages/GridGenerator'))
+
+// Blog posts
+const ColorTheory          = lazy(() => import('./pages/BlogPosts/ColorTheory'))
+const ColorPaletteTools    = lazy(() => import('./pages/BlogPosts/ColorPaletteTools'))
+const ImageColorExtraction = lazy(() => import('./pages/BlogPosts/ImageColorExtraction'))
+const WCAGColorContrast    = lazy(() => import('./pages/BlogPosts/WCAGColorContrast'))
+const ColorPsychology      = lazy(() => import('./pages/BlogPosts/ColorPsychology'))
+const BrandColorPalette    = lazy(() => import('./pages/BlogPosts/BrandColorPalette'))
+const ColorAccessibility   = lazy(() => import('./pages/BlogPosts/ColorAccessibility'))
+const DIYColorPalettes     = lazy(() => import('./pages/BlogPosts/DIYColorPalettes'))
+const CulturalColors       = lazy(() => import('./pages/BlogPosts/CulturalColors'))
+const ColorPerception      = lazy(() => import('./pages/BlogPosts/ColorPerception'))
+const ColorHarmonyGuide    = lazy(() => import('./pages/BlogPosts/ColorHarmonyGuide'))
+const CSSBoxShadowExamples = lazy(() => import('./pages/BlogPosts/CSSBoxShadowExamples'))
+const GlassmorphismTutorial = lazy(() => import('./pages/BlogPosts/GlassmorphismTutorial'))
+const GoogleFontPairings   = lazy(() => import('./pages/BlogPosts/GoogleFontPairings'))
+const CSSGradientIdeas     = lazy(() => import('./pages/BlogPosts/CSSGradientIdeas'))
+const TailwindColorPaletteGuide = lazy(() => import('./pages/BlogPosts/TailwindColorPaletteGuide'))
+const HexToRGBGuide        = lazy(() => import('./pages/BlogPosts/HexToRGBGuide'))
+const CSSBorderRadiusExamples = lazy(() => import('./pages/BlogPosts/CSSBorderRadiusExamples'))
+const WebTypographyGuide   = lazy(() => import('./pages/BlogPosts/WebTypographyGuide'))
+const DarkModeColorPalette = lazy(() => import('./pages/BlogPosts/DarkModeColorPalette'))
+const ColorPaletteFromPhoto = lazy(() => import('./pages/BlogPosts/ColorPaletteFromPhoto'))
+const UIColorTrends2025    = lazy(() => import('./pages/BlogPosts/UIColorTrends2025'))
+const ColorContrastGuide   = lazy(() => import('./pages/BlogPosts/ColorContrastGuide'))
+const PastelColorPalettes  = lazy(() => import('./pages/BlogPosts/PastelColorPalettes'))
+const DesignTokenColorSystem = lazy(() => import('./pages/BlogPosts/DesignTokenColorSystem'))
+
+// Route loading fallback
+const PageLoader = () => (
+  <div className="min-h-screen w-full flex items-center justify-center">
+    <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-indigo-500" />
+  </div>
+)
 
 interface HomePageProps {
   selectedImage: string;
@@ -397,6 +407,7 @@ const App: React.FC = () => {
             <Navbar onColorSelect={handleColorSelect} />
             
             
+            <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<HomePage selectedImage={selectedImage} selectedColor={selectedColor} favorites={favorites} showToast={showToast} colorPaletteRef={colorPaletteRef} handleColorSelect={handleColorSelect} handleToggleFavorite={handleToggleFavorite} setSelectedImage={setSelectedImage} setFavorites={setFavorites} />} />
               <Route path="/about" element={<About />} />
@@ -457,6 +468,7 @@ const App: React.FC = () => {
               <Route path="/grid" element={<GridGenerator />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
+            </Suspense>
 
             <ToolsSection />
             <Footer />

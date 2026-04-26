@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { getColorName } from '../utils/colorNames'
 import { useClipboard } from '../context/ClipboardContext'
 
 interface ColorDetailsProps {
@@ -113,7 +112,9 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
   
   useEffect(() => {
     if (selectedColor) {
-      setColorName(getColorName(selectedColor))
+      import('../utils/colorNames').then(({ getColorName }) => {
+        setColorName(getColorName(selectedColor))
+      })
     }
   }, [selectedColor])
 

@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, forwardRef, useImperativeHandle, useEffect } from 'react'
 import ColorThief from 'colorthief'
-import { getColorName } from '../utils/colorNames'
 import { useClipboard } from '../context/ClipboardContext'
 
 // Helper function to convert hex to RGB
@@ -99,13 +98,16 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
     generatePalette(image)
   }, [image])
 
-  // Update color names when selected colors change
+  // Update color names when selected colors change — lazily import to defer 1MB color-name-list
   useEffect(() => {
-    const newColorNames = selectedColors.reduce((acc, { color }) => {
-      acc[color] = getColorName(color);
-      return acc;
-    }, {} as Record<string, string>);
-    setColorNames(newColorNames);
+    if (selectedColors.length === 0) return;
+    import('../utils/colorNames').then(({ getColorName }) => {
+      const newColorNames = selectedColors.reduce((acc, { color }) => {
+        acc[color] = getColorName(color);
+        return acc;
+      }, {} as Record<string, string>);
+      setColorNames(newColorNames);
+    });
   }, [selectedColors]);
 
   // Expose handleColorSelect through ref
