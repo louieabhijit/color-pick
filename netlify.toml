@@ -5,8 +5,6 @@
 
 [build.environment]
   NODE_VERSION = "22"
-  # Allow Puppeteer (used by react-snap) to run in Netlify's build environment
-  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"
 
 [[redirects]]
   from   = "/*"
