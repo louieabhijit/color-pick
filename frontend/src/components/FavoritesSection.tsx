@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion'
 
 interface FavoritesSectionProps {
   favorites: string[]
@@ -8,10 +7,7 @@ interface FavoritesSectionProps {
 
 const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: FavoritesSectionProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
+    <div
       className="glass-card p-4"
     >
       <h2 className="text-xl font-semibold mb-3 flex items-center">
@@ -28,14 +24,10 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
       </h2>
 
       <div className="grid grid-cols-10 gap-1.5">
-        <AnimatePresence mode="popLayout">
+        
           {favorites.map((color) => (
-            <motion.div
+            <div
               key={color}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0, opacity: 0 }}
-              whileHover={{ scale: 1.05, zIndex: 10 }}
               className="relative group cursor-pointer"
               onClick={() => onColorSelect(color)}
             >
@@ -52,10 +44,7 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
               </div>
 
               {/* Remove button */}
-              <motion.button
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileHover={{ scale: 1.1 }}
-                animate={{ opacity: 1, scale: 1 }}
+              <button
                 onClick={(e) => {
                   e.stopPropagation()
                   onColorRemove(color)
@@ -77,21 +66,18 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
           ))}
 
           {/* Empty slots */}
           {Array.from({ length: Math.max(0, 10 - favorites.length) }).map((_, index) => (
-            <motion.div
+            <div
               key={`empty-${index}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
               className="w-full pt-[100%] rounded-md bg-white/40 dark:bg-white/8"
             />
           ))}
-        </AnimatePresence>
+        
       </div>
 
       {favorites.length === 0 && (
@@ -104,7 +90,7 @@ const FavoritesSection = ({ favorites, onColorSelect, onColorRemove }: Favorites
           <p className="text-sm mt-1">Click the heart icon on colors to add them here</p>
         </div>
       )}
-    </motion.div>
+    </div>
   )
 }
 

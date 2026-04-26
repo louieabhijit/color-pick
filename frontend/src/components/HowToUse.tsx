@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 
 const stagger = {
   hidden: {},
@@ -107,11 +106,7 @@ const HowToUse = () => (
     <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
 
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.5 }}
+      <div
         className="text-center mb-14"
       >
         <span className="section-label mb-4 inline-block">How it works</span>
@@ -122,20 +117,15 @@ const HowToUse = () => (
         <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
           Extract beautiful color palettes from your images and get everything you need for your next project.
         </p>
-      </motion.div>
+      </div>
 
       {/* Steps */}
-      <motion.div
-        variants={stagger}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: '-40px' }}
+      <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14"
       >
         {steps.map((step, index) => (
-          <motion.div
+          <div
             key={step.title}
-            variants={item}
             className="glass-card card-shine p-7 h-full border border-white/40 dark:border-white/10
                        hover:border-indigo-300/50 dark:hover:border-indigo-500/30 transition-colors duration-300"
           >
@@ -155,35 +145,26 @@ const HowToUse = () => (
             <p className="text-[var(--text-muted)] text-sm leading-relaxed">
               {step.description}
             </p>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
 
       {/* Divider */}
       <div className="gradient-divider mb-14" />
 
       {/* Features */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.45 }}
+      <div
         className="text-center mb-10"
       >
         <span className="section-label">Key Features</span>
-      </motion.div>
+      </div>
 
-      <motion.div
-        variants={stagger}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: '-40px' }}
+      <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14"
       >
         {features.map((feature) => (
-          <motion.div
+          <div
             key={feature.title}
-            variants={item}
             className="glass-card card-shine glow-ring p-7 h-full border border-white/40 dark:border-white/10
                        hover:border-indigo-300/50 dark:hover:border-indigo-500/30 transition-colors duration-300"
           >
@@ -196,16 +177,12 @@ const HowToUse = () => (
             <p className="text-[var(--text-muted)] text-sm leading-relaxed">
               {feature.description}
             </p>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
 
       {/* CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+      <div
         className="text-center"
       >
         <h3 className="text-2xl font-bold mb-3 text-[var(--text-primary)]">
@@ -214,15 +191,13 @@ const HowToUse = () => (
         <p className="text-[var(--text-muted)] mb-7">
           Upload your first image and discover the perfect color palette for your project.
         </p>
-        <motion.button
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
+        <button
           className="glass-button-primary px-8 py-3 text-base"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           Try ColorPeek Now
-        </motion.button>
-      </motion.div>
+        </button>
+      </div>
 
     </div>
   </section>

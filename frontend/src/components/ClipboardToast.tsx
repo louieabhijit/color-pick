@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
 
 interface ClipboardToastProps {
   copiedValue: string | null;
@@ -8,12 +7,8 @@ const ClipboardToast = ({ copiedValue }: ClipboardToastProps) => {
   if (!copiedValue) return null;
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+    
+      <div
         className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50"
       >
         <div className="px-6 py-3 rounded-2xl
@@ -46,8 +41,8 @@ const ClipboardToast = ({ copiedValue }: ClipboardToastProps) => {
             </span>
           </div>
         </div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
+    
   );
 };
 

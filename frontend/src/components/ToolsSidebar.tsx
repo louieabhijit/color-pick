@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import {
   IconPalettes, IconGradients, IconGradientGenerator, IconTintShade,
   IconColorBlindness, IconColorConverter, IconPaletteURL, IconFontPairing,
@@ -84,11 +83,8 @@ const ToolsSidebar = () => {
             {tools.map(({ name, href, desc, Icon, gradient }, i) => {
               const active = location.pathname === href;
               return (
-                <motion.div
+                <div
                   key={href}
-                  initial={{ opacity: 0, x: 14 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Link
                     to={href}
@@ -121,7 +117,7 @@ const ToolsSidebar = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
                     </svg>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>

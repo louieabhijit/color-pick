@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   IconPalettes,
@@ -74,11 +73,7 @@ const ToolsShowcase = () => (
     <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
 
       {/* Header row */}
-      <motion.div
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-50px' }}
-        transition={{ duration: 0.5 }}
+      <div
         className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10"
       >
         <div>
@@ -97,18 +92,14 @@ const ToolsShowcase = () => (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
         </Link>
-      </motion.div>
+      </div>
 
       {/* Tool cards */}
-      <motion.div
-        variants={stagger}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: '-40px' }}
+      <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
       >
         {TOOLS.map((tool) => (
-          <motion.div key={tool.href} variants={item}>
+          <div key={tool.href}>
             <Link
               to={tool.href}
               className="group glass-card card-shine border border-white/40 dark:border-white/10
@@ -143,9 +134,9 @@ const ToolsShowcase = () => (
                 </svg>
               </div>
             </Link>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   </section>
 );

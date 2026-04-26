@@ -20,41 +20,55 @@
     <meta name="keywords" content="color picker, extract color, color palette generator, hex code, image color tool, ColorPeek" />
     <title>ColorPeek - Free Color & CSS Design Tools Online</title>
 
-    <!-- Preload LCP image (stable public URL, not hashed) — WebP first, JPEG fallback -->
+    <!-- Preload LCP image (stable public URL, not hashed) -->
     <link rel="preload" as="image" href="/images/default1.webp" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/default1.jpg" fetchpriority="high" />
 
-    <!-- DNS prefetch / preconnect for third-party origins -->
+    <!-- Google Fonts — only 4 weights (down from 7), non-blocking via preconnect + link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-
-    <!-- Google Analytics — defer so it never blocks rendering -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GSMXWF15GP', { send_page_view: false });
-      window.addEventListener('load', function() { gtag('event', 'page_view'); });
-    </script>
-
-    <!-- Google AdSense — loaded 3s after page load so it never impacts LCP/TBT -->
-    <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var s = document.createElement('script');
-          s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643';
-          s.async = true;
-          s.crossOrigin = 'anonymous';
-          document.head.appendChild(s);
-        }, 3000);
-      });
-    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- All third-party scripts deferred until page is idle — never blocks TBT -->
+    <script>
+      function loadThirdPartyScripts() {
+        // 1. Google Analytics
+        var gtag_s = document.createElement('script');
+        gtag_s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GSMXWF15GP';
+        gtag_s.async = true;
+        gtag_s.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){window.dataLayer.push(arguments);};
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-GSMXWF15GP');
+        };
+        document.head.appendChild(gtag_s);
+
+        // 2. Google AdSense — 2s after GTM
+        setTimeout(function() {
+          var ads = document.createElement('script');
+          ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8219399801950643';
+          ads.async = true;
+          ads.crossOrigin = 'anonymous';
+          document.head.appendChild(ads);
+        }, 2000);
+      }
+
+      // Use requestIdleCallback if available (lets browser finish paint first)
+      if ('requestIdleCallback' in window) {
+        window.addEventListener('load', function() {
+          requestIdleCallback(loadThirdPartyScripts, { timeout: 5000 });
+        });
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(loadThirdPartyScripts, 3000);
+        });
+      }
+    </script>
   </body>
 </html>

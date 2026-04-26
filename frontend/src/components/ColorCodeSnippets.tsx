@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useClipboard } from '../context/ClipboardContext'
 
@@ -235,10 +234,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
 
   if (!selectedColor) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+      <div
         className="glass-card p-6 mt-4"
       >
         <div className="flex items-center mb-6">
@@ -260,17 +256,14 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
           <p className="font-medium">No color selected</p>
           <p className="text-sm mt-1">Select a color to view code snippets</p>
         </div>
-      </motion.div>
+      </div>
     )
   }
 
   const codeSnippets = getCodeSnippets(selectedColor)
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+    <div
       className="glass-card p-6 mt-4"
     >
       <div className="flex items-center mb-6">
@@ -312,7 +305,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
       <div className="flex space-x-1 mb-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600
                     bg-gray-100 dark:bg-gray-900/50 rounded-lg p-1">
         {codeSnippets.map((lang) => (
-          <motion.button
+          <button
             key={lang.language}
             onClick={() => setActiveLanguage(lang.language)}
             className={`px-3 py-1.5 rounded-md flex items-center space-x-2 transition-all duration-200 text-sm
@@ -320,12 +313,10 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
                         ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 shadow-sm'
                         : 'hover:bg-white/50 dark:hover:bg-gray-800/50 text-[var(--text-muted)]'
                       }`}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
           >
             <span dangerouslySetInnerHTML={{ __html: lang.icon }} />
             <span className="font-medium">{lang.language}</span>
-          </motion.button>
+          </button>
         ))}
       </div>
 
@@ -334,11 +325,8 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
         {codeSnippets
           .find(lang => lang.language === activeLanguage)
           ?.snippets.map((snippet, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
               className="relative group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-50/50 to-purple-50/50 
@@ -357,12 +345,10 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
                       {snippet.title}
                     </h3>
                   </div>
-                  <motion.button
+                  <button
                     onClick={() => handleCopy(snippet.code)}
                     className="text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400
                              transition-colors duration-200"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
                   >
                     {copiedSnippet === snippet.code ? (
                       <svg className="w-5 h-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
@@ -376,7 +362,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
                               d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                       </svg>
                     )}
-                  </motion.button>
+                  </button>
                 </div>
                 
                 <div className="relative rounded-b-lg overflow-hidden bg-gray-50 dark:bg-gray-900/50">
@@ -424,7 +410,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))
         }
       </div>
@@ -465,7 +451,7 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { FaGithub, FaTwitter, FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -22,9 +21,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
 
             {/* Brand */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.5 }}
+            <div
               className="flex items-center gap-3"
             >
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/25">
@@ -35,12 +32,10 @@ const Footer = () => {
                 </svg>
               </div>
               <span className="text-lg font-bold gradient-text">ColorPeek</span>
-            </motion.div>
+            </div>
 
             {/* Links */}
-            <motion.nav
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
+            <nav
               className="flex flex-wrap gap-x-5 gap-y-2"
             >
               {links.map((link) => (
@@ -52,12 +47,10 @@ const Footer = () => {
                   {link.name}
                 </Link>
               ))}
-            </motion.nav>
+            </nav>
 
             {/* Social + copyright */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}
+            <div
               className="flex items-center gap-4"
             >
               <a
@@ -71,7 +64,7 @@ const Footer = () => {
               <p className="text-sm text-[var(--text-muted)] flex items-center gap-1">
                 © {year} ColorPeek · Made with <FaHeart className="w-3 h-3 text-rose-400" />
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

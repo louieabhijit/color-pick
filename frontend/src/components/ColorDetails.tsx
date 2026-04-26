@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useClipboard } from '../context/ClipboardContext'
 
@@ -291,10 +290,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
 
   if (!selectedColor) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+      <div
         className="glass-card p-6 mt-4"
       >
         <div className="flex items-center gap-2.5 mb-5">
@@ -316,7 +312,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
           <p className="font-medium">No color selected</p>
           <p className="text-sm mt-1">Click on any color to view its details</p>
         </div>
-      </motion.div>
+      </div>
     )
   }
 
@@ -348,13 +344,9 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
         />
         
         {/* Slider thumb with integrated tooltip */}
-        <motion.div
+        <div
           className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 cursor-pointer"
           style={{ left: `${(value / max) * 100}%` }}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          whileHover={{ scale: 1.15 }}
-          transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
           {/* Value tooltip */}
           <div className="absolute -top-5 left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 rotate-45 
@@ -364,7 +356,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
           {/* Slider line */}
           <div className="h-3 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-400
                         shadow-[0_0_4px_rgba(99,102,241,0.4)] dark:shadow-[0_0_4px_rgba(167,139,250,0.4)]" />
-        </motion.div>
+        </div>
       </div>
       <div className="w-14 text-xs font-mono text-right text-[var(--text-secondary)] 
                    bg-white/40 dark:bg-white/8 rounded-md px-1.5 py-0.5">
@@ -374,10 +366,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
   )
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+    <div
       className="glass-card p-6 mt-4"
     >
       <div className="flex items-center gap-2.5 mb-5">
@@ -395,17 +384,15 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
         <div className="w-full md:w-48 mb-6 md:mb-0 space-y-4">
           {/* Color Preview */}
           <div className="flex justify-center md:justify-start">
-            <motion.div 
+            <div 
               className="relative group w-32 md:w-24 h-32 md:h-24"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
             >
               <div 
                 className="w-full h-full rounded-xl shadow-lg"
                 style={{ backgroundColor: selectedColor }}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/5 rounded-xl" />
-            </motion.div>
+            </div>
           </div>
 
           {/* Color Name */}
@@ -426,9 +413,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                               rounded-md px-2 py-1 flex-grow truncate">
                   {selectedColor}
                 </code>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={() => handleCopy(selectedColor)}
                   className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
@@ -444,7 +429,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                             d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                   )}
-                </motion.button>
+                </button>
               </div>
             </div>
           </div>
@@ -488,9 +473,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                               rounded-md px-2 py-1 flex-grow truncate">
                   {colorValues.rgbString}
                 </code>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={() => handleCopy(colorValues.rgbString)}
                   className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
@@ -506,7 +489,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                             d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                   )}
-                </motion.button>
+                </button>
               </div>
             </div>
 
@@ -545,9 +528,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                               rounded-md px-2 py-1 flex-grow truncate">
                   {colorValues.cmykString}
                 </code>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={() => handleCopy(colorValues.cmykString)}
                   className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
@@ -563,7 +544,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                             d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                   )}
-                </motion.button>
+                </button>
               </div>
             </div>
           </div>
@@ -597,9 +578,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                               rounded-md px-2 py-1 flex-grow truncate">
                   {colorValues.hslString}
                 </code>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={() => handleCopy(colorValues.hslString)}
                   className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
@@ -615,7 +594,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                             d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                   )}
-                </motion.button>
+                </button>
               </div>
             </div>
 
@@ -646,9 +625,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                               rounded-md px-2 py-1 flex-grow truncate">
                   {colorValues.hsvString}
                 </code>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={() => handleCopy(colorValues.hsvString)}
                   className="ml-2 p-2 rounded-md hover:bg-white/50 dark:hover:bg-white/10 
                            transition-colors duration-200 group"
@@ -664,7 +641,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
                             d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
                   )}
-                </motion.button>
+                </button>
               </div>
             </div>
           </div>
@@ -706,7 +683,7 @@ const ColorDetails = ({ selectedColor }: ColorDetailsProps) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

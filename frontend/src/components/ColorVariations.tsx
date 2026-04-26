@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useClipboard } from '../context/ClipboardContext';
 
@@ -131,10 +130,8 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
   const tones = calculateTones(selectedColor);
 
   const renderColorSection = (title: string, colors: string[], description: string) => (
-    <motion.div 
+    <div 
       className="mb-8 last:mb-0"
-      onHoverStart={() => setHoveredSection(title)}
-      onHoverEnd={() => setHoveredSection(null)}
     >
       <div className="flex items-baseline justify-between mb-2">
         <h3 className="text-sm font-medium text-[var(--text-secondary)]">
@@ -144,18 +141,14 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
           {description}
         </span>
       </div>
-      <motion.div 
+      <div 
         className="relative overflow-hidden rounded-xl"
-        whileHover={{ scale: 1.01 }}
-        transition={{ duration: 0.2 }}
       >
         <div className="flex">
           {colors.map((color, index) => (
-            <motion.div
+            <div
               key={`${title.toLowerCase()}-${color}-${index}`}
               className="group relative flex-1 cursor-pointer"
-              whileHover={{ scale: 1.15, zIndex: 10 }}
-              whileTap={{ scale: 0.95 }}
               onClick={() => handleColorClick(color)}
             >
               <div
@@ -177,32 +170,26 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
               </div>
 
               {/* Copied notification */}
-              <AnimatePresence>
+              
                 {copiedColor === color && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
+                  <div
                     className="absolute -top-8 left-1/2 transform -translate-x-1/2
                              bg-black/75 text-white text-[10px] py-1 px-2 rounded-full
                              whitespace-nowrap"
                   >
                     Copied {color}!
-                  </motion.div>
+                  </div>
                 )}
-              </AnimatePresence>
-            </motion.div>
+              
+            </div>
           ))}
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+    <div
       className="p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-lg
                 border border-white/40 dark:border-white/10/50 shadow-lg"
     >
@@ -271,7 +258,7 @@ const ColorVariations = ({ selectedColor }: ColorVariationsProps) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
