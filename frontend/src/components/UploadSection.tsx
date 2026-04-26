@@ -235,7 +235,7 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
                   borderColor: isDragActive || isDragReady ? 'rgba(99,102,241,0.5)' : 'rgba(148,163,184,0.4)',
                 }}
               >
-                <input {...getInputProps()} />
+                <input {...getInputProps()} aria-label="Upload image for color extraction" />
                 <motion.div
                   initial={false}
                   animate={{ 

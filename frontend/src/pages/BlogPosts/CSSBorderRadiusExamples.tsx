@@ -24,7 +24,7 @@ const CSSBorderRadiusExamples = () => {
     readTime: "8 min read",
     tags: ["CSS", "Border Radius", "Web Design", "Shapes", "Frontend"],
     image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop&fm=webp",
   };
 
   const shareUrl = window.location.href;

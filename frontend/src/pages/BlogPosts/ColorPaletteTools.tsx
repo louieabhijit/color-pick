@@ -28,7 +28,7 @@ const ColorPaletteTools = () => {
     date: 'May 1, 2024',
     readTime: '8 min read',
     tags: ['Color Tools', 'Design Resources', 'Color Palettes', 'UI/UX', 'Web Design', 'Free Tools'],
-    image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1609921212029-bb5a28e60960?q=80&w=800&auto=format&fit=crop&fm=webp'
   };
 
   const shareUrl = window.location.href;
@@ -58,7 +58,7 @@ const ColorPaletteTools = () => {
         'Export to multiple formats'
       ],
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1000&fm=webp',
       link: '/'
     },
     {
@@ -73,7 +73,7 @@ const ColorPaletteTools = () => {
         'Community palettes'
       ],
       rating: 4.8,
-      image: 'https://images.unsplash.com/photo-1579546929662-711aa81148cf?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1579546929662-711aa81148cf?q=80&w=1000&fm=webp',
       link: 'https://coolors.co'
     },
     {
@@ -88,7 +88,7 @@ const ColorPaletteTools = () => {
         'Community trends'
       ],
       rating: 4.7,
-      image: 'https://images.unsplash.com/photo-1560830889-96266c6dbe96?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1560830889-96266c6dbe96?q=80&w=1000&fm=webp',
       link: 'https://color.adobe.com'
     },
     {
@@ -103,7 +103,7 @@ const ColorPaletteTools = () => {
         'Palette creation'
       ],
       rating: 4.6,
-      image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1000&fm=webp',
       link: 'https://colorhunt.co'
     },
     {
@@ -118,7 +118,7 @@ const ColorPaletteTools = () => {
         'Color space support'
       ],
       rating: 4.5,
-      image: 'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?q=80&w=1000&fm=webp',
       link: 'https://paletton.com'
     }
   ];

@@ -35,7 +35,7 @@ const CSSBoxShadowExamples = () => {
     readTime: '8 min read',
     tags: ['CSS', 'Web Design', 'Frontend', 'Box Shadow', 'UI Effects'],
     image:
-      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop&fm=webp',
   };
 
   const shareUrl = window.location.href;

@@ -32,7 +32,7 @@ const WCAGColorContrast = () => {
     date: 'May 5, 2024',
     readTime: '12 min read',
     tags: ['WCAG 2.1', 'Accessibility', 'Color Contrast', 'Web Design', 'UI/UX', 'A11y', 'Web Standards'],
-    image: 'https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?q=80&w=2070'
+    image: 'https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?q=80&w=800&fm=webp'
   };
 
   const shareUrl = window.location.href;

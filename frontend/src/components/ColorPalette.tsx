@@ -298,6 +298,7 @@ const ColorPalette = forwardRef<ColorPaletteRef, ColorPaletteProps>(({ image, fa
                         className="p-1.5 rounded-lg bg-white/10 backdrop-blur-sm
                                border border-white/20 hover:border-white/40
                                shadow-lg hover:shadow-xl"
+                        aria-label={favorites.includes(entry.color) ? 'Remove from favorites' : 'Add to favorites'}
                         onClick={(e) => {
                           e.stopPropagation();
                           onToggleFavorite(entry.color);

@@ -28,7 +28,7 @@ const ImageColorExtraction = () => {
     date: 'May 3, 2024',
     readTime: '10 min read',
     tags: ['Color Extraction', 'Web Design', 'UI/UX', 'Color Palettes', 'Design Tools', 'Image Analysis'],
-    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070'
+    image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&fm=webp'
   };
 
   const shareUrl = window.location.href;
@@ -56,7 +56,7 @@ const ImageColorExtraction = () => {
         'Review and refine suggested palettes',
         'Export colors in your preferred format'
       ],
-      image: 'https://images.unsplash.com/photo-1677442136019-21c1edcd845f?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1677442136019-21c1edcd845f?q=80&w=1000&fm=webp',
       tools: ['ColorPeek', 'Adobe Color', 'Canva Color Palette Generator']
     },
     {
@@ -69,7 +69,7 @@ const ImageColorExtraction = () => {
         'Create swatches for selected colors',
         'Organize and save your palette'
       ],
-      image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=1000&fm=webp',
       tools: ['Adobe Photoshop', 'Figma', 'Sketch']
     },
     {
@@ -82,7 +82,7 @@ const ImageColorExtraction = () => {
         'Process and cluster similar colors',
         'Generate color palette programmatically'
       ],
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&fm=webp',
       tools: ['Python with ColorThief', 'JavaScript with node-vibrant', 'OpenCV']
     }
   ];

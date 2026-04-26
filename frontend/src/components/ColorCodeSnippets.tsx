@@ -290,8 +290,9 @@ rgb_color = ImageColor.getcolor("${color}", "RGB")`
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setLineNumbers(!lineNumbers)}
+            aria-label={lineNumbers ? 'Hide line numbers' : 'Show line numbers'}
             className={`p-2 rounded ${
-              lineNumbers 
+              lineNumbers
                 ? 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400'
                 : 'hover:bg-gray-200 dark:hover:bg-gray-800 text-[var(--text-muted)]'
             }`}

@@ -24,7 +24,7 @@ const WebTypographyGuide = () => {
     readTime: "10 min read",
     tags: ["Typography", "Web Design", "CSS", "Type Scale", "Frontend"],
     image:
-      "https://images.unsplash.com/photo-1503437313881-503a91226402?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1503437313881-503a91226402?q=80&w=800&auto=format&fit=crop&fm=webp",
   };
 
   const shareUrl = window.location.href;

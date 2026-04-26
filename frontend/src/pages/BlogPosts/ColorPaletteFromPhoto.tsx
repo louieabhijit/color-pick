@@ -19,7 +19,7 @@ const ColorPaletteFromPhoto = () => {
     date: "April 22, 2026",
     readTime: "9 min read",
     tags: ["Color Palette", "Photo", "Color Extraction", "Design", "Tools"],
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop&fm=webp",
   };
   const shareUrl = window.location.href;
   const shareOnTwitter = () => window.open(`https://twitter.com/intent/tweet?url=${shareUrl}&text=${metadata.title}`, '_blank');

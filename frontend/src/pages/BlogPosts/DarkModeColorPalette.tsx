@@ -19,7 +19,7 @@ const DarkModeColorPalette = () => {
     date: "April 22, 2026",
     readTime: "12 min read",
     tags: ["Dark Mode", "Color Palette", "UI Design", "CSS", "Accessibility"],
-    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=800&auto=format&fit=crop&fm=webp",
   };
   const shareUrl = window.location.href;
   const shareOnTwitter = () => window.open(`https://twitter.com/intent/tweet?url=${shareUrl}&text=${metadata.title}`, '_blank');

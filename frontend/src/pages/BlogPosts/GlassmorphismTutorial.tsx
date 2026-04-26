@@ -36,7 +36,7 @@ const GlassmorphismTutorial = () => {
     readTime: '10 min read',
     tags: ['CSS', 'Glassmorphism', 'UI Design', 'Frontend', 'Web Design'],
     image:
-      'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop&fm=webp',
   };
 
   const shareUrl = window.location.href;

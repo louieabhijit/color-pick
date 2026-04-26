@@ -22,7 +22,7 @@ const PastelColorPalettes = () => {
     date: "April 22, 2026",
     readTime: "8 min read",
     tags: ["Color Palette", "Pastel Colors", "Web Design", "UI Design", "Design Inspiration"],
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop&fm=webp"
   };
 
   const shareUrl = window.location.href;

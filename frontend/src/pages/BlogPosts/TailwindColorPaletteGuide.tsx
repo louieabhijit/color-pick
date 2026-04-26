@@ -24,7 +24,7 @@ const TailwindColorPaletteGuide = () => {
     readTime: "11 min read",
     tags: ["Tailwind CSS", "Color Palette", "Frontend", "CSS", "Design Tokens"],
     image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop&fm=webp",
   };
 
   const shareUrl = window.location.href;

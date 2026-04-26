@@ -22,7 +22,7 @@ const ColorContrastGuide = () => {
     date: "April 22, 2026",
     readTime: "11 min read",
     tags: ["Accessibility", "WCAG", "Color Contrast", "UI Design", "Color Blindness"],
-    image: "https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=800&auto=format&fit=crop&fm=webp"
   };
 
   const shareUrl = window.location.href;

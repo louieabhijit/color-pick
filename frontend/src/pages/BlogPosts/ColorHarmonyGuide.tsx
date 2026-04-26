@@ -28,7 +28,7 @@ const ColorHarmonyGuide = () => {
     date: "March 30, 2024",
     readTime: "15 min read",
     tags: ["Color Harmony", "Design Basics", "Color Theory", "Web Design", "UI/UX", "Visual Design"],
-    image: "https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=2070"
+    image: "https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=800&fm=webp"
   };
 
   const shareUrl = window.location.href;
@@ -55,7 +55,7 @@ const ColorHarmonyGuide = () => {
         { colors: ['#0000FF', '#FFB300'], name: 'Blue & Orange' },
         { colors: ['#9400D3', '#FFFF00'], name: 'Purple & Yellow' }
       ],
-      image: 'https://images.unsplash.com/photo-1528459801416-a9241982fc8d?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1528459801416-a9241982fc8d?q=80&w=1000&fm=webp',
       tips: [
         'Use one color as dominant',
         'Consider using tints and shades',
@@ -72,7 +72,7 @@ const ColorHarmonyGuide = () => {
         { colors: ['#0000FF', '#0066FF', '#00CCFF'], name: 'Blues' },
         { colors: ['#00FF00', '#66FF00', '#CCFF00'], name: 'Greens' }
       ],
-      image: 'https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1507908708918-778587c9e563?q=80&w=1000&fm=webp',
       tips: [
         'Choose one dominant color',
         'Use for natural, comfortable designs',
@@ -89,7 +89,7 @@ const ColorHarmonyGuide = () => {
         { colors: ['#FF6600', '#00FF00', '#9933FF'], name: 'Secondary Mix' },
         { colors: ['#FF3366', '#33FF66', '#6633FF'], name: 'Vibrant Mix' }
       ],
-      image: 'https://images.unsplash.com/photo-1535673774336-ef95d2851cf3?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1535673774336-ef95d2851cf3?q=80&w=1000&fm=webp',
       tips: [
         "Balance the colors carefully",
         "Use for playful designs",
@@ -106,7 +106,7 @@ const ColorHarmonyGuide = () => {
         { colors: ['#0000FF', '#FFCC00', '#FF6600'], name: 'Blue Base' },
         { colors: ['#FFFF00', '#FF00CC', '#0033FF'], name: 'Yellow Base' }
       ],
-      image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000',
+      image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&fm=webp',
       tips: [
         'Use one color as dominant',
         'Great for beginners',

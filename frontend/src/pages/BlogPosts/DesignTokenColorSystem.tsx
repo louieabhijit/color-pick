@@ -22,7 +22,7 @@ const DesignTokenColorSystem = () => {
     date: "April 22, 2026",
     readTime: "13 min read",
     tags: ["Design System", "Design Tokens", "CSS Variables", "Tailwind", "Color Palette", "Frontend"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop&fm=webp"
   };
 
   const shareUrl = window.location.href;

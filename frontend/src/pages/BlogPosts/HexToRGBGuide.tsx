@@ -24,7 +24,7 @@ const HexToRGBGuide = () => {
     readTime: "9 min read",
     tags: ["Color Formats", "CSS", "HEX", "RGB", "HSL", "Developer Tools"],
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop&fm=webp",
   };
 
   const shareUrl = window.location.href;

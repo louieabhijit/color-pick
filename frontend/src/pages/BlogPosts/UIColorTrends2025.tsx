@@ -19,7 +19,7 @@ const UIColorTrends2025 = () => {
     date: "April 22, 2026",
     readTime: "10 min read",
     tags: ["Color Trends", "UI Design", "Web Design", "2025", "Design Inspiration"],
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop&fm=webp",
   };
   const shareUrl = window.location.href;
   const shareOnTwitter = () => window.open(`https://twitter.com/intent/tweet?url=${shareUrl}&text=${metadata.title}`, '_blank');

@@ -170,7 +170,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Complementary</h4>
+          <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Complementary</p>
           <div className="flex">
             {harmonies.complementary.map((color, index) => (
               <motion.div
@@ -212,7 +212,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Analogous</h4>
+          <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Analogous</p>
           <div className="flex">
             {harmonies.analogous.map((color, index) => (
               <motion.div
@@ -254,7 +254,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Triadic</h4>
+          <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Triadic</p>
           <div className="flex">
             {harmonies.triadic.map((color, index) => (
               <motion.div
@@ -296,7 +296,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Split Complementary</h4>
+          <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Split Complementary</p>
           <div className="flex">
             {harmonies.splitComplementary.map((color, index) => (
               <motion.div
@@ -338,7 +338,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Tetradic</h4>
+          <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Tetradic</p>
           <div className="flex">
             {harmonies.tetradic.map((color, index) => (
               <motion.div
@@ -380,7 +380,7 @@ const ColorHarmony = ({ selectedColor }: ColorHarmonyProps) => {
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
         >
-          <h4 className="text-xs font-medium text-[var(--text-secondary)] mb-3">Square</h4>
+          <p className="text-xs font-medium text-[var(--text-secondary)] mb-3">Square</p>
           <div className="flex">
             {harmonies.square.map((color, index) => (
               <motion.div

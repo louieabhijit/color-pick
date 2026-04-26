@@ -27,7 +27,7 @@ const ColorTheory = () => {
     date: 'April 29, 2024',
     readTime: '12 min read',
     tags: ['Color Theory', 'Design Principles', 'UI/UX', 'Web Design', 'Color Psychology'],
-    image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?q=80&w=800&auto=format&fit=crop&fm=webp'
   };
 
   const shareUrl = window.location.href;
@@ -183,7 +183,7 @@ const ColorTheory = () => {
           >
             <h2 className="text-2xl md:text-3xl font-bold">1. The Basics of Color Theory</h2>
             <img
-              src="https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?q=80&w=2070"
+              src="https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?q=80&w=800&fm=webp"
               alt="Color wheel illustration"
               className="rounded-2xl my-8 w-full"
             />
@@ -300,7 +300,7 @@ const ColorTheory = () => {
           >
             <h2 className="text-2xl md:text-3xl font-bold">3. Color Schemes and Harmonies</h2>
             <img
-              src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=2069"
+              src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=2069&fm=webp"
               alt="Color harmony examples"
               className="rounded-2xl my-8 w-full"
             />

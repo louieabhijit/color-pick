@@ -49,7 +49,7 @@ body {
   /* Text */
   --text-primary:   #1a1a2e;
   --text-secondary: #4a4a6a;
-  --text-muted:     #8888aa;
+  --text-muted:     #6a6a8a;
 
   /* Page background - rich purple-to-blue-to-rose gradient */
   --page-bg-start:  #ddd6fe;  /* violet-200 */

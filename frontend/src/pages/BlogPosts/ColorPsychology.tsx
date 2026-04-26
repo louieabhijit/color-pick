@@ -28,7 +28,7 @@ const ColorPsychology = () => {
     date: 'May 7, 2024',
     readTime: '15 min read',
     tags: ['Color Psychology', 'Marketing', 'Consumer Behavior', 'Brand Design', 'Conversion Rate', 'UX Design', 'E-commerce'],
-    image: 'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=2070'
+    image: 'https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=800&fm=webp'
   };
 
   const shareUrl = window.location.href;

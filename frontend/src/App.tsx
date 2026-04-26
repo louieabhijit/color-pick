@@ -21,7 +21,8 @@ import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import ScrollToTop from './components/ScrollToTop'
 import ToolsSidebar from './components/ToolsSidebar'
-import defaultImage from './assets/default1.jpg'
+// Stable public URL — not hashed, so it can be preloaded in index.html
+const defaultImage = '/images/default1.jpg'
 
 // ── Lazy-loaded pages — loaded only when the route is visited ────────────────
 const About                = lazy(() => import('./pages/About'))
@@ -133,12 +134,8 @@ const HomePage = ({
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row w-full gap-4 items-start">
 
-          {/* Left Column - image & upload (35%) */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="w-full lg:w-[35%]"
-          >
+          {/* Left Column - image & upload (35%) — no opacity animation so LCP image is visible immediately */}
+          <div className="w-full lg:w-[35%]">
             <div className="space-y-4">
               <ImageSection selectedImage={selectedImage} onColorSelect={handleColorSelect} />
               <UploadSection onImageSelect={setSelectedImage} />
@@ -148,7 +145,7 @@ const HomePage = ({
                 onColorRemove={(color: string) => setFavorites(prev => prev.filter(c => c !== color))}
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* Center Column - analysis panels (43%) */}
           <motion.div

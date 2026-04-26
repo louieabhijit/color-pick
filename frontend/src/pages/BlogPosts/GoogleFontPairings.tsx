@@ -43,7 +43,7 @@ const GoogleFontPairings = () => {
     readTime: '12 min read',
     tags: ['Typography', 'Google Fonts', 'Web Design', 'Font Pairing', 'UI Design'],
     image:
-      'https://images.unsplash.com/photo-1467189741621-5973f25b9ced?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1467189741621-5973f25b9ced?q=80&w=800&auto=format&fit=crop&fm=webp',
   };
 
   const editorialPairings: FontPairing[] = [

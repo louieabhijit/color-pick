@@ -97,12 +97,7 @@ const ImageSection = ({ selectedImage, onColorSelect }: ImageSectionProps) => {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="glass-card p-6"
-    >
+    <div className="glass-card p-6">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 border border-indigo-500/20 flex items-center justify-center">
@@ -125,17 +120,34 @@ const ImageSection = ({ selectedImage, onColorSelect }: ImageSectionProps) => {
         onClick={handleClick}
       >
         <div className="relative pt-[56.25%]"> {/* 16:9 aspect ratio */}
-          <img
-            ref={imageRef}
-            src={selectedImage}
-            alt="Selected image for color analysis"
-            className="absolute inset-0 w-full h-full object-contain"
-            crossOrigin="anonymous"
-            width="1400"
-            height="800"
-            fetchPriority="high"
-            decoding="async"
-          />
+          {/* Use picture for WebP when showing the default image; fall back to img for user uploads */}
+          {selectedImage === '/images/default1.jpg' ? (
+            <picture>
+              <source srcSet="/images/default1.webp" type="image/webp" />
+              <img
+                ref={imageRef}
+                src="/images/default1.jpg"
+                alt="Selected image for color analysis"
+                className="absolute inset-0 w-full h-full object-contain"
+                crossOrigin="anonymous"
+                width="1400"
+                height="800"
+                fetchPriority="high"
+              />
+            </picture>
+          ) : (
+            <img
+              ref={imageRef}
+              src={selectedImage}
+              alt="Selected image for color analysis"
+              className="absolute inset-0 w-full h-full object-contain"
+              crossOrigin="anonymous"
+              width="1400"
+              height="800"
+              fetchPriority="high"
+              decoding="async"
+            />
+          )}
         </div>
 
         {/* Magnifier */}
@@ -190,7 +202,7 @@ const ImageSection = ({ selectedImage, onColorSelect }: ImageSectionProps) => {
           </>
         )}
       </div>
-    </motion.div>
+    </div>
   )
 }
 

@@ -62,7 +62,7 @@ const ToolLayout = () => {
             >
               <div className="flex items-center justify-between mb-4 px-1">
                 <span className="text-sm font-bold text-[var(--text-primary)]">All Tools</span>
-                <button onClick={() => setOpen(false)} className="p-1.5 rounded-lg glass-button">
+                <button onClick={() => setOpen(false)} aria-label="Close tools menu" className="p-1.5 rounded-lg glass-button">
                   <svg className="w-4 h-4 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
                   </svg>

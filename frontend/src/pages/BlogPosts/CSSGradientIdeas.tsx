@@ -41,7 +41,7 @@ const CSSGradientIdeas = () => {
     readTime: '10 min read',
     tags: ['CSS', 'Gradients', 'Web Design', 'Frontend', 'UI Design'],
     image:
-      'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2070&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=800&auto=format&fit=crop&fm=webp',
   };
 
   const linearGradients: GradientExample[] = [
