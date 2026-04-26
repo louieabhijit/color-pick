@@ -20,13 +20,14 @@
     <meta name="keywords" content="color picker, extract color, color palette generator, hex code, image color tool, ColorPeek" />
     <title>ColorPeek - Free Color & CSS Design Tools Online</title>
 
-    <!-- Preload LCP image (stable public URL, not hashed) — WebP first, JPEG fallback -->
+    <!-- Preload LCP image (stable public URL, not hashed) -->
     <link rel="preload" as="image" href="/images/default1.webp" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="image" href="/images/default1.jpg" fetchpriority="high" />
 
-    <!-- DNS prefetch / preconnect for third-party origins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload the primary font subset so text renders immediately -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
+
+    <!-- DNS prefetch for third-party origins -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
 
