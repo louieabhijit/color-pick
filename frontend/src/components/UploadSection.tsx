@@ -13,7 +13,7 @@ const UploadSection = ({ onImageSelect }: UploadSectionProps) => {
   const [pasteError, setPasteError] = useState<string | null>(null)
   const [isPasting, setIsPasting] = useState(false)
   const [showPasteButton, setShowPasteButton] = useState(false)
-  const pasteTimeoutRef = useRef<number>()
+  const pasteTimeoutRef = useRef<ReturnType<typeof setTimeout>>()
 
   // Handle file drop
   const onDrop = useCallback((acceptedFiles: File[]) => {

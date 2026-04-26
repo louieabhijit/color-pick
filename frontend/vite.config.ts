@@ -53,7 +53,9 @@ export default defineConfig({
     assetsDir: 'assets',
     copyPublicDir: true,
     minify: 'esbuild',
-    target: 'es2020',
+    // es2019: avoids optional chaining (?.) and nullish coalescing (??) in output,
+    // which react-snap's bundled Puppeteer (Chrome 73, 2019) cannot parse.
+    target: 'es2019',
   },
   optimizeDeps: {
     include: ['colorthief', 'color-name-list', 'nearest-color']

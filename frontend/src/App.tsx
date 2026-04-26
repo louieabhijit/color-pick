@@ -17,6 +17,7 @@ import HowToUse from './components/HowToUse'
 import BlogCarousel from './components/BlogCarousel'
 import ToolsSection from './components/ToolsSection'
 import Footer from './components/Footer'
+import PageSEO from './components/PageSEO'
 import { ClipboardProvider } from './context/ClipboardContext'
 import { Toaster as HotToaster } from 'react-hot-toast'
 import ScrollToTop from './components/ScrollToTop'
@@ -129,6 +130,24 @@ const HomePage = ({
   setFavorites
 }: HomePageProps) => (
   <>
+    <PageSEO
+      title="ColorPeek - Free Color & CSS Design Tools Online"
+      description="Free online color and CSS design tools for designers and developers. Color palettes, gradient generator, contrast checker, type scale, box shadow builder, and 20+ more tools."
+      path="/"
+      keywords="color tools, css tools, color palette generator, gradient generator, contrast checker, color converter, design tools online"
+      schema={{
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'ColorPeek',
+        url: 'https://color-peek.com',
+        description: 'Free online color and CSS design tools for designers and developers.',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: { '@type': 'EntryPoint', urlTemplate: 'https://color-peek.com/tools' },
+          'query-input': 'required name=search_term_string',
+        },
+      }}
+    />
     {/* ── 3-column layout: left upload | center analysis | right sidebar ── */}
     <main className="pt-16 pb-8">
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
