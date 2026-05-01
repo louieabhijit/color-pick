@@ -218,7 +218,43 @@ const ColorMixer = () => {
           </div>
         </motion.div>
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Color Mixer</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Pick Color A and Color B using the color pickers or by typing HEX values directly.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Drag the ratio slider to control the mix — 0% is 100% Color A, 100% is 100% Color B.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Switch between RGB, HSL, and OKLCH blend modes to see how each produces a different result.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Adjust the steps (5, 7, 9, or 11) to see a full gradient between the two colors. Click any step to copy it.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click "Copy Mixed Color" to copy the blended result as a HEX value.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is Color Mixing and Why Does Blend Mode Matter?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">Color mixing is the process of interpolating between two colors to produce an intermediate value. While this sounds simple, the result differs significantly depending on which color space the interpolation happens in. This tool offers three options — RGB, HSL, and OKLCH — each with different characteristics.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">RGB interpolation is the most common and what CSS transitions use by default. Mixing red and green in RGB produces a muddy brown at the midpoint, because the eye perceives the intermediate RGB values as a de-saturated color. HSL interpolation travels around the hue wheel, often producing vivid intermediate hues — mixing red and blue through HSL will pass through violet and purple. OKLCH interpolation is perceptually uniform, meaning the middle value looks equidistant between the two endpoints to the human eye, which often produces the most natural and visually balanced result.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">The steps preview is particularly useful for generating gradient color stops, creating smooth tint-to-shade transitions, or building intermediate palette values between two anchor colors in a design system.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Which blend mode should I use?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">For general design work, OKLCH typically produces the most visually natural midpoints. Use RGB if you need to match browser default interpolation. Use HSL if you want to travel through vivid intermediate hues, such as for a rainbow gradient.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I use this to generate CSS gradient stops?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. Set the steps to 5 or 7, choose your preferred blend mode, and click each step to copy the HEX values. Use them as color stops in a <code className="text-indigo-400">linear-gradient()</code> for smooth, perceptually consistent gradients.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Why does mixing red and green not produce yellow?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">In RGB (additive color mixing on screens), red + green does produce yellow. But in the RGB blend mode here, you are mixing the color channels numerically at 50%, which produces a muted brownish result because neither red's nor green's luminance is at maximum. To get vivid yellow from red and green, use the HSL blend mode which travels through the hue wheel.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/tint-shade', '/palettes', '/color-converter', '/color-harmonies']} />
         </div>
       </main>

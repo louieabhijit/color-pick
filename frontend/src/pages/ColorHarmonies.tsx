@@ -238,7 +238,47 @@ const ColorHarmonies = () => {
           </motion.div>
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Color Harmonies Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Enter any base color using the hex input or click a swatch from the quick-pick row.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Select a harmony type — Complementary, Analogous, Triadic, Split-Complementary, Tetradic, Square, or Monochromatic.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>The color wheel updates instantly, showing where each harmony color sits relative to your base.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Click any swatch in the palette strip to copy its HEX value to your clipboard.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Use "Copy CSS Vars" to copy the full palette as CSS custom properties, or "Copy HEX list" for a comma-separated list.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What are Color Harmonies?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">Color harmony is the theory of combining colors in ways that are visually pleasing to the human eye. It is rooted in the geometric relationships between colors on the HSL color wheel. Certain angular relationships — 180° for complementary, 120° for triadic, 90° for square — create predictable types of visual balance and contrast.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">Complementary colors sit directly opposite on the wheel and create the highest contrast. They are used for call-to-action buttons, alerts, and anywhere you need maximum visual tension. Analogous colors sit adjacent to each other and are serene and cohesive — common in nature and used for backgrounds and gradients. Triadic and tetradic schemes provide variety while maintaining balance, and are well-suited for diverse UI systems with multiple accent colors.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Monochromatic harmonies use only one hue at varying lightness levels, producing an understated, professional result. They are an excellent starting point for dark-mode UI or any design where restraint is a virtue. Once you have a harmony, refine the individual colors by testing them for accessibility contrast using a contrast checker.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the best color harmony for web design?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">There is no single best harmony. Analogous schemes are safest for backgrounds and large surfaces. Complementary pairs work well for CTAs and highlights. Triadic schemes suit playful, expressive brands. The right choice depends on your brand personality and the contrast needs of your UI.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is split-complementary?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Split-complementary takes the two colors adjacent to a base color's complement. It provides strong contrast like a complementary scheme but with more visual variety and slightly less tension, making it easier to work with for beginners.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I use a harmony as a design system palette?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Copy the harmony as CSS variables, then generate full tint/shade scales for each color using the Tint & Shade Generator. This gives you the full 50-900 range for each hue, suitable for a complete design system like Tailwind or Material.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Does color harmony guarantee the colors will look good?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Harmony theory guarantees mathematical relationships between hues, but not visual quality. You still need to consider lightness, saturation, and context. Two harmonious colors can fail contrast standards or look muddy if both are dark. Always check accessibility after choosing a harmony.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/palettes', '/color-converter', '/tint-shade']} />
         </div>
       </main>

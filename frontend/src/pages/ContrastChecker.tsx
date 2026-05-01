@@ -255,7 +255,47 @@ const ContrastChecker = () => {
           </div>
         </motion.div>
 
-        <div className="mt-12 max-w-3xl mx-auto space-y-8">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Color Contrast Checker</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Enter your foreground (text) color using the color picker or by typing a HEX code directly.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Enter your background color the same way, or click one of the preset swatches for common values.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>The contrast ratio and WCAG pass/fail badges update instantly as you adjust the colors.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>If you fail AA, check the suggested color — it's a neutral tone that passes with your background.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Use the "Copy Shareable Link" button to send the exact color pair to a teammate for review.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is WCAG Color Contrast?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">WCAG (Web Content Accessibility Guidelines) defines minimum contrast ratios between foreground text and its background to ensure readability for people with low vision. The contrast ratio is calculated from the relative luminance of both colors — a value derived from the linearized RGB channels weighted by how the human eye perceives brightness.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">WCAG 2.1 defines two conformance levels. Level AA (the legal minimum in most countries) requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text (18pt or 14pt bold). Level AAA requires 7:1 and 4.5:1 respectively, and is targeted for particularly sensitive populations.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Beyond text, WCAG also covers UI components and graphical objects — buttons, form borders, chart axes — which require a minimum 3:1 contrast against adjacent colors. Ignoring contrast requirements excludes roughly 300 million people worldwide with color vision deficiency, and exposes organizations to legal risk under ADA, EN 301 549, and similar laws.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is a good contrast ratio for body text?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">4.5:1 is the WCAG AA minimum for normal-sized body text. In practice, ratios above 7:1 are easier to read for everyone, not just those with low vision. Black text on white has a contrast ratio of 21:1 — the maximum possible.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What counts as "large text" in WCAG?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">WCAG defines large text as 18pt (24px) or larger at normal weight, or 14pt (approximately 18.67px) or larger when bold. Large text only needs to meet the 3:1 ratio, not 4.5:1.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Does contrast apply to placeholder text?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. Placeholder text is real text from the user's perspective and must meet the same 4.5:1 minimum. Many designs fail here because placeholder text is intentionally muted — often falling well below the threshold.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">My design looks fine — why does contrast matter?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Roughly 1 in 12 men and 1 in 200 women have some degree of color vision deficiency. Low contrast also affects everyone in bright sunlight, on low-quality displays, or as they age. Good contrast is good design, not just a compliance checkbox.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/color-blindness', '/color-converter', '/palettes']} />
         </div>
       </main>

@@ -256,7 +256,43 @@ const ColorNameFinder = () => {
           </motion.div>
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Color Name Finder</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Enter any HEX color using the color picker or by typing the code directly in the input field.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>The tool instantly finds the closest named color from a database of 200+ CSS and extended color names.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Browse the 5 closest matches with their similarity percentage — click any to copy its HEX code.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Use the "Search by name" box to find colors by description — try "ocean", "rose", "midnight", or "sage".</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click "Random" to explore a random color and discover its closest named equivalent.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What are CSS Named Colors?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">CSS defines 148 named colors — from classics like <code className="text-indigo-400">red</code>, <code className="text-indigo-400">blue</code>, and <code className="text-indigo-400">white</code>, to quirky names like <code className="text-indigo-400">rebeccapurple</code>, <code className="text-indigo-400">cornflowerblue</code>, and <code className="text-indigo-400">papayawhip</code>. These names are defined in the CSS Color Level 4 specification and are valid anywhere a color value is accepted.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">Beyond the official CSS names, designers and paint manufacturers have developed thousands of descriptive color names over centuries. Extended color databases include names like "cerulean", "vermilion", "chartreuse", and "ecru" — descriptive names that communicate color character more evocatively than a HEX code ever could. These names are especially useful in design documentation, client communication, and brand guidelines.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">The closest-name algorithm here uses Euclidean distance in RGB space — measuring the geometric distance between the input color and every named color in the database, then returning the nearest matches. The similarity percentage indicates how close the match is, with 100% meaning an exact match.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I use CSS named colors in production?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. All 148 CSS named colors are fully supported in every modern browser and are valid in any CSS property that accepts a color value. They are slightly less efficient than HEX values for tooling but perfectly valid for production use.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is rebeccapurple?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]"><code className="text-indigo-400">rebeccapurple</code> (#663399) was added to the CSS Color Level 4 specification in honor of Rebecca Meyer, daughter of CSS pioneer Eric Meyer, who passed away in 2014. It is the only CSS named color named after a person.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Why is my color's nearest match only 85% similar?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Most colors in the spectrum do not have an exact named equivalent — the 200+ color names cover only a fraction of the ~16 million possible RGB colors. A similarity below 100% simply means the nearest named color is close but not identical. The HEX value remains the exact representation of your color.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/color-converter', '/palettes', '/color-harmonies']} />
         </div>
       </main>

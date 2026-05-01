@@ -226,7 +226,43 @@ const FlexboxGenerator = () => {
           </motion.div>
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Flexbox Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Choose a preset layout (Centered, Navbar, Card Grid, Sidebar) as a starting point, or configure from scratch.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Adjust the container properties: flex-direction, flex-wrap, justify-content, align-items, and gap.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Click "Add Item" to add flex children. Select an item and set its flex-grow, shrink, basis, align-self, and order.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Watch the live preview update instantly as you change each property.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Switch between CSS and HTML tabs, then click "Copy" to grab production-ready code.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is CSS Flexbox?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">Flexbox (Flexible Box Layout) is a CSS layout model designed for distributing space along a single axis — either a row or a column. The parent container (the flex container) controls how its direct children (flex items) are sized, ordered, and aligned. This makes flexbox ideal for components that need to respond to different content sizes or viewport widths.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">The key properties are: <code className="text-indigo-400">flex-direction</code> (axis direction), <code className="text-indigo-400">justify-content</code> (alignment along the main axis), <code className="text-indigo-400">align-items</code> (alignment along the cross axis), and <code className="text-indigo-400">flex-wrap</code> (whether items can wrap to new lines). On individual items, <code className="text-indigo-400">flex-grow</code> controls how much available space an item claims, and <code className="text-indigo-400">flex-basis</code> sets its starting size before growth is applied.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Flexbox is best for one-dimensional layouts: navigation bars, button groups, form rows, card carousels, and centering content. For two-dimensional layouts where both rows and columns need independent control, CSS Grid is the better choice.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">When should I use Flexbox vs. CSS Grid?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Use Flexbox when you have a single row or column of items and want them to distribute or align within that space. Use Grid when you need to control placement in both dimensions simultaneously — page layouts, dashboards, and image galleries are natural Grid use cases.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is flex: 1 shorthand?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]"><code className="text-indigo-400">flex: 1</code> is shorthand for <code className="text-indigo-400">flex-grow: 1; flex-shrink: 1; flex-basis: 0%</code>. It tells an item to grow and shrink equally, starting from 0 and claiming an equal share of available space. It is the most common way to create equally-sized flex items.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I center something with Flexbox?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Set the container to <code className="text-indigo-400">display: flex; justify-content: center; align-items: center;</code>. This centers the child both horizontally (main axis) and vertically (cross axis). This is the most reliable way to perfectly center an element in modern CSS.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/box-shadow', '/border-radius', '/glass-generator']} />
         </div>
       </main>

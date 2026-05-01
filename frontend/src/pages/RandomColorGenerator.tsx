@@ -280,7 +280,43 @@ const RandomColorGenerator = () => {
           </div>
         )}
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Random Color Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Click "Generate" or press <code className="text-indigo-400">Space</code> to get a new random color displayed as a large swatch.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Use the filter presets (Pastel, Vivid, Dark, Neon, Earth) to constrain generation to a color family.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Enable 5-color mode to generate a full palette at once. Lock individual colors you like and regenerate the rest.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Click any value (HEX, RGB, HSL, OKLCH) to copy it instantly to your clipboard.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Colors you like persist in the history strip below — click any to bring it back.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">Why Use a Random Color Generator?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">Random color generation is a powerful creative technique used by designers to break out of habitual color choices and discover unexpected combinations. When you always start from a known brand color or a familiar palette, you unconsciously constrain your options. A random starting point forces you to evaluate color on its own merits rather than habit.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">The generator uses HSL (Hue, Saturation, Lightness) internally to apply filters. This is because HSL maps directly to how humans perceive color — "pastel" is simply high lightness and moderate saturation, while "vivid" is high saturation and mid-range lightness. By constraining the HSL ranges, the generator produces colors that reliably fall within a perceptual family rather than random values that often produce muddy or unusable results.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">The lock-and-regenerate workflow in 5-color mode mirrors the creative process used by professional palette builders — keep what works, discard what doesn't, and iterate rapidly until the combination feels right. This is significantly faster than manually adjusting individual hue values.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I share a specific color from this generator?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. In single-color mode, the current color's HEX value is written to the URL hash (e.g., <code className="text-indigo-400">/random-color#6366f1</code>). Copy the browser URL to share the exact color with anyone.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the Space key shortcut?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Pressing the Spacebar on your keyboard generates a new color instantly without needing to reach for the mouse. This makes rapid iteration much faster — hold Space and tap repeatedly to cycle through colors quickly.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How is OKLCH different from HSL for this tool?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">OKLCH is a perceptually uniform color space — equal steps in OKLCH look like equal steps to the human eye, which HSL does not achieve. The generated color's OKLCH value is shown for reference, but the generation itself uses HSL for its intuitive filter controls.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/palettes', '/color-converter', '/color-harmonies']} />
         </div>
       </main>

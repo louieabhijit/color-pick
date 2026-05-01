@@ -236,7 +236,47 @@ const TextShadowGenerator = () => {
           </motion.div>
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Text Shadow Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Choose a preset (Subtle Drop, Glow, Neon, Embossed, Retro 3D) to start, or build from scratch.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Adjust X offset, Y offset, blur radius, shadow color, and opacity using the sliders.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Click "Add Layer" to stack multiple shadows for richer effects like neon glows or 3D depth.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Toggle individual layers on/off using the eye icon to compare before and after.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click "Copy" to copy the complete <code className="text-indigo-400">text-shadow</code> CSS declaration, ready to paste.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is CSS text-shadow?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">The CSS <code className="text-indigo-400">text-shadow</code> property adds one or more shadow effects to text. Each shadow is defined by four values: the horizontal offset (X), vertical offset (Y), blur radius, and color. Positive X moves the shadow right; positive Y moves it down. A blur radius of 0 creates a hard-edged shadow with no softness.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">Where CSS <code className="text-indigo-400">box-shadow</code> applies to the rectangular box of an element, <code className="text-indigo-400">text-shadow</code> follows the actual shape of each letter — making it ideal for typographic effects. Multiple shadows are stacked as a comma-separated list, processed from back to front. This lets you layer a tight hard shadow for definition, a wide soft shadow for depth, and a colored glow for atmosphere — all in a single declaration.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Common uses include: subtle drop shadows for legibility on images, glowing neon effects for dark UI, letterpress or embossed text for editorial layouts, and long flat shadows for material-style headlines. Unlike <code className="text-indigo-400">filter: drop-shadow()</code>, <code className="text-indigo-400">text-shadow</code> does not affect surrounding elements and renders with excellent browser support across all modern platforms.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How many text shadows can I stack?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">There is no browser-imposed limit on the number of shadows. In practice, 3-5 layers cover most design needs. More than 8 layers can noticeably affect rendering performance on large text or when animations are involved.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I animate text-shadow with CSS?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. <code className="text-indigo-400">text-shadow</code> is animatable with CSS <code className="text-indigo-400">transition</code> and <code className="text-indigo-400">animation</code>. However, animating blur radius is expensive — prefer animating opacity or switching between pre-defined shadow values for better performance.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between text-shadow and filter: drop-shadow?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]"><code className="text-indigo-400">text-shadow</code> applies only to text characters and is part of the text rendering layer. <code className="text-indigo-400">filter: drop-shadow()</code> applies to the entire element including borders and backgrounds, and is GPU-composited. For text-only effects, <code className="text-indigo-400">text-shadow</code> is the correct choice.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Does text-shadow affect layout or spacing?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">No. Like <code className="text-indigo-400">box-shadow</code>, <code className="text-indigo-400">text-shadow</code> is purely visual and does not affect the document layout, line height, or the space any element occupies.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/box-shadow', '/font-pairing', '/type-scale']} />
         </div>
       </main>

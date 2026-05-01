@@ -220,7 +220,43 @@ const CSSFilterGenerator = () => {
           </motion.div>
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Filter Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Choose a sample image from the three built-in options, or upload your own image for a custom preview.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Toggle individual filters on/off using the checkbox, and adjust values with the sliders.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Use the preset buttons (Vintage, B&W, High Contrast, Warm, Cool) to apply curated filter stacks instantly.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Toggle the "Before/After" button to compare the original image with your filtered version.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Click "Copy" to copy the complete <code className="text-indigo-400">filter:</code> CSS declaration — apply it to any element in your stylesheet.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is the CSS filter Property?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">The CSS <code className="text-indigo-400">filter</code> property applies graphical effects to an element — blurring, changing colors, adjusting brightness and contrast, and more. Unlike image manipulation in Photoshop, CSS filters are applied at render time in the browser, are fully resolution-independent, and can be animated with CSS transitions. They apply to the entire element including any child content.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">The nine standard filter functions are: <code className="text-indigo-400">blur()</code>, <code className="text-indigo-400">brightness()</code>, <code className="text-indigo-400">contrast()</code>, <code className="text-indigo-400">grayscale()</code>, <code className="text-indigo-400">hue-rotate()</code>, <code className="text-indigo-400">invert()</code>, <code className="text-indigo-400">opacity()</code>, <code className="text-indigo-400">saturate()</code>, and <code className="text-indigo-400">sepia()</code>. They can be stacked in a single declaration, applied left to right in sequence.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">CSS filters are GPU-accelerated in all modern browsers, making them performant even when animated. Common use cases include: duotone image effects, hover color shifts on icons, degraded/faded photo styles for editorial layouts, and dynamic theming of SVG illustrations that need to adapt to light and dark modes.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is the difference between filter and backdrop-filter?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]"><code className="text-indigo-400">filter</code> applies effects to the element and all its content. <code className="text-indigo-400">backdrop-filter</code> applies effects to what is rendered <em>behind</em> the element — used to create the frosted glass effect. They use the same function syntax but affect different rendering layers.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Can I animate CSS filters?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Yes. All filter functions are animatable with CSS <code className="text-indigo-400">transition</code> and <code className="text-indigo-400">@keyframes</code>. Animating <code className="text-indigo-400">blur()</code> can be expensive — adding <code className="text-indigo-400">will-change: filter</code> to animated elements helps the browser optimize the compositing.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Does filter affect the element's layout?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">No. CSS filters are visual-only and do not change an element's size, position, or its effect on neighboring elements. The filter is applied at the compositing stage after layout has been calculated.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/glass-generator', '/box-shadow', '/color-converter']} />
         </div>
       </main>

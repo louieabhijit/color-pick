@@ -258,7 +258,43 @@ const GridGenerator = () => {
           </motion.div>
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the CSS Grid Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Start with a preset (Blog, 3-Col, Dashboard, Gallery) or define your own column and row tracks.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Type column and row templates directly — use fr, px, %, auto, or minmax() units.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Select an item in the preview and set its grid-column and grid-row span using the sliders.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Adjust column gap, row gap, justify-items, and align-items to fine-tune the layout.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Copy the CSS or HTML output with a single click.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is CSS Grid?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">CSS Grid is a two-dimensional layout system that allows you to define explicit columns and rows, then place items anywhere within that grid — including spanning multiple cells. Unlike Flexbox, which distributes items along a single axis, Grid lets you control placement in both dimensions simultaneously, making it the best tool for page-level layouts and complex component arrangements.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">The <code className="text-indigo-400">fr</code> unit (fraction) is unique to Grid and distributes available space proportionally after fixed and auto-sized tracks are placed. <code className="text-indigo-400">1fr 2fr 1fr</code> creates three columns where the middle takes twice as much space as each side — a classic content + sidebar layout. <code className="text-indigo-400">repeat(3, 1fr)</code> creates three equal columns concisely.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Grid items can span multiple columns or rows using <code className="text-indigo-400">grid-column: 1 / 3</code> notation. This makes it straightforward to build magazine-style layouts, dashboards with featured cards, and gallery grids where certain items are visually prominent. Grid and Flexbox complement each other — use Grid for the outer page structure, Flexbox for inner component alignment.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What does the fr unit mean in CSS Grid?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">The <code className="text-indigo-400">fr</code> unit means "fraction of the available space in the grid container." After fixed and auto-sized tracks are placed, the remaining space is divided among fr tracks in proportion to their fr values. <code className="text-indigo-400">1fr 1fr 1fr</code> creates three equal columns.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How do I make a responsive grid without media queries?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Use <code className="text-indigo-400">grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))</code>. This creates as many columns as fit given the minimum width, automatically adapting to the container width without any breakpoints. It is one of the most powerful responsive patterns in modern CSS.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">When should I use Grid instead of Flexbox?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Use Grid when you need to control placement in two dimensions (rows and columns), when items need to span multiple cells, or when you want items to align to a rigid grid regardless of content size. Use Flexbox for content-driven, single-axis distributions where the layout should respond to item sizes.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/flexbox', '/border-radius', '/box-shadow']} />
         </div>
       </main>

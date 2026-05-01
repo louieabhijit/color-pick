@@ -202,7 +202,43 @@ const SpacingScaleGenerator = () => {
           </motion.div>
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto">
+        <div className="mt-16 max-w-3xl mx-auto space-y-8">
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-5">How to Use the Spacing Scale Generator</h2>
+            <ol className="space-y-3">
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">1.</span>Set your base spacing unit — 4px is common for tight UI, 8px for more spacious layouts.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">2.</span>Choose a scale method: Linear (base × 1, 2, 3…) or Ratio-based (base × ratio^n, like type scales).</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">3.</span>Adjust the number of steps and pick a naming convention (numbered, T-shirt, or Tailwind-style).</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">4.</span>Preview the scale as a visual bar chart — larger bars show the relative size of each step.</li>
+              <li className="flex gap-3 text-[var(--text-secondary)]"><span className="font-bold text-indigo-500 shrink-0">5.</span>Select an export format (CSS, SCSS, Tailwind, JSON) and click Copy to grab your scale.</li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is a Design System Spacing Scale?</h2>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">A spacing scale is a predefined set of spacing values used consistently across a design system for margins, padding, gaps, and layout measurements. Without a scale, individual designers and developers pick spacing intuitively — leading to dozens of slightly different values (14px here, 16px there, 18px somewhere else) that make the UI feel inconsistent and are difficult to maintain.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-3">The most common foundation is a base-4 or base-8 grid. A 4px base produces values of 4, 8, 12, 16, 20, 24… which align cleanly with Tailwind's default spacing scale and most icon grid systems. An 8px base (8, 16, 24, 32, 40…) is slightly coarser but very common in larger applications. A ratio-based scale (using the same ratios as type scales) creates more expressive, progressively larger steps — useful for layout spacing that needs to feel rhythmically related to typography.</p>
+            <p className="text-[var(--text-secondary)] leading-relaxed">Exporting as CSS custom properties or design tokens (JSON) allows the same spacing values to be referenced across CSS, SCSS, Tailwind, and even Figma via token plugins — ensuring design and code stay in sync as the system evolves.</p>
+          </div>
+
+          <div className="glass-card p-8 rounded-2xl">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Frequently Asked Questions</h2>
+            <div className="space-y-3">
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">Should I use a 4px or 8px base unit?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">A 4px base gives more granularity and is better for dense UIs (dashboards, data tables). An 8px base produces cleaner, more spacious results and is easier to work with in most app and marketing contexts. Both align to common device pixel ratios.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">What is a design token?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">A design token is a named variable that stores a design decision — a specific color, font size, or spacing value — in a format that can be consumed by design tools and code. The JSON export from this tool is a spacing token file compatible with tools like Style Dictionary and Figma's Token Studio plugin.</p>
+              </details>
+              <details className="border border-white/20 rounded-xl overflow-hidden">
+                <summary className="cursor-pointer px-5 py-4 font-semibold text-[var(--text-primary)] hover:bg-white/5 transition-colors select-none">How does spacing relate to typography?</summary>
+                <p className="px-5 pb-4 text-[var(--text-secondary)]">Using the same ratio for both your type scale and your spacing scale creates visual rhythm — the spaces between elements feel proportionally related to the sizes of the text they contain. This is the basis of a "vertical rhythm" system in typography-first design.</p>
+              </details>
+            </div>
+          </div>
+
           <RelatedTools tools={['/type-scale', '/font-pairing', '/palette-exporter']} />
         </div>
       </main>
