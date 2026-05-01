@@ -1,203 +1,156 @@
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import PageSEO from '../components/PageSEO';
-import { FaLightbulb, FaCode, FaPalette, FaRocket } from 'react-icons/fa';
+import Footer from '../components/Footer';
 
-const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
-  <motion.div
-    whileHover={{ scale: 1.02 }}
-    whileTap={{ scale: 0.98 }}
-    className="glass-card p-6 shadow-sm hover:shadow-md 
-               transition-all duration-300 border border-gray-100 dark:border-gray-700"
-  >
-    <div className="flex items-start space-x-4">
-      <div className="bg-gradient-to-br from-indigo-500 to-purple-500 p-3 rounded-lg">
-        <Icon className="w-6 h-6 text-white" />
-      </div>
-      <div>
-        <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2">{title}</h3>
-        <p className="text-[var(--text-muted)]">{description}</p>
-      </div>
-    </div>
-  </motion.div>
-);
+const About = () => (
+  <div className="min-h-screen w-full">
+    <PageSEO
+      title="About ColorPeek - Free Design Tools for Designers & Developers"
+      description="ColorPeek is a free collection of color, CSS, and typography tools built for web designers and developers by Abhijit Chapke. No sign-up, no paywalls, everything runs in your browser."
+      path="/about"
+      keywords="about colorpeek, free design tools, color tools for developers, css generators, who made colorpeek"
+    />
+    <Navbar onColorSelect={() => {}} />
 
-const StatCard = ({ number, label }: { number: string, label: string }) => (
-  <motion.div
-    whileHover={{ scale: 1.05 }}
-    className="bg-gradient-to-br from-indigo-500 to-purple-500 p-6 rounded-xl text-white
-               transform transition-all duration-300 hover:shadow-xl"
-  >
-    <h3 className="text-4xl font-bold mb-2">{number}</h3>
-    <p className="text-indigo-100">{label}</p>
-  </motion.div>
-);
+    <main className="pt-24 pb-16 px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto">
 
-const About = () => {
-  const handleColorSelect = (color: string) => {
-    // No-op since we don't need color selection on this page
-  };
+        {/* Header */}
+        <div className="mb-12">
+          <span className="section-label mb-3 inline-block">About</span>
+          <h1 className="text-4xl sm:text-5xl font-bold mt-2 mb-4 text-[var(--text-primary)]">
+            About <span className="gradient-text">ColorPeek</span>
+          </h1>
+          <p className="text-lg text-[var(--text-muted)] leading-relaxed">
+            A free, open collection of color and CSS design tools built for web designers and developers.
+          </p>
+        </div>
 
-  const features = [
-    {
-      icon: FaLightbulb,
-      title: "Smart Color Extraction",
-      description: "Advanced algorithms that identify and extract the most significant colors from any image."
-    },
-    {
-      icon: FaPalette,
-      title: "Color Harmonies",
-      description: "Generate perfect color combinations using color theory principles and advanced matching algorithms."
-    },
-    {
-      icon: FaCode,
-      title: "Developer Ready",
-      description: "Get instant access to color codes in multiple formats, ready to use in your projects."
-    },
-    {
-      icon: FaRocket,
-      title: "Performance Focused",
-      description: "Lightning-fast color processing and real-time updates for a seamless experience."
-    }
-  ];
+        {/* What is ColorPeek */}
+        <section className="glass-card p-8 rounded-2xl mb-6">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What is ColorPeek?</h2>
+          <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+            ColorPeek is a free browser-based toolkit for designers and developers who work with color and CSS.
+            It brings together 23+ tools in one place - from color palette generators and CSS shadow builders
+            to contrast checkers, type scale calculators, and font pairing previews.
+          </p>
+          <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+            Every tool runs entirely in your browser. There are no accounts, no sign-ups, no paywalls, and no data
+            collected from what you create. Your palettes, gradients, and CSS code stay on your machine.
+          </p>
+          <p className="text-[var(--text-secondary)] leading-relaxed">
+            The site is free to use for personal and commercial projects. No attribution required.
+          </p>
+        </section>
 
-  const stats = [
-    { number: "1M+", label: "Colors Analyzed" },
-    { number: "50K+", label: "Active Users" },
-    { number: "100K+", label: "Palettes Created" },
-    { number: "99%", label: "User Satisfaction" }
-  ];
+        {/* Why I Built This */}
+        <section className="glass-card p-8 rounded-2xl mb-6">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">Why I Built This</h2>
+          <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+            Hi - I'm Abhijit Chapke, a developer based in India. I built ColorPeek because I kept
+            switching between a dozen different websites whenever I needed a color converter, a shadow
+            generator, or a quick type scale. Each site had one tool, required sign-up for exports,
+            or was cluttered with ads. It was frustrating.
+          </p>
+          <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+            I started building the tools I actually needed - a gradient generator that copies clean CSS,
+            a tint/shade generator that outputs Tailwind-compatible scales, a font pairing tool that
+            loads Google Fonts live. One by one, ColorPeek grew into a full toolkit.
+          </p>
+          <p className="text-[var(--text-secondary)] leading-relaxed">
+            The philosophy is simple: design tools should load instantly, work without accounts, and
+            never get in the way. If a tool doesn't solve a real problem faster than opening a code editor,
+            it doesn't belong here.
+          </p>
+        </section>
 
-  return (
-    <div className="min-h-screen w-full">
-      <PageSEO
-        title="About ColorPeek"
-        description="Learn about ColorPeek's mission to empower designers and developers with intelligent colour tools - from palette extraction and harmony generation to accessibility simulation and export."
-        path="/about"
-        keywords="about colorpeek, color palette tool, color extraction app, design tool, color picker online"
-      />
-      <Navbar onColorSelect={handleColorSelect} />
-      
-      
-      <main className="pt-16 pb-8">
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6">
-          {/* Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-24 h-24 mx-auto mb-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 
-                        flex items-center justify-center"
-            >
-              <FaPalette className="w-12 h-12 text-white" />
-            </motion.div>
-            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-              About ColorPeek
-            </h1>
-            <p className="text-xl text-[var(--text-muted)] max-w-3xl mx-auto">
-              Empowering creators with intelligent color tools and innovative design solutions.
-            </p>
-          </motion.div>
+        {/* Tools available */}
+        <section className="glass-card p-8 rounded-2xl mb-6">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">What You Can Do</h2>
 
-
-          {/* Stats Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <StatCard {...stat} />
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Features Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16"
-          >
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <FeatureCard {...feature} />
-              </motion.div>
-            ))}
-          </motion.div>
-
-
-
-          {/* Mission Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="glass-card rounded-2xl p-8 md:p-12 mb-16 border border-indigo-200/40 dark:border-indigo-500/20"
-          >
-            <h2 className="text-3xl font-bold mb-6 text-[var(--text-primary)]">Our Mission</h2>
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-[var(--text-muted)]">
-                At ColorPeek, we believe that color is fundamental to great design. Our mission is to make 
-                color exploration and palette creation intuitive and accessible for everyone. Whether you're 
-                a professional designer or just someone who loves colors, our tool helps you discover, 
-                analyze, and utilize colors in ways you never imagined.
+          <div className="space-y-5">
+            <div>
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-2">Color Tools</h3>
+              <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                Generate color palettes, create tint and shade scales (like Tailwind's 50-950), convert colors
+                between HEX, RGB, HSL, HSV, CMYK, and OKLCH, extract palettes from any image or URL, simulate
+                how colors appear to people with color blindness (7 vision types), mix and blend two colors,
+                generate harmonies (complementary, triadic, analogous), find color names, and export palettes
+                as CSS variables, SCSS, Tailwind config, JSON, or SVG.
               </p>
             </div>
-          </motion.div>
 
-          {/* Technology Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="glass-card rounded-2xl p-8 md:p-12 border border-white/40 dark:border-white/10"
-          >
-            <h2 className="text-3xl font-bold mb-6 text-[var(--text-primary)]">Our Technology</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-[var(--text-primary)]">
-                  Advanced Color Analysis
-                </h3>
-                <p className="text-[var(--text-muted)]">
-                  Our sophisticated algorithms analyze images to extract the most meaningful colors, 
-                  considering both dominant hues and subtle accents that make your design unique.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-[var(--text-primary)]">
-                  Real-time Processing
-                </h3>
-                <p className="text-[var(--text-muted)]">
-                  Experience instant color analysis and palette generation with our optimized 
-                  processing engine, designed for performance and accuracy.
-                </p>
-              </div>
+            <div>
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-2">CSS Generators</h3>
+              <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                Build CSS gradients (linear, radial, conic) with a live visual editor. Generate multi-layer
+                box shadows, create glassmorphism panels with backdrop-filter controls, design border-radius
+                shapes, generate CSS text shadows with presets like Neon and Embossed, apply CSS filters
+                (blur, contrast, sepia) with before/after preview, and build flexbox and CSS grid layouts
+                visually with copy-ready CSS and HTML.
+              </p>
             </div>
-          </motion.div>
 
-        </div>
-      </main>
-    </div>
-  );
-};
+            <div>
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-2">Typography</h3>
+              <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                Calculate modular type scales with 8 musical ratios (Minor Third through Golden Ratio),
+                preview Google Font pairings with live text samples, and generate design system spacing
+                scales in px, rem, or em - with export to CSS, SCSS, Tailwind, or JSON.
+              </p>
+            </div>
 
-export default About; 
+            <div>
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-2">Accessibility</h3>
+              <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                Check WCAG 2.1 color contrast ratios with AA and AAA pass/fail badges, live text preview,
+                and automatic suggestion of a passing alternative color.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Stack / tech */}
+        <section className="glass-card p-8 rounded-2xl mb-6">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">How It's Built</h2>
+          <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+            ColorPeek is built with React, TypeScript, Vite, and Tailwind CSS. It's hosted on Netlify
+            with static prerendering so every page loads with real HTML and metadata - no JavaScript
+            required to see the content.
+          </p>
+          <p className="text-[var(--text-secondary)] leading-relaxed">
+            All color math (OKLCH conversions, WCAG contrast formulas, tint/shade generation) is
+            implemented directly in the browser - no external color API, no server calls. The only
+            external requests are Google Fonts for font previews and Google Analytics for anonymous
+            traffic stats.
+          </p>
+        </section>
+
+        {/* Get in touch */}
+        <section className="glass-card p-8 rounded-2xl mb-6">
+          <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-4">Get in Touch</h2>
+          <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+            Bug reports, feature requests, and feedback are all welcome. If a tool is behaving
+            unexpectedly, or if you have an idea for something that would be genuinely useful,
+            I'd like to hear about it.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 glass-button-primary px-5 py-2.5 text-sm font-semibold rounded-xl"
+          >
+            Send a message
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </section>
+
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+);
+
+export default About;
