@@ -77,10 +77,42 @@ const TECH_STACK = [
 ];
 
 const PILLARS = [
-  { icon: '⚡', label: 'Instant Load', sub: 'No splash screens, no loading states' },
-  { icon: '🔒', label: 'No Accounts', sub: 'Zero sign-ups, zero paywalls' },
-  { icon: '🧠', label: 'Client-Side', sub: 'All math runs in your browser' },
-  { icon: '🎁', label: 'Free Forever', sub: 'Personal and commercial use' },
+  {
+    icon: (
+      <svg className="w-5 h-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    label: 'Instant Load',
+    sub: 'No splash screens, no loading states',
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+    ),
+    label: 'No Accounts',
+    sub: 'Zero sign-ups, zero paywalls',
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    label: 'Client-Side',
+    sub: 'All math runs in your browser',
+  },
+  {
+    icon: (
+      <svg className="w-5 h-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    label: 'Free Forever',
+    sub: 'Personal and commercial use',
+  },
 ];
 
 const About = () => (
@@ -133,7 +165,9 @@ const About = () => (
               key={label}
               className="glass-card p-4 rounded-2xl text-center group hover:scale-[1.03] transition-transform duration-300"
             >
-              <span className="text-2xl mb-2 inline-block group-hover:scale-110 transition-transform duration-300">{icon}</span>
+              <div className="w-9 h-9 rounded-xl glass-card flex items-center justify-center mb-2 mx-auto group-hover:scale-110 transition-transform duration-300">
+                {icon}
+              </div>
               <p className="text-sm font-semibold text-[var(--text-primary)]">{label}</p>
               <p className="text-[10px] text-[var(--text-muted)] mt-0.5 leading-tight">{sub}</p>
             </div>
@@ -277,7 +311,11 @@ const About = () => (
             />
 
             <div className="relative z-10">
-              <span className="text-3xl mb-3 inline-block">💬</span>
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-indigo-500/25">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
               <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-3">Get in Touch</h2>
               <p className="text-[var(--text-secondary)] leading-relaxed mb-6 max-w-md mx-auto">
                 Bug reports, feature requests, and feedback are all welcome. If a tool is behaving
